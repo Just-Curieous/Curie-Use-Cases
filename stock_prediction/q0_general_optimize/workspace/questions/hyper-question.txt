@@ -1,0 +1,25 @@
+Help me develop a machine learning model for predicting stock returns using historical factors. My current implementation uses LightGBM with a rolling window approach. I'd like your help exploring various optimization strategies to improve my model's performance in terms of rank correlation.
+
+My current solution:
+- Uses LightGBM regression to predict stock returns
+- Trains on historical factor data (multiple features)
+- Applies a rolling window approach (training on previous N years to predict next year)
+- Uses rank correlation as the main evaluation metric
+- Implements ensemble learning by averaging multiple model predictions
+- Stock data is downloaded, which you can directly use.
+
+Please help me explore the following area to optimize prediction performance:
+
+Try to tune hyperparameters listed below for LightGBM model to find the best set of hyperparameters that gives best rank correlation.
+
+
+"lgbm_params": { 
+    "num_leaves": 511,
+    "learning_rate": 0.02, 
+    "min_child_samples": 30,
+    "n_estimators": 10000,
+    "subsample": 0.7,
+    "colsample_bytree": 0.7,
+    "early_stopping_rounds": 100,
+    "log_evaluation_freq": 500
+}

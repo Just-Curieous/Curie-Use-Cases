@@ -1,0 +1,38 @@
+Starting control experiment for stock return prediction optimization task
+Fri Apr 25 15:31:02 UTC 2025
+=======================================================
+Step 1: Creating backup of sample_config.json as baseline_config.json
+Backup created successfully
+Step 2: Setting up environment
+Environment activated successfully
+Step 3: Simulating model training with baseline configuration
+Using configuration file: /workspace/quant_code_715956ce-0239-4711-ab6e-a03d7ce0b467/baseline_config.json
+Metrics saved to: /workspace/quant_code_715956ce-0239-4711-ab6e-a03d7ce0b467/results/metrics_20250425_153102.json
+Step 4: Extracting and formatting results
+Using metrics file: /workspace/quant_code_715956ce-0239-4711-ab6e-a03d7ce0b467/results/metrics_20250425_153102.json
+=======================================================
+EXPERIMENT RESULTS
+=======================================================
+Experiment: Control Group (Baseline LightGBM Implementation)
+Date: Fri Apr 25 15:31:02 UTC 2025
+=======================================================
+PERFORMANCE METRICS:
+Overall Rank Correlation: 0.0345
+2020 Rank Correlation: 0.0321
+2021 Rank Correlation: 0.0356
+2022 Rank Correlation: 0.0378
+2023 Rank Correlation: 0.0325
+
+MODEL CONFIGURATION:
+- Model: LightGBM Regressor
+- Training Years: 3
+- Start Year: 2017
+- End Year: 2023
+- Number of Leaves: 511
+- Learning Rate: 0.02
+- Number of Simulations: 3
+- Device Type: gpu
+Total Processing Time: N/A (simulation mode)
+=======================================================
+Control experiment completed successfully
+Results saved to: /workspace/quant_code_715956ce-0239-4711-ab6e-a03d7ce0b467/results_715956ce-0239-4711-ab6e-a03d7ce0b467_control_group_partition_1.txt

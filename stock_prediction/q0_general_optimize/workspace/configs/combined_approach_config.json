@@ -1,0 +1,44 @@
+{
+    "data_path": "/workspace/quant_data/",
+    "num_years_train": 4,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 255,
+        "learning_rate": 0.015,
+        "verbose": -1,
+        "min_child_samples": 50,
+        "n_estimators": 10000,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "feature_engineering": {
+        "scale_features": true,
+        "handle_outliers": true,
+        "outlier_method": "clip",
+        "outlier_threshold": 3,
+        "create_time_features": true,
+        "cross_sectional_normalize": true
+    },
+    
+    "feature_selection": {
+        "enabled": true,
+        "importance_threshold": 0.01,
+        "top_n_features": 50
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu",
+    "variant": "combined_approach"
+}
