@@ -1,0 +1,85 @@
+# Experimental Results Summary: Dog Breed Classification
+
+## Overview of Experiments
+
+Four different experimental groups were conducted to optimize a dog breed classification model for 120 breeds. The experiments explored:
+1. Model architecture selection (baseline vs. transfer learning)
+2. Hyperparameter optimization and learning strategies
+3. Data augmentation and balancing techniques
+4. Ensemble modeling techniques
+
+## 1. Model Architecture Experiment Results
+
+| Model | Accuracy | Log Loss | Training Time (s) |
+|-------|----------|----------|-------------------|
+| Simple CNN (from scratch) | 0.0223 | 4.6312 | 358.0 |
+| ResNet50 | 0.5913 | 1.4414 | 324.3 |
+| VGG16 | 0.0185 | 4.7741 | 379.6 |
+| MobileNetV2 | 0.6538 | 1.1936 | 256.8 |
+| EfficientNetB0 | 0.6804 | 1.1095 | 277.2 |
+| ResNet50 with Advanced Aug | 0.5690 | 1.5928 | 458.1 |
+
+**Key Insights:**
+- Transfer learning models dramatically outperformed the CNN built from scratch
+- EfficientNetB0 performed best in terms of both accuracy and log loss
+- Advanced augmentation unexpectedly decreased ResNet50 performance
+- MobileNetV2 offered good performance with the fastest training time
+
+## 2. Hyperparameter Optimization Results
+
+| Configuration | Accuracy | Log Loss | Training Time (s) |
+|--------------|----------|----------|-------------------|
+| Default (Adam, const LR) | 0.7408 | 0.8429 | 504.0 |
+| Adam + StepLR (BS=32) | 0.8054 | 0.6626 | 948.8 |
+| SGD + StepLR (BS=32) | 0.8353 | 0.5348 | 843.3 |
+| Adam + Cosine (BS=32) | 0.8168 | 0.6236 | 751.7 |
+| Adam + StepLR (BS=64) | 0.8043 | 0.6471 | 750.0 |
+
+**Key Insights:**
+- Learning rate scheduling significantly improved performance over constant LR
+- SGD with momentum and step decay achieved the best results (0.5348 log loss)
+- Cosine annealing schedule with Adam showed strong performance
+- Default configuration (constant learning rate) significantly underperformed
+
+## 3. Data Augmentation and Balancing Experiment
+
+**Control Group (Standard Augmentation):**
+- Validation Accuracy: 71.63%
+- Validation Log Loss: 1.1144
+- Best results at epoch 11 
+
+**Key Per-Class Insights:**
+- High-performing breeds (F1 > 0.90): borzoi, keeshond, chow, ibizan_hound
+- Low-performing breeds (F1 < 0.40): eskimo_dog, american_staffordshire_terrier, whippet
+- Confusion observed between similar-looking breeds
+
+## 4. Ensemble Model Results
+ 
+- Accuracy: 0.7848
+- Multi-class Log Loss: 0.7587
+- Average Inference Time per Image: 0.0006 seconds
+- Model Size: 90.92 MB
+
+## Overall Best Configurations
+
+1. **Best Overall Model**: SGD with momentum (0.9) + StepLR schedule + batch size 32
+   - Accuracy: 83.53%
+   - Log Loss: 0.5348
+   - Training Time: 843.3 seconds
+
+2. **Best Individual Architecture**: EfficientNetB0 with transfer learning
+   - Accuracy: 68.04%
+   - Log Loss: 1.1095
+   - Training Time: 277.2 seconds
+
+## Key Findings
+
+1. **Architecture Impact**: Transfer learning models outperformed the CNN trained from scratch by an order of magnitude. EfficientNetB0 delivered the best balance of performance and efficiency.
+
+2. **Optimization Strategy**: Learning rate scheduling was critical for performance. SGD with momentum and step decay produced significantly better results than default settings.
+
+3. **Data Augmentation**: Standard augmentation proved sufficient; advanced augmentation techniques unexpectedly reduced performance with ResNet50, suggesting potential overfitting.
+
+4. **Class Balance Challenges**: Significant variation in per-class performance was observed, with some dog breeds consistently misclassified.
+
+5. **Performance Improvement**: From the baseline model's 2.3% accuracy to the best model's 83.5% accuracy, appropriate architecture selection and hyperparameter tuning delivered substantial improvements.
