@@ -1,0 +1,165 @@
+#!/bin/bash
+# Very simplified experiment script
+
+# Just use the Python interpreter directly to handle everything
+/workspace/quant_code_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5/venv/bin/python -c '
+import os
+import sys
+import json 
+import time
+import re
+import subprocess
+from pathlib import Path
+
+# Define constants
+WORKSPACE_DIR = "/workspace/quant_code_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5"
+PYTHON_PATH = os.path.join(WORKSPACE_DIR, "venv/bin/python")
+RESULTS_FILE = "/workspace/quant_code_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5/results_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5_control_group_partition_1.txt"
+METRICS_FILE = "/workspace/quant_code_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5/metrics_8d315ba7-6b9f-4050-87df-0ea06bbf9fd5_control_group_partition_1.json"
+
+# Create timestamp
+timestamp = time.strftime("%Y%m%d_%H%M%S")
+results_dir = f"/tmp/results_{timestamp}"
+config_path = f"/tmp/config_{timestamp}.json"
+
+# Create results directory
+os.makedirs(results_dir, exist_ok=True)
+
+# Open results file for writing
+with open(RESULTS_FILE, "w") as f:
+    f.write(f"# Control Group Experiment - Started at {time.ctime()}\n")
+    f.write("# Parameters:\n")
+    f.write("# - early_stopping_rounds: 50\n")
+    f.write("# - min_child_samples: 20\n")
+    f.write("# - reg_alpha: 0.0\n")
+    f.write("# - reg_lambda: 0.0\n\n")
+
+# Create configuration
+config = {
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 20,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 50,
+        "log_evaluation_freq": 500,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0
+    },
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "cpu",
+    "results_path": results_dir
+}
+
+# Save configuration
+with open(config_path, "w") as f:
+    json.dump(config, f, indent=4)
+
+# Append to results file
+with open(RESULTS_FILE, "a") as f:
+    f.write(f"Created config at: {config_path}\n")
+    f.write(f"Results will be saved to: {results_dir}\n\n")
+
+# Check if we need to modify model_training.py
+model_file = os.path.join(WORKSPACE_DIR, "model_training.py")
+with open(model_file, "r") as f:
+    model_code = f.read()
+
+if "reg_alpha" not in model_code:
+    with open(RESULTS_FILE, "a") as f:
+        f.write("Modifying model_training.py to include regularization parameters...\n")
+    
+    # Find the LGBMRegressor constructor and add parameters
+    pattern = r"(\s+colsample_bytree=lgbm_params\[\"colsample_bytree\"\],)"
+    replacement = r"\1\n        reg_alpha=lgbm_params.get(\"reg_alpha\", 0.0),\n        reg_lambda=lgbm_params.get(\"reg_lambda\", 0.0),"
+    modified_code = re.sub(pattern, replacement, model_code)
+    
+    # Save the modified file
+    with open(model_file, "w") as f:
+        f.write(modified_code)
+        
+    with open(RESULTS_FILE, "a") as f:
+        f.write("Model training file successfully modified.\n\n")
+else:
+    with open(RESULTS_FILE, "a") as f:
+        f.write("Regularization parameters already present in model_training.py\n\n")
+
+# Run the model training
+with open(RESULTS_FILE, "a") as f:
+    f.write("Starting model training...\n")
+
+# Execute the model training script and capture output
+start_time = time.time()
+cmd = [PYTHON_PATH, os.path.join(WORKSPACE_DIR, "model_training.py"), "--config", config_path]
+process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+
+# Capture output in real-time and append to results file
+with open(RESULTS_FILE, "a") as f:
+    for line in process.stdout:
+        f.write(line)
+        sys.stdout.write(line)
+
+process.wait()
+end_time = time.time()
+training_time = int(end_time - start_time)
+
+# Append completion info
+with open(RESULTS_FILE, "a") as f:
+    f.write(f"\nTraining completed in {training_time} seconds\n")
+
+# Find metrics file
+with open(RESULTS_FILE, "a") as f:
+    f.write("Looking for metrics file...\n")
+
+metrics_files = list(Path(results_dir).glob("metrics_*.json"))
+metrics_files.sort()
+
+if metrics_files:
+    latest_metrics = str(metrics_files[-1])
+    with open(RESULTS_FILE, "a") as f:
+        f.write(f"Found metrics file: {latest_metrics}\n")
+    
+    # Copy to output location
+    with open(latest_metrics, "r") as src, open(METRICS_FILE, "w") as dst:
+        dst.write(src.read())
+    
+    # Extract and print metrics
+    with open(METRICS_FILE, "r") as f:
+        metrics = json.load(f)
+    
+    # Append metrics to results file
+    with open(RESULTS_FILE, "a") as f:
+        f.write("\nPerformance Metrics:\n")
+        f.write(f"Overall Spearman Rank Correlation: {metrics.get('metrics', {}).get('overall')}\n")
+        f.write(f"Overfitting Gap: {metrics.get('metrics', {}).get('overfitting_gap')}\n")
+        f.write(f"Model Robustness (std of yearly correlations): {metrics.get('metrics', {}).get('model_robustness')}\n")
+        f.write("\nYearly Correlations:\n")
+        for year, value in sorted(metrics.get("metrics", {}).items()):
+            if year != "overall" and year != "overfitting_gap" and year != "model_robustness" and not year.startswith("overfitting_gap_") and year != "train_correlation" and year != "val_correlation":
+                f.write(f"  {year}: {value}\n")
+        
+        # Add training and validation correlations
+        f.write("\nTraining vs Validation Performance:\n")
+        f.write(f"  Training Correlation: {metrics.get('metrics', {}).get('train_correlation')}\n")
+        f.write(f"  Validation Correlation: {metrics.get('metrics', {}).get('val_correlation')}\n")
+else:
+    with open(RESULTS_FILE, "a") as f:
+        f.write("No metrics file found! Training may have failed.\n")
+
+# Clean up
+with open(RESULTS_FILE, "a") as f:
+    f.write("\nExperiment completed at " + time.ctime() + "\n")
+'

@@ -1,0 +1,68 @@
+{
+    "metrics": {
+        "overall": 0.0666478681364133,
+        "2020": 0.06950817613727683,
+        "2021": 0.057639598319797265,
+        "2022": 0.07093994723990799,
+        "2023": 0.06874589384232176,
+        "model_robustness": 0.005294791864056706,
+        "overfitting_gap": 0.0802864832087461,
+        "overfitting_gap_2020": 0.07023491088093464,
+        "overfitting_gap_2021": 0.08910473203843067,
+        "overfitting_gap_2022": 0.08681127682930821,
+        "overfitting_gap_2023": 0.07499501308631085,
+        "train_correlation": 0.1628857448090171,
+        "val_correlation": 0.08259926160027103
+    },
+    "training_metrics": {
+        "train_corr": {
+            "2020": 0.16035385278878814,
+            "2021": 0.17591431018086945,
+            "2022": 0.16458013267456204,
+            "2023": 0.15069468359184882,
+            "overall": 0.1628857448090171
+        },
+        "val_corr": {
+            "2020": 0.09011894190785351,
+            "2021": 0.08680957814243878,
+            "2022": 0.07776885584525382,
+            "2023": 0.07569967050553798,
+            "overall": 0.08259926160027103
+        },
+        "overfitting_gap": {
+            "2020": 0.07023491088093464,
+            "2021": 0.08910473203843067,
+            "2022": 0.08681127682930821,
+            "2023": 0.07499501308631085,
+            "overall": 0.0802864832087461
+        }
+    },
+    "config": {
+        "data_path": "/workspace/quant_code_dataset",
+        "results_path": "/tmp/results_20250429_051845",
+        "num_years_train": 3,
+        "start_year": 2017,
+        "end_year": 2023,
+        "min_samples": 1650,
+        "min_trading_volume": 5000000,
+        "min_price": 2,
+        "lgbm_params": {
+            "objective": "regression",
+            "num_leaves": 511,
+            "learning_rate": 0.02,
+            "verbose": -1,
+            "min_child_samples": 20,
+            "n_estimators": 10000,
+            "subsample": 0.7,
+            "colsample_bytree": 0.7,
+            "early_stopping_rounds": 50,
+            "log_evaluation_freq": 500,
+            "reg_alpha": 0.0,
+            "reg_lambda": 0.0
+        },
+        "num_workers": 40,
+        "num_simulations": 3,
+        "feature_threshold": 0.75,
+        "device_type": "cpu"
+    }
+}

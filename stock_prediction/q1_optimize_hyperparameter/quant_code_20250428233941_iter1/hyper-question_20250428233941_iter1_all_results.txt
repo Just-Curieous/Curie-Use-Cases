@@ -1,0 +1,60 @@
+# Hyperparameter Optimization Experiment Results Summary
+
+This experiment investigated the effects of various LightGBM hyperparameters on stock return prediction performance, specifically focusing on improving Spearman rank correlation between predicted and actual returns.
+
+## Control Group Configuration & Results
+
+**Baseline Parameters:**
+- num_leaves: 31
+- learning_rate: 0.1
+- max_depth: -1
+
+**Performance Metrics:**
+- Overall Rank Correlation: 0.0668
+- 2020 Rank Correlation: 0.0692
+- 2021 Rank Correlation: 0.0581
+- 2022 Rank Correlation: 0.0715
+- 2023 Rank Correlation: 0.0686
+
+**Training Time:** ~101.5 seconds
+
+## Additional Context from Other Experiments
+
+From additional experiments, we see similar performance with a different set of parameters:
+- n_estimators=100, subsample=0.8, colsample_bytree=0.8 yielded an Overall Rank Correlation of 0.0678
+- Another experiment focused on regularization parameters with early_stopping_rounds=50, min_child_samples=20, and no regularization (reg_alpha=0.0, reg_lambda=0.0) yielded an Overall Rank Correlation of 0.0666
+
+## Key Observations
+
+1. **Performance Consistency:** The model shows consistent but modest rank correlations across different years, with values in the 0.06-0.07 range.
+
+2. **Year-by-Year Variation:** Performance varies slightly across different years, with 2022 typically showing the best correlation (~0.071-0.073) and 2021 showing the lowest (~0.057-0.059).
+
+3. **Early Stopping Behavior:** In the control configuration, early stopping occurred at different iterations for different prediction years:
+   - 2020: ~230-336 iterations
+   - 2021: ~235-244 iterations
+   - 2022: ~190-366 iterations
+   - 2023: ~135-237 iterations
+
+4. **Overfitting Analysis:** From the regularization experiment, we observe:
+   - Overall overfitting gap of 0.080 (difference between training correlation of 0.163 and validation correlation of 0.083)
+   - Yearly overfitting gaps ranged from 0.070 to 0.089
+
+5. **Model Robustness:** The standard deviation of yearly correlations was 0.0053, indicating relatively consistent performance across market conditions.
+
+## Conclusions
+
+1. **Default Parameters Show Reasonable Performance:** The default LightGBM configuration (num_leaves=31, learning_rate=0.1, max_depth=-1) provides a reasonable baseline with an overall rank correlation of ~0.067.
+
+2. **Variation Across Market Years:** The model's performance varies across different years, suggesting that market conditions affect prediction accuracy.
+
+3. **Early Stopping Is Important:** The model benefits from early stopping to prevent overfitting, with optimal stopping points varying by prediction year.
+
+4. **Evidence of Overfitting:** Despite early stopping, there is still a significant gap between training and validation performance, indicating potential for improvement through better regularization.
+
+5. **Tree-based Hyperparameters:** Adjusting tree-related parameters (n_estimators=100, subsample=0.8, colsample_bytree=0.8) showed a slight improvement in overall correlation from 0.0668 to 0.0678.
+
+For future optimization, combining insights from all experiments would suggest focusing on:
+1. Proper regularization to reduce the overfitting gap
+2. Finding optimal early stopping configuration
+3. Year-specific or market-regime-specific models to address performance variations across years

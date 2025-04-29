@@ -1,0 +1,35 @@
+{
+    "metrics": {
+        "overall": 0.06754809139137576,
+        "2020": 0.07020609055797995,
+        "2021": 0.05878989876916766,
+        "2022": 0.07222783328562656,
+        "2023": 0.06916030093655115
+    },
+    "config": {
+        "data_path": "/workspace/quant_code_dataset",
+        "results_path": "/workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044817",
+        "num_years_train": 3,
+        "start_year": 2017,
+        "end_year": 2023,
+        "min_samples": 1650,
+        "min_trading_volume": 5000000,
+        "min_price": 2,
+        "lgbm_params": {
+            "objective": "regression",
+            "num_leaves": 511,
+            "learning_rate": 0.02,
+            "verbose": -1,
+            "min_child_samples": 30,
+            "n_estimators": 100,
+            "subsample": 0.8,
+            "colsample_bytree": 0.8,
+            "early_stopping_rounds": 100,
+            "log_evaluation_freq": 500
+        },
+        "num_workers": 40,
+        "num_simulations": 3,
+        "feature_threshold": 0.75,
+        "device_type": "gpu"
+    }
+}

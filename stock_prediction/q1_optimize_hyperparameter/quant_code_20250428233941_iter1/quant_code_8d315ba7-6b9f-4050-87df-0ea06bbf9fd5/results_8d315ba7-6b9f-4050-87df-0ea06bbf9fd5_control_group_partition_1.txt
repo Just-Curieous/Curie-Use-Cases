@@ -1,0 +1,42 @@
+# Control Group Experiment Results
+# Experimental Plan ID: 8d315ba7-6b9f-4050-87df-0ea06bbf9fd5
+#
+# This experiment evaluates if proper regularization and early stopping configurations
+# in LightGBM can reduce overfitting and improve consistency of Spearman rank correlation
+# between predicted and actual stock returns across different market conditions.
+#
+# Three dependent variables are tracked:
+# 1. Spearman rank correlation (predictive performance)
+# 2. Overfitting gap (difference between training and validation performance)
+# 3. Model robustness (consistency across different market conditions)
+#
+# Parameters:
+# - early_stopping_rounds: 50
+# - min_child_samples: 20
+# - reg_alpha: 0.0
+# - reg_lambda: 0.0
+
+Performance Metrics:
+==================================================
+Overall Spearman Rank Correlation: 0.0666478681364133
+
+Overfitting Analysis:
+Overall Overfitting Gap: 0.0802864832087461
+Training Correlation: 0.1628857448090171
+Validation Correlation: 0.08259926160027103
+
+Yearly Overfitting Gaps:
+  2020: 0.07023491088093464
+  2021: 0.08910473203843067
+  2022: 0.08681127682930821
+  2023: 0.07499501308631085
+
+Model Robustness:
+Consistency (std of yearly correlations): 0.005294791864056706
+(Lower values indicate more consistent performance across market conditions)
+
+Yearly Correlations:
+  2020: 0.06950817613727683
+  2021: 0.057639598319797265
+  2022: 0.07093994723990799
+  2023: 0.06874589384232176

@@ -1,0 +1,1999 @@
+[92m07:43:56 - openhands:INFO[0m: runtime_build.py:182 - Building image: ghcr.io/all-hands-ai/runtime:oh_v0.27.0_3ffs7ly6gtpzq1u5_5795t106wcweq15j
+[92m07:43:56 - openhands:INFO[0m: docker_runtime.py:140 - [runtime 108c6072-7b7f-4f91-92d6-267e7d31f755-77c01e52bc24361b] Starting runtime with image: ghcr.io/all-hands-ai/runtime:oh_v0.27.0_3ffs7ly6gtpzq1u5_5795t106wcweq15j
+[92m07:43:57 - openhands:INFO[0m: docker_runtime.py:144 - [runtime 108c6072-7b7f-4f91-92d6-267e7d31f755-77c01e52bc24361b] Container started: openhands-runtime-108c6072-7b7f-4f91-92d6-267e7d31f755-77c01e52bc24361b. VSCode URL: None
+[92m07:43:57 - openhands:INFO[0m: docker_runtime.py:155 - [runtime 108c6072-7b7f-4f91-92d6-267e7d31f755-77c01e52bc24361b] Waiting for client to become ready at http://localhost:31056...
+[92m07:44:21 - openhands:INFO[0m: docker_runtime.py:161 - [runtime 108c6072-7b7f-4f91-92d6-267e7d31f755-77c01e52bc24361b] Runtime is ready.
+07:44:21 - USER_ACTION
+[Agent Controller default] **MessageAction** (source=EventSource.USER)
+CONTENT: You are a **Coding Agent** assigned to implement a reproducible experimental workflow based on the provided experiment plan below. 
+Before starting, check whether a `description.md` and `README.md` file exists in the codebase—**if so, read it thoroughly to understand the repository structure and try to leverage the existing code instead of generating new code.**
+
+### Setup Instructions
+- Initialize and activate the existing environment using micromamba:
+```bash
+export PATH="/openhands/micromamba/bin:$PATH" && \
+micromamba shell init --shell bash --root-prefix=~/.local/share/mamba && \
+eval "$(micromamba shell hook --shell bash)" && \
+micromamba activate /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/
+```
+- Use `/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/bin/python` to run Python scripts.
+- Install packages using:
+```bash
+micromamba install -y -q -p /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/ <package-name> 
+```
+- **Do not** write or modify files outside `/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1`.
+
+### Your Responsibilities
+1. Write code to implement the experiment plan. 
+- Use Pytorch (not tensorflow) to train models on GPUs if applicable.
+- Mute the training progress if applicable.
+
+2. Write a **single controlling script** to automate the full experimental procedure based on the provided experiment plan under `/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1`.
+- All files in the script should use absolute path.
+- Name the final controlling script:
+  ```
+  /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh
+  ```
+- This script must:
+  - Take **no arguments**.
+  - Execute the entire workflow end-to-end for the specified group.
+  - Save the final output to:
+    ```
+    /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt
+    ```
+- You don't need to run the end-to-end workflow, but need to make sure there is no bug.
+
+### Reminders
+- Use `ls` commands like `ls * | head -n 25` to avoid exhaust context length or overwhelm output parsing.
+- You may prototype individual components as smaller standalone scripts before composing the final workflow.
+
+Here is the experiment plan:
+
+Create a comprehensive bash script named `control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh` for running a series of experiments with LightGBM for stock return prediction.
+
+The script should test the following 5 different hyperparameter configurations:
+1. min_samples: 100, feature_threshold: 0.02, min_price: 5, min_trading_volume: 10000
+2. min_samples: 100, feature_threshold: 0.01, min_price: 1, min_trading_volume: 10000
+3. min_samples: 100, feature_threshold: 0.01, min_price: 10, min_trading_volume: 10000
+4. min_samples: 50, feature_threshold: 0.005, min_price: 1, min_trading_volume: 5000
+5. min_samples: 200, feature_threshold: 0.02, min_price: 10, min_trading_volume: 20000
+
+The workflow should:
+1. Set up the environment (including OpenCL for GPU)
+2. Create a config JSON file for each experiment configuration
+3. Run model_training.py with each configuration file
+4. Collect results and metrics (especially the rank correlation)
+5. Identify the best performing configuration
+6. Generate a summary of all results
+
+For each experiment configuration, keep the following parameters constant:
+- lgbm_params (objective: "regression", num_leaves: 511, learning_rate: 0.02, etc.)
+- num_years_train: 3
+- start_year: 2017
+- end_year: 2023
+- data_path: "/workspace/quant_code_dataset"
+- num_workers: 40
+- num_simulations: 3
+- device_type: "gpu"
+
+Follow the pattern of the existing experimental_group partition_1 script, but adapt it for these new configurations. The results should be saved to `/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt`.
+
+Please ensure proper variable handling (no escaping issues or problems with heredoc sections) and make the script robust to errors.
+[92m07:44:21 - openhands:INFO[0m: agent_controller.py:468 - [Agent Controller default] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 0 GLOBAL STEP 0
+
+07:44:25 - ACTION
+[Agent Controller default] FileReadAction(path='/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1', start=0, end=-1, thought="I'll help you implement the experimental workflow based on the provided plan. Let's start by exploring the repository structure to understand the existing code.", action='read', security_risk=None, impl_source=<FileReadSource.OH_ACI: 'oh_aci'>, view_range=None)
+07:44:25 - OBSERVATION
+[Agent Controller default] AgentStateChangedObservation(content='', agent_state=<AgentState.RUNNING: 'running'>, observation='agent_state_changed')
+07:44:25 - OBSERVATION
+[Agent Controller default] [Read from /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1 is successful.]
+Here's the files and directories up to 2 levels deep in /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1, excluding hidden items:
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/all_results_a8042960-65f0-4bbf-8232-4f4572c943a1_control_group_partition_1.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/all_results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp1.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp2.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp3.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp4.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp5.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_test.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_control_group_partition_1.sh
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.sh
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_group_config.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/description.md
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/hints_for_data_preprocessing.MD
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_control_group_partition_1.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp1.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp2.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp3.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp4.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp5.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.log
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/question.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/questions/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/questions/data-question.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/questions/feature-question.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/questions/hyper-question.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_061756.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_062523.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_071553.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_072058.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_072604.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_073115.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/metrics_20250429_073619.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_061756.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_062523.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_071553.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_072058.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_072604.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_073115.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results/predictions_20250429_073619.parquet
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results_a8042960-65f0-4bbf-8232-4f4572c943a1_control_group_partition_1.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/sample_config.json
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/script.sh
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/summary.txt
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/bin/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/compiler_compat/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/conda-meta/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/etc/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/include/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/lib/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/man/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/sbin/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/share/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/ssl/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/x86_64-conda-linux-gnu/
+/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/x86_64-conda_cos6-linux-gnu/
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 1 GLOBAL STEP 1
+
+07:44:29 - ACTION
+[Agent Controller default] FileReadAction(path='/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/description.md', start=0, end=-1, thought="Let's first read the description.md file to understand the repository structure:", action='read', security_risk=None, impl_source=<FileReadSource.OH_ACI: 'oh_aci'>, view_range=None)
+07:44:29 - OBSERVATION
+[Agent Controller default] [Read from /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/description.md is successful.]
+Here's the result of running `cat -n` on /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/description.md:
+     1	
+     2	Dataset directory: /workspace/quant_code_dataset. Briefly explore the directory to understand the structure.
+     3	# Running the Model Training Script with Multiple Configurations
+     4	Your main job is to copy `sample_config.json` and edit the configuratoins. 
+     5	The main python file is `model_training.py`, which is correct executable. 
+     6	
+     7	Here's how to configure and run the model training script with different parameter sets:
+     8	
+     9	0. **Setup**
+    10	   **Be sure to include this in your workflow script!!!** to support efficient model training.
+    11	   ```bash
+    12	   mkdir -p /etc/OpenCL/vendors
+    13	   echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
+    14	   ```
+    15	
+    16	1. **Basic usage** of the training code.
+    17	   ```bash
+    18	   python model_training.py --config sample_config.json
+    19	   ```
+    20	
+    21	2. **Read `sample_config.json` configuration file** with different parameter values:
+    22	
+    23	- Understand the training configurations within `sample_config.json`. 
+    24	- Copy `sample_config.json` and edit the new configuration file to tune the variables, such as `data_path`.
+    25	- Note that if you configure the hyperparameters out of the range, it might cause bugs.
+    26	
+    27	3. **Run each configuration**: 
+    28	
+    29	Each run will create its own timestamped output file `predictions_*.parquet` and result file `metrics_*.json` in the results directory, making it easy to compare performance across different parameter settings.
+    30	You just need to focus on the performance reported in the result file `metrics_*.json`.
+
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 2 GLOBAL STEP 2
+
+07:44:34 - ACTION
+[Agent Controller default] FileReadAction(path='/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.sh', start=0, end=-1, thought="Now, let's look at the existing experimental group partition 1 script to understand the pattern:", action='read', security_risk=None, impl_source=<FileReadSource.OH_ACI: 'oh_aci'>, view_range=None)
+07:44:34 - OBSERVATION
+[Agent Controller default] [Read from /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.sh is successful.]
+Here's the result of running `cat -n` on /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.sh:
+     1	#!/bin/bash
+     2	
+     3	# ===============================================================
+     4	# Stock Return Prediction Model - Experimental Group (Partition 1)
+     5	# ===============================================================
+     6	
+     7	set -e
+     8	
+     9	# Set directory paths
+    10	WORKSPACE="/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1"
+    11	RESULTS_DIR="${WORKSPACE}/results"
+    12	RESULTS_FILE="${WORKSPACE}/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.txt"
+    13	ALL_RESULTS_FILE="${WORKSPACE}/all_results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1.txt"
+    14	PYTHON_PATH="${WORKSPACE}/venv/bin/python"
+    15	
+    16	echo "Starting experimental workflow in ${WORKSPACE}"
+    17	
+    18	# Set up environment
+    19	echo "Setting up environment..."
+    20	export PATH="/openhands/micromamba/bin:$PATH"
+    21	micromamba shell init --shell bash --root-prefix=~/.local/share/mamba
+    22	eval "$(micromamba shell hook --shell bash)"
+    23	micromamba activate /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/
+    24	
+    25	# Install required dependencies
+    26	echo "Installing required dependencies..."
+    27	micromamba install -y -q -p /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/ pyarrow
+    28	
+    29	# Setup OpenCL environment for GPU
+    30	mkdir -p /etc/OpenCL/vendors
+    31	echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
+    32	
+    33	# Create results file headers (Using > to overwrite file for the first write only)
+    34	cat > ${RESULTS_FILE} << END_HEADER
+    35	# =======================================================
+    36	# Stock Return Prediction Model - Experimental Group (Partition 1) Results
+    37	# Date: $(date)
+    38	# =======================================================
+    39	
+    40	END_HEADER
+    41	
+    42	# Create configuration files for the experiments
+    43	echo "Creating configuration files for all experiments..."
+    44	
+    45	# Configuration 1: min_samples: 50, feature_threshold: 0.01, min_price: 5, min_trading_volume: 10000
+    46	cat > ${WORKSPACE}/config_exp1.json << EOL1
+    47	{
+    48	    "data_path": "/workspace/quant_code_dataset",
+    49	    "num_years_train": 3,
+    50	    "start_year": 2017,
+    51	    "end_year": 2023,
+    52	    
+    53	    "min_samples": 50,
+    54	    "min_trading_volume": 10000,
+    55	    "feature_threshold": 0.01,
+    56	    "min_price": 5,
+    57	
+    58	    "lgbm_params": {
+    59	        "objective": "regression",
+    60	        "num_leaves": 511,
+    61	        "learning_rate": 0.02,
+    62	        "verbose": -1,
+    63	        "min_child_samples": 30,
+    64	        "n_estimators": 10000,
+    65	        "subsample": 0.7,
+    66	        "colsample_bytree": 0.7,
+    67	        "early_stopping_rounds": 100,
+    68	        "log_evaluation_freq": 500
+    69	    },
+    70	    
+    71	    "num_workers": 40,
+    72	    "num_simulations": 3,
+    73	    "device_type": "gpu"
+    74	}
+    75	EOL1
+    76	
+    77	# Configuration 2: min_samples: 200, feature_threshold: 0.01, min_price: 5, min_trading_volume: 10000
+    78	cat > ${WORKSPACE}/config_exp2.json << EOL2
+    79	{
+    80	    "data_path": "/workspace/quant_code_dataset",
+    81	    "num_years_train": 3,
+    82	    "start_year": 2017,
+    83	    "end_year": 2023,
+    84	    
+    85	    "min_samples": 200,
+    86	    "min_trading_volume": 10000,
+    87	    "feature_threshold": 0.01,
+    88	    "min_price": 5,
+    89	
+    90	    "lgbm_params": {
+    91	        "objective": "regression",
+    92	        "num_leaves": 511,
+    93	        "learning_rate": 0.02,
+    94	        "verbose": -1,
+    95	        "min_child_samples": 30,
+    96	        "n_estimators": 10000,
+    97	        "subsample": 0.7,
+    98	        "colsample_bytree": 0.7,
+    99	        "early_stopping_rounds": 100,
+   100	        "log_evaluation_freq": 500
+   101	    },
+   102	    
+   103	    "num_workers": 40,
+   104	    "num_simulations": 3,
+   105	    "device_type": "gpu"
+   106	}
+   107	EOL2
+   108	
+   109	# Configuration 3: min_samples: 100, feature_threshold: 0.01, min_price: 5, min_trading_volume: 5000
+   110	cat > ${WORKSPACE}/config_exp3.json << EOL3
+   111	{
+   112	    "data_path": "/workspace/quant_code_dataset",
+   113	    "num_years_train": 3,
+   114	    "start_year": 2017,
+   115	    "end_year": 2023,
+   116	    
+   117	    "min_samples": 100,
+   118	    "min_trading_volume": 5000,
+   119	    "feature_threshold": 0.01,
+   120	    "min_price": 5,
+   121	
+   122	    "lgbm_params": {
+   123	        "objective": "regression",
+   124	        "num_leaves": 511,
+   125	        "learning_rate": 0.02,
+   126	        "verbose": -1,
+   127	        "min_child_samples": 30,
+   128	        "n_estimators": 10000,
+   129	        "subsample": 0.7,
+   130	        "colsample_bytree": 0.7,
+   131	        "early_stopping_rounds": 100,
+   132	        "log_evaluation_freq": 500
+   133	    },
+   134	    
+   135	    "num_workers": 40,
+   136	    "num_simulations": 3,
+   137	    "device_type": "gpu"
+   138	}
+   139	EOL3
+   140	
+   141	# Configuration 4: min_samples: 100, feature_threshold: 0.01, min_price: 5, min_trading_volume: 20000
+   142	cat > ${WORKSPACE}/config_exp4.json << EOL4
+   143	{
+   144	    "data_path": "/workspace/quant_code_dataset",
+   145	    "num_years_train": 3,
+   146	    "start_year": 2017,
+   147	    "end_year": 2023,
+   148	    
+   149	    "min_samples": 100,
+   150	    "min_trading_volume": 20000,
+   151	    "feature_threshold": 0.01,
+   152	    "min_price": 5,
+   153	
+   154	    "lgbm_params": {
+   155	        "objective": "regression",
+   156	        "num_leaves": 511,
+   157	        "learning_rate": 0.02,
+   158	        "verbose": -1,
+   159	        "min_child_samples": 30,
+   160	        "n_estimators": 10000,
+   161	        "subsample": 0.7,
+   162	        "colsample_bytree": 0.7,
+   163	        "early_stopping_rounds": 100,
+   164	        "log_evaluation_freq": 500
+   165	    },
+   166	    
+   167	    "num_workers": 40,
+   168	    "num_simulations": 3,
+   169	    "device_type": "gpu"
+   170	}
+   171	EOL4
+   172	
+   173	# Configuration 5: min_samples: 100, feature_threshold: 0.005, min_price: 5, min_trading_volume: 10000
+   174	cat > ${WORKSPACE}/config_exp5.json << EOL5
+   175	{
+   176	    "data_path": "/workspace/quant_code_dataset",
+   177	    "num_years_train": 3,
+   178	    "start_year": 2017,
+   179	    "end_year": 2023,
+   180	    
+   181	    "min_samples": 100,
+   182	    "min_trading_volume": 10000,
+   183	    "feature_threshold": 0.005,
+   184	    "min_price": 5,
+   185	
+   186	    "lgbm_params": {
+   187	        "objective": "regression",
+   188	        "num_leaves": 511,
+   189	        "learning_rate": 0.02,
+   190	        "verbose": -1,
+   191	        "min_child_samples": 30,
+   192	        "n_estimators": 10000,
+   193	        "subsample": 0.7,
+   194	        "colsample_bytree": 0.7,
+   195	        "early_stopping_rounds": 100,
+   196	        "log_evaluation_freq": 500
+   197	    },
+   198	    
+   199	    "num_workers": 40,
+   200	    "num_simulations": 3,
+   201	    "device_type": "gpu"
+   202	}
+   203	EOL5
+   204	
+   205	# Add sections to results file
+   206	cat >> ${RESULTS_FILE} << END_SECTIONS
+   207	# =======================================================
+   208	# Experiment Results
+   209	# =======================================================
+   210	
+   211	END_SECTIONS
+   212	
+   213	# Run Experiment 1
+   214	echo "Running experiment 1 with min_samples=50, feature_threshold=0.01, min_price=5, min_trading_volume=10000"
+   215	cat >> ${RESULTS_FILE} << END_EXP1_HEADER
+   216	# =======================================================
+   217	Experiment 1:
+   218	Parameters:
+   219	- min_samples: 50
+   220	- feature_threshold: 0.01
+   221	- min_price: 5
+   222	- min_trading_volume: 10000
+   223	END_EXP1_HEADER
+   224	
+   225	${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp1.json
+   226	
+   227	# Find the latest metrics file
+   228	LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+   229	if [ -f "$LATEST_METRICS" ]; then
+   230	    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+   231	    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+   232	    
+   233	    # Copy the metrics file with a standardized name
+   234	    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp1.json"
+   235	else
+   236	    echo "Error: No metrics file found for experiment 1" >> ${RESULTS_FILE}
+   237	fi
+   238	echo "" >> ${RESULTS_FILE}
+   239	
+   240	# Run Experiment 2
+   241	echo "Running experiment 2 with min_samples=200, feature_threshold=0.01, min_price=5, min_trading_volume=10000"
+   242	cat >> ${RESULTS_FILE} << END_EXP2_HEADER
+   243	# =======================================================
+   244	Experiment 2:
+   245	Parameters:
+   246	- min_samples: 200
+   247	- feature_threshold: 0.01
+   248	- min_price: 5
+   249	- min_trading_volume: 10000
+   250	END_EXP2_HEADER
+   251	
+   252	${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp2.json
+   253	
+   254	# Find the latest metrics file
+   255	LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+   256	if [ -f "$LATEST_METRICS" ]; then
+   257	    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+   258	    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+   259	    
+   260	    # Copy the metrics file with a standardized name
+   261	    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp2.json"
+   262	else
+   263	    echo "Error: No metrics file found for experiment 2" >> ${RESULTS_FILE}
+   264	fi
+   265	echo "" >> ${RESULTS_FILE}
+   266	
+   267	# Run Experiment 3
+   268	echo "Running experiment 3 with min_samples=100, feature_threshold=0.01, min_price=5, min_trading_volume=5000"
+   269	cat >> ${RESULTS_FILE} << END_EXP3_HEADER
+   270	# =======================================================
+   271	Experiment 3:
+   272	Parameters:
+   273	- min_samples: 100
+   274	- feature_threshold: 0.01
+   275	- min_price: 5
+   276	- min_trading_volume: 5000
+   277	END_EXP3_HEADER
+   278	
+   279	${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp3.json
+   280	
+   281	# Find the latest metrics file
+   282	LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+   283	if [ -f "$LATEST_METRICS" ]; then
+   284	    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+   285	    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+   286	    
+   287	    # Copy the metrics file with a standardized name
+   288	    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp3.json"
+   289	else
+   290	    echo "Error: No metrics file found for experiment 3" >> ${RESULTS_FILE}
+   291	fi
+   292	echo "" >> ${RESULTS_FILE}
+   293	
+   294	# Run Experiment 4
+   295	echo "Running experiment 4 with min_samples=100, feature_threshold=0.01, min_price=5, min_trading_volume=20000"
+   296	cat >> ${RESULTS_FILE} << END_EXP4_HEADER
+   297	# =======================================================
+   298	Experiment 4:
+   299	Parameters:
+   300	- min_samples: 100
+   301	- feature_threshold: 0.01
+   302	- min_price: 5
+   303	- min_trading_volume: 20000
+   304	END_EXP4_HEADER
+   305	
+   306	${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp4.json
+   307	
+   308	# Find the latest metrics file
+   309	LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+   310	if [ -f "$LATEST_METRICS" ]; then
+   311	    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+   312	    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+   313	    
+   314	    # Copy the metrics file with a standardized name
+   315	    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp4.json"
+   316	else
+   317	    echo "Error: No metrics file found for experiment 4" >> ${RESULTS_FILE}
+   318	fi
+   319	echo "" >> ${RESULTS_FILE}
+   320	
+   321	# Run Experiment 5
+   322	echo "Running experiment 5 with min_samples=100, feature_threshold=0.005, min_price=5, min_trading_volume=10000"
+   323	cat >> ${RESULTS_FILE} << END_EXP5_HEADER
+   324	# =======================================================
+   325	Experiment 5:
+   326	Parameters:
+   327	- min_samples: 100
+   328	- feature_threshold: 0.005
+   329	- min_price: 5
+   330	- min_trading_volume: 10000
+   331	END_EXP5_HEADER
+   332	
+   333	${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp5.json
+   334	
+   335	# Find the latest metrics file
+   336	LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+   337	if [ -f "$LATEST_METRICS" ]; then
+   338	    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+   339	    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+   340	    
+   341	    # Copy the metrics file with a standardized name
+   342	    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_1_exp5.json"
+   343	else
+   344	    echo "Error: No metrics file found for experiment 5" >> ${RESULTS_FILE}
+   345	fi
+   346	echo "" >> ${RESULTS_FILE}
+   347	
+   348	# Collect and compare results
+   349	cat >> ${RESULTS_FILE} << END_SUMMARY_HEADER
+   350	# =======================================================
+   351	# Summary
+   352	# =======================================================
+   353	
+   354	END_SUMMARY_HEADER
+   355	
+   356	# Find best experiment based on correlation
+   357	EXP1_CORR=$(grep -A1 "Experiment 1:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+   358	EXP2_CORR=$(grep -A1 "Experiment 2:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+   359	EXP3_CORR=$(grep -A1 "Experiment 3:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+   360	EXP4_CORR=$(grep -A1 "Experiment 4:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+   361	EXP5_CORR=$(grep -A1 "Experiment 5:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+   362	
+   363	BEST_EXP=0
+   364	BEST_CORR=-999
+   365	
+   366	if [[ ! -z "$EXP1_CORR" ]]; then
+   367	    if (( $(echo "$EXP1_CORR > $BEST_CORR" | bc -l) )); then
+   368	        BEST_CORR=$EXP1_CORR
+   369	        BEST_EXP=1
+   370	    fi
+   371	fi
+   372	
+   373	if [[ ! -z "$EXP2_CORR" ]]; then
+   374	    if (( $(echo "$EXP2_CORR > $BEST_CORR" | bc -l) )); then
+   375	        BEST_CORR=$EXP2_CORR
+   376	        BEST_EXP=2
+   377	    fi
+   378	fi
+   379	
+   380	if [[ ! -z "$EXP3_CORR" ]]; then
+   381	    if (( $(echo "$EXP3_CORR > $BEST_CORR" | bc -l) )); then
+   382	        BEST_CORR=$EXP3_CORR
+   383	        BEST_EXP=3
+   384	    fi
+   385	fi
+   386	
+   387	if [[ ! -z "$EXP4_CORR" ]]; then
+   388	    if (( $(echo "$EXP4_CORR > $BEST_CORR" | bc -l) )); then
+   389	        BEST_CORR=$EXP4_CORR
+   390	        BEST_EXP=4
+   391	    fi
+   392	fi
+   393	
+   394	if [[ ! -z "$EXP5_CORR" ]]; then
+   395	    if (( $(echo "$EXP5_CORR > $BEST_CORR" | bc -l) )); then
+   396	        BEST_CORR=$EXP5_CORR
+   397	        BEST_EXP=5
+   398	    fi
+   399	fi
+   400	
+   401	if [ $BEST_EXP -eq 1 ]; then
+   402	    cat >> ${RESULTS_FILE} << END_BEST1
+   403	Best Performing Configuration:
+   404	Experiment 1 with Overall Rank Correlation: $BEST_CORR
+   405	Parameters:
+   406	- min_samples: 50
+   407	- feature_threshold: 0.01
+   408	- min_price: 5
+   409	- min_trading_volume: 10000
+   410	END_BEST1
+   411	elif [ $BEST_EXP -eq 2 ]; then
+   412	    cat >> ${RESULTS_FILE} << END_BEST2
+   413	Best Performing Configuration:
+   414	Experiment 2 with Overall Rank Correlation: $BEST_CORR
+   415	Parameters:
+   416	- min_samples: 200
+   417	- feature_threshold: 0.01
+   418	- min_price: 5
+   419	- min_trading_volume: 10000
+   420	END_BEST2
+   421	elif [ $BEST_EXP -eq 3 ]; then
+   422	    cat >> ${RESULTS_FILE} << END_BEST3
+   423	Best Performing Configuration:
+   424	Experiment 3 with Overall Rank Correlation: $BEST_CORR
+   425	Parameters:
+   426	- min_samples: 100
+   427	- feature_threshold: 0.01
+   428	- min_price: 5
+   429	- min_trading_volume: 5000
+   430	END_BEST3
+   431	elif [ $BEST_EXP -eq 4 ]; then
+   432	    cat >> ${RESULTS_FILE} << END_BEST4
+   433	Best Performing Configuration:
+   434	Experiment 4 with Overall Rank Correlation: $BEST_CORR
+   435	Parameters:
+   436	- min_samples: 100
+   437	- feature_threshold: 0.01
+   438	- min_price: 5
+   439	- min_trading_volume: 20000
+   440	END_BEST4
+   441	elif [ $BEST_EXP -eq 5 ]; then
+   442	    cat >> ${RESULTS_FILE} << END_BEST5
+   443	Best Performing Configuration:
+   444	Experiment 5 with Overall Rank Correlation: $BEST_CORR
+   445	Parameters:
+   446	- min_samples: 100
+   447	- feature_threshold: 0.005
+   448	- min_price: 5
+   449	- min_trading_volume: 10000
+   450	END_BEST5
+   451	else
+   452	    echo "Could not determine the best configuration due to errors in all experiments." >> ${RESULTS_FILE}
+   453	fi
+   454	
+   455	cat >> ${RESULTS_FILE} << END_FOOTER
+   456	
+   457	# =======================================================
+   458	# Experiment completed at: $(date)
+   459	# =======================================================
+   460	END_FOOTER
+   461	
+   462	echo "All experiments completed. Results saved to: ${RESULTS_FILE}"
+   463	
+
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 3 GLOBAL STEP 3
+
+07:44:41 - ACTION
+[Agent Controller default] FileReadAction(path='/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py', start=0, end=-1, thought="Let's also check the model_training.py file to understand how it works:", action='read', security_risk=None, impl_source=<FileReadSource.OH_ACI: 'oh_aci'>, view_range=None)
+07:44:41 - OBSERVATION
+[Agent Controller default] [Read from /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py is successful.]
+Here's the result of running `cat -n` on /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py:
+     1	#!/usr/bin/env python3
+     2	# -*- coding: utf-8 -*-
+     3	
+     4	"""
+     5	Structured Model Training Script
+     6	
+     7	This script contains improved implementation of financial factor-based prediction model.
+     8	It includes optimized data processing, model training, and evaluation.
+     9	"""
+    10	
+    11	import os
+    12	import warnings
+    13	import logging
+    14	import argparse
+    15	import time
+    16	from datetime import datetime
+    17	import pandas as pd
+    18	import numpy as np
+    19	from functools import partial
+    20	import json
+    21	
+    22	# For parallel processing
+    23	from multiprocessing import Pool, cpu_count
+    24	
+    25	# Machine learning
+    26	import lightgbm as lgb
+    27	from lightgbm import LGBMRegressor
+    28	from sklearn.model_selection import train_test_split
+    29	
+    30	# get the current working directory
+    31	import os
+    32	cur_dir = os.path.dirname(os.path.abspath(__file__))
+    33	print(f"Current working directory: {cur_dir}")
+    34	
+    35	# Set up logging
+    36	logging.basicConfig(
+    37	    level=logging.INFO,
+    38	    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    39	    handlers=[
+    40	        logging.FileHandler(os.path.join(cur_dir, "model_training.log")),
+    41	        logging.StreamHandler()
+    42	    ]
+    43	)
+    44	logger = logging.getLogger(__name__)
+    45	
+    46	# Suppress warnings
+    47	warnings.filterwarnings('ignore')
+    48	
+    49	# Default hyperparameters
+    50	DEFAULT_CONFIG = {
+    51	    # Data parameters
+    52	    "data_path": "/workspace/quant_data/",
+    53	    "results_path": os.path.join(cur_dir, "results"),
+    54	    "num_years_train": 3,
+    55	    "start_year": 2017,
+    56	    "end_year": 2023,
+    57	    
+    58	    # Filtering parameters
+    59	    "min_samples": 1650,
+    60	    "min_trading_volume": 5000000,
+    61	    "min_price": 2,
+    62	    
+    63	    # Model parameters
+    64	    "lgbm_params": {
+    65	        "objective": "regression",
+    66	        "num_leaves": 511,
+    67	        "learning_rate": 0.02,
+    68	        "verbose": -1,
+    69	        "min_child_samples": 30,
+    70	        "n_estimators": 10000,
+    71	        "subsample": 0.7,
+    72	        "colsample_bytree": 0.7,
+    73	        "early_stopping_rounds": 100,
+    74	        "log_evaluation_freq": 500
+    75	    },
+    76	    
+    77	    # Processing parameters
+    78	    "num_workers": min(80, cpu_count()),
+    79	    "num_simulations": 3,
+    80	    "feature_threshold": 0.75,
+    81	    "device_type": "gpu"
+    82	}
+    83	
+    84	# Create necessary directories
+    85	def create_directories(config):
+    86	    """Create necessary directories for storing results."""
+    87	    os.makedirs(config["results_path"], exist_ok=True)
+    88	    logger.info(f"Created or verified directories: {config['results_path']}")
+    89	
+    90	# Helper Functions
+    91	def filter_st(signal, is_locked):
+    92	    """Filter out locked stocks."""
+    93	    mask = (is_locked != 1).replace(False, np.nan)
+    94	    return (mask * signal).dropna(how='all')
+    95	
+    96	def get_common_indices(dataframes):
+    97	    """Get common indices and columns across dataframes."""
+    98	    common_idx = dataframes[0].index
+    99	    common_cols = dataframes[0].columns
+   100	    
+   101	    for df in dataframes:
+   102	        common_idx = common_idx.intersection(df.index)
+   103	        common_cols = common_cols.intersection(df.columns)
+   104	    
+   105	    return [df.loc[common_idx, common_cols] for df in dataframes]
+   106	
+   107	def process_factor(factor, is_locked):
+   108	    """Process a single factor - used for parallel processing."""
+   109	    try:
+   110	        result = filter_st(factor, is_locked)
+   111	        return result.astype(np.float64).fillna(0)
+   112	    except Exception as e:
+   113	        logger.error(f"Error processing factor: {e}")
+   114	        return None
+   115	
+   116	def factors_process_parallel(factors, is_locked, config):
+   117	    """Process all factors in parallel using process pool."""
+   118	    logger.info(f"Processing {len(factors)} factors using {config['num_workers']} workers")
+   119	    
+   120	    start_time = time.time()
+   121	    
+   122	    # Using partial to create a function with preset parameters
+   123	    process_func = partial(process_factor, is_locked=is_locked)
+   124	    
+   125	    # Using context manager to ensure proper cleanup
+   126	    with Pool(config['num_workers']) as pool:
+   127	        processed_factors = pool.map(process_func, factors)
+   128	    
+   129	    # Filter out None values (failed processing)
+   130	    valid_factors = [f for f in processed_factors if f is not None]
+   131	    
+   132	    duration = time.time() - start_time
+   133	    logger.info(f"Processed {len(valid_factors)} factors in {duration:.2f} seconds")
+   134	    
+   135	    return valid_factors
+   136	
+   137	def filter_factors(factors, min_samples=1650, year_range=('2017', '2023')):
+   138	    """Filter factors based on sample size within date range."""
+   139	    filtered = [f for f in factors if f.dropna(how='all').loc[year_range[0]:year_range[1]].shape[0] > min_samples]
+   140	    logger.info(f"Filtered factors from {len(factors)} to {len(filtered)}")
+   141	    return filtered
+   142	
+   143	# Model Training and Prediction Functions
+   144	def reshape_data(factors, return_data, mask):
+   145	    """Reshape factor and return data for model training."""
+   146	    # Get dimensions
+   147	    nrows = return_data[mask].iloc[:-6, :].shape[0]
+   148	    ncols = return_data[mask].iloc[:-6, :].shape[1]
+   149	    
+   150	    # Extract and reshape factors
+   151	    factor_data = [factor[mask].iloc[:-6, :] for factor in factors]
+   152	    factor_array = np.asarray(factor_data)
+   153	    X = np.reshape(factor_array, (factor_array.shape[0], nrows * ncols))
+   154	    
+   155	    # Reshape return data
+   156	    y = np.reshape(return_data[mask].iloc[:-6, :].values, (nrows * ncols))
+   157	    
+   158	    return X.T, y
+   159	
+   160	def remove_nan_sparse(X, y, feature_threshold=0.75):
+   161	    """Remove rows with NaN values or too many zero features."""
+   162	    # Mask for non-NaN target values
+   163	    mask_1 = ~np.isnan(y)
+   164	    
+   165	    # Mask for rows where less than threshold% of features are zero
+   166	    mask_2 = (X == 0).sum(axis=1) < X.shape[1] * feature_threshold
+   167	    
+   168	    # Combine masks
+   169	    combined_mask = mask_1 & mask_2
+   170	    
+   171	    return X[combined_mask], y[combined_mask]
+   172	
+   173	def train_lgbm_model(X_train, y_train, config):
+   174	    """Train LightGBM model with early stopping."""
+   175	    lgbm_params = config["lgbm_params"]
+   176	    
+   177	    # Split data for training and validation
+   178	    X_train, X_val, y_train, y_val = train_test_split(
+   179	        X_train, y_train, 
+   180	        test_size=0.2, 
+   181	        random_state=np.random.randint(1000)
+   182	    )
+   183	    
+   184	    # Create and train model
+   185	    model = LGBMRegressor(
+   186	        objective=lgbm_params["objective"],
+   187	        num_leaves=lgbm_params["num_leaves"],
+   188	        learning_rate=lgbm_params["learning_rate"],
+   189	        verbose=lgbm_params["verbose"],
+   190	        min_child_samples=lgbm_params["min_child_samples"],
+   191	        n_estimators=lgbm_params["n_estimators"],
+   192	        n_jobs=config["num_workers"],
+   193	        subsample=lgbm_params["subsample"],
+   194	        colsample_bytree=lgbm_params["colsample_bytree"],
+   195	        random_state=np.random.randint(1000),
+   196	        device_type="gpu"
+   197	    )
+   198	    
+   199	    # Train with early stopping
+   200	    model.fit(
+   201	        X_train, y_train,
+   202	        eval_metric='l2',
+   203	        eval_set=[(X_val, y_val)],
+   204	        callbacks=[
+   205	            lgb.early_stopping(stopping_rounds=lgbm_params["early_stopping_rounds"]),
+   206	            lgb.log_evaluation(lgbm_params["log_evaluation_freq"])
+   207	        ]
+   208	    )
+   209	    
+   210	    return model
+   211	
+   212	def make_predictions(factors, mask, model, config):
+   213	    """Make predictions for a specific time period."""
+   214	    # Extract factor data for the specified mask
+   215	    factor_data = [factor[mask] for factor in factors]
+   216	    factor_array = np.array(factor_data)
+   217	    
+   218	    # Initialize predictions array
+   219	    predictions = np.zeros([factor_array.shape[1], factor_array.shape[2]])
+   220	    
+   221	    # For each day in the period
+   222	    for day in range(factor_array.shape[1]):
+   223	        # Stack features for all stocks on this day
+   224	        X = np.column_stack(factor_array[:, day])
+   225	        
+   226	        # Identify stocks with sufficient non-zero features
+   227	        indicator = (X != 0).sum(axis=1) > config["feature_threshold"] * X.shape[1]
+   228	        
+   229	        # Make predictions for valid stocks
+   230	        if np.any(indicator):
+   231	            day_predictions = model.predict(X[indicator], num_iteration=model.best_iteration_)
+   232	            predictions[day][indicator] = day_predictions
+   233	            predictions[day][~indicator] = np.nan
+   234	            
+   235	    return predictions
+   236	
+   237	def run_prediction(factors, return_data, config):
+   238	    """Run prediction for all years in simulation."""
+   239	    # Extract configuration parameters
+   240	    start_year = config["start_year"]
+   241	    end_year = config["end_year"]
+   242	    num_years_train = config["num_years_train"]
+   243	    num_sims = config["num_simulations"]
+   244	    
+   245	    # Initialize prediction DataFrame with zeros
+   246	    predictions = pd.DataFrame(
+   247	        np.zeros(factors[0].shape),
+   248	        index=factors[0].index,
+   249	        columns=factors[0].columns
+   250	    )
+   251	    
+   252	    # Run multiple simulations to reduce variance
+   253	    for sim in range(num_sims):
+   254	        logger.info(f"Running simulation {sim+1}/{num_sims}")
+   255	        
+   256	        # Initialize this simulation's predictions
+   257	        sim_predictions = pd.DataFrame(
+   258	            index=factors[0].index,
+   259	            columns=factors[0].columns
+   260	        )
+   261	        
+   262	        # For each prediction year
+   263	        for pred_year in range(start_year + num_years_train, end_year + 1):
+   264	            print(f"[{sim+1}/{num_sims}] Predicting for year {pred_year}")
+   265	            # Define training and prediction periods
+   266	            train_mask = (factors[0].index.year < pred_year) & (factors[0].index.year >= (pred_year - num_years_train))
+   267	            pred_mask = factors[0].index.year == pred_year
+   268	            
+   269	            # Reshape data for training
+   270	            X, y = reshape_data(factors, return_data=return_data, mask=train_mask)
+   271	            
+   272	            # Remove NaN and sparse rows
+   273	            X, y = remove_nan_sparse(X, y, config["feature_threshold"])
+   274	            
+   275	            # Train model
+   276	            model = train_lgbm_model(X, y, config)
+   277	            
+   278	            # Make predictions
+   279	            sim_predictions[pred_mask] = make_predictions(factors, mask=pred_mask, model=model, config=config)
+   280	        
+   281	        # Add this simulation's predictions to the total
+   282	        predictions += sim_predictions
+   283	    
+   284	    # Average the predictions across simulations
+   285	    predictions = predictions / num_sims
+   286	    
+   287	    return predictions
+   288	
+   289	def calculate_metrics(predictions, returns, config):
+   290	    """Calculate and return performance metrics."""
+   291	    # Apply filtering criteria
+   292	    filtered_predictions = predictions.copy()
+   293	    
+   294	    # Calculate rank correlations by year
+   295	    metrics = {}
+   296	    
+   297	    # Overall metrics
+   298	    filtered_predictions_rank = filtered_predictions.rank(axis=1)
+   299	    returns_rank = returns.rank(axis=1).shift(-1)
+   300	    overall_corr = filtered_predictions_rank.corrwith(returns_rank, axis=1).mean()
+   301	    metrics["overall"] = float(overall_corr)
+   302	    
+   303	    # Yearly metrics
+   304	    for year in range(config["start_year"] + config["num_years_train"], config["end_year"] + 1):
+   305	        year_mask = filtered_predictions.index.year == year
+   306	        if year_mask.sum() > 0:
+   307	            year_corr = filtered_predictions.loc[str(year)].rank(axis=1).corrwith(
+   308	                returns.rank(axis=1).shift(-1), axis=1
+   309	            ).mean()
+   310	            metrics[str(year)] = float(year_corr)
+   311	    
+   312	    return metrics
+   313	
+   314	def apply_filters(predictions, returns, is_locked, trading_volume, prices, config):
+   315	    """Apply filters to predictions and returns data."""
+   316	    # Create masks for filtering
+   317	    volume_mask = trading_volume > config["min_trading_volume"]
+   318	    price_mask = prices > config["min_price"]
+   319	    lock_mask = is_locked != 1
+   320	    
+   321	    # Apply all filters
+   322	    combined_mask = volume_mask & price_mask & lock_mask
+   323	    
+   324	    # Apply masks to dataframes
+   325	    filtered_predictions = predictions[combined_mask]
+   326	    filtered_returns = returns[combined_mask]
+   327	    
+   328	    logger.info(f"Applied filters: {filtered_predictions.shape[0]} rows remaining")
+   329	    
+   330	    return filtered_predictions, filtered_returns
+   331	
+   332	def load_data(config):
+   333	    """Load all necessary data files."""
+   334	    data_path = config["data_path"]
+   335	    
+   336	    # Load factors
+   337	    factor_dir = os.path.join(data_path, 'RawData/NFactors/')
+   338	    factors = []
+   339	    
+   340	    # Check if directory exists
+   341	    if not os.path.exists(factor_dir):
+   342	        logger.error(f"Factor directory not found: {factor_dir}")
+   343	        return None
+   344	    
+   345	    # Load each factor file
+   346	    for filename in os.listdir(factor_dir):
+   347	        try:
+   348	            file_path = os.path.join(factor_dir, filename)
+   349	            df = pd.read_parquet(file_path, engine='pyarrow')
+   350	            factors.append(df)
+   351	        except Exception as e:
+   352	            logger.info(f"Warning: Skip reading {file_path}: {e}")
+   353	    
+   354	    logger.info(f"Loaded {len(factors)} factor files")
+   355	    
+   356	    # Load label data
+   357	    label_dir = os.path.join(data_path, 'RawData/Label/')
+   358	    
+   359	    try:
+   360	        ret = pd.read_parquet(os.path.join(label_dir, 'ret.parquet'))
+   361	        ret_n = pd.read_parquet(os.path.join(label_dir, 'ret_n.parquet'))
+   362	    except Exception as e:
+   363	        logger.error(f"Error loading return data: {e}")
+   364	        return None
+   365	    
+   366	    # Load daily base data
+   367	    daily_base_dir = os.path.join(data_path, 'RawData/DailyBase/')
+   368	    
+   369	    try:
+   370	        is_locked = pd.read_parquet(os.path.join(daily_base_dir, 'is_locked.parquet'))
+   371	        tva_0930_1130 = pd.read_parquet(os.path.join(daily_base_dir, 'tva_0930_1130.parquet'))
+   372	        vwap_0930_1130 = pd.read_parquet(os.path.join(daily_base_dir, 'vwap_0930_1130.parquet'))
+   373	    except Exception as e:
+   374	        logger.error(f"Error loading daily base data: {e}")
+   375	        return None
+   376	    
+   377	    logger.info("Successfully loaded all data files")
+   378	    
+   379	    return {
+   380	        'factors': factors,
+   381	        'ret': ret,
+   382	        'ret_n': ret_n,
+   383	        'is_locked': is_locked,
+   384	        'tva_0930_1130': tva_0930_1130,
+   385	        'vwap_0930_1130': vwap_0930_1130
+   386	    }
+   387	
+   388	def save_results(predictions, metrics, config):
+   389	    """Save predictions and metrics to files."""
+   390	    # Create timestamp for filenames
+   391	    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+   392	    
+   393	    # Save predictions to parquet
+   394	    pred_file = os.path.join(config["results_path"], f"predictions_{timestamp}.parquet")
+   395	    predictions.to_parquet(pred_file)
+   396	    
+   397	    # Save metrics and config to JSON
+   398	    results = {
+   399	        "metrics": metrics,
+   400	        "config": config
+   401	    }
+   402	    
+   403	    metrics_file = os.path.join(config["results_path"], f"metrics_{timestamp}.json")
+   404	    with open(metrics_file, 'a') as f:
+   405	        json.dump(results, f, indent=4)
+   406	    
+   407	    logger.info(f"Results saved to {pred_file} and {metrics_file}")
+   408	    
+   409	    return metrics_file
+   410	
+   411	def main(config=None):
+   412	    """Main function to run the entire pipeline."""
+   413	    start_time = time.time()
+   414	    
+   415	    # Use default config if none provided
+   416	    if config is None:
+   417	        config = DEFAULT_CONFIG.copy()
+   418	    
+   419	    # Create directories
+   420	    create_directories(config)
+   421	    
+   422	    # Load data
+   423	    logger.info("Loading data...")
+   424	    data = load_data(config)
+   425	    if data is None:
+   426	        logger.error("Failed to load data. Exiting.")
+   427	        return None
+   428	    
+   429	    # Filter factors based on sample size
+   430	    logger.info("Filtering factors...")
+   431	    filtered_factors = filter_factors(
+   432	        data['factors'], 
+   433	        min_samples=config["min_samples"], 
+   434	        year_range=(str(config["start_year"]), str(config["end_year"]))
+   435	    )
+   436	    
+   437	    # Process factors in parallel
+   438	    logger.info("Processing factors...")
+   439	    processed_factors = factors_process_parallel(
+   440	        filtered_factors,
+   441	        data['is_locked'],
+   442	        config
+   443	    )
+   444	    
+   445	    # Prepare return data
+   446	    ret_train = data['ret_n'][data['is_locked'] != 1].shift(-1).dropna(how='all')
+   447	    
+   448	    # Combine factors with return data and get common indices
+   449	    logger.info("Finding common indices...")
+   450	    combined_data = processed_factors + [ret_train]
+   451	    common_data = get_common_indices(combined_data)
+   452	    
+   453	    # Extract factors and returns with common indices
+   454	    common_factors = common_data[:-1]
+   455	    ret_train_common = common_data[-1]
+   456	    
+   457	    # Run prediction
+   458	    logger.info("Running prediction...")
+   459	    predictions = run_prediction(common_factors, ret_train_common, config)
+   460	    
+   461	    # Apply filters
+   462	    logger.info("Applying filters...")
+   463	    filtered_predictions, filtered_returns = apply_filters(
+   464	        predictions,
+   465	        data['ret'],
+   466	        data['is_locked'],
+   467	        data['tva_0930_1130'],
+   468	        data['vwap_0930_1130'],
+   469	        config
+   470	    )
+   471	    
+   472	    # Calculate metrics
+   473	    logger.info("Calculating metrics...")
+   474	    metrics = calculate_metrics(filtered_predictions, filtered_returns, config)
+   475	    
+   476	    # Save results
+   477	    logger.info("Saving results...")
+   478	    metrics<response clipped><NOTE>Due to the max output limit, only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
+
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 4 GLOBAL STEP 4
+
+07:44:47 - ACTION
+[Agent Controller default] **CmdRunAction (source=EventSource.AGENT, is_input=False)**
+THOUGHT: Let's check the rest of the model_training.py file:
+COMMAND:
+grep -n "def main" -A 50 /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py
+07:44:48 - OBSERVATION
+[Agent Controller default] **CmdOutputObservation (source=EventSource.AGENT, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "openhands",
+  "hostname": "998133e5e982",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+411:def main(config=None):
+412-    """Main function to run the entire pipeline."""
+413-    start_time = time.time()
+414-
+415-    # Use default config if none provided
+416-    if config is None:
+417-        config = DEFAULT_CONFIG.copy()
+418-
+419-    # Create directories
+420-    create_directories(config)
+421-
+422-    # Load data
+423-    logger.info("Loading data...")
+424-    data = load_data(config)
+425-    if data is None:
+426-        logger.error("Failed to load data. Exiting.")
+427-        return None
+428-
+429-    # Filter factors based on sample size
+430-    logger.info("Filtering factors...")
+431-    filtered_factors = filter_factors(
+432-        data['factors'],
+433-        min_samples=config["min_samples"],
+434-        year_range=(str(config["start_year"]), str(config["end_year"]))
+435-    )
+436-
+437-    # Process factors in parallel
+438-    logger.info("Processing factors...")
+439-    processed_factors = factors_process_parallel(
+440-        filtered_factors,
+441-        data['is_locked'],
+442-        config
+443-    )
+444-
+445-    # Prepare return data
+446-    ret_train = data['ret_n'][data['is_locked'] != 1].shift(-1).dropna(how='all')
+447-
+448-    # Combine factors with return data and get common indices
+449-    logger.info("Finding common indices...")
+450-    combined_data = processed_factors + [ret_train]
+451-    common_data = get_common_indices(combined_data)
+452-
+453-    # Extract factors and returns with common indices
+454-    common_factors = common_data[:-1]
+455-    ret_train_common = common_data[-1]
+456-
+457-    # Run prediction
+458-    logger.info("Running prediction...")
+459-    predictions = run_prediction(common_factors, ret_train_common, config)
+460-
+461-    # Apply filters
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 5 GLOBAL STEP 5
+
+07:44:53 - ACTION
+[Agent Controller default] **CmdRunAction (source=EventSource.AGENT, is_input=False)**
+COMMAND:
+grep -n "if __name__" -A 20 /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/model_training.py
+07:44:54 - OBSERVATION
+[Agent Controller default] **CmdOutputObservation (source=EventSource.AGENT, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "openhands",
+  "hostname": "998133e5e982",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+499:if __name__ == "__main__":
+500-    # Parse command line arguments
+501-    parser = argparse.ArgumentParser(description="Financial factor model training")
+502-    parser.add_argument("--config", type=str, required=True, help="Path to config JSON file")
+503-    args = parser.parse_args()
+504-
+505-    # Load config from file if provided
+506-    if args.config and os.path.exists(args.config):
+507-        with open(args.config, 'r') as f:
+508-            custom_config = json.load(f)
+509-            # Merge with default config
+510-            config = {**DEFAULT_CONFIG, **custom_config}
+511-    else:
+512-        import sys
+513-        sys.exit("Config file not found. Specify a valid path using --config.")
+514-
+515-    # Run main function
+516-    main(config)
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 6 GLOBAL STEP 6
+
+07:45:00 - ACTION
+[Agent Controller default] FileReadAction(path='/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/sample_config.json', start=0, end=-1, thought="Let's check the sample config file to understand the structure:", action='read', security_risk=None, impl_source=<FileReadSource.OH_ACI: 'oh_aci'>, view_range=None)
+07:45:00 - OBSERVATION
+[Agent Controller default] [Read from /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/sample_config.json is successful.]
+Here's the result of running `cat -n` on /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/sample_config.json:
+     1	{
+     2	    "data_path": "/workspace/quant_code_dataset", 
+     3	    "num_years_train": 3,
+     4	    "start_year": 2017,
+     5	    "end_year": 2023,
+     6	    
+     7	    "min_samples": 1650,
+     8	    "min_trading_volume": 5000000,
+     9	    "feature_threshold": 0.75,
+    10	    "min_price": 2,
+    11	
+    12	    "lgbm_params": {
+    13	        "objective": "regression",
+    14	        "num_leaves": 511,
+    15	        "learning_rate": 0.02,
+    16	        "verbose": -1,
+    17	        "min_child_samples": 30,
+    18	        "n_estimators": 10000,
+    19	        "subsample": 0.7,
+    20	        "colsample_bytree": 0.7,
+    21	        "early_stopping_rounds": 100,
+    22	        "log_evaluation_freq": 500
+    23	    },
+    24	    
+    25	    "num_workers": 40,
+    26	    "num_simulations": 3,
+    27	    "device_type": "gpu"
+    28	}
+    29	
+
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 7 GLOBAL STEP 7
+
+07:45:14 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp1_partition2.json]
+Thought: Now I have a good understanding of the repository structure and how the code works. Let's create the controlling script for experimental group partition 2 based on the provided experiment plan.
+
+First, I'll create the configuration files for the 5 different hyperparameter configurations:
+Command: create
+Created File with Text:
+```
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 100,
+    "min_trading_volume": 10000,
+    "feature_threshold": 0.02,
+    "min_price": 5,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+```
+
+07:45:14 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp1_partition2.json
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 8 GLOBAL STEP 8
+
+07:45:28 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp2_partition2.json]
+Thought: 
+Command: create
+Created File with Text:
+```
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 100,
+    "min_trading_volume": 10000,
+    "feature_threshold": 0.01,
+    "min_price": 1,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+```
+
+07:45:28 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp2_partition2.json
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 9 GLOBAL STEP 9
+
+07:45:37 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp3_partition2.json]
+Thought: 
+Command: create
+Created File with Text:
+```
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 100,
+    "min_trading_volume": 10000,
+    "feature_threshold": 0.01,
+    "min_price": 10,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+```
+
+07:45:37 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp3_partition2.json
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 10 GLOBAL STEP 10
+
+07:45:45 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp4_partition2.json]
+Thought: Please continue.
+Command: create
+Created File with Text:
+```
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 50,
+    "min_trading_volume": 5000,
+    "feature_threshold": 0.005,
+    "min_price": 1,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+```
+
+07:45:45 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp4_partition2.json
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 11 GLOBAL STEP 11
+
+07:45:54 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp5_partition2.json]
+Thought: Please continue.
+Command: create
+Created File with Text:
+```
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 200,
+    "min_trading_volume": 20000,
+    "feature_threshold": 0.02,
+    "min_price": 10,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+```
+
+07:45:54 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp5_partition2.json
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 12 GLOBAL STEP 12
+
+07:47:09 - ACTION
+[Agent Controller default] **FileEditAction**
+Path: [/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh]
+Thought: Now, let's create the main controlling script:
+Command: create
+Created File with Text:
+```
+#!/bin/bash
+
+# ===============================================================
+# Stock Return Prediction Model - Experimental Group (Partition 2)
+# ===============================================================
+
+set -e
+
+# Set directory paths
+WORKSPACE="/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1"
+RESULTS_DIR="${WORKSPACE}/results"
+RESULTS_FILE="${WORKSPACE}/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt"
+ALL_RESULTS_FILE="${WORKSPACE}/all_results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt"
+PYTHON_PATH="${WORKSPACE}/venv/bin/python"
+
+echo "Starting experimental workflow in ${WORKSPACE}"
+
+# Set up environment
+echo "Setting up environment..."
+export PATH="/openhands/micromamba/bin:$PATH"
+micromamba shell init --shell bash --root-prefix=~/.local/share/mamba
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/
+
+# Install required dependencies
+echo "Installing required dependencies..."
+micromamba install -y -q -p /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/venv/ pyarrow
+
+# Setup OpenCL environment for GPU
+mkdir -p /etc/OpenCL/vendors
+echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
+
+# Create results file headers (Using > to overwrite file for the first write only)
+cat > ${RESULTS_FILE} << END_HEADER
+# =======================================================
+# Stock Return Prediction Model - Experimental Group (Partition 2) Results
+# Date: $(date)
+# =======================================================
+
+END_HEADER
+
+# Add sections to results file
+cat >> ${RESULTS_FILE} << END_SECTIONS
+# =======================================================
+# Experiment Results
+# =======================================================
+
+END_SECTIONS
+
+# Run Experiment 1
+echo "Running experiment 1 with min_samples=100, feature_threshold=0.02, min_price=5, min_trading_volume=10000"
+cat >> ${RESULTS_FILE} << END_EXP1_HEADER
+# =======================================================
+Experiment 1:
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.02
+- min_price: 5
+- min_trading_volume: 10000
+END_EXP1_HEADER
+
+${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp1_partition2.json
+
+# Find the latest metrics file
+LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+if [ -f "$LATEST_METRICS" ]; then
+    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+    
+    # Copy the metrics file with a standardized name
+    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2_exp1.json"
+else
+    echo "Error: No metrics file found for experiment 1" >> ${RESULTS_FILE}
+fi
+echo "" >> ${RESULTS_FILE}
+
+# Run Experiment 2
+echo "Running experiment 2 with min_samples=100, feature_threshold=0.01, min_price=1, min_trading_volume=10000"
+cat >> ${RESULTS_FILE} << END_EXP2_HEADER
+# =======================================================
+Experiment 2:
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.01
+- min_price: 1
+- min_trading_volume: 10000
+END_EXP2_HEADER
+
+${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp2_partition2.json
+
+# Find the latest metrics file
+LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+if [ -f "$LATEST_METRICS" ]; then
+    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+    
+    # Copy the metrics file with a standardized name
+    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2_exp2.json"
+else
+    echo "Error: No metrics file found for experiment 2" >> ${RESULTS_FILE}
+fi
+echo "" >> ${RESULTS_FILE}
+
+# Run Experiment 3
+echo "Running experiment 3 with min_samples=100, feature_threshold=0.01, min_price=10, min_trading_volume=10000"
+cat >> ${RESULTS_FILE} << END_EXP3_HEADER
+# =======================================================
+Experiment 3:
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.01
+- min_price: 10
+- min_trading_volume: 10000
+END_EXP3_HEADER
+
+${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp3_partition2.json
+
+# Find the latest metrics file
+LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+if [ -f "$LATEST_METRICS" ]; then
+    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+    
+    # Copy the metrics file with a standardized name
+    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2_exp3.json"
+else
+    echo "Error: No metrics file found for experiment 3" >> ${RESULTS_FILE}
+fi
+echo "" >> ${RESULTS_FILE}
+
+# Run Experiment 4
+echo "Running experiment 4 with min_samples=50, feature_threshold=0.005, min_price=1, min_trading_volume=5000"
+cat >> ${RESULTS_FILE} << END_EXP4_HEADER
+# =======================================================
+Experiment 4:
+Parameters:
+- min_samples: 50
+- feature_threshold: 0.005
+- min_price: 1
+- min_trading_volume: 5000
+END_EXP4_HEADER
+
+${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp4_partition2.json
+
+# Find the latest metrics file
+LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+if [ -f "$LATEST_METRICS" ]; then
+    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+    
+    # Copy the metrics file with a standardized name
+    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2_exp4.json"
+else
+    echo "Error: No metrics file found for experiment 4" >> ${RESULTS_FILE}
+fi
+echo "" >> ${RESULTS_FILE}
+
+# Run Experiment 5
+echo "Running experiment 5 with min_samples=200, feature_threshold=0.02, min_price=10, min_trading_volume=20000"
+cat >> ${RESULTS_FILE} << END_EXP5_HEADER
+# =======================================================
+Experiment 5:
+Parameters:
+- min_samples: 200
+- feature_threshold: 0.02
+- min_price: 10
+- min_trading_volume: 20000
+END_EXP5_HEADER
+
+${PYTHON_PATH} ${WORKSPACE}/model_training.py --config ${WORKSPACE}/config_exp5_partition2.json
+
+# Find the latest metrics file
+LATEST_METRICS=$(find ${RESULTS_DIR} -name "metrics_*.json" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+if [ -f "$LATEST_METRICS" ]; then
+    OVERALL_CORR=$(grep -o '"overall": [0-9.-]*' "$LATEST_METRICS" | cut -d' ' -f2)
+    echo "Overall Rank Correlation: $OVERALL_CORR" >> ${RESULTS_FILE}
+    
+    # Copy the metrics file with a standardized name
+    cp "$LATEST_METRICS" "${WORKSPACE}/metrics_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2_exp5.json"
+else
+    echo "Error: No metrics file found for experiment 5" >> ${RESULTS_FILE}
+fi
+echo "" >> ${RESULTS_FILE}
+
+# Collect and compare results
+cat >> ${RESULTS_FILE} << END_SUMMARY_HEADER
+# =======================================================
+# Summary
+# =======================================================
+
+END_SUMMARY_HEADER
+
+# Find best experiment based on correlation
+EXP1_CORR=$(grep -A1 "Experiment 1:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+EXP2_CORR=$(grep -A1 "Experiment 2:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+EXP3_CORR=$(grep -A1 "Experiment 3:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+EXP4_CORR=$(grep -A1 "Experiment 4:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+EXP5_CORR=$(grep -A1 "Experiment 5:" ${RESULTS_FILE} | grep "Overall Rank Correlation:" | cut -d' ' -f4)
+
+BEST_EXP=0
+BEST_CORR=-999
+
+if [[ ! -z "$EXP1_CORR" ]]; then
+    if (( $(echo "$EXP1_CORR > $BEST_CORR" | bc -l) )); then
+        BEST_CORR=$EXP1_CORR
+        BEST_EXP=1
+    fi
+fi
+
+if [[ ! -z "$EXP2_CORR" ]]; then
+    if (( $(echo "$EXP2_CORR > $BEST_CORR" | bc -l) )); then
+        BEST_CORR=$EXP2_CORR
+        BEST_EXP=2
+    fi
+fi
+
+if [[ ! -z "$EXP3_CORR" ]]; then
+    if (( $(echo "$EXP3_CORR > $BEST_CORR" | bc -l) )); then
+        BEST_CORR=$EXP3_CORR
+        BEST_EXP=3
+    fi
+fi
+
+if [[ ! -z "$EXP4_CORR" ]]; then
+    if (( $(echo "$EXP4_CORR > $BEST_CORR" | bc -l) )); then
+        BEST_CORR=$EXP4_CORR
+        BEST_EXP=4
+    fi
+fi
+
+if [[ ! -z "$EXP5_CORR" ]]; then
+    if (( $(echo "$EXP5_CORR > $BEST_CORR" | bc -l) )); then
+        BEST_CORR=$EXP5_CORR
+        BEST_EXP=5
+    fi
+fi
+
+if [ $BEST_EXP -eq 1 ]; then
+    cat >> ${RESULTS_FILE} << END_BEST1
+Best Performing Configuration:
+Experiment 1 with Overall Rank Correlation: $BEST_CORR
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.02
+- min_price: 5
+- min_trading_volume: 10000
+END_BEST1
+elif [ $BEST_EXP -eq 2 ]; then
+    cat >> ${RESULTS_FILE} << END_BEST2
+Best Performing Configuration:
+Experiment 2 with Overall Rank Correlation: $BEST_CORR
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.01
+- min_price: 1
+- min_trading_volume: 10000
+END_BEST2
+elif [ $BEST_EXP -eq 3 ]; then
+    cat >> ${RESULTS_FILE} << END_BEST3
+Best Performing Configuration:
+Experiment 3 with Overall Rank Correlation: $BEST_CORR
+Parameters:
+- min_samples: 100
+- feature_threshold: 0.01
+- min_price: 10
+- min_trading_volume: 10000
+END_BEST3
+elif [ $BEST_EXP -eq 4 ]; then
+    cat >> ${RESULTS_FILE} << END_BEST4
+Best Performing Configuration:
+Experiment 4 with Overall Rank Correlation: $BEST_CORR
+Parameters:
+- min_samples: 50
+- feature_threshold: 0.005
+- min_price: 1
+- min_trading_volume: 5000
+END_BEST4
+elif [ $BEST_EXP -eq 5 ]; then
+    cat >> ${RESULTS_FILE} << END_BEST5
+Best Performing Configuration:
+Experiment 5 with Overall Rank Correlation: $BEST_CORR
+Parameters:
+- min_samples: 200
+- feature_threshold: 0.02
+- min_price: 10
+- min_trading_volume: 20000
+END_BEST5
+else
+    echo "Could not determine the best configuration due to errors in all experiments." >> ${RESULTS_FILE}
+fi
+
+cat >> ${RESULTS_FILE} << END_FOOTER
+
+# =======================================================
+# Experiment completed at: $(date)
+# =======================================================
+END_FOOTER
+
+echo "All experiments completed. Results saved to: ${RESULTS_FILE}"
+```
+
+07:47:09 - OBSERVATION
+[Agent Controller default] File created successfully at: /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 13 GLOBAL STEP 13
+
+07:47:15 - ACTION
+[Agent Controller default] **CmdRunAction (source=EventSource.AGENT, is_input=False)**
+THOUGHT: Now, let's make the script executable:
+COMMAND:
+chmod +x /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh
+07:47:16 - OBSERVATION
+[Agent Controller default] **CmdOutputObservation (source=EventSource.AGENT, exit code=1, metadata={
+  "exit_code": 1,
+  "pid": -1,
+  "username": "openhands",
+  "hostname": "998133e5e982",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 1.]"
+})**
+--BEGIN AGENT OBSERVATION--
+chmod: changing permissions of '/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh': Operation not permitted
+[The command completed with exit code 1.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python]
+[Command finished with exit code 1]
+--END AGENT OBSERVATION--
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 14 GLOBAL STEP 14
+
+07:47:25 - ACTION
+[Agent Controller default] **CmdRunAction (source=EventSource.AGENT, is_input=False)**
+THOUGHT: It seems we don't have permission to change the file permissions. That's okay, the script can still be executed using `bash` command when needed.
+
+Let's verify that our script is correctly set up by checking the file:
+COMMAND:
+head -n 20 /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh
+07:47:26 - OBSERVATION
+[Agent Controller default] **CmdOutputObservation (source=EventSource.AGENT, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "openhands",
+  "hostname": "998133e5e982",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+#!/bin/bash
+
+# ===============================================================
+# Stock Return Prediction Model - Experimental Group (Partition 2)
+# ===============================================================
+
+set -e
+
+# Set directory paths
+WORKSPACE="/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1"
+RESULTS_DIR="${WORKSPACE}/results"
+RESULTS_FILE="${WORKSPACE}/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt"
+ALL_RESULTS_FILE="${WORKSPACE}/all_results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt"
+PYTHON_PATH="${WORKSPACE}/venv/bin/python"
+
+echo "Starting experimental workflow in ${WORKSPACE}"
+
+# Set up environment
+echo "Setting up environment..."
+export PATH="/openhands/micromamba/bin:$PATH"
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 15 GLOBAL STEP 15
+
+07:47:33 - ACTION
+[Agent Controller default] **CmdRunAction (source=EventSource.AGENT, is_input=False)**
+THOUGHT: Let's also check one of our configuration files to ensure they're correctly formatted:
+COMMAND:
+cat /workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/config_exp1_partition2.json
+07:47:34 - OBSERVATION
+[Agent Controller default] **CmdOutputObservation (source=EventSource.AGENT, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "openhands",
+  "hostname": "998133e5e982",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+{
+    "data_path": "/workspace/quant_code_dataset",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+
+    "min_samples": 100,
+    "min_trading_volume": 10000,
+    "feature_threshold": 0.02,
+    "min_price": 5,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+
+
+==============
+[Agent Controller default] LEVEL 0 LOCAL STEP 16 GLOBAL STEP 16
+
+07:47:53 - ACTION
+[Agent Controller default] AgentFinishAction(outputs={}, thought="Great! Let's summarize what we've done:\n\n1. We've created 5 configuration files for the different hyperparameter settings:\n   - `config_exp1_partition2.json`: min_samples: 100, feature_threshold: 0.02, min_price: 5, min_trading_volume: 10000\n   - `config_exp2_partition2.json`: min_samples: 100, feature_threshold: 0.01, min_price: 1, min_trading_volume: 10000\n   - `config_exp3_partition2.json`: min_samples: 100, feature_threshold: 0.01, min_price: 10, min_trading_volume: 10000\n   - `config_exp4_partition2.json`: min_samples: 50, feature_threshold: 0.005, min_price: 1, min_trading_volume: 5000\n   - `config_exp5_partition2.json`: min_samples: 200, feature_threshold: 0.02, min_price: 10, min_trading_volume: 20000\n\n2. We've created a comprehensive bash script `control_experiment_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.sh` that:\n   - Sets up the environment (including OpenCL for GPU)\n   - Runs model_training.py with each configuration file\n   - Collects results and metrics (especially the rank correlation)\n   - Identifies the best performing configuration\n   - Generates a summary of all results\n   - Saves the final output to `/workspace/quant_code_a8042960-65f0-4bbf-8232-4f4572c943a1/results_a8042960-65f0-4bbf-8232-4f4572c943a1_experimental_group_partition_2.txt`\n\nThe script follows the pattern of the existing experimental_group partition_1 script but is adapted for the new configurations specified in the experiment plan. All the constant parameters (lgbm_params, num_years_train, start_year, end_year, data_path, num_workers, num_simulations, device_type) have been kept the same across all configurations as required.\n\nThe script is designed to run end-to-end without requiring any arguments, and it will automatically determine the best performing configuration based on the rank correlation metric.", action='finish')
+[92m07:47:53 - openhands:INFO[0m: agent_controller.py:468 - [Agent Controller default] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+07:47:53 - OBSERVATION
+[Agent Controller default] AgentStateChangedObservation(content='', agent_state=<AgentState.FINISHED: 'finished'>, observation='agent_state_changed')

@@ -1,0 +1,27 @@
+==================================================
+EXPERIMENT: 21064c09-530e-4d2f-ae2c-6e1f6f20c3b6
+CONTROL GROUP: Partition 1
+TIMESTAMP: Tue Apr 29 04:30:09 UTC 2025
+==================================================
+
+Ensuring max_depth parameter is properly included in train_lgbm_model function...
+max_depth parameter is already correctly set in model_training.py
+Configuration:
+- num_leaves: 31
+- learning_rate: 0.1
+- max_depth: -1
+
+Starting model training...
+2025-04-29 04:30:10,252 - __main__ - INFO - Created or verified directories: /workspace/quant_code_21064c09-530e-4d2f-ae2c-6e1f6f20c3b6/results_20250429_043009
+2025-04-29 04:30:10,253 - __main__ - INFO - Loading data...
+2025-04-29 04:30:13,196 - __main__ - INFO - Loaded 11 factor files
+2025-04-29 04:30:14,564 - __main__ - INFO - Successfully loaded all data files
+2025-04-29 04:30:14,564 - __main__ - INFO - Filtering factors...
+2025-04-29 04:30:14,898 - __main__ - INFO - Filtered factors from 11 to 10
+2025-04-29 04:30:14,898 - __main__ - INFO - Processing factors...
+2025-04-29 04:30:14,899 - __main__ - INFO - Processing 10 factors using 40 workers
+Current working directory: /workspace/quant_code_21064c09-530e-4d2f-ae2c-6e1f6f20c3b6
+2025-04-29 04:30:23,099 - __main__ - INFO - Processed 10 factors in 8.20 seconds
+2025-04-29 04:30:23,213 - __main__ - INFO - Finding common indices...
+2025-04-29 04:30:25,491 - __main__ - INFO - Running prediction...
+2025-04-29 04:30:25,491 - __main__ - INFO - Running simulation 1/3

@@ -1,0 +1,94 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+# Starting experiment with control group parameters
+# n_estimators=100, subsample=0.8, colsample_bytree=0.8
+Created config file at /tmp/config_20250429_044159.json
+Running model training...
+2025-04-29 04:42:00,463 - __main__ - INFO - Created or verified directories: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159
+2025-04-29 04:42:00,463 - __main__ - INFO - Loading data...
+2025-04-29 04:42:03,334 - __main__ - INFO - Loaded 11 factor files
+2025-04-29 04:42:04,682 - __main__ - INFO - Successfully loaded all data files
+2025-04-29 04:42:04,682 - __main__ - INFO - Filtering factors...
+2025-04-29 04:42:05,036 - __main__ - INFO - Filtered factors from 11 to 10
+2025-04-29 04:42:05,036 - __main__ - INFO - Processing factors...
+2025-04-29 04:42:05,036 - __main__ - INFO - Processing 10 factors using 40 workers
+Current working directory: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048
+2025-04-29 04:42:13,476 - __main__ - INFO - Processed 10 factors in 8.44 seconds
+2025-04-29 04:42:13,581 - __main__ - INFO - Finding common indices...
+2025-04-29 04:42:15,935 - __main__ - INFO - Running prediction...
+2025-04-29 04:42:15,935 - __main__ - INFO - Running simulation 1/3
+2025-04-29 04:42:57,617 - __main__ - INFO - Running simulation 2/3
+2025-04-29 04:43:36,973 - __main__ - INFO - Running simulation 3/3
+2025-04-29 04:44:16,944 - __main__ - INFO - Applying filters...
+2025-04-29 04:44:17,152 - __main__ - INFO - Applied filters: 1676 rows remaining
+2025-04-29 04:44:17,152 - __main__ - INFO - Calculating metrics...
+2025-04-29 04:44:30,302 - __main__ - INFO - Saving results...
+2025-04-29 04:44:31,206 - __main__ - INFO - Results saved to /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/predictions_20250429_044430.parquet and /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/metrics_20250429_044430.json
+2025-04-29 04:44:31,206 - __main__ - INFO - Total processing time: 150.74 seconds
+2025-04-29 04:44:31,206 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-04-29 04:44:31,206 - __main__ - INFO - Overall Rank Correlation: 0.0678
+2025-04-29 04:44:31,206 - __main__ - INFO - 2020 Rank Correlation: 0.0703
+2025-04-29 04:44:31,206 - __main__ - INFO - 2021 Rank Correlation: 0.0589
+2025-04-29 04:44:31,206 - __main__ - INFO - 2022 Rank Correlation: 0.0728
+2025-04-29 04:44:31,206 - __main__ - INFO - 2023 Rank Correlation: 0.0692
+2025-04-29 04:44:31,206 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/metrics_20250429_044430.json
+==================================================
+[1/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.693879
+[1/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.700039
+[1/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.708263
+[1/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.719735
+[2/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.695404
+[2/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.697524
+[2/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.712087
+[2/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.717565
+[3/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.693505
+[3/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.701635
+[3/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.710648
+[3/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+Did not meet early stopping. Best iteration is:
+[100]	valid_0's l2: 0.717176
+Experiment completed, results saved to /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_3178e48d-9a28-4034-b3a4-438eb2192048_control_group_partition_1.txt
+
+
+Result 2:
+

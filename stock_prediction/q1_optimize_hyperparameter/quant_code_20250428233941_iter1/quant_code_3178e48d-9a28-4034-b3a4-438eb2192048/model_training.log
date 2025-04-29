@@ -1,0 +1,84 @@
+2025-04-29 04:40:54,079 - __main__ - INFO - Created or verified directories: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044053
+2025-04-29 04:40:54,079 - __main__ - INFO - Loading data...
+2025-04-29 04:40:54,079 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/stock_data.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,079 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor1.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor10.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor100.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor101.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor102.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor103.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor104.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor105.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor106.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Warning: Skip reading /workspace/quant_code_dataset/RawData/NFactors/factor107.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-04-29 04:40:54,080 - __main__ - INFO - Loaded 0 factor files
+2025-04-29 04:40:54,080 - __main__ - ERROR - Error loading return data: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-04-29 04:40:54,080 - __main__ - ERROR - Failed to load data. Exiting.
+2025-04-29 04:42:00,463 - __main__ - INFO - Created or verified directories: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159
+2025-04-29 04:42:00,463 - __main__ - INFO - Loading data...
+2025-04-29 04:42:03,334 - __main__ - INFO - Loaded 11 factor files
+2025-04-29 04:42:04,682 - __main__ - INFO - Successfully loaded all data files
+2025-04-29 04:42:04,682 - __main__ - INFO - Filtering factors...
+2025-04-29 04:42:05,036 - __main__ - INFO - Filtered factors from 11 to 10
+2025-04-29 04:42:05,036 - __main__ - INFO - Processing factors...
+2025-04-29 04:42:05,036 - __main__ - INFO - Processing 10 factors using 40 workers
+2025-04-29 04:42:13,476 - __main__ - INFO - Processed 10 factors in 8.44 seconds
+2025-04-29 04:42:13,581 - __main__ - INFO - Finding common indices...
+2025-04-29 04:42:15,935 - __main__ - INFO - Running prediction...
+2025-04-29 04:42:15,935 - __main__ - INFO - Running simulation 1/3
+2025-04-29 04:42:57,617 - __main__ - INFO - Running simulation 2/3
+2025-04-29 04:43:36,973 - __main__ - INFO - Running simulation 3/3
+2025-04-29 04:44:16,944 - __main__ - INFO - Applying filters...
+2025-04-29 04:44:17,152 - __main__ - INFO - Applied filters: 1676 rows remaining
+2025-04-29 04:44:17,152 - __main__ - INFO - Calculating metrics...
+2025-04-29 04:44:30,302 - __main__ - INFO - Saving results...
+2025-04-29 04:44:31,206 - __main__ - INFO - Results saved to /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/predictions_20250429_044430.parquet and /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/metrics_20250429_044430.json
+2025-04-29 04:44:31,206 - __main__ - INFO - Total processing time: 150.74 seconds
+2025-04-29 04:44:31,206 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-04-29 04:44:31,206 - __main__ - INFO - Overall Rank Correlation: 0.0678
+2025-04-29 04:44:31,206 - __main__ - INFO - 2020 Rank Correlation: 0.0703
+2025-04-29 04:44:31,206 - __main__ - INFO - 2021 Rank Correlation: 0.0589
+2025-04-29 04:44:31,206 - __main__ - INFO - 2022 Rank Correlation: 0.0728
+2025-04-29 04:44:31,206 - __main__ - INFO - 2023 Rank Correlation: 0.0692
+2025-04-29 04:44:31,206 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044159/metrics_20250429_044430.json
+==================================================
+2025-04-29 04:48:18,637 - __main__ - INFO - Created or verified directories: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044817
+2025-04-29 04:48:18,637 - __main__ - INFO - Loading data...
+2025-04-29 04:48:21,535 - __main__ - INFO - Loaded 11 factor files
+2025-04-29 04:48:22,946 - __main__ - INFO - Successfully loaded all data files
+2025-04-29 04:48:22,946 - __main__ - INFO - Filtering factors...
+2025-04-29 04:48:23,306 - __main__ - INFO - Filtered factors from 11 to 10
+2025-04-29 04:48:23,306 - __main__ - INFO - Processing factors...
+2025-04-29 04:48:23,306 - __main__ - INFO - Processing 10 factors using 40 workers
+2025-04-29 04:48:31,475 - __main__ - INFO - Processed 10 factors in 8.17 seconds
+2025-04-29 04:48:31,591 - __main__ - INFO - Finding common indices...
+2025-04-29 04:48:33,976 - __main__ - INFO - Running prediction...
+2025-04-29 04:48:33,976 - __main__ - INFO - Running simulation 1/3
+2025-04-29 04:49:16,264 - __main__ - INFO - Running simulation 2/3
+2025-04-29 04:49:55,514 - __main__ - INFO - Running simulation 3/3
+2025-04-29 04:50:35,218 - __main__ - INFO - Applying filters...
+2025-04-29 04:50:35,438 - __main__ - INFO - Applied filters: 1676 rows remaining
+2025-04-29 04:50:35,439 - __main__ - INFO - Calculating metrics...
+2025-04-29 04:50:48,659 - __main__ - INFO - Saving results...
+2025-04-29 04:50:49,534 - __main__ - INFO - Results saved to /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044817/predictions_20250429_045048.parquet and /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044817/metrics_20250429_045048.json
+2025-04-29 04:50:49,534 - __main__ - INFO - Total processing time: 150.90 seconds
+2025-04-29 04:50:49,534 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-04-29 04:50:49,534 - __main__ - INFO - Overall Rank Correlation: 0.0675
+2025-04-29 04:50:49,534 - __main__ - INFO - 2020 Rank Correlation: 0.0702
+2025-04-29 04:50:49,534 - __main__ - INFO - 2021 Rank Correlation: 0.0588
+2025-04-29 04:50:49,534 - __main__ - INFO - 2022 Rank Correlation: 0.0722
+2025-04-29 04:50:49,534 - __main__ - INFO - 2023 Rank Correlation: 0.0692
+2025-04-29 04:50:49,534 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/quant_code_3178e48d-9a28-4034-b3a4-438eb2192048/results_20250429_044817/metrics_20250429_045048.json
+==================================================
