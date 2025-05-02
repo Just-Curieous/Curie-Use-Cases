@@ -26,7 +26,7 @@ Key parameters to tune from sample_config.json:
 ### Curie Results
 
 Experiment results and analysis can be found in the following files:
-- Experiment Report: [feature-question_20250429020152_iter1.md](./feature-question_20250429020152_iter1.md)
+- **Experiment Report: [feature-question_20250429020152_iter1.md](./feature-question_20250429020152_iter1.md)**
 - Experiment results (summarized from the raw results): [feature-question_20250429020152_iter1_all_results.txt](./feature-question_20250429020152_iter1_all_results.txt)
 - Raw Curie execution Log: [feature-question_20250429020152_iter1.log](./feature-question_20250429020152_iter1.log)
 - Raw Curie configuration Files: [quant_code_config_feature-question_20250429020152_iter1.json](./quant_code_config_feature-question_20250429020152_iter1.json)  
