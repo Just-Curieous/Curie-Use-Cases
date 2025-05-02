@@ -1,5 +1,5 @@
 {
-    "data_path": "/workspace/quant_code_dataset", 
+    "data_path": "/workspace/starter_code_dataset", 
     "num_years_train": 3,
     "start_year": 2017,
     "end_year": 2023,

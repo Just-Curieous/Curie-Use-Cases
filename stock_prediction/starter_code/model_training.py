@@ -37,7 +37,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(os.path.join(cur_dir, "model_training.log")),
+        logging.FileHandler(os.path.join(cur_dir, "model_training_log.txt")),
         logging.StreamHandler()
     ]
 )
@@ -489,7 +489,7 @@ def main(config=None):
         logger.info(f"{year} Rank Correlation: {metrics[year]:.4f}")
     
     logger.info(f"{'='*50}\nFull report saved to: {metrics_file}\n{'='*50}")
-    
+    logger.info(f"Metrics: {metrics}") 
     return {
         'predictions': filtered_predictions,
         'metrics': metrics,
