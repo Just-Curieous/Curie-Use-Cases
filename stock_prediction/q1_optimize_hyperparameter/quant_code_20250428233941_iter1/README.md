@@ -1,6 +1,6 @@
 # Hyperparameter Optimization for Stock Prediction Model
 
-This directory contains experiment results and logs for hyperparameter optimization of the stock prediction model.
+This directory contains experiment results and logs for hyperparameter optimization of the stock prediction model. The implementation is based on the starter code (`../../starter_code`).
 
 ## Running Experiments
 

@@ -7,7 +7,7 @@ This directory contains logs and results for feature selection experiments on st
 To run feature selection experiments:
 ```bash
 cd Curie/
-python3 -m curie.main -f starter_file/quant_code/questions/feature-question.txt  --task_config curie/configs/quant_config.json  --report
+python3 -m curie.main -f ~/Curie-Use-Cases/stock_prediction/starter_code/questions/feature-question.txt  --task_config curie/configs/quant_config.json  --report
 ```
 - We use an A40 GPU as the local machine.
 - You need to modify the dataset and starter code path specified in `quant_config.json`.
