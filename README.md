@@ -1,6 +1,11 @@
 # Curie Use Cases
 
-This repository provides a collection of use cases and examples demonstrating the application of the [Curie framework](https://github.com/Just-Curieous/Curie) for automated and rigorous scientific experimentation with AI agents.
+[![arXiv](https://img.shields.io/badge/arXiv-2502.16069-b31b1b.svg)](https://arxiv.org/abs/2502.16069)
+[![Slack](https://img.shields.io/badge/Slack-Join%20Community-4A154B?logo=slack)](https://join.slack.com/t/just-curieous/shared_invite/zt-313elxhhy-hpEK5r9kX9Xv1Pfxzt9CJQ)
+[![Demo](https://img.shields.io/badge/Demo-Live-green)](http://44.202.70.8:5000/)
+[![Blog](https://img.shields.io/badge/Blog-Read%20More-orange)](https://www.just-curieous.com/)
+
+This repository provides a collection of use cases and examples demonstrating the application of the [Curie](https://github.com/Just-Curieous/Curie) for automated and rigorous scientific experimentation with AI agents.
 
 ## Overview
 
