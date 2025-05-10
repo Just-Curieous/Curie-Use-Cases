@@ -18,15 +18,41 @@ python3 -m curie.main -f ~/Curie-Use-Cases/stock_prediction/q3_loss_function/que
 
 ## Experiment Plan
 
- 
+ **Plan 1: Custom Rank Correlation Objectives**   
+- Default LightGBM objective (best from Experiment 1)  
+- Custom Spearman objective  
+- Custom Kendall objective  
+- Custom Hybrid objective (MSE + rank correlation)  
 
-| Plan | Description                                                                                     |
-|------|-------------------------------------------------------------------------------------------------|
-| 1    | Compare standard LightGBM loss functions (MSE, MAE, Huber, etc.) for rank correlation.          |
-| 2    | Add more standard losses (e.g., MAPE, Tweedie) to test their effect on rank correlation.        |
-| 3    | Implement custom objective functions (Spearman, Kendall, hybrid) to directly optimize rank.     |
-| 4    | Study the effect of metric choice (Spearman vs Kendall) and training strategy on performance.  |
-| 5    | Evaluate if custom objectives outperform the best standard objective from previous results.     |
+**Plan 2: Rank Correlation Metrics and Optimization**   
+- Spearman rank metric, standard training  
+- Kendall tau, standard training  
+- Spearman, two-stage training  
+- Kendall tau, two-stage training  
+
+**Plan 3: Standard Loss Function Comparison**   
+- Regression L2 (MSE) loss  
+- Regression L1 (MAE) loss  
+- Huber loss  
+- Fair loss  
+- Poisson loss  
+- Quantile loss (alpha=0.5)  
+- MAPE loss  
+- Tweedie regression loss  
+
+**Plan 4: Extended Loss Function Comparison**   
+- Regression L2 (MSE) loss  
+- Regression L1 (MAE) loss  
+- Huber loss (delta=1.0)  
+- Fair loss (c=1.0)  
+- Poisson loss  
+- Quantile loss (alpha=0.5)  
+- MAPE loss  
+- Tweedie loss (variance power=1.5)  
+
+**Plan 5: MSE vs. MAPE Loss Comparison**   
+- Regression L2 (MSE) loss  
+- MAPE loss
 
 
 ## Curie Results
