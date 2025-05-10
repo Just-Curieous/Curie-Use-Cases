@@ -1,0 +1,404 @@
+2025-05-08 20:17:10,841 - __main__ - INFO - Loaded configuration from /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/control_group_config.json
+2025-05-08 20:17:10,842 - __main__ - INFO - Created results directory: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710
+2025-05-08 20:17:10,842 - __main__ - INFO - Starting control experiment with regression_l2 loss...
+2025-05-08 20:17:10,842 - model_training - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710
+2025-05-08 20:17:10,842 - model_training - INFO - Loading data...
+2025-05-08 20:18:10,034 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 20:18:12,950 - model_training - INFO - Loaded 208 factor files
+2025-05-08 20:18:14,390 - model_training - INFO - Successfully loaded all data files
+2025-05-08 20:18:14,390 - model_training - INFO - Filtering factors...
+2025-05-08 20:18:21,480 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-08 20:18:21,480 - model_training - INFO - Processing factors...
+2025-05-08 20:18:21,480 - model_training - INFO - Processing 205 factors using 40 workers
+2025-05-08 20:19:53,595 - model_training - INFO - Processed 205 factors in 92.11 seconds
+2025-05-08 20:19:53,711 - model_training - INFO - Finding common indices...
+2025-05-08 20:20:54,153 - model_training - INFO - Running prediction...
+2025-05-08 20:20:54,153 - model_training - INFO - Running simulation 1/3
+2025-05-08 20:41:54,393 - model_training - INFO - Running simulation 2/3
+2025-05-08 21:02:22,575 - model_training - INFO - Running simulation 3/3
+2025-05-08 21:20:41,309 - __main__ - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results
+2025-05-08 21:20:41,309 - __main__ - INFO - Loading data...
+2025-05-08 21:21:49,061 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 21:21:52,241 - __main__ - INFO - Loaded 208 factor files
+2025-05-08 21:21:53,839 - __main__ - INFO - Successfully loaded all data files
+2025-05-08 21:21:53,839 - __main__ - INFO - Filtering factors...
+2025-05-08 21:22:01,684 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-08 21:22:01,684 - __main__ - INFO - Processing factors...
+2025-05-08 21:22:01,684 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-08 21:23:32,376 - model_training - INFO - Applying filters...
+2025-05-08 21:23:32,560 - model_training - INFO - Applied filters: 1644 rows remaining
+2025-05-08 21:23:32,560 - model_training - INFO - Calculating metrics...
+2025-05-08 21:23:36,962 - __main__ - INFO - Processed 205 factors in 95.28 seconds
+2025-05-08 21:23:37,061 - __main__ - INFO - Finding common indices...
+2025-05-08 21:23:47,081 - model_training - INFO - Saving results...
+2025-05-08 21:23:47,991 - model_training - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710/predictions_20250508_212347.parquet and /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710/metrics_20250508_212347.json
+2025-05-08 21:23:47,991 - model_training - INFO - Total processing time: 3997.15 seconds
+2025-05-08 21:23:47,991 - model_training - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-08 21:23:47,991 - model_training - INFO - Overall Rank Correlation: 0.0915
+2025-05-08 21:23:47,991 - model_training - INFO - 2020 Rank Correlation: 0.1080
+2025-05-08 21:23:47,991 - model_training - INFO - 2021 Rank Correlation: 0.0875
+2025-05-08 21:23:47,991 - model_training - INFO - 2022 Rank Correlation: 0.0817
+2025-05-08 21:23:47,991 - model_training - INFO - 2023 Rank Correlation: 0.0888
+2025-05-08 21:23:47,991 - model_training - INFO - ==================================================
+Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710/metrics_20250508_212347.json
+==================================================
+2025-05-08 21:23:47,991 - model_training - INFO - Metrics: {'overall': 0.09147885368960412, '2020': 0.10804909024243821, '2021': 0.08750567341006513, '2022': 0.08167625715431988, '2023': 0.08881436691285029}
+2025-05-08 21:23:51,827 - __main__ - INFO - Metrics saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710/metrics_20250508_201710.json
+2025-05-08 21:23:51,828 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS SUMMARY
+==================================================
+2025-05-08 21:23:51,828 - __main__ - INFO - Overall Rank Correlation: 0.0915
+2025-05-08 21:23:51,828 - __main__ - INFO - 2020 Rank Correlation: 0.1080
+2025-05-08 21:23:51,828 - __main__ - INFO - 2021 Rank Correlation: 0.0875
+2025-05-08 21:23:51,828 - __main__ - INFO - 2022 Rank Correlation: 0.0817
+2025-05-08 21:23:51,828 - __main__ - INFO - 2023 Rank Correlation: 0.0888
+2025-05-08 21:23:51,828 - __main__ - INFO - ==================================================
+2025-05-08 21:23:51,828 - __main__ - INFO - Total experiment time: 4000.99 seconds
+2025-05-08 21:23:51,828 - __main__ - INFO - Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group/run_20250508_201710/metrics_20250508_201710.json
+2025-05-08 21:24:33,024 - __main__ - INFO - Running prediction...
+2025-05-08 21:24:33,024 - __main__ - INFO - Running simulation 1/3
+2025-05-08 21:45:30,296 - __main__ - INFO - Running simulation 2/3
+2025-05-08 22:05:46,734 - __main__ - INFO - Running simulation 3/3
+2025-05-08 22:21:15,032 - __main__ - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results
+2025-05-08 22:21:15,032 - __main__ - INFO - Loading data...
+2025-05-08 22:21:15,032 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor96.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,032 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor104.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,032 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor106.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor107.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor105.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor108.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor109.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor111.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor112.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor113.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor114.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor115.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,033 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor116.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor110.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor117.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor12.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor120.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor121.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor122.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor123.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor124.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor125.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor126.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor127.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,034 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor128.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor129.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor13.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor130.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor131.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor132.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor133.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor134.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor135.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor136.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor137.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor138.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,035 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor139.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor14.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor140.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor141.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor142.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor143.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor144.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor145.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor146.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor147.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor148.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor149.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,036 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor15.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor150.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor151.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor164.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor165.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor166.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor167.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor152.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor168.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor169.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor17.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor170.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,037 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor171.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor172.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor176.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor173.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor175.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor177.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor178.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor179.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor18.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor180.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor181.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,038 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor182.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor183.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor184.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor185.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor186.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor187.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor188.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor189.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor19.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor190.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,039 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor191.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor192.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor193.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor194.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor195.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor196.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor197.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor198.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor199.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,040 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor2.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor20.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor200.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor201.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor202.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor203.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor204.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor205.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor206.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor207.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor208.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor209.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,041 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor21.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor210.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor22.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor23.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor24.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor25.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor26.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor27.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor28.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor29.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor3.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,042 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor30.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor31.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor32.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor33.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor34.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor35.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor36.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor37.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor153.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor154.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor155.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor156.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,043 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor157.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor158.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor159.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor16.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor160.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor161.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor162.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor163.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor38.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor39.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor4.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor40.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,044 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor41.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor42.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor43.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor44.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor45.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor46.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor47.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor48.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor49.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor5.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor50.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor51.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,045 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor52.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor53.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor54.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor55.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor56.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor57.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor58.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor59.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor6.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor60.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor61.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor62.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,046 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor63.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor64.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor65.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor66.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor67.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor68.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor69.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor7.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor70.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor71.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor72.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor73.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,047 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor74.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor75.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor76.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor77.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor78.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor79.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor8.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor80.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor81.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor82.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor83.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,048 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor84.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor85.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor86.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor87.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor88.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor89.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor9.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor90.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor91.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor92.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor93.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor94.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,049 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor95.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor97.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor174.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor101.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor102.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor103.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor100.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor11.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor118.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor119.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor1.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor10.parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-05-08 22:21:15,050 - __main__ - INFO - Loaded 0 factor files
+2025-05-08 22:21:15,051 - __main__ - ERROR - Error loading return data: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-05-08 22:21:15,051 - __main__ - ERROR - Failed to load data. Exiting.
+2025-05-08 22:21:29,700 - __main__ - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results
+2025-05-08 22:21:29,700 - __main__ - INFO - Loading data...
+2025-05-08 22:22:36,027 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 22:22:39,245 - __main__ - INFO - Loaded 208 factor files
+2025-05-08 22:22:40,833 - __main__ - INFO - Successfully loaded all data files
+2025-05-08 22:22:40,833 - __main__ - INFO - Filtering factors...
+2025-05-08 22:22:48,156 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-08 22:22:48,156 - __main__ - INFO - Processing factors...
+2025-05-08 22:22:48,156 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-08 22:24:29,727 - __main__ - INFO - Processed 205 factors in 101.57 seconds
+2025-05-08 22:24:29,854 - __main__ - INFO - Finding common indices...
+2025-05-08 22:25:32,608 - __main__ - INFO - Running prediction...
+2025-05-08 22:25:32,608 - __main__ - INFO - Running simulation 1/3
+2025-05-08 22:28:01,992 - __main__ - INFO - Applying filters...
+2025-05-08 22:28:02,180 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-08 22:28:02,180 - __main__ - INFO - Calculating metrics...
+2025-05-08 22:28:17,507 - __main__ - INFO - Saving results...
+2025-05-08 22:28:18,503 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/predictions_20250508_222817.parquet and /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250508_222817.json
+2025-05-08 22:28:18,504 - __main__ - INFO - Total processing time: 4057.19 seconds
+2025-05-08 22:28:18,504 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-08 22:28:18,504 - __main__ - INFO - Overall Rank Correlation: 0.0913
+2025-05-08 22:28:18,504 - __main__ - INFO - 2020 Rank Correlation: 0.1079
+2025-05-08 22:28:18,504 - __main__ - INFO - 2021 Rank Correlation: 0.0876
+2025-05-08 22:28:18,504 - __main__ - INFO - 2022 Rank Correlation: 0.0815
+2025-05-08 22:28:18,504 - __main__ - INFO - 2023 Rank Correlation: 0.0883
+2025-05-08 22:28:18,504 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250508_222817.json
+==================================================
+2025-05-08 22:28:18,504 - __main__ - INFO - Metrics: {'overall': 0.09132258481310745, '2020': 0.10787747254094684, '2021': 0.08763961263389737, '2022': 0.08154743180380225, '2023': 0.08831605348301357}
+2025-05-08 22:46:27,048 - __main__ - INFO - Running simulation 2/3
+2025-05-08 23:05:44,466 - __main__ - INFO - Running simulation 3/3
+2025-05-08 23:21:38,495 - __main__ - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results
+2025-05-08 23:21:38,495 - __main__ - INFO - Loading data...
+2025-05-08 23:22:41,110 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 23:22:44,308 - __main__ - INFO - Loaded 208 factor files
+2025-05-08 23:22:45,641 - __main__ - INFO - Successfully loaded all data files
+2025-05-08 23:22:45,641 - __main__ - INFO - Filtering factors...
+2025-05-08 23:22:52,439 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-08 23:22:52,439 - __main__ - INFO - Processing factors...
+2025-05-08 23:22:52,439 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-08 23:24:34,642 - __main__ - INFO - Processed 205 factors in 102.20 seconds
+2025-05-08 23:24:34,764 - __main__ - INFO - Finding common indices...
+2025-05-08 23:25:36,364 - __main__ - INFO - Running prediction...
+2025-05-08 23:25:36,365 - __main__ - INFO - Running simulation 1/3
+2025-05-08 23:26:46,134 - __main__ - INFO - Applying filters...
+2025-05-08 23:26:46,303 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-08 23:26:46,303 - __main__ - INFO - Calculating metrics...
+2025-05-08 23:27:02,154 - __main__ - INFO - Saving results...
+2025-05-08 23:27:03,123 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/predictions_20250508_232702.parquet and /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250508_232702.json
+2025-05-08 23:27:03,124 - __main__ - INFO - Total processing time: 3933.42 seconds
+2025-05-08 23:27:03,124 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-08 23:27:03,124 - __main__ - INFO - Overall Rank Correlation: 0.0916
+2025-05-08 23:27:03,124 - __main__ - INFO - 2020 Rank Correlation: 0.1077
+2025-05-08 23:27:03,124 - __main__ - INFO - 2021 Rank Correlation: 0.0872
+2025-05-08 23:27:03,124 - __main__ - INFO - 2022 Rank Correlation: 0.0820
+2025-05-08 23:27:03,124 - __main__ - INFO - 2023 Rank Correlation: 0.0895
+2025-05-08 23:27:03,124 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250508_232702.json
+==================================================
+2025-05-08 23:27:03,124 - __main__ - INFO - Metrics: {'overall': 0.09156541869487378, '2020': 0.10770558844460075, '2021': 0.08723133147515198, '2022': 0.08201796230494074, '2023': 0.08949373301962091}
+2025-05-08 23:45:35,754 - __main__ - INFO - Running simulation 2/3
+2025-05-09 00:08:44,922 - __main__ - INFO - Running simulation 3/3
+2025-05-09 00:22:00,907 - __main__ - INFO - Created or verified directories: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results
+2025-05-09 00:22:00,907 - __main__ - INFO - Loading data...
+2025-05-09 00:23:06,878 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 00:23:10,237 - __main__ - INFO - Loaded 208 factor files
+2025-05-09 00:23:11,931 - __main__ - INFO - Successfully loaded all data files
+2025-05-09 00:23:11,931 - __main__ - INFO - Filtering factors...
+2025-05-09 00:23:20,095 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-09 00:23:20,095 - __main__ - INFO - Processing factors...
+2025-05-09 00:23:20,095 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-09 00:25:03,033 - __main__ - INFO - Processed 205 factors in 102.94 seconds
+2025-05-09 00:25:03,141 - __main__ - INFO - Finding common indices...
+2025-05-09 00:26:03,722 - __main__ - INFO - Running prediction...
+2025-05-09 00:26:03,722 - __main__ - INFO - Running simulation 1/3
+2025-05-09 00:31:04,624 - __main__ - INFO - Applying filters...
+2025-05-09 00:31:04,827 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-09 00:31:04,827 - __main__ - INFO - Calculating metrics...
+2025-05-09 00:31:20,415 - __main__ - INFO - Saving results...
+2025-05-09 00:31:21,391 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/predictions_20250509_003120.parquet and /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250509_003120.json
+2025-05-09 00:31:21,392 - __main__ - INFO - Total processing time: 4182.90 seconds
+2025-05-09 00:31:21,392 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-09 00:31:21,392 - __main__ - INFO - Overall Rank Correlation: 0.0911
+2025-05-09 00:31:21,392 - __main__ - INFO - 2020 Rank Correlation: 0.1074
+2025-05-09 00:31:21,392 - __main__ - INFO - 2021 Rank Correlation: 0.0865
+2025-05-09 00:31:21,392 - __main__ - INFO - 2022 Rank Correlation: 0.0802
+2025-05-09 00:31:21,392 - __main__ - INFO - 2023 Rank Correlation: 0.0906
+2025-05-09 00:31:21,392 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250509_003120.json
+==================================================
+2025-05-09 00:31:21,392 - __main__ - INFO - Metrics: {'overall': 0.09108096684989979, '2020': 0.10735896183735516, '2021': 0.08652394981124167, '2022': 0.08021690041774514, '2023': 0.0905919082449504}
+2025-05-09 00:47:05,285 - __main__ - INFO - Running simulation 2/3
+2025-05-09 01:09:07,398 - __main__ - INFO - Running simulation 3/3
+2025-05-09 01:31:16,157 - __main__ - INFO - Applying filters...
+2025-05-09 01:31:16,389 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-09 01:31:16,389 - __main__ - INFO - Calculating metrics...
+2025-05-09 01:31:34,282 - __main__ - INFO - Saving results...
+2025-05-09 01:31:35,183 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/predictions_20250509_013134.parquet and /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250509_013134.json
+2025-05-09 01:31:35,184 - __main__ - INFO - Total processing time: 4174.28 seconds
+2025-05-09 01:31:35,184 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-09 01:31:35,184 - __main__ - INFO - Overall Rank Correlation: 0.0915
+2025-05-09 01:31:35,184 - __main__ - INFO - 2020 Rank Correlation: 0.1087
+2025-05-09 01:31:35,184 - __main__ - INFO - 2021 Rank Correlation: 0.0876
+2025-05-09 01:31:35,184 - __main__ - INFO - 2022 Rank Correlation: 0.0821
+2025-05-09 01:31:35,184 - __main__ - INFO - 2023 Rank Correlation: 0.0878
+2025-05-09 01:31:35,184 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results/metrics_20250509_013134.json
+==================================================
+2025-05-09 01:31:35,184 - __main__ - INFO - Metrics: {'overall': 0.09153404422275467, '2020': 0.10866229869755616, '2021': 0.08756568181058152, '2022': 0.08209705283183988, '2023': 0.08784007178883042}

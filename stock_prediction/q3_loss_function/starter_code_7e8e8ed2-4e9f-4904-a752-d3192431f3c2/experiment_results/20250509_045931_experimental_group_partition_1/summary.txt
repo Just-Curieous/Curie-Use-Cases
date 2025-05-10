@@ -1,0 +1,120 @@
+Experimental Group Partition 1 - 2025-05-09 04:59:31
+======================================================================
+Testing 5 different LightGBM loss functions:
+- regression_l1
+- huber
+- fair
+- poisson
+- quantile
+
+Skipping OpenCL setup (not needed for this environment)
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Skipping OpenCL setup (not needed for this environment)
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Created configuration file for regression_l1: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_regression_l1_20250509_045931.json
+Created configuration file for regression_l1: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_regression_l1_20250509_045931.json
+Current working directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2
+Model training completed in 0.88 seconds
+2025-05-09 04:59:31,956 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,956 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,956 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,956 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.88 seconds
+No recent metrics files found for regression_l1. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: huber
+==================================================
+No recent metrics files found for regression_l1. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: huber
+==================================================
+Created configuration file for huber: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_huber_20250509_045931.json
+Created configuration file for huber: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_huber_20250509_045931.json
+2025-05-09 04:59:31,957 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,957 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,957 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+Model training completed in 0.00 seconds
+No recent metrics files found for huber. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: fair
+==================================================
+2025-05-09 04:59:31,957 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.00 seconds
+No recent metrics files found for huber. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: fair
+==================================================
+Created configuration file for fair: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_fair_20250509_045931.json
+Created configuration file for fair: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_fair_20250509_045931.json
+2025-05-09 04:59:31,957 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,958 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,958 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.00 seconds
+Model training completed in 0.00 seconds
+No recent metrics files found for fair. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: poisson
+==================================================
+No recent metrics files found for fair. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: poisson
+==================================================
+Created configuration file for poisson: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_poisson_20250509_045931.json
+Model training completed in 0.00 seconds
+No recent metrics files found for poisson. The model training may have failed.
+
+==================================================
+Created configuration file for poisson: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_poisson_20250509_045931.json
+2025-05-09 04:59:31,958 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,958 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,958 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.00 seconds
+No recent metrics files found for poisson. The model training may have failed.
+Starting experiment for loss function: quantile
+
+==================================================
+Starting experiment for loss function: quantile
+==================================================
+==================================================
+Created configuration file for quantile: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_quantile_20250509_045931.json
+Created configuration file for quantile: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_quantile_20250509_045931.json
+2025-05-09 04:59:31,958 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,959 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+Model training completed in 0.00 seconds
+No recent metrics files found for quantile. The model training may have failed.
+
+
+======================================================================
+EXPERIMENT COMPARISON SUMMARY
+======================================================================
+Loss Function   | Overall Corr    | Training Time (s)    | 2020 Corr  | 2021 Corr  | 2022 Corr  | 2023 Corr 
+--------------------------------------------------------------------------------------------------------------
+No valid results to compare.
+2025-05-09 04:59:31,959 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.00 seconds
+No recent metrics files found for quantile. The model training may have failed.
+
+
+======================================================================
+EXPERIMENT COMPARISON SUMMARY
+======================================================================
+Loss Function   | Overall Corr    | Training Time (s)    | 2020 Corr  | 2021 Corr  | 2022 Corr  | 2023 Corr 
+--------------------------------------------------------------------------------------------------------------
+No valid results to compare.
+2025-05-09 04:59:32 - Creating summary file in experiment directory
+2025-05-09 04:59:32 - Creating summary file in experiment directory

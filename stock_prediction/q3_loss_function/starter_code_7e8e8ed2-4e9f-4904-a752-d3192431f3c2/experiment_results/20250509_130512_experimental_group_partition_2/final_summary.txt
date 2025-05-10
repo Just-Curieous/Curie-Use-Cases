@@ -1,0 +1,62 @@
+LightGBM Loss Function Verification - Final Summary
+======================================================
+Date: Fri May  9 13:16:03 UTC 2025
+
+This experiment verified two LightGBM loss functions:
+- mape (Mean Absolute Percentage Error)
+- tweedie (Tweedie regression with tweedie_variance_power=1.5)
+
+Verification Results:
+-------------------
+MAPE Verification:
+{
+    "loss_function": "mape",
+    "mse": 1.5071680705126894e+41,
+    "mae": 2.917765323066314e+19,
+    "mape": 50.508273274805596,
+    "rank_correlation": 0.6339399190140176,
+    "is_using_correct_objective": true,
+    "special_params_verified": {},
+    "booster_params": {
+        "objective": "mape"
+    }
+}
+Tweedie Verification:
+{
+    "loss_function": "tweedie",
+    "mse": 1.7168051124128375e+41,
+    "mae": 5.2187150449045004e+19,
+    "mape": 3.9309872215469405e+20,
+    "rank_correlation": 0.45968352547400404,
+    "is_using_correct_objective": true,
+    "special_params_verified": {
+        "is_tweedie_variance_power_set": true,
+        "expected_variance_power": 1.5,
+        "actual_variance_power": 1.5
+    },
+    "booster_params": {
+        "objective": "tweedie",
+        "tweedie_variance_power": 1.5
+    }
+}
+Comparison Results:
+{
+    "timestamp": "20250509_130514",
+    "comparison": {
+        "mape": {
+            "mse": 1.5071680705126894e+41,
+            "mae": 2.917765323066314e+19,
+            "mape": 50.508273274805596,
+            "rank_correlation": 0.6339399190140176
+        },
+        "tweedie": {
+            "mse": 1.7168051124128375e+41,
+            "mae": 5.2187150449045004e+19,
+            "mape": 3.9309872215469405e+20,
+            "rank_correlation": 0.45968352547400404,
+            "tweedie_variance_power": 1.5
+        },
+        "better_loss_function": "mape",
+        "rank_correlation_difference": 0.17425639354001354
+    }
+}

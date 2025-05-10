@@ -1,0 +1,90 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Experimental Group Partition 1 - LightGBM Loss Function Fix Verification - Fri May  9 10:10:36 UTC 2025
+=========================================================================
+Verifying the fix for LightGBM loss function issues:
+- Creating a configuration file for huber loss function
+- Setting huber_delta=1.0 parameter
+- Verifying that LightGBM uses this loss function as the objective
+- Outputting results to the experiment results file
+
+2025-05-09 10:10:36 - Starting LightGBM loss function fix verification experiment
+2025-05-09 10:10:36 - Starting LightGBM loss function fix verification experiment
+2025-05-09 10:10:36 - Timestamp: 20250509_101036
+2025-05-09 10:10:36 - Timestamp: 20250509_101036
+2025-05-09 10:10:36 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_101036_experimental_group_partition_1
+2025-05-09 10:10:36 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_101036_experimental_group_partition_1
+2025-05-09 10:10:36 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 10:10:36 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 10:10:36 - Activating micromamba environment
+2025-05-09 10:10:36 - Activating micromamba environment
+2025-05-09 10:10:36 - Running LightGBM loss function fix verification script
+2025-05-09 10:10:36 - Running LightGBM loss function fix verification script
+/workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+
+================================================================================
+LIGHTGBM LOSS FUNCTION FIX VERIFICATION
+================================================================================
+Timestamp: 20250509_104217
+Loss Function: huber
+Huber Delta: 1.0
+MSE: 35885.866764
+MAE: 151.012082
+Huber Loss: 150.512170
+Using Huber as Objective: True
+Huber Delta Parameter Set: True
+Booster Parameters: {'objective': 'huber', 'huber_delta': 1.0}
+================================================================================
+
+Starting LightGBM loss function verification
+============================================================
+Created configuration file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_huber_fixed_20250509_101037.json
+
+Verifying loss function implementation...
+Training until validation scores don't improve for 50 rounds
+[100]	valid_0's huber: 140.509
+[200]	valid_0's huber: 139.914
+[300]	valid_0's huber: 139.313
+[400]	valid_0's huber: 138.721
+[500]	valid_0's huber: 138.138
+[600]	valid_0's huber: 137.554
+[700]	valid_0's huber: 137.019
+[800]	valid_0's huber: 136.506
+[900]	valid_0's huber: 136.002
+[1000]	valid_0's huber: 135.506
+Did not meet early stopping. Best iteration is:
+[1000]	valid_0's huber: 135.506
+
+Verification Results:
+============================================================
+Loss Function: huber
+Huber Delta: 1.0
+MSE: 35885.866764
+MAE: 151.012082
+Huber Loss: 150.512170
+Using Huber as Objective: True
+Huber Delta Parameter Set: True
+Booster Parameters: {'objective': 'huber', 'huber_delta': 1.0}
+
+Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/huber_verification_20250509_104217.json
+
+Results also appended to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_experimental_group_partition_1.txt
+
+VERIFICATION SUCCESSFUL: LightGBM is correctly using the huber loss function with huber_delta=1.0
+2025-05-09 10:42:17 - Copying verification results to experiment directory
+2025-05-09 10:42:17 - Copying verification results to experiment directory
+2025-05-09 10:42:17 - Copied verification results: huber_verification_20250509_104217.json
+2025-05-09 10:42:17 - Copied verification results: huber_verification_20250509_104217.json
+2025-05-09 10:42:17 - Final summary saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_101036_experimental_group_partition_1/final_summary.txt
+2025-05-09 10:42:17 - Final summary saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_101036_experimental_group_partition_1/final_summary.txt
+2025-05-09 10:42:17 - Experiment completed successfully
+2025-05-09 10:42:17 - Experiment completed successfully
+2025-05-09 10:42:17 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_experimental_group_partition_1.txt
+2025-05-09 10:42:17 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_experimental_group_partition_1.txt
+
+
+Result 2:
+

@@ -1,0 +1,27 @@
+{
+    "data_path": "/workspace/starter_code_dataset",
+    "results_path": "/workspace/starter_code_ac20158a-ee6d-48ad-a2a6-9f6cb203d889/results/quantile",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+    "lgbm_params": {
+        "objective": "quantile",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500,
+        "alpha": 0.5
+    },
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}

@@ -1,0 +1,257 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Control Experiment - 2025-05-08 20:08:22
+==================================================
+
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+Starting model training with control group configuration
+[1/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.671189
+[1000]	valid_0's l2: 0.668932
+[1500]	valid_0's l2: 0.668219
+[2000]	valid_0's l2: 0.667834
+[2500]	valid_0's l2: 0.667571
+Early stopping, best iteration is:
+[2533]	valid_0's l2: 0.667553
+[1/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.682432
+[1000]	valid_0's l2: 0.680573
+[1500]	valid_0's l2: 0.67998
+[2000]	valid_0's l2: 0.679617
+[2500]	valid_0's l2: 0.679315
+[3000]	valid_0's l2: 0.679117
+Early stopping, best iteration is:
+[3374]	valid_0's l2: 0.678945
+[1/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.694882
+[1000]	valid_0's l2: 0.693148
+[1500]	valid_0's l2: 0.692724
+[2000]	valid_0's l2: 0.692313
+[2500]	valid_0's l2: 0.692052
+[3000]	valid_0's l2: 0.691877
+Early stopping, best iteration is:
+[3043]	valid_0's l2: 0.691846
+[1/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.704104
+[1000]	valid_0's l2: 0.703178
+[1500]	valid_0's l2: 0.702817
+[2000]	valid_0's l2: 0.702598
+Early stopping, best iteration is:
+[2135]	valid_0's l2: 0.702535
+[2/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.672932
+[1000]	valid_0's l2: 0.670537
+[1500]	valid_0's l2: 0.669599
+[2000]	valid_0's l2: 0.669123
+Early stopping, best iteration is:
+[2240]	valid_0's l2: 0.668939
+[2/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.682682
+[1000]	valid_0's l2: 0.68059
+[1500]	valid_0's l2: 0.680109
+[2000]	valid_0's l2: 0.679727
+[2500]	valid_0's l2: 0.679569
+Early stopping, best iteration is:
+[2404]	valid_0's l2: 0.679546
+[2/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.694441
+[1000]	valid_0's l2: 0.692917
+[1500]	valid_0's l2: 0.692398
+[2000]	valid_0's l2: 0.692107
+[2500]	valid_0's l2: 0.691881
+Early stopping, best iteration is:
+[2570]	valid_0's l2: 0.691862
+[2/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.703882
+[1000]	valid_0's l2: 0.703148
+[1500]	valid_0's l2: 0.702679
+[2000]	valid_0's l2: 0.702451
+Early stopping, best iteration is:
+[1951]	valid_0's l2: 0.702424
+[3/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.677512
+[1000]	valid_0's l2: 0.675287
+[1500]	valid_0's l2: 0.674563
+[2000]	valid_0's l2: 0.674143
+[2500]	valid_0's l2: 0.673897
+[3000]	valid_0's l2: 0.673697
+[3500]	valid_0's l2: 0.673518
+Early stopping, best iteration is:
+[3500]	valid_0's l2: 0.673518
+[3/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.678606
+[1000]	valid_0's l2: 0.676627
+[1500]	valid_0's l2: 0.675934
+[2000]	valid_0's l2: 0.675534
+[2500]	valid_0's l2: 0.675196
+Early stopping, best iteration is:
+[2651]	valid_0's l2: 0.675126
+[3/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.688801
+[1000]	valid_0's l2: 0.687408
+[1500]	valid_0's l2: 0.686816
+[2000]	valid_0's l2: 0.686431
+[2500]	valid_0's l2: 0.686131
+Early stopping, best iteration is:
+[2599]	valid_0's l2: 0.68608
+[3/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.704475
+[1000]	valid_0's l2: 0.70366
+[1500]	valid_0's l2: 0.703262
+[2000]	valid_0's l2: 0.702976
+[2500]	valid_0's l2: 0.702749
+Early stopping, best iteration is:
+[2449]	valid_0's l2: 0.70274
+2025-05-08 20:08:23,199 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 20:08:23,199 - model_training - INFO - Loading data...
+2025-05-08 20:08:23,199 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+Model training completed successfully
+2025-05-08 20:08:23,199 - model_training - ERROR - Failed to load data. Exiting.
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+Starting model training with control group configuration
+Current working directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2
+Model training completed successfully
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+2025-05-08 20:08:23 - Copying results to experiment directory
+2025-05-08 20:08:23 - Copying results to experiment directory
+2025-05-08 20:08:23 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:08:23 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:08:23 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:08:23 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:08:23 - Yearly Rank Correlations:
+2025-05-08 20:08:23 - Yearly Rank Correlations:
+2025-05-08 20:08:23 -   2020: 0.1075442199606952
+2025-05-08 20:08:23 -   2020: 0.1075442199606952
+2025-05-08 20:08:23 -   2021: 0.08801387417027644
+2025-05-08 20:08:23 -   2021: 0.08801387417027644
+2025-05-08 20:08:23 -   2022: 0.08095599658955482
+2025-05-08 20:08:23 -   2022: 0.08095599658955482
+2025-05-08 20:08:23 -   2023: 0.09031233845969096
+2025-05-08 20:08:23 -   2023: 0.09031233845969096
+2025-05-08 20:08:23 - Saving summary to results directory
+2025-05-08 20:08:23 - Saving summary to results directory
+2025-05-08 20:08:23 - Experiment completed successfully
+2025-05-08 20:08:23 - Experiment completed successfully
+2025-05-08 20:08:23 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_200822_control_group
+2025-05-08 20:08:23 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_200822_control_group
+2025-05-08 20:08:23 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+2025-05-08 20:08:23 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+2025-05-08 20:08:25 - Copying results to experiment directory
+2025-05-08 20:08:25 - Copying results to experiment directory
+2025-05-08 20:08:25 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:08:25 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:08:25 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:08:25 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:08:25 - Yearly Rank Correlations:
+2025-05-08 20:08:25 - Yearly Rank Correlations:
+2025-05-08 20:08:25 -   2020: 0.1075442199606952
+2025-05-08 20:08:25 -   2020: 0.1075442199606952
+2025-05-08 20:08:25 -   2021: 0.08801387417027644
+2025-05-08 20:08:25 -   2021: 0.08801387417027644
+2025-05-08 20:08:25 -   2022: 0.08095599658955482
+2025-05-08 20:08:25 -   2022: 0.08095599658955482
+2025-05-08 20:08:25 -   2023: 0.09031233845969096
+2025-05-08 20:08:25 -   2023: 0.09031233845969096
+2025-05-08 20:08:25 - Saving summary to results directory
+2025-05-08 20:08:25 - Saving summary to results directory
+2025-05-08 20:08:25 - Experiment completed successfully
+2025-05-08 20:08:25 - Experiment completed successfully
+2025-05-08 20:08:25 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_190420_control_group
+2025-05-08 20:08:25 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_190420_control_group
+2025-05-08 20:08:25 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+2025-05-08 20:08:25 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+
+
+Result 2:
+Control Experiment - 2025-05-08 20:10:33
+==================================================
+
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+Starting model training with control group configuration
+2025-05-08 20:10:34,062 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 20:10:34,062 - model_training - INFO - Loading data...
+2025-05-08 20:10:34,062 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-08 20:10:34,062 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed successfully
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+Starting model training with control group configuration
+Current working directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2
+Model training completed successfully
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+2025-05-08 20:10:34 - Copying results to experiment directory
+2025-05-08 20:10:34 - Copying results to experiment directory
+2025-05-08 20:10:34 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:10:34 - Extracting key metrics from: metrics_20250508_200817.json
+2025-05-08 20:10:34 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:10:34 - Overall Rank Correlation: 0.09164135820257166
+2025-05-08 20:10:34 - Yearly Rank Correlations:
+2025-05-08 20:10:34 - Yearly Rank Correlations:
+2025-05-08 20:10:34 -   2020: 0.1075442199606952
+2025-05-08 20:10:34 -   2020: 0.1075442199606952
+2025-05-08 20:10:34 -   2021: 0.08801387417027644
+2025-05-08 20:10:34 -   2021: 0.08801387417027644
+2025-05-08 20:10:34 -   2022: 0.08095599658955482
+2025-05-08 20:10:34 -   2022: 0.08095599658955482
+2025-05-08 20:10:34 -   2023: 0.09031233845969096
+2025-05-08 20:10:34 -   2023: 0.09031233845969096
+2025-05-08 20:10:34 - Saving summary to results directory
+2025-05-08 20:10:34 - Saving summary to results directory
+2025-05-08 20:10:34 - Experiment completed successfully
+2025-05-08 20:10:34 - Experiment completed successfully
+2025-05-08 20:10:34 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_201033_control_group
+2025-05-08 20:10:34 - Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250508_201033_control_group
+2025-05-08 20:10:34 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+2025-05-08 20:10:34 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_control_group_partition_1.txt
+

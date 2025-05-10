@@ -1,0 +1,25 @@
+LightGBM Loss Function Fix Verification - Final Summary
+======================================================
+Date: Fri May  9 10:42:17 UTC 2025
+
+This experiment verified the fix for LightGBM loss function issues:
+- Created a configuration file for huber loss function
+- Set huber_delta=1.0 parameter
+- Verified that LightGBM uses this loss function as the objective
+- Output results to the experiment results file
+
+Verification Results:
+-------------------
+{
+    "loss_function": "huber",
+    "huber_delta": 1.0,
+    "mse": 35885.86676371647,
+    "mae": 151.0120823304295,
+    "huber_loss": 150.51216995498663,
+    "is_using_huber_objective": true,
+    "is_huber_delta_set": true,
+    "booster_params": {
+        "objective": "huber",
+        "huber_delta": 1.0
+    }
+}

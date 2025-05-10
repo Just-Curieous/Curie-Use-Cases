@@ -1,0 +1,19 @@
+Experimental Group Partition 1 - 2025-05-09 05:28:35
+======================================================================
+Testing 5 different LightGBM loss functions:
+- regression_l1
+- huber
+- fair
+- poisson
+- quantile
+
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Model training completed in 3431.71 seconds
+No metrics files found for regression_l1. The model training may have failed.
+
+==================================================
+Starting experiment for loss function: huber
+==================================================

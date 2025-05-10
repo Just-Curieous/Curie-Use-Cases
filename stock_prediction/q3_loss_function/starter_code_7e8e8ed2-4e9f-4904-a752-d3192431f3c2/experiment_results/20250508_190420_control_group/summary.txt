@@ -1,0 +1,12 @@
+Control Group Experiment Summary
+================================
+Date: Thu May  8 20:08:25 UTC 2025
+Configuration: regression_l2 loss function
+
+Overall Rank Correlation: 0.09164135820257166
+
+Yearly Rank Correlations:
+  2020: 0.1075442199606952
+  2021: 0.08801387417027644
+  2022: 0.08095599658955482
+  2023: 0.09031233845969096

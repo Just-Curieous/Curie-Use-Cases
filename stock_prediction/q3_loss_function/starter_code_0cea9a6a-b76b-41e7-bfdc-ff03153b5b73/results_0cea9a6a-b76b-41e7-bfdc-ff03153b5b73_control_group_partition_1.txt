@@ -1,0 +1,156 @@
+Starting simple control experiment for stock return prediction using LightGBM...
+Configuration: Using control_group_config.json
+Timestamp: Fri May  9 04:43:47 UTC 2025
+----------------------------------------
+2025-05-09 04:43:48,157 - __main__ - INFO - Created or verified directories: /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73/results
+2025-05-09 04:43:48,157 - __main__ - INFO - Loading data...
+2025-05-09 04:44:55,467 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 04:44:58,725 - __main__ - INFO - Loaded 208 factor files
+2025-05-09 04:45:00,377 - __main__ - INFO - Successfully loaded all data files
+2025-05-09 04:45:00,377 - __main__ - INFO - Filtering factors...
+2025-05-09 04:45:08,476 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-09 04:45:08,477 - __main__ - INFO - Processing factors...
+2025-05-09 04:45:08,477 - __main__ - INFO - Processing 205 factors using 40 workers
+Current working directory: /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73
+2025-05-09 04:46:46,461 - __main__ - INFO - Processed 205 factors in 97.98 seconds
+2025-05-09 04:46:46,559 - __main__ - INFO - Finding common indices...
+2025-05-09 04:47:43,679 - __main__ - INFO - Running prediction...
+2025-05-09 04:47:43,679 - __main__ - INFO - Running simulation 1/3
+2025-05-09 05:10:19,907 - __main__ - INFO - Running simulation 2/3
+2025-05-09 05:31:03,038 - __main__ - INFO - Running simulation 3/3
+2025-05-09 05:56:28,922 - __main__ - INFO - Applying filters...
+2025-05-09 05:56:29,168 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-09 05:56:29,168 - __main__ - INFO - Calculating metrics...
+2025-05-09 05:56:48,140 - __main__ - INFO - Saving results...
+2025-05-09 05:56:49,287 - __main__ - INFO - Results saved to /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73/results/predictions_20250509_055648.parquet and /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73/results/metrics_20250509_055648.json
+2025-05-09 05:56:49,287 - __main__ - INFO - Total processing time: 4381.13 seconds
+2025-05-09 05:56:49,287 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-09 05:56:49,287 - __main__ - INFO - Overall Rank Correlation: 0.0913
+2025-05-09 05:56:49,287 - __main__ - INFO - 2020 Rank Correlation: 0.1079
+2025-05-09 05:56:49,287 - __main__ - INFO - 2021 Rank Correlation: 0.0870
+2025-05-09 05:56:49,288 - __main__ - INFO - 2022 Rank Correlation: 0.0814
+2025-05-09 05:56:49,288 - __main__ - INFO - 2023 Rank Correlation: 0.0891
+2025-05-09 05:56:49,288 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73/results/metrics_20250509_055648.json
+==================================================
+2025-05-09 05:56:49,288 - __main__ - INFO - Metrics: {'overall': 0.0913120207128627, '2020': 0.1078703157970141, '2021': 0.08703876164803885, '2022': 0.08141792771943765, '2023': 0.08910278730496188}
+[1/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.670038
+[1000]	valid_0's l2: 0.667835
+[1500]	valid_0's l2: 0.667079
+[2000]	valid_0's l2: 0.666714
+[2500]	valid_0's l2: 0.666533
+Early stopping, best iteration is:
+[2883]	valid_0's l2: 0.666369
+[1/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.679756
+[1000]	valid_0's l2: 0.677701
+[1500]	valid_0's l2: 0.677097
+[2000]	valid_0's l2: 0.676756
+[2500]	valid_0's l2: 0.676564
+Early stopping, best iteration is:
+[2776]	valid_0's l2: 0.676431
+[1/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.689943
+[1000]	valid_0's l2: 0.688353
+[1500]	valid_0's l2: 0.687874
+[2000]	valid_0's l2: 0.687427
+[2500]	valid_0's l2: 0.687148
+[3000]	valid_0's l2: 0.686927
+[3500]	valid_0's l2: 0.686801
+Early stopping, best iteration is:
+[3718]	valid_0's l2: 0.686745
+[1/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.701351
+[1000]	valid_0's l2: 0.700498
+[1500]	valid_0's l2: 0.700003
+[2000]	valid_0's l2: 0.699707
+[2500]	valid_0's l2: 0.699492
+Early stopping, best iteration is:
+[2796]	valid_0's l2: 0.699372
+[2/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.680351
+[1000]	valid_0's l2: 0.677978
+[1500]	valid_0's l2: 0.67722
+[2000]	valid_0's l2: 0.676736
+Early stopping, best iteration is:
+[2165]	valid_0's l2: 0.67664
+[2/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.679279
+[1000]	valid_0's l2: 0.677273
+[1500]	valid_0's l2: 0.676512
+[2000]	valid_0's l2: 0.676064
+[2500]	valid_0's l2: 0.67572
+Early stopping, best iteration is:
+[2585]	valid_0's l2: 0.675671
+[2/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.694088
+[1000]	valid_0's l2: 0.6926
+[1500]	valid_0's l2: 0.692068
+[2000]	valid_0's l2: 0.691593
+[2500]	valid_0's l2: 0.691373
+[3000]	valid_0's l2: 0.691207
+Early stopping, best iteration is:
+[3003]	valid_0's l2: 0.691199
+[2/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.706845
+[1000]	valid_0's l2: 0.705964
+[1500]	valid_0's l2: 0.705509
+[2000]	valid_0's l2: 0.705276
+[2500]	valid_0's l2: 0.705128
+Early stopping, best iteration is:
+[2840]	valid_0's l2: 0.705029
+[3/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.672309
+[1000]	valid_0's l2: 0.670164
+[1500]	valid_0's l2: 0.66934
+[2000]	valid_0's l2: 0.668947
+[2500]	valid_0's l2: 0.668628
+Early stopping, best iteration is:
+[2709]	valid_0's l2: 0.668573
+[3/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.677578
+[1000]	valid_0's l2: 0.675648
+[1500]	valid_0's l2: 0.675111
+[2000]	valid_0's l2: 0.674603
+[2500]	valid_0's l2: 0.674352
+Early stopping, best iteration is:
+[2402]	valid_0's l2: 0.674342
+[3/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.6917
+[1000]	valid_0's l2: 0.690233
+[1500]	valid_0's l2: 0.689685
+[2000]	valid_0's l2: 0.689375
+[2500]	valid_0's l2: 0.689126
+[3000]	valid_0's l2: 0.688974
+[3500]	valid_0's l2: 0.688858
+Early stopping, best iteration is:
+[3513]	valid_0's l2: 0.688853
+[3/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.702188
+[1000]	valid_0's l2: 0.701191
+[1500]	valid_0's l2: 0.700922
+[2000]	valid_0's l2: 0.700649
+[2500]	valid_0's l2: 0.700371
+[3000]	valid_0's l2: 0.700213
+[3500]	valid_0's l2: 0.700059
+Early stopping, best iteration is:
+[3483]	valid_0's l2: 0.700049
+----------------------------------------
+Control experiment completed at: Fri May  9 05:57:04 UTC 2025
+Results saved to: /workspace/starter_code_0cea9a6a-b76b-41e7-bfdc-ff03153b5b73/results/metrics_20250509_055648.json

@@ -1,0 +1,30 @@
+{
+    "data_path": "/workspace/starter_code_dataset",
+    "results_path": "/workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/results_control_group",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "loss_function": "regression_l2",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}

@@ -1,0 +1,35 @@
+Experimental Group Partition 1 - LightGBM Loss Function Fix Verification - Fri May  9 10:46:01 UTC 2025
+=========================================================================
+Verifying the fix for LightGBM loss function issues:
+- Creating a configuration file for huber loss function
+- Setting huber_delta=1.0 parameter
+- Verifying that LightGBM uses this loss function as the objective
+- Outputting results to the experiment results file
+
+2025-05-09 10:46:01 - Starting LightGBM loss function fix verification experiment
+2025-05-09 10:46:01 - Starting LightGBM loss function fix verification experiment
+2025-05-09 10:46:01 - Timestamp: 20250509_104601
+2025-05-09 10:46:01 - Timestamp: 20250509_104601
+2025-05-09 10:46:01 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_104601_experimental_group_partition_1
+2025-05-09 10:46:01 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_104601_experimental_group_partition_1
+2025-05-09 10:46:01 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 10:46:01 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 10:46:01 - Activating micromamba environment
+2025-05-09 10:46:01 - Activating micromamba environment
+2025-05-09 10:46:01 - Running LightGBM loss function fix verification script
+2025-05-09 10:46:01 - Running LightGBM loss function fix verification script
+
+================================================================================
+LIGHTGBM LOSS FUNCTION FIX VERIFICATION
+================================================================================
+Timestamp: 20250509_112317
+Loss Function: huber
+Huber Delta: 1.0
+MSE: 35885.866764
+MAE: 151.012082
+Huber Loss: 150.512170
+Using Huber as Objective: True
+Huber Delta Parameter Set: True
+Booster Parameters: {'objective': 'huber', 'huber_delta': 1.0}
+================================================================================
+

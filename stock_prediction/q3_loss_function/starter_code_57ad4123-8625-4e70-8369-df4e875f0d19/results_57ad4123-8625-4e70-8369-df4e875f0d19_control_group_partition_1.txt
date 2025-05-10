@@ -1,0 +1,57 @@
+2025-05-09 01:26:10,216 - __main__ - INFO - Starting mock experiment for stock return prediction
+2025-05-09 01:26:10,216 - __main__ - INFO - Generating synthetic data with 1000 samples, 20 features
+2025-05-09 01:26:10,220 - __main__ - INFO - Generated data with shape: X_train=(800, 20), y_train=(800,)
+2025-05-09 01:26:10,221 - __main__ - INFO - Training LightGBM model with regression_l2 loss function
+2025-05-09 01:28:34,944 - __main__ - INFO - Model training completed. Test MSE: 0.202233, Test R²: 0.789536
+2025-05-09 01:28:34,959 - __main__ - INFO - Rank correlation between predictions and actual returns: 0.924499
+2025-05-09 01:28:34,965 - __main__ - INFO - Long-short portfolio return: 2.535299
+2025-05-09 01:28:34,965 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/mock_experiment_results_20250509_012834.json
+
+==================================================
+MOCK EXPERIMENT RESULTS SUMMARY
+==================================================
+Training MSE: 0.017268
+Test MSE: 0.202233
+Test R²: 0.789536
+Rank Correlation: 0.924499
+Long-Short Portfolio Return: 2.535299
+==================================================
+
+Top 5 Features by Importance:
+  feature_10: 248.000000
+  feature_5: 244.000000
+  feature_15: 230.000000
+  feature_16: 227.000000
+  feature_3: 223.000000
+==================================================
+===================================================
+CONTROL EXPERIMENT: LightGBM with MSE Loss (regression_l2)
+Started at: Fri May  9 01:30:51 UTC 2025
+===================================================
+Setting up environment...
+Running `shell init`, which:
+ - modifies RC file: "/root/.bashrc"
+ - generates config for root prefix: [1m"/root/.local/share/mamba"[0m
+ - sets mamba executable to: [1m"/usr/local/bin/micromamba"[0m
+The following has been added in your "/root/.bashrc" file
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/usr/local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/root/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+Setting up OpenCL for GPU support...
+Creating results directory...
+Running mock experiment with LightGBM using regression_l2 loss...
+2025-05-09 01:30:53,343 - __main__ - INFO - Starting mock experiment for stock return prediction
+2025-05-09 01:30:53,343 - __main__ - INFO - Generating synthetic data with 1000 samples, 20 features
+2025-05-09 01:30:53,344 - __main__ - INFO - Generated data with shape: X_train=(800, 20), y_train=(800,)
+2025-05-09 01:30:53,344 - __main__ - INFO - Training LightGBM model with regression_l2 loss function

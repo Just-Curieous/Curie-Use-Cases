@@ -1,0 +1,13 @@
+{
+    "loss_function": "huber",
+    "huber_delta": 1.0,
+    "mse": 35885.86676371647,
+    "mae": 151.0120823304295,
+    "huber_loss": 150.51216995498663,
+    "is_using_huber_objective": true,
+    "is_huber_delta_set": true,
+    "booster_params": {
+        "objective": "huber",
+        "huber_delta": 1.0
+    }
+}

@@ -1,0 +1,229 @@
+2025-05-08 18:04:18,234 - __main__ - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 18:04:18,234 - __main__ - INFO - Loading data...
+2025-05-08 18:05:14,153 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 18:05:16,910 - __main__ - INFO - Loaded 208 factor files
+2025-05-08 18:05:18,294 - __main__ - INFO - Successfully loaded all data files
+2025-05-08 18:05:18,295 - __main__ - INFO - Filtering factors...
+2025-05-08 18:05:25,382 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-08 18:05:25,383 - __main__ - INFO - Processing factors...
+2025-05-08 18:05:25,383 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-08 18:06:51,091 - __main__ - INFO - Processed 205 factors in 85.71 seconds
+2025-05-08 18:06:51,193 - __main__ - INFO - Finding common indices...
+2025-05-08 18:07:45,952 - __main__ - INFO - Running prediction...
+2025-05-08 18:07:45,952 - __main__ - INFO - Running simulation 1/3
+2025-05-08 18:28:31,117 - __main__ - INFO - Running simulation 2/3
+2025-05-08 18:47:53,690 - __main__ - INFO - Running simulation 3/3
+2025-05-08 19:04:21,333 - __main__ - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 19:04:21,333 - __main__ - INFO - Loading data...
+2025-05-08 19:05:24,622 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-08 19:05:27,876 - __main__ - INFO - Loaded 208 factor files
+2025-05-08 19:05:29,511 - __main__ - INFO - Successfully loaded all data files
+2025-05-08 19:05:29,511 - __main__ - INFO - Filtering factors...
+2025-05-08 19:05:37,533 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-08 19:05:37,534 - __main__ - INFO - Processing factors...
+2025-05-08 19:05:37,534 - __main__ - INFO - Processing 205 factors using 40 workers
+2025-05-08 19:07:18,661 - __main__ - INFO - Processed 205 factors in 101.13 seconds
+2025-05-08 19:07:18,769 - __main__ - INFO - Finding common indices...
+2025-05-08 19:08:19,027 - __main__ - INFO - Running prediction...
+2025-05-08 19:08:19,028 - __main__ - INFO - Running simulation 1/3
+2025-05-08 19:08:29,579 - __main__ - INFO - Applying filters...
+2025-05-08 19:08:29,760 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-08 19:08:29,760 - __main__ - INFO - Calculating metrics...
+2025-05-08 19:08:44,960 - __main__ - INFO - Saving results...
+2025-05-08 19:08:45,831 - __main__ - INFO - Results saved to /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/predictions_20250508_190844.parquet and /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_190844.json
+2025-05-08 19:08:45,832 - __main__ - INFO - Total processing time: 3867.60 seconds
+2025-05-08 19:08:45,832 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-08 19:08:45,832 - __main__ - INFO - Overall Rank Correlation: 0.0914
+2025-05-08 19:08:45,832 - __main__ - INFO - 2020 Rank Correlation: 0.1084
+2025-05-08 19:08:45,832 - __main__ - INFO - 2021 Rank Correlation: 0.0871
+2025-05-08 19:08:45,832 - __main__ - INFO - 2022 Rank Correlation: 0.0818
+2025-05-08 19:08:45,832 - __main__ - INFO - 2023 Rank Correlation: 0.0886
+2025-05-08 19:08:45,832 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_190844.json
+==================================================
+2025-05-08 19:08:45,832 - __main__ - INFO - Metrics: {'overall': 0.09143195403901236, '2020': 0.10835998150363325, '2021': 0.08709123759058576, '2022': 0.08177924984535213, '2023': 0.08862141464451423}
+2025-05-08 19:29:05,536 - __main__ - INFO - Running simulation 2/3
+2025-05-08 19:47:02,057 - __main__ - INFO - Running simulation 3/3
+2025-05-08 20:08:02,668 - __main__ - INFO - Applying filters...
+2025-05-08 20:08:02,884 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-08 20:08:02,885 - __main__ - INFO - Calculating metrics...
+2025-05-08 20:08:17,512 - __main__ - INFO - Saving results...
+2025-05-08 20:08:18,423 - __main__ - INFO - Results saved to /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/predictions_20250508_200817.parquet and /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+2025-05-08 20:08:18,424 - __main__ - INFO - Total processing time: 3837.09 seconds
+2025-05-08 20:08:18,424 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-08 20:08:18,424 - __main__ - INFO - Overall Rank Correlation: 0.0916
+2025-05-08 20:08:18,424 - __main__ - INFO - 2020 Rank Correlation: 0.1075
+2025-05-08 20:08:18,424 - __main__ - INFO - 2021 Rank Correlation: 0.0880
+2025-05-08 20:08:18,424 - __main__ - INFO - 2022 Rank Correlation: 0.0810
+2025-05-08 20:08:18,424 - __main__ - INFO - 2023 Rank Correlation: 0.0903
+2025-05-08 20:08:18,424 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+==================================================
+2025-05-08 20:08:18,424 - __main__ - INFO - Metrics: {'overall': 0.09164135820257166, '2020': 0.1075442199606952, '2021': 0.08801387417027644, '2022': 0.08095599658955482, '2023': 0.09031233845969096}
+2025-05-08 20:08:23,199 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 20:08:23,199 - model_training - INFO - Loading data...
+2025-05-08 20:08:23,199 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-08 20:08:23,199 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-08 20:10:34,062 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-08 20:10:34,062 - model_training - INFO - Loading data...
+2025-05-08 20:10:34,062 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-08 20:10:34,062 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:50:47,069 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,069 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,069 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,069 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:50:47,071 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,071 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,071 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,071 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:50:47,072 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,072 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,072 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,072 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:50:47,073 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,073 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,073 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,073 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:50:47,074 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,074 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,074 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,074 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:31,956 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,956 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,956 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,956 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:31,957 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,957 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,957 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,957 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:31,957 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,958 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,958 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:31,958 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,958 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,958 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:31,958 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:31,958 - model_training - INFO - Loading data...
+2025-05-09 04:59:31,959 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors
+2025-05-09 04:59:31,959 - model_training - ERROR - Failed to load data. Exiting.
+2025-05-09 04:59:58,571 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:59:58,572 - model_training - INFO - Loading data...
+2025-05-09 05:01:02,834 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 05:01:06,015 - model_training - INFO - Loaded 208 factor files
+2025-05-09 05:01:07,511 - model_training - INFO - Successfully loaded all data files
+2025-05-09 05:01:07,511 - model_training - INFO - Filtering factors...
+2025-05-09 05:01:14,677 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 05:01:14,677 - model_training - INFO - Processing factors...
+2025-05-09 05:01:14,677 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 05:08:01,819 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 05:08:01,819 - model_training - INFO - Loading data...
+2025-05-09 05:09:05,422 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 05:09:08,787 - model_training - INFO - Loaded 208 factor files
+2025-05-09 05:09:10,247 - model_training - INFO - Successfully loaded all data files
+2025-05-09 05:09:10,247 - model_training - INFO - Filtering factors...
+2025-05-09 05:09:17,630 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 05:09:17,630 - model_training - INFO - Processing factors...
+2025-05-09 05:09:17,630 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 05:15:47,161 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 05:15:47,161 - model_training - INFO - Loading data...
+2025-05-09 05:16:51,664 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 05:16:54,897 - model_training - INFO - Loaded 208 factor files
+2025-05-09 05:16:56,377 - model_training - INFO - Successfully loaded all data files
+2025-05-09 05:16:56,378 - model_training - INFO - Filtering factors...
+2025-05-09 05:17:04,021 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 05:17:04,022 - model_training - INFO - Processing factors...
+2025-05-09 05:17:04,022 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 05:28:36,765 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 05:28:36,765 - model_training - INFO - Loading data...
+2025-05-09 05:29:42,635 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 05:29:45,932 - model_training - INFO - Loaded 208 factor files
+2025-05-09 05:29:47,459 - model_training - INFO - Successfully loaded all data files
+2025-05-09 05:29:47,459 - model_training - INFO - Filtering factors...
+2025-05-09 05:29:55,967 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 05:29:55,967 - model_training - INFO - Processing factors...
+2025-05-09 05:29:55,967 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 05:31:48,596 - model_training - INFO - Processed 205 factors in 112.63 seconds
+2025-05-09 05:31:48,708 - model_training - INFO - Finding common indices...
+2025-05-09 05:32:51,433 - model_training - INFO - Running prediction...
+2025-05-09 05:32:51,434 - model_training - INFO - Running simulation 1/3
+2025-05-09 06:01:10,128 - model_training - INFO - Running simulation 2/3
+2025-05-09 06:13:15,315 - model_training - INFO - Running simulation 3/3
+2025-05-09 06:25:27,237 - model_training - INFO - Applying filters...
+2025-05-09 06:25:27,406 - model_training - INFO - Applied filters: 1644 rows remaining
+2025-05-09 06:25:27,407 - model_training - INFO - Calculating metrics...
+2025-05-09 06:25:42,401 - model_training - INFO - Saving results...
+2025-05-09 06:25:43,322 - model_training - INFO - Results saved to /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/predictions_20250509_062542.parquet and /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250509_062542.json
+2025-05-09 06:25:43,322 - model_training - INFO - Total processing time: 3426.56 seconds
+2025-05-09 06:25:43,322 - model_training - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-09 06:25:43,322 - model_training - INFO - Overall Rank Correlation: 0.0919
+2025-05-09 06:25:43,322 - model_training - INFO - 2020 Rank Correlation: 0.1069
+2025-05-09 06:25:43,322 - model_training - INFO - 2021 Rank Correlation: 0.0878
+2025-05-09 06:25:43,322 - model_training - INFO - 2022 Rank Correlation: 0.0829
+2025-05-09 06:25:43,322 - model_training - INFO - 2023 Rank Correlation: 0.0904
+2025-05-09 06:25:43,322 - model_training - INFO - ==================================================
+Full report saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250509_062542.json
+==================================================
+2025-05-09 06:25:43,322 - model_training - INFO - Metrics: {'overall': 0.0919460138710206, '2020': 0.10687285834845461, '2021': 0.08782366517905271, '2022': 0.0829146218899566, '2023': 0.0903859780333055}
+2025-05-09 06:25:47,585 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 06:25:47,585 - model_training - INFO - Loading data...
+2025-05-09 06:26:42,745 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 06:26:45,550 - model_training - INFO - Loaded 208 factor files
+2025-05-09 06:26:46,899 - model_training - INFO - Successfully loaded all data files
+2025-05-09 06:26:46,900 - model_training - INFO - Filtering factors...
+2025-05-09 06:26:51,159 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 06:26:51,160 - model_training - INFO - Processing factors...
+2025-05-09 06:26:51,160 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 06:30:52,721 - model_training - INFO - Processed 205 factors in 241.56 seconds
+2025-05-09 06:30:52,835 - model_training - INFO - Finding common indices...
+2025-05-09 06:31:47,335 - model_training - INFO - Running prediction...
+2025-05-09 06:31:47,342 - model_training - INFO - Running simulation 1/3
+2025-05-09 06:37:46,223 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 06:37:46,224 - model_training - INFO - Loading data...
+2025-05-09 06:38:44,946 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 06:38:47,832 - model_training - INFO - Loaded 208 factor files
+2025-05-09 06:38:49,349 - model_training - INFO - Successfully loaded all data files
+2025-05-09 06:38:49,350 - model_training - INFO - Filtering factors...
+2025-05-09 06:39:01,148 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 06:39:01,149 - model_training - INFO - Processing factors...
+2025-05-09 06:39:01,149 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 06:43:58,724 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 06:43:58,725 - model_training - INFO - Loading data...
+2025-05-09 06:44:37,236 - model_training - INFO - Running simulation 2/3
+2025-05-09 06:56:48,244 - model_training - INFO - Running simulation 3/3
+2025-05-09 06:57:22,060 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 06:57:22,060 - model_training - INFO - Loading data...
+2025-05-09 06:58:54,389 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 06:58:58,992 - model_training - INFO - Loaded 208 factor files
+2025-05-09 06:59:00,951 - model_training - INFO - Successfully loaded all data files
+2025-05-09 06:59:00,952 - model_training - INFO - Filtering factors...
+2025-05-09 06:59:10,715 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 06:59:10,715 - model_training - INFO - Processing factors...
+2025-05-09 06:59:10,716 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 07:01:18,284 - model_training - INFO - Processed 205 factors in 127.57 seconds
+2025-05-09 07:01:18,424 - model_training - INFO - Finding common indices...
+2025-05-09 07:02:32,852 - model_training - INFO - Running prediction...
+2025-05-09 07:02:32,853 - model_training - INFO - Running simulation 1/3
+2025-05-09 07:58:05,420 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 07:58:05,420 - model_training - INFO - Loading data...
+2025-05-09 08:00:07,162 - model_training - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-09 08:00:13,260 - model_training - INFO - Loaded 208 factor files
+2025-05-09 08:00:16,320 - model_training - INFO - Successfully loaded all data files
+2025-05-09 08:00:16,320 - model_training - INFO - Filtering factors...
+2025-05-09 08:00:22,679 - model_training - INFO - Filtered factors from 208 to 205
+2025-05-09 08:00:22,679 - model_training - INFO - Processing factors...
+2025-05-09 08:00:22,679 - model_training - INFO - Processing 205 factors using 80 workers
+2025-05-09 08:03:30,174 - model_training - INFO - Processed 205 factors in 187.49 seconds
+2025-05-09 08:03:30,300 - model_training - INFO - Finding common indices...
+2025-05-09 08:04:47,237 - model_training - INFO - Running prediction...
+2025-05-09 08:04:47,238 - model_training - INFO - Running simulation 1/3

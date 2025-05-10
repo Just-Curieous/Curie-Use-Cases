@@ -1,0 +1,17 @@
+Experimental Group Partition 1 - 2025-05-09 06:57:21
+======================================================================
+Testing 5 different LightGBM loss functions:
+- regression_l1
+- huber (with huber_delta=1.0)
+- fair (with fair_c=1.0)
+- poisson
+- quantile (with alpha=0.5)
+
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Verifying loss function configuration for: regression_l1
+Configured objective: regression_l1
+Configured loss_function: regression_l1
+Starting model training with regression_l1 loss function

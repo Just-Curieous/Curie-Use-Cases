@@ -1,0 +1,86 @@
+# Prompt for Stock Return Prediction Optimization
+
+I've developed a machine learning model for predicting stock returns using historical factors. My current implementation uses LightGBM with a rolling window approach. I'd like your help exploring various optimization strategies to improve my model's performance.
+
+## Current Implementation Details
+
+My model:
+- Uses LightGBM regression to predict stock returns
+- Trains on historical factor data (multiple features)
+- Applies a rolling window approach (training on previous N years to predict next year)
+- Uses rank correlation as the main evaluation metric
+- Implements ensemble learning by averaging multiple model predictions
+- Stock data is downloaded and included in the code, which you can directly use without additional operations.
+- Code instructions can be found in README.md
+
+## Areas for Optimization
+
+Please help me explore the following areas to optimize prediction performance:
+
+### 1. Feature Engineering and Selection
+- Feature importance analysis and selection methods
+- Feature transformation techniques (log, power, rank, etc.)
+- Feature interaction and polynomial features
+- Time-based feature creation (momentum, trend, volatility indicators)
+- Dimensionality reduction (PCA, t-SNE, UMAP, etc.)
+- Handling of outliers and missing data
+
+### 2. Model Architecture
+- Alternative models beyond LightGBM (XGBoost, CatBoost, Random Forest, Neural Networks)
+- Hyperparameter optimization approaches
+- Ensemble methods (stacking, blending, voting)
+- Multi-level models (separate models for different market regimes)
+- Time series specific approaches (ARIMA, Prophet, etc.)
+- Deep learning architectures for time series (LSTM, GRU, Transformers)
+
+### 3. Training Methodology
+- Cross-validation strategies for time series
+- Dynamic vs. fixed training window sizes
+- Weighting of training samples (recent data more important?)
+- Handling class imbalance if using classification approach
+- Regularization techniques
+- Adaptive learning rates and schedules
+
+### 4. Evaluation Framework
+- Alternative metrics beyond rank correlation
+- Portfolio construction simulation and backtest
+- Robustness testing across different market regimes
+- Out-of-sample testing approaches
+- Evaluation of prediction stability over time
+
+### 5. Data Preprocessing
+- Stock filtering criteria optimization
+- Normalization/standardization approaches
+- Outlier handling methods
+- Missing data imputation techniques
+- Data augmentation possibilities
+
+### 6. Market Regime Analysis
+- Market state detection and conditioning
+- Sector/industry-specific models
+- Volatility regime consideration
+- Macro environment incorporation
+
+### 7. Advanced Techniques
+- Online learning / incremental learning approaches
+- Transfer learning possibilities
+- Bayesian optimization for hyperparameters
+- Meta-learning approaches
+- Reinforcement learning for dynamic strategy adjustment
+- Explainable AI techniques for model interpretation
+
+### 8. Implementation Efficiency
+- Computation optimization (distributed training, GPU acceleration)
+- Data pipeline optimization
+- Model serving and inference optimization
+
+## For Each Area
+
+For each optimization area you explore, please:
+1. Explain the theoretical approach and why it might help
+2. Provide specific implementation recommendations
+3. Suggest reasonable parameter ranges or values to test
+4. Discuss potential tradeoffs, risks, or considerations
+5. Provide sample code snippets where applicable
+
+Feel free to focus on areas you believe will give the biggest performance improvements first, and please provide evidence or reasoning for your recommendations whenever possible.

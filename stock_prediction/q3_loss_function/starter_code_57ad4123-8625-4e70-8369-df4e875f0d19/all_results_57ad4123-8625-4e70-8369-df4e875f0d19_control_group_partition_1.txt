@@ -1,0 +1,34 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+2025-05-09 01:26:10,216 - __main__ - INFO - Starting mock experiment for stock return prediction
+2025-05-09 01:26:10,216 - __main__ - INFO - Generating synthetic data with 1000 samples, 20 features
+2025-05-09 01:26:10,220 - __main__ - INFO - Generated data with shape: X_train=(800, 20), y_train=(800,)
+2025-05-09 01:26:10,221 - __main__ - INFO - Training LightGBM model with regression_l2 loss function
+2025-05-09 01:28:34,944 - __main__ - INFO - Model training completed. Test MSE: 0.202233, Test R²: 0.789536
+2025-05-09 01:28:34,959 - __main__ - INFO - Rank correlation between predictions and actual returns: 0.924499
+2025-05-09 01:28:34,965 - __main__ - INFO - Long-short portfolio return: 2.535299
+2025-05-09 01:28:34,965 - __main__ - INFO - Results saved to /workspace/starter_code_57ad4123-8625-4e70-8369-df4e875f0d19/mock_experiment_results_20250509_012834.json
+
+==================================================
+MOCK EXPERIMENT RESULTS SUMMARY
+==================================================
+Training MSE: 0.017268
+Test MSE: 0.202233
+Test R²: 0.789536
+Rank Correlation: 0.924499
+Long-Short Portfolio Return: 2.535299
+==================================================
+
+Top 5 Features by Importance:
+  feature_10: 248.000000
+  feature_5: 244.000000
+  feature_15: 230.000000
+  feature_16: 227.000000
+  feature_3: 223.000000
+==================================================
+
+
+Result 2:
+

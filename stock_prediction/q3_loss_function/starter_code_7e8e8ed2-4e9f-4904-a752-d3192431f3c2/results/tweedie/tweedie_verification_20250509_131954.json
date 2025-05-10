@@ -1,0 +1,17 @@
+{
+    "loss_function": "tweedie",
+    "mse": 1.7168051124128375e+41,
+    "mae": 5.2187150449045004e+19,
+    "mape": 3.9309872215469405e+20,
+    "rank_correlation": 0.45968352547400404,
+    "is_using_correct_objective": true,
+    "special_params_verified": {
+        "is_tweedie_variance_power_set": true,
+        "expected_variance_power": 1.5,
+        "actual_variance_power": 1.5
+    },
+    "booster_params": {
+        "objective": "tweedie",
+        "tweedie_variance_power": 1.5
+    }
+}

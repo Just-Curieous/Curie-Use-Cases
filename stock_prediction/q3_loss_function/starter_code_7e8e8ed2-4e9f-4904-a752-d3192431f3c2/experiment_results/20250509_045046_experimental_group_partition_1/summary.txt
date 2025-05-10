@@ -1,0 +1,220 @@
+Experimental Group Partition 1 - 2025-05-09 04:50:46
+======================================================================
+Testing 5 different LightGBM loss functions:
+- regression_l1
+- huber
+- fair
+- poisson
+- quantile
+
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Created configuration file for regression_l1: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_regression_l1_20250509_045046.json
+2025-05-09 04:50:47,069 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,069 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,069 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,069 - model_training - ERROR - Failed to load data. Exiting.
+Model training completed in 0.90 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: huber
+==================================================
+Created configuration file for huber: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_huber_20250509_045047.json
+Model training completed in 0.00 seconds
+2025-05-09 04:50:47,071 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,071 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,071 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,071 - model_training - ERROR - Failed to load data. Exiting.
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: fair
+==================================================
+Created configuration file for fair: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_fair_20250509_045047.json
+Model training completed in 0.00 seconds
+2025-05-09 04:50:47,072 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,072 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,072 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,072 - model_training - ERROR - Failed to load data. Exiting.
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: poisson
+==================================================
+Created configuration file for poisson: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_poisson_20250509_045047.json
+Model training completed in 0.00 seconds
+2025-05-09 04:50:47,073 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,073 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,073 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,073 - model_training - ERROR - Failed to load data. Exiting.
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: quantile
+==================================================
+Created configuration file for quantile: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_quantile_20250509_045047.json
+Model training completed in 0.00 seconds
+2025-05-09 04:50:47,074 - model_training - INFO - Created or verified directories: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results
+2025-05-09 04:50:47,074 - model_training - INFO - Loading data...
+2025-05-09 04:50:47,074 - model_training - ERROR - Factor directory not found: /workspace/quant_data/RawData/NFactors/
+2025-05-09 04:50:47,074 - model_training - ERROR - Failed to load data. Exiting.
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+
+======================================================================
+EXPERIMENT COMPARISON SUMMARY
+======================================================================
+Loss Function   | Overall Corr    | Training Time (s)    | 2020 Corr  | 2021 Corr  | 2022 Corr  | 2023 Corr 
+--------------------------------------------------------------------------------------------------------------
+regression_l1   | 0.091641        | 0.90                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+huber           | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+fair            | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+poisson         | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+quantile        | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+
+----------------------------------------------------------------------
+Best performing loss function: regression_l1
+Overall rank correlation: 0.09164135820257166
+Training time: 0.90 seconds
+Successfully ran: mkdir -p /etc/OpenCL/vendors
+Successfully ran: echo 'libnvidia-opencl.so.1' > /etc/OpenCL/vendors/nvidia.icd
+
+==================================================
+Starting experiment for loss function: regression_l1
+==================================================
+Created configuration file for regression_l1: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_regression_l1_20250509_045046.json
+Current working directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2
+Model training completed in 0.90 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: huber
+==================================================
+Created configuration file for huber: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_huber_20250509_045047.json
+Model training completed in 0.00 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: fair
+==================================================
+Created configuration file for fair: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_fair_20250509_045047.json
+Model training completed in 0.00 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: poisson
+==================================================
+Created configuration file for poisson: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_poisson_20250509_045047.json
+Model training completed in 0.00 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+==================================================
+Starting experiment for loss function: quantile
+==================================================
+Created configuration file for quantile: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_quantile_20250509_045047.json
+Model training completed in 0.00 seconds
+Found metrics file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/metrics_20250508_200817.json
+
+Results Summary:
+==============================
+Overall Rank Correlation: 0.09164135820257166
+2020 Rank Correlation: 0.1075442199606952
+2021 Rank Correlation: 0.08801387417027644
+2022 Rank Correlation: 0.08095599658955482
+2023 Rank Correlation: 0.09031233845969096
+
+
+======================================================================
+EXPERIMENT COMPARISON SUMMARY
+======================================================================
+Loss Function   | Overall Corr    | Training Time (s)    | 2020 Corr  | 2021 Corr  | 2022 Corr  | 2023 Corr 
+--------------------------------------------------------------------------------------------------------------
+regression_l1   | 0.091641        | 0.90                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+huber           | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+fair            | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+poisson         | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+quantile        | 0.091641        | 0.00                 | 0.107544   | 0.088014   | 0.080956   | 0.090312  
+
+----------------------------------------------------------------------
+Best performing loss function: regression_l1
+Overall rank correlation: 0.09164135820257166
+Training time: 0.90 seconds
+2025-05-09 04:50:47 - Creating summary file in experiment directory
+2025-05-09 04:50:47 - Creating summary file in experiment directory

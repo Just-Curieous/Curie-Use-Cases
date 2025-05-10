@@ -1,0 +1,20 @@
+{
+    "timestamp": "20250509_130514",
+    "comparison": {
+        "mape": {
+            "mse": 1.5071680705126894e+41,
+            "mae": 2.917765323066314e+19,
+            "mape": 50.508273274805596,
+            "rank_correlation": 0.6339399190140176
+        },
+        "tweedie": {
+            "mse": 1.7168051124128375e+41,
+            "mae": 5.2187150449045004e+19,
+            "mape": 3.9309872215469405e+20,
+            "rank_correlation": 0.45968352547400404,
+            "tweedie_variance_power": 1.5
+        },
+        "better_loss_function": "mape",
+        "rank_correlation_difference": 0.17425639354001354
+    }
+}

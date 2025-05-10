@@ -1,0 +1,12 @@
+{
+    "loss_function": "mape",
+    "mse": 1.5071680705126894e+41,
+    "mae": 2.917765323066314e+19,
+    "mape": 50.508273274805596,
+    "rank_correlation": 0.6339399190140176,
+    "is_using_correct_objective": true,
+    "special_params_verified": {},
+    "booster_params": {
+        "objective": "mape"
+    }
+}

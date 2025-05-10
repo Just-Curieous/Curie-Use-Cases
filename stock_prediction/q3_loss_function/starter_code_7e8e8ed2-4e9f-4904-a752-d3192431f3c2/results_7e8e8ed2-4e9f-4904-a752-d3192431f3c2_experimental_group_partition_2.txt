@@ -1,0 +1,65 @@
+Experimental Group Partition 2 - LightGBM Loss Function Verification - Fri May  9 13:19:52 UTC 2025
+=========================================================================
+Verifying two LightGBM loss functions:
+- mape (Mean Absolute Percentage Error)
+- tweedie (Tweedie regression with tweedie_variance_power=1.5)
+
+2025-05-09 13:19:52 - Starting LightGBM loss function verification experiment for partition 2
+2025-05-09 13:19:52 - Starting LightGBM loss function verification experiment for partition 2
+2025-05-09 13:19:52 - Timestamp: 20250509_131952
+2025-05-09 13:19:52 - Timestamp: 20250509_131952
+2025-05-09 13:19:52 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_131952_experimental_group_partition_2
+2025-05-09 13:19:52 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_131952_experimental_group_partition_2
+2025-05-09 13:19:52 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 13:19:52 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 13:19:52 - Activating micromamba environment
+2025-05-09 13:19:52 - Activating micromamba environment
+2025-05-09 13:19:52 - Running LightGBM loss function verification script for partition 2
+2025-05-09 13:19:52 - Running LightGBM loss function verification script for partition 2
+
+================================================================================
+LIGHTGBM MAPE LOSS FUNCTION VERIFICATION
+================================================================================
+Timestamp: 20250509_131954
+Loss Function: mape
+MSE: 150716807051268936937310621288593746821120.000000
+MAE: 29177653230663139328.000000
+MAPE: 50.508273%
+Rank Correlation: 0.633940
+Using mape as Objective: True
+Booster Parameters: {'objective': 'mape'}
+================================================================================
+
+
+================================================================================
+LIGHTGBM TWEEDIE LOSS FUNCTION VERIFICATION
+================================================================================
+Timestamp: 20250509_131954
+Loss Function: tweedie
+Tweedie Variance Power: 1.5
+MSE: 171680511241283752486570736783287226728448.000000
+MAE: 52187150449045004288.000000
+MAPE: 393098722154694049792.000000%
+Rank Correlation: 0.459684
+Using tweedie as Objective: True
+Tweedie Variance Power Set: True
+Booster Parameters: {'objective': 'tweedie', 'tweedie_variance_power': 1.5}
+================================================================================
+
+
+================================================================================
+LOSS FUNCTION COMPARISON SUMMARY
+================================================================================
+Timestamp: 20250509_131954
+
+Metric               | MAPE            | Tweedie        
+MSE                  | 150716807051268936937310621288593746821120.000000 | 171680511241283752486570736783287226728448.000000
+MAE                  | 29177653230663139328.000000 | 52187150449045004288.000000
+MAPE                 | 50.508273%      | 393098722154694049792.000000%
+Rank Correlation     | 0.633940        | 0.459684       
+
+--------------------------------------------------------------------------------
+Better performing loss function based on rank correlation: mape
+Rank correlation difference: 0.174256
+--------------------------------------------------------------------------------
+

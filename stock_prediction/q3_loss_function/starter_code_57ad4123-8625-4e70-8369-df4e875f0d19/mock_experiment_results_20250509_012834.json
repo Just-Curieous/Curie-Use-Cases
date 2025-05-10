@@ -1,0 +1,41 @@
+{
+    "timestamp": "20250509_012834",
+    "training_metrics": {
+        "train_mse": 0.017267620935953878,
+        "test_mse": 0.20223256365120673,
+        "train_r2": 0.9832870698329129,
+        "test_r2": 0.7895357484353277,
+        "best_iteration": 100
+    },
+    "rank_correlation": 0.9244986124653118,
+    "portfolio_returns": {
+        "quantile_1": -1.3961691650771777,
+        "quantile_2": -0.6236576045974784,
+        "quantile_3": -0.1061571907136554,
+        "quantile_4": 0.37993669585558026,
+        "quantile_5": 1.1391296544954126,
+        "long_short": 2.5352988195725903
+    },
+    "feature_importance": {
+        "feature_0": 75.0,
+        "feature_1": 82.0,
+        "feature_2": 101.0,
+        "feature_3": 223.0,
+        "feature_4": 59.0,
+        "feature_5": 244.0,
+        "feature_6": 200.0,
+        "feature_7": 48.0,
+        "feature_8": 223.0,
+        "feature_9": 213.0,
+        "feature_10": 248.0,
+        "feature_11": 33.0,
+        "feature_12": 32.0,
+        "feature_13": 62.0,
+        "feature_14": 201.0,
+        "feature_15": 230.0,
+        "feature_16": 227.0,
+        "feature_17": 48.0,
+        "feature_18": 210.0,
+        "feature_19": 201.0
+    }
+}

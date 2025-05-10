@@ -1,0 +1,163 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Experimental Group Partition 2 - LightGBM Loss Function Verification - Fri May  9 13:05:12 UTC 2025
+=========================================================================
+Verifying two LightGBM loss functions:
+- mape (Mean Absolute Percentage Error)
+- tweedie (Tweedie regression with tweedie_variance_power=1.5)
+
+2025-05-09 13:05:12 - Starting LightGBM loss function verification experiment for partition 2
+2025-05-09 13:05:12 - Starting LightGBM loss function verification experiment for partition 2
+2025-05-09 13:05:12 - Timestamp: 20250509_130512
+2025-05-09 13:05:12 - Timestamp: 20250509_130512
+2025-05-09 13:05:12 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_130512_experimental_group_partition_2
+2025-05-09 13:05:12 - Creating experiment directory: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_130512_experimental_group_partition_2
+2025-05-09 13:05:12 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 13:05:12 - Setting up OpenCL for GPU support (skipping if not possible)
+2025-05-09 13:05:12 - Activating micromamba environment
+2025-05-09 13:05:12 - Activating micromamba environment
+2025-05-09 13:05:12 - Running LightGBM loss function verification script for partition 2
+2025-05-09 13:05:12 - Running LightGBM loss function verification script for partition 2
+/workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+
+================================================================================
+LIGHTGBM MAPE LOSS FUNCTION VERIFICATION
+================================================================================
+Timestamp: 20250509_130514
+Loss Function: mape
+MSE: 150716807051268936937310621288593746821120.000000
+MAE: 29177653230663139328.000000
+MAPE: 50.508273%
+Rank Correlation: 0.633940
+Using mape as Objective: True
+Booster Parameters: {'objective': 'mape'}
+================================================================================
+
+/workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+
+================================================================================
+LIGHTGBM TWEEDIE LOSS FUNCTION VERIFICATION
+================================================================================
+Timestamp: 20250509_130514
+Loss Function: tweedie
+Tweedie Variance Power: 1.5
+MSE: 171680511241283752486570736783287226728448.000000
+MAE: 52187150449045004288.000000
+MAPE: 393098722154694049792.000000%
+Rank Correlation: 0.459684
+Using tweedie as Objective: True
+Tweedie Variance Power Set: True
+Booster Parameters: {'objective': 'tweedie', 'tweedie_variance_power': 1.5}
+================================================================================
+
+
+================================================================================
+LOSS FUNCTION COMPARISON SUMMARY
+================================================================================
+Timestamp: 20250509_130514
+
+Metric               | MAPE            | Tweedie        
+MSE                  | 150716807051268936937310621288593746821120.000000 | 171680511241283752486570736783287226728448.000000
+MAE                  | 29177653230663139328.000000 | 52187150449045004288.000000
+MAPE                 | 50.508273%      | 393098722154694049792.000000%
+Rank Correlation     | 0.633940        | 0.459684       
+
+--------------------------------------------------------------------------------
+Better performing loss function based on rank correlation: mape
+Rank correlation difference: 0.174256
+--------------------------------------------------------------------------------
+
+Starting LightGBM loss function verification for partition 2
+============================================================
+
+------------------------------------------------------------
+Testing loss function: mape
+------------------------------------------------------------
+Created configuration file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_mape_20250509_130514.json
+
+Verifying mape loss function implementation...
+Training until validation scores don't improve for 50 rounds
+Early stopping, best iteration is:
+[11]	valid_0's mape: 0.505083
+
+Verification Results:
+============================================================
+Loss Function: mape
+MSE: 150716807051268936937310621288593746821120.000000
+MAE: 29177653230663139328.000000
+MAPE: 50.508273%
+Rank Correlation: 0.633940
+Using mape as Objective: True
+Booster Parameters: {'objective': 'mape'}
+
+Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/mape/mape_verification_20250509_130514.json
+
+------------------------------------------------------------
+Testing loss function: tweedie
+With special parameters: {'tweedie_variance_power': 1.5}
+------------------------------------------------------------
+Created configuration file: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/config_tweedie_20250509_130807.json
+
+Verifying tweedie loss function implementation...
+Training until validation scores don't improve for 50 rounds
+[100]	valid_0's tweedie: 2.64722e+10
+[200]	valid_0's tweedie: 1.9483e+10
+Early stopping, best iteration is:
+[175]	valid_0's tweedie: 1.76271e+10
+
+Verification Results:
+============================================================
+Loss Function: tweedie
+MSE: 171680511241283752486570736783287226728448.000000
+MAE: 52187150449045004288.000000
+MAPE: 393098722154694049792.000000%
+Rank Correlation: 0.459684
+Using tweedie as Objective: True
+Tweedie Variance Power Set: True
+Expected Variance Power: 1.5
+Actual Variance Power: 1.5
+Booster Parameters: {'objective': 'tweedie', 'tweedie_variance_power': 1.5}
+
+Results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/tweedie/tweedie_verification_20250509_130514.json
+
+================================================================================
+COMPARISON OF LOSS FUNCTIONS
+================================================================================
+Metric               | MAPE            | Tweedie        
+MSE                  | 150716807051268936937310621288593746821120.000000 | 171680511241283752486570736783287226728448.000000
+MAE                  | 29177653230663139328.000000 | 52187150449045004288.000000
+MAPE                 | 50.508273%      | 393098722154694049792.000000%
+Rank Correlation     | 0.633940        | 0.459684       
+
+--------------------------------------------------------------------------------
+Better performing loss function based on rank correlation: mape
+Rank correlation difference: 0.174256
+--------------------------------------------------------------------------------
+
+Comparison results saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results/loss_function_comparison_20250509_130514.json
+
+VERIFICATION SUCCESSFUL: LightGBM is correctly using both loss functions
+- MAPE loss function is correctly configured
+- Tweedie loss function is correctly configured with tweedie_variance_power=1.5
+2025-05-09 13:16:03 - Copying verification results to experiment directory
+2025-05-09 13:16:03 - Copying verification results to experiment directory
+2025-05-09 13:16:03 - Copied MAPE verification results: mape_verification_20250509_130514.json
+2025-05-09 13:16:03 - Copied MAPE verification results: mape_verification_20250509_130514.json
+2025-05-09 13:16:03 - Copied Tweedie verification results: tweedie_verification_20250509_130514.json
+2025-05-09 13:16:03 - Copied Tweedie verification results: tweedie_verification_20250509_130514.json
+2025-05-09 13:16:03 - Copied comparison results: loss_function_comparison_20250509_130514.json
+2025-05-09 13:16:03 - Copied comparison results: loss_function_comparison_20250509_130514.json
+2025-05-09 13:16:03 - Final summary saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_130512_experimental_group_partition_2/final_summary.txt
+2025-05-09 13:16:03 - Final summary saved to: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/experiment_results/20250509_130512_experimental_group_partition_2/final_summary.txt
+2025-05-09 13:16:03 - Experiment completed successfully
+2025-05-09 13:16:03 - Experiment completed successfully
+2025-05-09 13:16:04 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_experimental_group_partition_2.txt
+2025-05-09 13:16:04 - Full logs available at: /workspace/starter_code_7e8e8ed2-4e9f-4904-a752-d3192431f3c2/results_7e8e8ed2-4e9f-4904-a752-d3192431f3c2_experimental_group_partition_2.txt
+
+
+Result 2:
+
