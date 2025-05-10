@@ -512,5 +512,6 @@ if __name__ == "__main__":
         import sys
         sys.exit("Config file not found. Specify a valid path using --config.")
     
+    logger.info(f">>> Start training with Config: {config} <<<")
     # Run main function
     main(config)
