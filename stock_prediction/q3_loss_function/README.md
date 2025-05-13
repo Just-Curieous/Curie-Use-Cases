@@ -75,16 +75,5 @@ This directory also includes:
   * [starter\_code\_57ad4123-8625-4e70-8369-df4e875f0d19](./starter_code_57ad4123-8625-4e70-8369-df4e875f0d19)
   * [starter\_code\_ac20158a-ee6d-48ad-a2a6-9f6cb203d889](./starter_code_ac20158a-ee6d-48ad-a2a6-9f6cb203d889)
 
+
  
-## Parital Results from [Report](./loss-question_20250508135450_iter1.md)
-
-| Loss Function | Overall | 2020   | 2021   | 2022   | 2023   |
-|---------------|---------|--------|--------|--------|--------|
-| regression_l2 (MSE) | 0.0916 | 0.1075 | 0.0880 | 0.0810 | 0.0903 |
-| regression_l1 (MAE) | 0.0700 | 0.0650 | 0.0800 | 0.0600 | 0.0750 |
-| huber          | 0.0800 | 0.0750 | 0.0900 | 0.0700 | 0.0850 |
-| fair           | 0.0900 | 0.0850 | 0.1000 | 0.0800 | 0.0950 |
-| poisson        | 0.1000 | 0.0950 | 0.1100 | 0.0900 | 0.1050 |
-| quantile       | 0.1100 | 0.1050 | 0.1200 | 0.1000 | 0.1150 |
-
-Among the standard alternatives, the quantile loss function showed the best overall rank correlation (0.1100), followed by poisson (0.1000) and fair (0.0900).
