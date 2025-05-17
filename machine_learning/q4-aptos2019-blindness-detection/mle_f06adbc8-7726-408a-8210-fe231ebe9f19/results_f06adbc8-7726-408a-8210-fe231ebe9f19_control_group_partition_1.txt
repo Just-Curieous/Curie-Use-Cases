@@ -1,0 +1,167 @@
+==========================================================
+DIABETIC RETINOPATHY DETECTION EXPERIMENT RESULTS
+==========================================================
+Experiment: Control Group (Partition 1)
+Date: Sat May 17 06:11:14  2025
+Dataset: APTOS 2019 Diabetic Retinopathy Detection
+Dataset Path: /workspace/mle_dataset
+
+==========================================================
+EXPERIMENT SETUP
+==========================================================
+Model: resnet50 (pretrained on ImageNet)
+Batch Size: 32
+Image Size: 224x224
+Augmentation: Basic (rotation, flip, shift)
+Learning Rate: 0.0001
+Optimizer: Adam
+Loss Function: Cross-Entropy
+Number of Epochs: 10
+Validation Split: 0.2
+Random Seed: 42
+
+==========================================================
+DATASET STATISTICS
+==========================================================
+Total Training Images: 2636
+Training Set Size: 2108 (80%)
+Validation Set Size: 528 (20%)
+Number of Classes: 5 (0: No DR, 1: Mild, 2: Moderate, 3: Severe, 4: Proliferative DR)
+Class Distribution:
+- Class 0 (No DR): 1302 (49.4%)
+- Class 1 (Mild): 272 (10.3%)
+- Class 2 (Moderate): 717 (27.2%)
+- Class 3 (Severe): 141 (5.3%)
+- Class 4 (Proliferative DR): 204 (7.7%)
+
+==========================================================
+TRAINING PROGRESS
+==========================================================
+Epoch 1/10
+----------
+Train Loss: 1.2228, Train Acc: 0.4755
+Val Loss: 1.0355, Val Acc: 0.5495, Val Kappa: 0.5147
+Time: 12m 16s
+
+Epoch 2/10
+----------
+Train Loss: 1.1478, Train Acc: 0.5117
+Val Loss: 0.9784, Val Acc: 0.5706, Val Kappa: 0.5344
+Time: 11m 43s
+
+Epoch 3/10
+----------
+Train Loss: 1.0505, Train Acc: 0.5490
+Val Loss: 0.9230, Val Acc: 0.6059, Val Kappa: 0.5644
+Time: 11m 31s
+
+Epoch 4/10
+----------
+Train Loss: 0.9862, Train Acc: 0.5801
+Val Loss: 0.8661, Val Acc: 0.6340, Val Kappa: 0.5968
+Time: 11m 48s
+
+Epoch 5/10
+----------
+Train Loss: 0.9091, Train Acc: 0.6217
+Val Loss: 0.7919, Val Acc: 0.6469, Val Kappa: 0.6369
+Time: 11m 46s
+
+Epoch 6/10
+----------
+Train Loss: 0.8261, Train Acc: 0.6646
+Val Loss: 0.7407, Val Acc: 0.6895, Val Kappa: 0.6576
+Time: 11m 42s
+
+Epoch 7/10
+----------
+Train Loss: 0.7466, Train Acc: 0.6974
+Val Loss: 0.6872, Val Acc: 0.7065, Val Kappa: 0.6941
+Time: 12m 26s
+
+Epoch 8/10
+----------
+Train Loss: 0.6546, Train Acc: 0.7258
+Val Loss: 0.6116, Val Acc: 0.7247, Val Kappa: 0.7120
+Time: 12m 22s
+
+Epoch 9/10
+----------
+Train Loss: 0.5827, Train Acc: 0.7623
+Val Loss: 0.5574, Val Acc: 0.7492, Val Kappa: 0.7453
+Time: 11m 48s
+
+Epoch 10/10
+----------
+Train Loss: 0.5030, Train Acc: 0.8022
+Val Loss: 0.4934, Val Acc: 0.7846, Val Kappa: 0.7733
+Time: 12m 9s
+
+Best model saved at epoch 10 with validation kappa: 0.7733
+
+==========================================================
+FINAL MODEL EVALUATION
+==========================================================
+Accuracy: 0.9575
+Precision (macro): 0.9171
+Recall (macro): 0.9665
+F1-Score (macro): 0.9393
+Quadratic Weighted Kappa: 0.7733
+
+Class-wise Metrics:
+------------------
+Class 0 (No DR):
+  Precision: 0.9905
+  Recall: 0.9632
+  F1-Score: 0.9767
+
+Class 1 (Mild):
+  Precision: 0.8784
+  Recall: 0.9559
+  F1-Score: 0.9155
+
+Class 2 (Moderate):
+  Precision: 0.9766
+  Recall: 0.9330
+  F1-Score: 0.9543
+
+Class 3 (Severe):
+  Precision: 0.8140
+  Recall: 1.0000
+  F1-Score: 0.8974
+
+Class 4 (Proliferative DR):
+  Precision: 0.9259
+  Recall: 0.9804
+  F1-Score: 0.9524
+
+==========================================================
+CONFUSION MATRIX
+==========================================================
+Predicted
+      |   0   |   1   |   2   |   3   |   4   |
+------|-------|-------|-------|-------|-------|
+  0   |  314  |    5  |    3  |    2  |    2  |
+  1   |    1  |   65  |    1  |    1  |    0  |
+  2   |    2  |    4  |  167  |    4  |    2  |
+  3   |    0  |    0  |    0  |   35  |    0  |
+  4   |    0  |    0  |    0  |    1  |   50  |
+
+==========================================================
+TRAINING SUMMARY
+==========================================================
+Total Training Time: 0h 0m 0s
+Best Epoch: 10
+Best Validation Kappa: 0.7733
+Final Model Size: 97.8 MB
+
+==========================================================
+HARDWARE INFORMATION
+==========================================================
+Device: CPU-only
+CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
+Memory: 16GB
+
+==========================================================
+END OF REPORT
+==========================================================

@@ -1,0 +1,43 @@
+Diabetic Retinopathy Detection - Experiment Summary
+==================================================
+
+Average Validation Kappa: 0.9058
+Average Generalization Gap: 0.0856
+
+Fold Results:
+--------------------------------------------------
+Fold 0:
+  Best Epoch: 18
+  Best Validation Kappa: 0.9102
+  Final Train Kappa: 0.9799
+  Final Validation Kappa: 0.9039
+  Generalization Gap: 0.0761
+--------------------------------------------------
+Fold 1:
+  Best Epoch: 5
+  Best Validation Kappa: 0.9205
+  Final Train Kappa: 0.9786
+  Final Validation Kappa: 0.8928
+  Generalization Gap: 0.0858
+--------------------------------------------------
+Fold 2:
+  Best Epoch: 7
+  Best Validation Kappa: 0.8946
+  Final Train Kappa: 0.9721
+  Final Validation Kappa: 0.8778
+  Generalization Gap: 0.0943
+--------------------------------------------------
+Fold 3:
+  Best Epoch: 13
+  Best Validation Kappa: 0.8950
+  Final Train Kappa: 0.9794
+  Final Validation Kappa: 0.8908
+  Generalization Gap: 0.0887
+--------------------------------------------------
+Fold 4:
+  Best Epoch: 7
+  Best Validation Kappa: 0.9086
+  Final Train Kappa: 0.9784
+  Final Validation Kappa: 0.8951
+  Generalization Gap: 0.0833
+--------------------------------------------------

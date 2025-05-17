@@ -1,0 +1,26 @@
+2025-05-17 07:09:40,618 - __main__ - INFO - Starting experiment 6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396 - control_group_partition_1
+2025-05-17 07:09:40,618 - __main__ - INFO - Timestamp: 2025-05-17 07:09:40
+2025-05-17 07:09:40,619 - __main__ - INFO - Running cross-validation...
+2025-05-17 07:09:43,621 - __main__ - ERROR - Error during experiment: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+Traceback (most recent call last):
+  File "/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/src/main.py", line 42, in main
+    summary = run_cross_validation()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/src/train.py", line 242, in run_cross_validation
+    fold_results = train_and_validate(fold)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/src/train.py", line 107, in train_and_validate
+    scheduler = ReduceLROnPlateau(
+                ^^^^^^^^^^^^^^^^^^
+TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+2025-05-17 07:13:42,659 - __main__ - INFO - Starting experiment 6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396 - control_group_partition_1
+2025-05-17 07:13:42,660 - __main__ - INFO - Timestamp: 2025-05-17 07:13:42
+2025-05-17 07:13:42,661 - __main__ - INFO - Running cross-validation...
+2025-05-17 09:18:35,286 - __main__ - INFO - Starting experiment 6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396 - control_group_partition_1
+2025-05-17 09:18:35,286 - __main__ - INFO - Timestamp: 2025-05-17 09:18:35
+2025-05-17 09:18:35,287 - __main__ - INFO - Running cross-validation...
+2025-05-17 10:55:05,459 - __main__ - INFO - Cross-validation completed in 221.38 minutes
+2025-05-17 10:55:05,460 - __main__ - INFO - Average Validation Kappa: 0.9058
+2025-05-17 10:55:05,460 - __main__ - INFO - Average Generalization Gap: 0.0856
+2025-05-17 10:55:05,460 - __main__ - INFO - Results saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/results/results_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396_control_group_partition_1.txt
+2025-05-17 10:55:05,460 - __main__ - INFO - Experiment completed successfully

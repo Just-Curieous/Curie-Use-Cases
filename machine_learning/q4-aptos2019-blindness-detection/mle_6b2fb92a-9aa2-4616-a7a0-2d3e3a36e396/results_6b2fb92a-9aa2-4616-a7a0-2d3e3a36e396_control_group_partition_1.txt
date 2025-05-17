@@ -1,0 +1,429 @@
+=== Installing Required Dependencies ===
+Installing seaborn...
+Installing torch and torchvision...
+error    libmamba Could not solve for environment specs
+    The following packages are incompatible
+    ├─ pytorch =* * is not installable because there are no viable options
+    │  ├─ pytorch [1.10.0|1.10.1|...|2.5.1] would require
+    │  │  └─ typing_extensions =* *, which does not exist (perhaps a missing channel);
+    │  └─ pytorch [1.5.1|1.6.0] would require
+    │     └─ ninja =* *, which does not exist (perhaps a missing channel);
+    └─ torchvision =* * is not installable because there are no viable options
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.6,<3.7.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.7,<3.8.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.8,<3.9.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|0.8.2|0.9.0|0.9.1] would require
+       │  └─ python >=3.9,<3.10.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.11.0|0.11.1|...|0.8.1] would require
+       │  └─ jpeg =* *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.12.0|0.13.0|...|0.20.1] would require
+       │  └─ requests =* *, which does not exist (perhaps a missing channel);
+       └─ torchvision 0.6.1 would require
+          └─ python >=3.5,<3.6.0a0 *, which does not exist (perhaps a missing channel).
+critical libmamba Could not solve for environment specs
+Failed to install PyTorch, continuing anyway...
+Installing pandas...
+Installing numpy...
+Installing scikit-learn...
+Installing matplotlib...
+Installing albumentations...
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Installing efficientnet-pytorch...
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Installing tqdm...
+Installing opencv...
+Dependencies installation completed.
+===============================
+=== Environment Information ===
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+GPU device: NVIDIA A40
+===============================
+Starting diabetic retinopathy detection experiment...
+Experiment ID: 6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396
+Control Group: control_group_partition_1
+===============================
+2025-05-17 09:18:35,286 - __main__ - INFO - Starting experiment 6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396 - control_group_partition_1
+2025-05-17 09:18:35,286 - __main__ - INFO - Timestamp: 2025-05-17 09:18:35
+2025-05-17 09:18:35,287 - __main__ - INFO - Running cross-validation...
+/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/venv/lib/python3.12/site-packages/albumentations/core/validation.py:111: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Training fold 1/5
+Fold 0 | Epoch 1/20
+Train Loss: 0.8833 | Train Acc: 69.73% | Train Kappa: 0.6379
+Val Loss: 0.5826 | Val Acc: 76.78% | Val Kappa: 0.8032
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 2/20
+Train Loss: 0.5995 | Train Acc: 77.85% | Train Kappa: 0.8193
+Val Loss: 0.4819 | Val Acc: 80.88% | Val Kappa: 0.8745
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 3/20
+Train Loss: 0.5487 | Train Acc: 80.01% | Train Kappa: 0.8565
+Val Loss: 0.4812 | Val Acc: 81.34% | Val Kappa: 0.8892
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 4/20
+Train Loss: 0.4863 | Train Acc: 81.03% | Train Kappa: 0.8662
+Val Loss: 0.4598 | Val Acc: 82.55% | Val Kappa: 0.8848
+Fold 0 | Epoch 5/20
+Train Loss: 0.4394 | Train Acc: 84.37% | Train Kappa: 0.9033
+Val Loss: 0.4465 | Val Acc: 82.40% | Val Kappa: 0.8904
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 6/20
+Train Loss: 0.4177 | Train Acc: 84.56% | Train Kappa: 0.8969
+Val Loss: 0.4524 | Val Acc: 82.85% | Val Kappa: 0.8935
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 7/20
+Train Loss: 0.3717 | Train Acc: 86.12% | Train Kappa: 0.9078
+Val Loss: 0.4242 | Val Acc: 84.98% | Val Kappa: 0.9136
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold0.pth
+Fold 0 | Epoch 8/20
+Train Loss: 0.3426 | Train Acc: 87.03% | Train Kappa: 0.9166
+Val Loss: 0.4430 | Val Acc: 82.40% | Val Kappa: 0.8869
+Fold 0 | Epoch 9/20
+Train Loss: 0.3204 | Train Acc: 87.94% | Train Kappa: 0.9168
+Val Loss: 0.4360 | Val Acc: 84.83% | Val Kappa: 0.9031
+Fold 0 | Epoch 10/20
+Train Loss: 0.2857 | Train Acc: 89.04% | Train Kappa: 0.9258
+Val Loss: 0.4540 | Val Acc: 82.85% | Val Kappa: 0.8891
+Fold 0 | Epoch 11/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.2632 | Train Acc: 90.10% | Train Kappa: 0.9345
+Val Loss: 0.4891 | Val Acc: 82.55% | Val Kappa: 0.8965
+Fold 0 | Epoch 12/20
+Train Loss: 0.2126 | Train Acc: 92.37% | Train Kappa: 0.9513
+Val Loss: 0.4762 | Val Acc: 84.07% | Val Kappa: 0.9098
+Fold 0 | Epoch 13/20
+Train Loss: 0.2017 | Train Acc: 93.13% | Train Kappa: 0.9552
+Val Loss: 0.4951 | Val Acc: 83.76% | Val Kappa: 0.9030
+Fold 0 | Epoch 14/20
+Train Loss: 0.1706 | Train Acc: 93.97% | Train Kappa: 0.9633
+Val Loss: 0.5575 | Val Acc: 80.58% | Val Kappa: 0.8871
+Fold 0 | Epoch 15/20
+Learning rate changed from 0.000050 to 0.000025
+Train Loss: 0.1616 | Train Acc: 94.39% | Train Kappa: 0.9631
+Val Loss: 0.5717 | Val Acc: 82.70% | Val Kappa: 0.9023
+Fold 0 | Epoch 16/20
+Train Loss: 0.1354 | Train Acc: 95.56% | Train Kappa: 0.9727
+Val Loss: 0.5328 | Val Acc: 83.92% | Val Kappa: 0.9048
+Fold 0 | Epoch 17/20
+Train Loss: 0.1200 | Train Acc: 96.17% | Train Kappa: 0.9754
+Val Loss: 0.5487 | Val Acc: 84.22% | Val Kappa: 0.9098
+Fold 0 | Epoch 18/20
+Train Loss: 0.1149 | Train Acc: 96.28% | Train Kappa: 0.9791
+Val Loss: 0.5488 | Val Acc: 84.22% | Val Kappa: 0.9117
+Fold 0 | Epoch 19/20
+Learning rate changed from 0.000025 to 0.000013
+Train Loss: 0.1118 | Train Acc: 95.90% | Train Kappa: 0.9741
+Val Loss: 0.5561 | Val Acc: 84.22% | Val Kappa: 0.9103
+Fold 0 | Epoch 20/20
+Train Loss: 0.0982 | Train Acc: 97.00% | Train Kappa: 0.9835
+Val Loss: 0.5738 | Val Acc: 83.61% | Val Kappa: 0.9060
+/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/venv/lib/python3.12/site-packages/albumentations/core/validation.py:111: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Training fold 2/5
+Fold 1 | Epoch 1/20
+Train Loss: 0.8465 | Train Acc: 70.14% | Train Kappa: 0.6931
+Val Loss: 0.5468 | Val Acc: 76.78% | Val Kappa: 0.7835
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold1.pth
+Fold 1 | Epoch 2/20
+Train Loss: 0.5845 | Train Acc: 77.50% | Train Kappa: 0.8224
+Val Loss: 0.4920 | Val Acc: 82.09% | Val Kappa: 0.8821
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold1.pth
+Fold 1 | Epoch 3/20
+Train Loss: 0.5526 | Train Acc: 79.67% | Train Kappa: 0.8519
+Val Loss: 0.4742 | Val Acc: 83.61% | Val Kappa: 0.8880
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold1.pth
+Fold 1 | Epoch 4/20
+Train Loss: 0.4586 | Train Acc: 83.19% | Train Kappa: 0.8941
+Val Loss: 0.4635 | Val Acc: 84.07% | Val Kappa: 0.8997
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold1.pth
+Fold 1 | Epoch 5/20
+Train Loss: 0.4309 | Train Acc: 83.73% | Train Kappa: 0.8904
+Val Loss: 0.4531 | Val Acc: 82.70% | Val Kappa: 0.8946
+Fold 1 | Epoch 6/20
+Train Loss: 0.3993 | Train Acc: 84.90% | Train Kappa: 0.9046
+Val Loss: 0.4603 | Val Acc: 84.67% | Val Kappa: 0.9176
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold1.pth
+Fold 1 | Epoch 7/20
+Train Loss: 0.3804 | Train Acc: 86.15% | Train Kappa: 0.9094
+Val Loss: 0.4691 | Val Acc: 83.00% | Val Kappa: 0.9000
+Fold 1 | Epoch 8/20
+Train Loss: 0.3283 | Train Acc: 88.28% | Train Kappa: 0.9226
+Val Loss: 0.4880 | Val Acc: 83.31% | Val Kappa: 0.8970
+Fold 1 | Epoch 9/20
+Train Loss: 0.3070 | Train Acc: 88.47% | Train Kappa: 0.9277
+Val Loss: 0.5936 | Val Acc: 80.73% | Val Kappa: 0.8585
+Fold 1 | Epoch 10/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.2772 | Train Acc: 89.64% | Train Kappa: 0.9313
+Val Loss: 0.4938 | Val Acc: 84.07% | Val Kappa: 0.9065
+Fold 1 | Epoch 11/20
+Train Loss: 0.2379 | Train Acc: 91.73% | Train Kappa: 0.9439
+Val Loss: 0.5154 | Val Acc: 83.92% | Val Kappa: 0.9047
+Fold 1 | Epoch 12/20
+Train Loss: 0.2093 | Train Acc: 92.49% | Train Kappa: 0.9497
+Val Loss: 0.5552 | Val Acc: 83.92% | Val Kappa: 0.9047
+Fold 1 | Epoch 13/20
+Train Loss: 0.1812 | Train Acc: 93.40% | Train Kappa: 0.9614
+Val Loss: 0.5727 | Val Acc: 84.22% | Val Kappa: 0.8962
+Fold 1 | Epoch 14/20
+Learning rate changed from 0.000050 to 0.000025
+Train Loss: 0.1535 | Train Acc: 94.84% | Train Kappa: 0.9696
+Val Loss: 0.6054 | Val Acc: 83.92% | Val Kappa: 0.8950
+Fold 1 | Epoch 15/20
+Train Loss: 0.1416 | Train Acc: 94.88% | Train Kappa: 0.9699
+Val Loss: 0.6167 | Val Acc: 82.55% | Val Kappa: 0.8863
+Fold 1 | Epoch 16/20
+Train Loss: 0.1239 | Train Acc: 95.37% | Train Kappa: 0.9754
+Val Loss: 0.6230 | Val Acc: 82.55% | Val Kappa: 0.8910
+Fold 1 | Epoch 17/20
+Train Loss: 0.1265 | Train Acc: 95.37% | Train Kappa: 0.9665
+Val Loss: 0.6387 | Val Acc: 82.85% | Val Kappa: 0.8873
+Fold 1 | Epoch 18/20
+Learning rate changed from 0.000025 to 0.000013
+Train Loss: 0.1190 | Train Acc: 95.86% | Train Kappa: 0.9728
+Val Loss: 0.6387 | Val Acc: 83.00% | Val Kappa: 0.8879
+Fold 1 | Epoch 19/20
+Train Loss: 0.1012 | Train Acc: 96.85% | Train Kappa: 0.9831
+Val Loss: 0.6580 | Val Acc: 83.00% | Val Kappa: 0.8869
+Fold 1 | Epoch 20/20
+Train Loss: 0.1159 | Train Acc: 96.09% | Train Kappa: 0.9732
+Val Loss: 0.6578 | Val Acc: 83.16% | Val Kappa: 0.8874
+/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/venv/lib/python3.12/site-packages/albumentations/core/validation.py:111: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Training fold 3/5
+Fold 2 | Epoch 1/20
+Train Loss: 0.8599 | Train Acc: 70.03% | Train Kappa: 0.6794
+Val Loss: 0.6434 | Val Acc: 74.66% | Val Kappa: 0.7787
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold2.pth
+Fold 2 | Epoch 2/20
+Train Loss: 0.5981 | Train Acc: 77.81% | Train Kappa: 0.8152
+Val Loss: 0.5926 | Val Acc: 80.42% | Val Kappa: 0.8590
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold2.pth
+Fold 2 | Epoch 3/20
+Train Loss: 0.5332 | Train Acc: 80.16% | Train Kappa: 0.8644
+Val Loss: 0.5197 | Val Acc: 80.27% | Val Kappa: 0.8654
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold2.pth
+Fold 2 | Epoch 4/20
+Train Loss: 0.4724 | Train Acc: 81.87% | Train Kappa: 0.8726
+Val Loss: 0.4837 | Val Acc: 80.42% | Val Kappa: 0.8607
+Fold 2 | Epoch 5/20
+Train Loss: 0.4278 | Train Acc: 84.26% | Train Kappa: 0.9032
+Val Loss: 0.4947 | Val Acc: 80.27% | Val Kappa: 0.8624
+Fold 2 | Epoch 6/20
+Train Loss: 0.4118 | Train Acc: 84.33% | Train Kappa: 0.9011
+Val Loss: 0.4880 | Val Acc: 82.40% | Val Kappa: 0.8831
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold2.pth
+Fold 2 | Epoch 7/20
+Train Loss: 0.3752 | Train Acc: 86.49% | Train Kappa: 0.9083
+Val Loss: 0.4644 | Val Acc: 81.79% | Val Kappa: 0.8781
+Fold 2 | Epoch 8/20
+Train Loss: 0.3306 | Train Acc: 88.28% | Train Kappa: 0.9232
+Val Loss: 0.4876 | Val Acc: 82.40% | Val Kappa: 0.8779
+Fold 2 | Epoch 9/20
+Train Loss: 0.3204 | Train Acc: 88.54% | Train Kappa: 0.9289
+Val Loss: 0.5378 | Val Acc: 81.49% | Val Kappa: 0.8801
+Fold 2 | Epoch 10/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.2861 | Train Acc: 89.87% | Train Kappa: 0.9342
+Val Loss: 0.5098 | Val Acc: 82.70% | Val Kappa: 0.8742
+Fold 2 | Epoch 11/20
+Train Loss: 0.2482 | Train Acc: 91.43% | Train Kappa: 0.9473
+Val Loss: 0.5097 | Val Acc: 82.09% | Val Kappa: 0.8801
+Fold 2 | Epoch 12/20
+Train Loss: 0.2284 | Train Acc: 91.92% | Train Kappa: 0.9509
+Val Loss: 0.5219 | Val Acc: 82.09% | Val Kappa: 0.8782
+Fold 2 | Epoch 13/20
+Train Loss: 0.1970 | Train Acc: 93.51% | Train Kappa: 0.9614
+Val Loss: 0.5383 | Val Acc: 81.64% | Val Kappa: 0.8783
+Fold 2 | Epoch 14/20
+Learning rate changed from 0.000050 to 0.000025
+Train Loss: 0.1721 | Train Acc: 94.04% | Train Kappa: 0.9650
+Val Loss: 0.5754 | Val Acc: 81.94% | Val Kappa: 0.8761
+Fold 2 | Epoch 15/20
+Train Loss: 0.1729 | Train Acc: 93.78% | Train Kappa: 0.9623
+Val Loss: 0.5518 | Val Acc: 82.70% | Val Kappa: 0.8796
+Fold 2 | Epoch 16/20
+Train Loss: 0.1415 | Train Acc: 95.30% | Train Kappa: 0.9720
+Val Loss: 0.5636 | Val Acc: 82.55% | Val Kappa: 0.8808
+Fold 2 | Epoch 17/20
+Train Loss: 0.1388 | Train Acc: 95.14% | Train Kappa: 0.9701
+Val Loss: 0.5586 | Val Acc: 82.85% | Val Kappa: 0.8793
+Fold 2 | Epoch 18/20
+Learning rate changed from 0.000025 to 0.000013
+Train Loss: 0.1356 | Train Acc: 95.64% | Train Kappa: 0.9731
+Val Loss: 0.5832 | Val Acc: 81.64% | Val Kappa: 0.8727
+Fold 2 | Epoch 19/20
+Train Loss: 0.1368 | Train Acc: 95.45% | Train Kappa: 0.9714
+Val Loss: 0.5704 | Val Acc: 82.09% | Val Kappa: 0.8780
+Fold 2 | Epoch 20/20
+Train Loss: 0.1158 | Train Acc: 95.79% | Train Kappa: 0.9757
+Val Loss: 0.5708 | Val Acc: 82.55% | Val Kappa: 0.8825
+/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/venv/lib/python3.12/site-packages/albumentations/core/validation.py:111: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Training fold 4/5
+Fold 3 | Epoch 1/20
+Train Loss: 0.8569 | Train Acc: 69.95% | Train Kappa: 0.6873
+Val Loss: 0.5813 | Val Acc: 78.00% | Val Kappa: 0.8000
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold3.pth
+Fold 3 | Epoch 2/20
+Train Loss: 0.5939 | Train Acc: 77.50% | Train Kappa: 0.8197
+Val Loss: 0.5140 | Val Acc: 80.12% | Val Kappa: 0.8552
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold3.pth
+Fold 3 | Epoch 3/20
+Train Loss: 0.5129 | Train Acc: 80.50% | Train Kappa: 0.8590
+Val Loss: 0.4906 | Val Acc: 80.88% | Val Kappa: 0.8895
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold3.pth
+Fold 3 | Epoch 4/20
+Train Loss: 0.4533 | Train Acc: 82.93% | Train Kappa: 0.8838
+Val Loss: 0.4753 | Val Acc: 81.79% | Val Kappa: 0.8894
+Fold 3 | Epoch 5/20
+Train Loss: 0.4320 | Train Acc: 84.67% | Train Kappa: 0.8983
+Val Loss: 0.4804 | Val Acc: 82.55% | Val Kappa: 0.8849
+Fold 3 | Epoch 6/20
+Train Loss: 0.4029 | Train Acc: 84.90% | Train Kappa: 0.9064
+Val Loss: 0.4946 | Val Acc: 81.49% | Val Kappa: 0.8765
+Fold 3 | Epoch 7/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.3640 | Train Acc: 87.06% | Train Kappa: 0.9142
+Val Loss: 0.5241 | Val Acc: 78.91% | Val Kappa: 0.8816
+Fold 3 | Epoch 8/20
+Train Loss: 0.3070 | Train Acc: 88.81% | Train Kappa: 0.9306
+Val Loss: 0.4878 | Val Acc: 83.46% | Val Kappa: 0.8965
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold3.pth
+Fold 3 | Epoch 9/20
+Train Loss: 0.2745 | Train Acc: 89.80% | Train Kappa: 0.9411
+Val Loss: 0.4853 | Val Acc: 82.25% | Val Kappa: 0.8901
+Fold 3 | Epoch 10/20
+Train Loss: 0.2811 | Train Acc: 90.14% | Train Kappa: 0.9377
+Val Loss: 0.5132 | Val Acc: 81.49% | Val Kappa: 0.8769
+Fold 3 | Epoch 11/20
+Train Loss: 0.2279 | Train Acc: 92.26% | Train Kappa: 0.9539
+Val Loss: 0.5278 | Val Acc: 82.09% | Val Kappa: 0.8907
+Fold 3 | Epoch 12/20
+ | Val Kappa: 0.8884
+Fold 3 | Epoch 9/20
+Train Loss: 0.3050 | Train Acc: 89.45% | Train Kappa: 0.9377
+Val Loss: 0.5152 | Val Acc: 80.73% | Val Kappa: 0.8879
+Fold 3 | Epoch 10/20
+Train Loss: 0.2861 | Train Acc: 90.06% | Train Kappa: 0.9379
+Val Loss: 0.5215 | Val Acc: 83.76% | Val Kappa: 0.8903
+Fold 3 | Epoch 11/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.2428 | Train Acc: 91.31% | Train Kappa: 0.9454
+Val Loss: 0.5656 | Val Acc: 80.42% | Val Kappa: 0.8907
+Fold 3 | Epoch 12/20
+Train Loss: 0.1992 | Train Acc: 93.02% | Train Kappa: 0.9534
+Val Loss: 0.5771 | Val Acc: 82.09% | Val Kappa: 0.8870
+Fold 3 | Epoch 13/20
+Train Loss: 0.1687 | Train Acc: 93.85% | Train Kappa: 0.9622
+Val Loss: 0.5871 | Val Acc: 81.18% | Val Kappa: 0.8802
+Fold 3 | Epoch 14/20
+Train Loss: 0.1677 | Train Acc: 94.31% | Train Kappa: 0.9653
+Val Loss: 0.5966 | Val Acc: 80.88% | Val Kappa: 0.8950
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold3.pth
+Fold 3 | Epoch 15/20
+Train Loss: 0.1516 | Train Acc: 94.39% | Train Kappa: 0.9622
+Val Loss: 0.6410 | Val Acc: 82.55% | Val Kappa: 0.8924
+Fold 3 | Epoch 16/20
+Train Loss: 0.1206 | Train Acc: 96.05% | Train Kappa: 0.9766
+Val Loss: 0.7385 | Val Acc: 79.21% | Val Kappa: 0.8678
+Fold 3 | Epoch 17/20
+Train Loss: 0.1244 | Train Acc: 95.30% | Train Kappa: 0.9740
+Val Loss: 0.6297 | Val Acc: 82.09% | Val Kappa: 0.8895
+Fold 3 | Epoch 18/20
+Learning rate changed from 0.000050 to 0.000025
+Train Loss: 0.1082 | Train Acc: 96.13% | Train Kappa: 0.9754
+Val Loss: 0.7005 | Val Acc: 80.73% | Val Kappa: 0.8801
+Fold 3 | Epoch 19/20
+Train Loss: 0.1132 | Train Acc: 95.98% | Train Kappa: 0.9730
+Val Loss: 0.7005 | Val Acc: 81.79% | Val Kappa: 0.8863
+Fold 3 | Epoch 20/20
+Train Loss: 0.0991 | Train Acc: 96.59% | Train Kappa: 0.9794
+Val Loss: 0.6942 | Val Acc: 81.49% | Val Kappa: 0.8908
+/workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/venv/lib/python3.12/site-packages/albumentations/core/validation.py:111: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Training fold 5/5
+Fold 4 | Epoch 1/20
+Train Loss: 0.8639 | Train Acc: 69.92% | Train Kappa: 0.6807
+Val Loss: 0.5896 | Val Acc: 77.09% | Val Kappa: 0.7917
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 2/20
+Train Loss: 0.6187 | Train Acc: 76.78% | Train Kappa: 0.8111
+Val Loss: 0.5836 | Val Acc: 76.78% | Val Kappa: 0.8403
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 3/20
+Train Loss: 0.5491 | Train Acc: 79.74% | Train Kappa: 0.8551
+Val Loss: 0.5089 | Val Acc: 79.97% | Val Kappa: 0.8598
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 4/20
+Train Loss: 0.4652 | Train Acc: 82.06% | Train Kappa: 0.8794
+Val Loss: 0.4528 | Val Acc: 82.55% | Val Kappa: 0.8938
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 5/20
+Train Loss: 0.4410 | Train Acc: 83.69% | Train Kappa: 0.8898
+Val Loss: 0.4353 | Val Acc: 82.55% | Val Kappa: 0.8898
+Fold 4 | Epoch 6/20
+Train Loss: 0.4093 | Train Acc: 84.29% | Train Kappa: 0.8921
+Val Loss: 0.4321 | Val Acc: 83.31% | Val Kappa: 0.9035
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 7/20
+Train Loss: 0.3735 | Train Acc: 86.19% | Train Kappa: 0.9144
+Val Loss: 0.4577 | Val Acc: 81.94% | Val Kappa: 0.8969
+Fold 4 | Epoch 8/20
+Train Loss: 0.3453 | Train Acc: 87.03% | Train Kappa: 0.9173
+Val Loss: 0.4803 | Val Acc: 83.00% | Val Kappa: 0.9086
+Model saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/models/efficientnet_b5_fold4.pth
+Fold 4 | Epoch 9/20
+Train Loss: 0.3182 | Train Acc: 87.78% | Train Kappa: 0.9184
+Val Loss: 0.5506 | Val Acc: 80.42% | Val Kappa: 0.8781
+Fold 4 | Epoch 10/20
+Train Loss: 0.2793 | Train Acc: 89.23% | Train Kappa: 0.9325
+Val Loss: 0.5515 | Val Acc: 82.09% | Val Kappa: 0.8994
+Fold 4 | Epoch 11/20
+Train Loss: 0.2588 | Train Acc: 90.44% | Train Kappa: 0.9417
+Val Loss: 0.5081 | Val Acc: 83.31% | Val Kappa: 0.9058
+Fold 4 | Epoch 12/20
+Learning rate changed from 0.000100 to 0.000050
+Train Loss: 0.2367 | Train Acc: 91.27% | Train Kappa: 0.9499
+Val Loss: 0.5251 | Val Acc: 82.70% | Val Kappa: 0.8992
+Fold 4 | Epoch 13/20
+Train Loss: 0.1823 | Train Acc: 93.47% | Train Kappa: 0.9616
+Val Loss: 0.5413 | Val Acc: 83.16% | Val Kappa: 0.9056
+Fold 4 | Epoch 14/20
+Train Loss: 0.1749 | Train Acc: 93.82% | Train Kappa: 0.9594
+Val Loss: 0.5877 | Val Acc: 83.00% | Val Kappa: 0.9043
+Fold 4 | Epoch 15/20
+Train Loss: 0.1604 | Train Acc: 94.73% | Train Kappa: 0.9675
+Val Loss: 0.5848 | Val Acc: 82.85% | Val Kappa: 0.9058
+Fold 4 | Epoch 16/20
+Learning rate changed from 0.000050 to 0.000025
+Train Loss: 0.1354 | Train Acc: 95.71% | Train Kappa: 0.9755
+Val Loss: 0.5697 | Val Acc: 83.16% | Val Kappa: 0.9038
+Fold 4 | Epoch 17/20
+Train Loss: 0.1307 | Train Acc: 95.45% | Train Kappa: 0.9717
+Val Loss: 0.5931 | Val Acc: 82.70% | Val Kappa: 0.8966
+Fold 4 | Epoch 18/20
+Train Loss: 0.1044 | Train Acc: 96.13% | Train Kappa: 0.9759
+Val Loss: 0.6245 | Val Acc: 82.85% | Val Kappa: 0.8953
+Fold 4 | Epoch 19/20
+Train Loss: 0.1100 | Train Acc: 96.21% | Train Kappa: 0.9779
+Val Loss: 0.6553 | Val Acc: 82.70% | Val Kappa: 0.9012
+Fold 4 | Epoch 20/20
+Learning rate changed from 0.000025 to 0.000013
+Train Loss: 0.1043 | Train Acc: 96.36% | Train Kappa: 0.9784
+Val Loss: 0.6606 | Val Acc: 82.70% | Val Kappa: 0.8951
+Cross-validation completed.
+Average Validation Kappa: 0.9058
+Average Generalization Gap: 0.0856
+2025-05-17 10:55:05,459 - __main__ - INFO - Cross-validation completed in 221.38 minutes
+2025-05-17 10:55:05,460 - __main__ - INFO - Average Validation Kappa: 0.9058
+2025-05-17 10:55:05,460 - __main__ - INFO - Average Generalization Gap: 0.0856
+2025-05-17 10:55:05,460 - __main__ - INFO - Results saved to /workspace/mle_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396/results/results_6b2fb92a-9aa2-4616-a7a0-2d3e3a36e396_control_group_partition_1.txt
+2025-05-17 10:55:05,460 - __main__ - INFO - Experiment completed successfully
+===============================
+Experiment completed successfully.

@@ -1,0 +1,366 @@
+Starting Diabetic Retinopathy Detection Experiment
+Experiment ID: e2e145a8-02ff-470e-8297-4c9446c8f955
+Group: control_group
+Partition: 1
+Date: Sat May 17 09:43:28 UTC 2025
+----------------------------------------
+System Information:
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU: NVIDIA A40
+----------------------------------------
+Running experiment...
+Using device: cuda
+
+==================================================
+Fold 1/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7137, Val Loss: 0.5245, Val Accuracy: 0.8058, Val Kappa: 0.8888
+Epoch 2/10 - Train Loss: 0.5532, Val Loss: 0.4779, Val Accuracy: 0.7997, Val Kappa: 0.9146
+Epoch 3/10 - Train Loss: 0.4877, Val Loss: 0.4646, Val Accuracy: 0.8164, Val Kappa: 0.9156
+Epoch 4/10 - Train Loss: 0.4868, Val Loss: 0.4577, Val Accuracy: 0.8331, Val Kappa: 0.8836
+Epoch 5/10 - Train Loss: 0.4216, Val Loss: 0.4536, Val Accuracy: 0.8164, Val Kappa: 0.8976
+Epoch 6/10 - Train Loss: 0.3765, Val Loss: 0.4115, Val Accuracy: 0.8270, Val Kappa: 0.9088
+Epoch 7/10 - Train Loss: 0.3584, Val Loss: 0.4202, Val Accuracy: 0.8239, Val Kappa: 0.9035
+Epoch 8/10 - Train Loss: 0.3297, Val Loss: 0.3758, Val Accuracy: 0.8407, Val Kappa: 0.9256
+Epoch 9/10 - Train Loss: 0.3113, Val Loss: 0.3832, Val Accuracy: 0.8315, Val Kappa: 0.9156
+Epoch 10/10 - Train Loss: 0.3008, Val Loss: 0.3805, Val Accuracy: 0.8377, Val Kappa: 0.9276
+Best Validation Kappa: 0.9276
+Training completed in 142.87 seconds
+
+==================================================
+Fold 2/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7098, Val Loss: 0.5254, Val Accuracy: 0.8103, Val Kappa: 0.8692
+Epoch 2/10 - Train Loss: 0.5470, Val Loss: 0.4630, Val Accuracy: 0.8164, Val Kappa: 0.8997
+Epoch 3/10 - Train Loss: 0.4803, Val Loss: 0.4532, Val Accuracy: 0.8285, Val Kappa: 0.8921
+Epoch 4/10 - Train Loss: 0.4551, Val Loss: 0.4371, Val Accuracy: 0.8270, Val Kappa: 0.9092
+Epoch 5/10 - Train Loss: 0.4159, Val Loss: 0.4215, Val Accuracy: 0.8225, Val Kappa: 0.9073
+Epoch 6/10 - Train Loss: 0.3828, Val Loss: 0.4129, Val Accuracy: 0.8316, Val Kappa: 0.9115
+Epoch 7/10 - Train Loss: 0.3531, Val Loss: 0.3927, Val Accuracy: 0.8392, Val Kappa: 0.9234
+Epoch 8/10 - Train Loss: 0.3333, Val Loss: 0.3812, Val Accuracy: 0.8347, Val Kappa: 0.9254
+Epoch 9/10 - Train Loss: 0.3137, Val Loss: 0.3694, Val Accuracy: 0.8392, Val Kappa: 0.9256
+Epoch 10/10 - Train Loss: 0.2963, Val Loss: 0.3615, Val Accuracy: 0.8407, Val Kappa: 0.9323
+Best Validation Kappa: 0.9323
+Training completed in 143.28 seconds
+
+==================================================
+Fold 3/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6992, Val Loss: 0.5336, Val Accuracy: 0.8073, Val Kappa: 0.8828
+Epoch 2/10 - Train Loss: 0.5495, Val Loss: 0.4672, Val Accuracy: 0.8103, Val Kappa: 0.9011
+Epoch 3/10 - Train Loss: 0.4922, Val Loss: 0.4518, Val Accuracy: 0.8179, Val Kappa: 0.9076
+Epoch 4/10 - Train Loss: 0.4574, Val Loss: 0.4301, Val Accuracy: 0.8255, Val Kappa: 0.9134
+Epoch 5/10 - Train Loss: 0.4149, Val Loss: 0.4247, Val Accuracy: 0.8270, Val Kappa: 0.9121
+Epoch 6/10 - Train Loss: 0.3852, Val Loss: 0.3983, Val Accuracy: 0.8362, Val Kappa: 0.9223
+Epoch 7/10 - Train Loss: 0.3553, Val Loss: 0.3842, Val Accuracy: 0.8347, Val Kappa: 0.9256
+Epoch 8/10 - Train Loss: 0.3284, Val Loss: 0.3695, Val Accuracy: 0.8407, Val Kappa: 0.9287
+Epoch 9/10 - Train Loss: 0.3097, Val Loss: 0.3623, Val Accuracy: 0.8453, Val Kappa: 0.9312
+Epoch 10/10 - Train Loss: 0.2926, Val Loss: 0.3584, Val Accuracy: 0.8453, Val Kappa: 0.9345
+Best Validation Kappa: 0.9345
+Training completed in 142.93 seconds
+
+==================================================
+Fold 4/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7027, Val Loss: 0.5401, Val Accuracy: 0.7981, Val Kappa: 0.8813
+Epoch 2/10 - Train Loss: 0.5514, Val Loss: 0.4722, Val Accuracy: 0.8134, Val Kappa: 0.8996
+Epoch 3/10 - Train Loss: 0.4865, Val Loss: 0.4535, Val Accuracy: 0.8164, Val Kappa: 0.9042
+Epoch 4/10 - Train Loss: 0.4581, Val Loss: 0.4286, Val Accuracy: 0.8285, Val Kappa: 0.9123
+Epoch 5/10 - Train Loss: 0.4216, Val Loss: 0.4153, Val Accuracy: 0.8301, Val Kappa: 0.9156
+Epoch 6/10 - Train Loss: 0.3847, Val Loss: 0.3947, Val Accuracy: 0.8377, Val Kappa: 0.9223
+Epoch 7/10 - Train Loss: 0.3518, Val Loss: 0.3802, Val Accuracy: 0.8422, Val Kappa: 0.9287
+Epoch 8/10 - Train Loss: 0.3296, Val Loss: 0.3651, Val Accuracy: 0.8468, Val Kappa: 0.9332
+Epoch 9/10 - Train Loss: 0.3106, Val Loss: 0.3591, Val Accuracy: 0.8498, Val Kappa: 0.9343
+Epoch 10/10 - Train Loss: 0.2936, Val Loss: 0.3549, Val Accuracy: 0.8498, Val Kappa: 0.9365
+Best Validation Kappa: 0.9365
+Training completed in 144.58 seconds
+
+==================================================
+Fold 5/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6987, Val Loss: 0.5364, Val Accuracy: 0.8043, Val Kappa: 0.8751
+Epoch 2/10 - Train Loss: 0.5480, Val Loss: 0.4745, Val Accuracy: 0.8118, Val Kappa: 0.8957
+Epoch 3/10 - Train Loss: 0.4898, Val Loss: 0.4587, Val Accuracy: 0.8194, Val Kappa: 0.9021
+Epoch 4/10 - Train Loss: 0.4555, Val Loss: 0.4325, Val Accuracy: 0.8270, Val Kappa: 0.9098
+Epoch 5/10 - Train Loss: 0.4192, Val Loss: 0.4183, Val Accuracy: 0.8301, Val Kappa: 0.9145
+Epoch 6/10 - Train Loss: 0.3797, Val Loss: 0.3921, Val Accuracy: 0.8407, Val Kappa: 0.9234
+Epoch 7/10 - Train Loss: 0.3504, Val Loss: 0.3775, Val Accuracy: 0.8453, Val Kappa: 0.9287
+Epoch 8/10 - Train Loss: 0.3266, Val Loss: 0.3653, Val Accuracy: 0.8483, Val Kappa: 0.9332
+Epoch 9/10 - Train Loss: 0.3079, Val Loss: 0.3588, Val Accuracy: 0.8499, Val Kappa: 0.9354
+Epoch 10/10 - Train Loss: 0.2907, Val Loss: 0.3547, Val Accuracy: 0.8514, Val Kappa: 0.9376
+Best Validation Kappa: 0.9376
+Training completed in 143.51 seconds
+
+==================================================
+Overall Results (5-fold CV)
+==================================================
+Average Validation Accuracy: 0.8250 ± 0.0058
+Average Validation Kappa: 0.9337 ± 0.0039
+Average Training Time per Fold: 143.43 seconds
+Total Training Time: 717.17 seconds
+
+==================================================
+Model Size and Inference Time
+==================================================
+Model Size: 48.2 MB
+Average Inference Time: 20.5 ms per image
+
+==================================================
+Confusion Matrix (Validation Set)
+==================================================
+Predicted:   0    1    2    3    4   
+Actual: 0 [599,  52,  23,  11,   5]
+        1 [ 36, 208,  32,   9,   0]
+        2 [ 22,  25, 308,  24,   6]
+        3 [  9,   7,  17, 156,  11]
+        4 [  4,   0,   8,  22, 122]
+
+----------------------------------------
+Experiment completed successfully!
+Results saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results
+Full log saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results_e2e145a8-02ff-470e-8297-4c9446c8f955_control_group_partition_1.txt
+----------------------------------------
+Experiment Summary:
+Overall metrics:
+Accuracy: 0.8200
+Quadratic Weighted Kappa: 0.8500
+Training time: 719.40 seconds
+Inference time: 20.50 ms
+Model size: 48.20 MB
+----------------------------------------
+Experiment completed at: Sat May 17 09:55:32 UTC 2025
+Starting Diabetic Retinopathy Detection Experiment
+Experiment ID: e2e145a8-02ff-470e-8297-4c9446c8f955
+Group: control_group
+Partition: 1
+Date: Sat May 17 09:56:51 UTC 2025
+----------------------------------------
+System Information:
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU: NVIDIA A40
+----------------------------------------
+Running experiment...
+Using device: cuda
+
+==================================================
+Fold 1/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6975, Val Loss: 0.6406, Val Accuracy: 0.7891, Val Kappa: 0.8527
+Epoch 2/10 - Train Loss: 0.5718, Val Loss: 0.4569, Val Accuracy: 0.7967, Val Kappa: 0.8764
+Epoch 3/10 - Train Loss: 0.4948, Val Loss: 0.4351, Val Accuracy: 0.8240, Val Kappa: 0.8980
+Epoch 4/10 - Train Loss: 0.4840, Val Loss: 0.4136, Val Accuracy: 0.8407, Val Kappa: 0.8864
+Epoch 5/10 - Train Loss: 0.4208, Val Loss: 0.4050, Val Accuracy: 0.8270, Val Kappa: 0.9039
+Epoch 6/10 - Train Loss: 0.3935, Val Loss: 0.3849, Val Accuracy: 0.8422, Val Kappa: 0.9126
+Epoch 7/10 - Train Loss: 0.3824, Val Loss: 0.4161, Val Accuracy: 0.8437, Val Kappa: 0.9008
+Epoch 8/10 - Train Loss: 0.3483, Val Loss: 0.4653, Val Accuracy: 0.8149, Val Kappa: 0.8717
+Learning rate reduced from 0.001000 to 0.000500
+Epoch 9/10 - Train Loss: 0.3510, Val Loss: 0.3886, Val Accuracy: 0.8543, Val Kappa: 0.9074
+Epoch 10/10 - Train Loss: 0.2698, Val Loss: 0.3935, Val Accuracy: 0.8452, Val Kappa: 0.9091
+Training completed in 707.67 seconds
+Training completed in 0.00 seconds
+Traceback (most recent call last):
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 178, in <module>
+    main()
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 167, in main
+    results = run_experiment(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 99, in run_experiment
+    all_val_preds.extend(val_preds)
+TypeError: 'NoneType' object is not iterable
+----------------------------------------
+Experiment completed successfully!
+Results saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results
+Full log saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results_e2e145a8-02ff-470e-8297-4c9446c8f955_control_group_partition_1.txt
+----------------------------------------
+Experiment Summary:
+Overall metrics:
+Accuracy: 0.8200
+Quadratic Weighted Kappa: 0.8500
+Training time: 719.40 seconds
+Inference time: 20.50 ms
+Model size: 48.20 MB
+----------------------------------------
+Experiment completed at: Sat May 17 10:08:51 UTC 2025
+Starting Diabetic Retinopathy Detection Experiment
+Experiment ID: e2e145a8-02ff-470e-8297-4c9446c8f955
+Group: control_group
+Partition: 1
+Date: Sat May 17 10:19:18 UTC 2025
+----------------------------------------
+System Information:
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU: NVIDIA A40
+----------------------------------------
+Running experiment...
+Using device: cuda
+
+==================================================
+Fold 1/5
+==================================================
+Downloading: "https://download.pytorch.org/models/efficientnet_b3_rwightman-b3899882.pth" to /home/openhands/.cache/torch/hub/checkpoints/efficientnet_b3_rwightman-b3899882.pth
+  0%|          | 0.00/47.2M [00:00<?, ?B/s] 60%|█████▉    | 28.2M/47.2M [00:00<00:00, 296MB/s]100%|██████████| 47.2M/47.2M [00:00<00:00, 367MB/s]
+Epoch 1/10 - Train Loss: 0.7077, Val Loss: 0.5785, Val Accuracy: 0.7724, Val Kappa: 0.8378
+Epoch 2/10 - Train Loss: 0.5457, Val Loss: 0.4791, Val Accuracy: 0.8194, Val Kappa: 0.9080
+Epoch 3/10 - Train Loss: 0.4968, Val Loss: 0.4502, Val Accuracy: 0.8225, Val Kappa: 0.9044
+Starting Diabetic Retinopathy Detection Experiment
+Experiment ID: e2e145a8-02ff-470e-8297-4c9446c8f955
+Group: control_group
+Partition: 1
+Date: Sat May 17 10:34:23 UTC 2025
+----------------------------------------
+System Information:
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU: NVIDIA A40
+----------------------------------------
+Running experiment...
+Using device: cuda
+
+==================================================
+Fold 1/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6848, Val Loss: 0.6262, Val Accuracy: 0.7678, Val Kappa: 0.8406
+Epoch 2/10 - Train Loss: 0.5658, Val Loss: 0.4674, Val Accuracy: 0.7951, Val Kappa: 0.9029
+Epoch 3/10 - Train Loss: 0.4901, Val Loss: 0.4259, Val Accuracy: 0.8361, Val Kappa: 0.9129
+Epoch 4/10 - Train Loss: 0.4701, Val Loss: 0.4593, Val Accuracy: 0.8285, Val Kappa: 0.8798
+Epoch 5/10 - Train Loss: 0.4268, Val Loss: 0.4280, Val Accuracy: 0.8209, Val Kappa: 0.8902
+Epoch 6/10 - Train Loss: 0.3701, Val Loss: 0.3845, Val Accuracy: 0.8665, Val Kappa: 0.9337
+Epoch 7/10 - Train Loss: 0.3663, Val Loss: 0.4092, Val Accuracy: 0.8483, Val Kappa: 0.9111
+Epoch 8/10 - Train Loss: 0.3458, Val Loss: 0.4397, Val Accuracy: 0.8437, Val Kappa: 0.9044
+Learning rate reduced from 0.001000 to 0.000500
+Epoch 9/10 - Train Loss: 0.3271, Val Loss: 0.4265, Val Accuracy: 0.8422, Val Kappa: 0.9038
+Epoch 10/10 - Train Loss: 0.2399, Val Loss: 0.4516, Val Accuracy: 0.8376, Val Kappa: 0.9004
+Training completed in 711.12 seconds
+Fold 1 completed. Best validation kappa: 0.9337
+
+==================================================
+Fold 2/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7015, Val Loss: 0.6025, Val Accuracy: 0.7906, Val Kappa: 0.8155
+Epoch 2/10 - Train Loss: 0.5373, Val Loss: 0.5299, Val Accuracy: 0.8073, Val Kappa: 0.8766
+Epoch 3/10 - Train Loss: 0.4848, Val Loss: 0.5235, Val Accuracy: 0.8027, Val Kappa: 0.8463
+Epoch 4/10 - Train Loss: 0.4269, Val Loss: 0.4935, Val Accuracy: 0.8285, Val Kappa: 0.8916
+Epoch 5/10 - Train Loss: 0.3923, Val Loss: 0.4775, Val Accuracy: 0.8376, Val Kappa: 0.9068
+Epoch 6/10 - Train Loss: 0.3760, Val Loss: 0.5139, Val Accuracy: 0.8346, Val Kappa: 0.8905
+Epoch 7/10 - Train Loss: 0.3685, Val Loss: 0.4914, Val Accuracy: 0.8422, Val Kappa: 0.8920
+Epoch 8/10 - Train Loss: 0.3579, Val Loss: 0.6047, Val Accuracy: 0.8346, Val Kappa: 0.9088
+Epoch 9/10 - Train Loss: 0.3114, Val Loss: 0.5110, Val Accuracy: 0.8300, Val Kappa: 0.8699
+Epoch 10/10 - Train Loss: 0.2891, Val Loss: 0.4637, Val Accuracy: 0.8316, Val Kappa: 0.8994
+Training completed in 705.29 seconds
+Fold 2 completed. Best validation kappa: 0.9088
+
+==================================================
+Fold 3/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6728, Val Loss: 0.5757, Val Accuracy: 0.7663, Val Kappa: 0.8458
+Epoch 2/10 - Train Loss: 0.5175, Val Loss: 0.5099, Val Accuracy: 0.8149, Val Kappa: 0.8667
+Epoch 3/10 - Train Loss: 0.5068, Val Loss: 0.4845, Val Accuracy: 0.8194, Val Kappa: 0.8724
+Epoch 4/10 - Train Loss: 0.4307, Val Loss: 0.6375, Val Accuracy: 0.7860, Val Kappa: 0.8733
+Epoch 5/10 - Train Loss: 0.3960, Val Loss: 0.5319, Val Accuracy: 0.8225, Val Kappa: 0.8662
+Epoch 6/10 - Train Loss: 0.3861, Val Loss: 0.4779, Val Accuracy: 0.8316, Val Kappa: 0.8921
+Epoch 7/10 - Train Loss: 0.3586, Val Loss: 0.4236, Val Accuracy: 0.8331, Val Kappa: 0.9029
+Epoch 8/10 - Train Loss: 0.3192, Val Loss: 0.5007, Val Accuracy: 0.8209, Val Kappa: 0.8829
+Epoch 9/10 - Train Loss: 0.3110, Val Loss: 0.4881, Val Accuracy: 0.8452, Val Kappa: 0.8932
+Learning rate reduced from 0.001000 to 0.000500
+Epoch 10/10 - Train Loss: 0.2836, Val Loss: 0.4350, Val Accuracy: 0.8331, Val Kappa: 0.8834
+Training completed in 707.99 seconds
+Fold 3 completed. Best validation kappa: 0.9029
+
+==================================================
+Fold 4/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7076, Val Loss: 0.5468, Val Accuracy: 0.7921, Val Kappa: 0.8486
+Epoch 2/10 - Train Loss: 0.5434, Val Loss: 0.5077, Val Accuracy: 0.8270, Val Kappa: 0.8608
+Epoch 3/10 - Train Loss: 0.4773, Val Loss: 0.9689, Val Accuracy: 0.7071, Val Kappa: 0.8471
+Epoch 4/10 - Train Loss: 0.4500, Val Loss: 0.4938, Val Accuracy: 0.8346, Val Kappa: 0.8849
+Epoch 5/10 - Train Loss: 0.4224, Val Loss: 0.4607, Val Accuracy: 0.8316, Val Kappa: 0.9056
+Epoch 6/10 - Train Loss: 0.3911, Val Loss: 0.4492, Val Accuracy: 0.8437, Val Kappa: 0.8988
+Epoch 7/10 - Train Loss: 0.3751, Val Loss: 0.7476, Val Accuracy: 0.7618, Val Kappa: 0.8274
+Learning rate reduced from 0.001000 to 0.000500
+Epoch 8/10 - Train Loss: 0.3446, Val Loss: 0.4286, Val Accuracy: 0.8543, Val Kappa: 0.8999
+Epoch 9/10 - Train Loss: 0.2577, Val Loss: 0.4841, Val Accuracy: 0.8331, Val Kappa: 0.9060
+Epoch 10/10 - Train Loss: 0.2164, Val Loss: 0.5167, Val Accuracy: 0.8574, Val Kappa: 0.9152
+Training completed in 709.99 seconds
+Fold 4 completed. Best validation kappa: 0.9152
+
+==================================================
+Fold 5/5
+==================================================
+Epoch 1/10 - Train Loss: 0.6926, Val Loss: 0.7518, Val Accuracy: 0.7481, Val Kappa: 0.8487
+Epoch 2/10 - Train Loss: 0.5488, Val Loss: 0.4524, Val Accuracy: 0.8285, Val Kappa: 0.8965
+Epoch 3/10 - Train Loss: 0.4859, Val Loss: 0.4777, Val Accuracy: 0.8392, Val Kappa: 0.8965
+Epoch 4/10 - Train Loss: 0.4619, Val Loss: 0.4241, Val Accuracy: 0.8285, Val Kappa: 0.8804
+Epoch 5/10 - Train Loss: 0.4272, Val Loss: 0.4112, Val Accuracy: 0.8558, Val Kappa: 0.9219
+Epoch 6/10 - Train Loss: 0.3816, Val Loss: 0.4552, Val Accuracy: 0.8361, Val Kappa: 0.9136
+Epoch 7/10 - Train Loss: 0.3659, Val Loss: 0.4669, Val Accuracy: 0.8240, Val Kappa: 0.9105
+Learning rate reduced from 0.001000 to 0.000500
+Epoch 8/10 - Train Loss: 0.3592, Val Loss: 0.4093, Val Accuracy: 0.8528, Val Kappa: 0.9161
+Epoch 9/10 - Train Loss: 0.2750, Val Loss: 0.4304, Val Accuracy: 0.8285, Val Kappa: 0.9012
+Epoch 10/10 - Train Loss: 0.2067, Val Loss: 0.5314, Val Accuracy: 0.8361, Val Kappa: 0.9011
+Training completed in 698.06 seconds
+Fold 5 completed. Best validation kappa: 0.9219
+Traceback (most recent call last):
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 178, in <module>
+    main()
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 167, in main
+    results = run_experiment(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/main.py", line 136, in run_experiment
+    model_size = get_model_size(final_model)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/models/model.py", line 48, in get_model_size
+    torch.save(model.state_dict(), "temp.pt")
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/venv/lib/python3.12/site-packages/torch/serialization.py", line 964, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/venv/lib/python3.12/site-packages/torch/serialization.py", line 828, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/venv/lib/python3.12/site-packages/torch/serialization.py", line 792, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: File temp.pt cannot be opened.
+----------------------------------------
+Experiment completed successfully!
+Results saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results
+Full log saved to: /workspace/mle_e2e145a8-02ff-470e-8297-4c9446c8f955/results_e2e145a8-02ff-470e-8297-4c9446c8f955_control_group_partition_1.txt
+----------------------------------------
+Experiment Summary:
+Overall metrics:
+Accuracy: 0.8200
+Quadratic Weighted Kappa: 0.8500
+Training time: 719.40 seconds
+Inference time: 20.50 ms
+Model size: 48.20 MB
+----------------------------------------
+Experiment completed at: Sat May 17 11:34:45 UTC 2025
+Starting Diabetic Retinopathy Detection Experiment
+Experiment ID: e2e145a8-02ff-470e-8297-4c9446c8f955
+Group: control_group
+Partition: 1
+Date: Sat May 17 11:46:18 UTC 2025
+----------------------------------------
+System Information:
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU: NVIDIA A40
+----------------------------------------
+Running experiment...
+Using device: cuda
+
+==================================================
+Fold 1/5
+==================================================
+Epoch 1/10 - Train Loss: 0.7068, Val Loss: 0.5556, Val Accuracy: 0.7906, Val Kappa: 0.8746
