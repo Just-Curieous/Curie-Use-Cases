@@ -1,0 +1,23 @@
+{
+    "job_name": "mle",
+    "workspace_name": "",
+    "dataset_dir": "/home/amberljc/.cache/mle-bench/data/histopathologic-cancer-detection/prepared/public",
+    "docker_image": "exp-agent-image",
+    "dockerfile_name": "ExpDockerfile_default",
+    "benchmark_specific_context": "none",
+    "is_user_interrupt_allowed": false,
+    "timeout": 600,
+    "max_global_steps": 70,
+    "max_coding_iterations": 25,
+    "supervisor_system_prompt_filename": "prompts/simple/simple-supervisor.txt",
+    "control_worker_system_prompt_filename": "prompts/simple/simple-control-worker.txt",
+    "patcher_system_prompt_filename": "prompts/simple/simple-patcher.txt",
+    "llm_verifier_system_prompt_filename": "prompts/simple/simple-llm-verifier.txt",
+    "coding_prompt_filename": "prompts/simple/simple-coding.txt",
+    "worker_system_prompt_filename": "prompts/simple/simple-worker.txt",
+    "unique_id": "20250519225201",
+    "iteration": 1,
+    "log_filename": "logs/mle_20250519225201_iter1/histopathologic-cancer-detection_20250519225201_iter1.log",
+    "exp_plan_filename": "benchmark/mle_bench/histopathologic-cancer-detection/histopathologic-cancer-detection.txt",
+    "base_dir": "/home/amberljc/dev/Curie"
+}
