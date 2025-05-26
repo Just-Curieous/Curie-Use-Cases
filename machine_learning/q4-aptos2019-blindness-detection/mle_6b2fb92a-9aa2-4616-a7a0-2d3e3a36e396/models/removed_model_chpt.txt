@@ -1,1 +1,0 @@
-this dir used to have 'efficientnet_b5_fold0.pth  efficientnet_b5_fold1.pth  efficientnet_b5_fold2.pth  efficientnet_b5_fold3.pth  efficientnet_b5_fold4.pth'

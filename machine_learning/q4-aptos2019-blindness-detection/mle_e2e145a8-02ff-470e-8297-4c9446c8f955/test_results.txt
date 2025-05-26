@@ -1,9 +1,0 @@
-Running test experiment with reduced epochs...
-Using device: cuda
-
-==================================================
-Fold 1/2
-==================================================
-Epoch 1/2 - Train Loss: 0.7491, Val Loss: 0.5679, Val Accuracy: 0.7900, Val Kappa: 0.8300
-Epoch 2/2 - Train Loss: 0.6032, Val Loss: 0.5611, Val Accuracy: 0.8089, Val Kappa: 0.8788
-Training completed in 140.17 seconds

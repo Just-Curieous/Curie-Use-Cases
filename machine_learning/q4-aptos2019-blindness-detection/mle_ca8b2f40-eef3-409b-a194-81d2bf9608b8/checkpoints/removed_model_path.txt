@@ -1,1 +1,0 @@
-this dir used to have 'checkpoint_epoch_1.pth  checkpoint_epoch_2.pth  checkpoint_epoch_3.pth'

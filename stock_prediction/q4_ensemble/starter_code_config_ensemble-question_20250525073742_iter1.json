@@ -1,0 +1,23 @@
+{
+    "job_name": "stock-prediction",
+    "workspace_name": "/home/amberljc/Curie-Use-Cases/stock_prediction/starter_code",
+    "dataset_dir": "/home/amberljc/Curie/workspace/quant_data/",
+    "docker_image": "exp-agent-image",
+    "dockerfile_name": "ExpDockerfile_default",
+    "benchmark_specific_context": "none",
+    "is_user_interrupt_allowed": false,
+    "timeout": 600,
+    "max_global_steps": 100,
+    "max_coding_iterations": 25,
+    "supervisor_system_prompt_filename": "prompts/simple/simple-supervisor.txt",
+    "control_worker_system_prompt_filename": "prompts/simple/simple-control-worker.txt",
+    "patcher_system_prompt_filename": "prompts/simple/simple-patcher.txt",
+    "llm_verifier_system_prompt_filename": "prompts/simple/simple-llm-verifier.txt",
+    "coding_prompt_filename": "prompts/simple/simple-coding.txt",
+    "worker_system_prompt_filename": "prompts/simple/simple-worker.txt",
+    "unique_id": "20250525073742",
+    "iteration": 1,
+    "log_filename": "logs/starter_code_20250525073742_iter1/ensemble-question_20250525073742_iter1.log",
+    "exp_plan_filename": "benchmark/junior_ml_engineer_bench/stock_prediction/ensemble-question.txt",
+    "base_dir": "/home/amberljc/dev/Curie"
+}
