@@ -1,0 +1,282 @@
+Setting up environment...
+Setting up OpenCL for GPU acceleration...
+Checking GPU availability...
+Sun May 25 22:28:33 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   72C    P0            130W /  300W |     735MiB /  46068MiB |     30%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+=========================================================
+EXPERIMENTAL GROUP PARTITION 1: ENSEMBLE METHODS
+=========================================================
+Starting experiments at Sun May 25 22:28:33 UTC 2025
+Dataset path: /workspace/starter_code_dataset
+Running 5 different ensemble configurations:
+1. MSE+MAE+Huber with averaging
+2. MSE+MAE+Huber with stacking
+3. MSE+Quantile(0.1,0.5,0.9) with averaging
+4. MSE+Quantile(0.1,0.5,0.9) with stacking
+5. MSE+RankCorrelation with averaging
+=========================================================
+
+=========================================================
+RUNNING EXPERIMENT: MSE+MAE+Huber with averaging ensemble
+Configuration file: /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/config_mse_mae_huber_averaging.json
+Starting at Sun May 25 22:28:33 UTC 2025
+=========================================================
+Configuration details:
+{
+    "data_path": "/workspace/starter_code_dataset", 
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "ensemble_method": "averaging",
+    "loss_functions": ["mse", "mae", "huber"],
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+Starting model training...
+2025-05-25 22:28:34,409 - __main__ - INFO - >>> Start training with Config: {'data_path': '/workspace/starter_code_dataset', 'results_path': '/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results', 'num_years_train': 3, 'start_year': 2017, 'end_year': 2023, 'min_samples': 1650, 'min_trading_volume': 5000000, 'min_price': 2, 'feature_threshold': 0.75, 'lgbm_params': {'objective': 'regression', 'num_leaves': 511, 'learning_rate': 0.02, 'verbose': -1, 'min_child_samples': 30, 'n_estimators': 10000, 'subsample': 0.7, 'colsample_bytree': 0.7, 'early_stopping_rounds': 100, 'log_evaluation_freq': 500}, 'ensemble_method': 'averaging', 'loss_functions': ['mse', 'mae', 'huber'], 'num_workers': 40, 'num_simulations': 3, 'device_type': 'gpu'} <<<
+2025-05-25 22:28:34,409 - __main__ - INFO - Created or verified directories: /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results
+2025-05-25 22:28:34,409 - __main__ - INFO - Loading data...
+2025-05-25 22:37:26,950 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 22:38:02,621 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 22:45:52,611 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 22:59:07,987 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 23:04:33,633 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 23:04:35,047 - __main__ - INFO - Applying filters...
+2025-05-25 23:04:35,222 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-25 23:04:35,222 - __main__ - INFO - Calculating metrics...
+
+[2/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.70116
+[1000]	valid_0's l2: 0.700073
+[1500]	valid_0's l2: 0.699571
+[2000]	valid_0's l2: 0.699303
+[2500]	valid_0's l2: 0.699061
+Early stopping, best iteration is:
+[2736]	valid_0's l2: 0.699022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.711955	valid_0's l1: 0.592727
+[1000]	valid_0's l2: 0.711649	valid_0's l1: 0.592599
+[1500]	valid_0's l2: 0.711367	valid_0's l1: 0.592388
+[2000]	valid_0's l2: 0.711202	valid_0's l1: 0.592258
+[2500]	valid_0's l2: 0.711068	valid_0's l1: 0.592187
+[3000]	valid_0's l2: 0.711	valid_0's l1: 0.592153
+Early stopping, best iteration is:
+[3308]	valid_0's l2: 0.710971	valid_0's l1: 0.592098
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.705042	valid_0's huber: 0.272557
+[1000]	valid_0's l2: 0.703696	valid_0's huber: 0.272123
+[1500]	valid_0's l2: 0.703127	valid_0's huber: 0.272019
+[2000]	valid_0's l2: 0.702596	valid_0's huber: 0.271951
+[2500]	valid_0's l2: 0.702144	valid_0's huber: 0.271877
+[3000]	valid_0's l2: 0.7017	valid_0's huber: 0.271818
+Early stopping, best iteration is:
+[3175]	valid_0's l2: 0.701561	valid_0's huber: 0.271797
+[3/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.675647
+[1000]	valid_0's l2: 0.673367
+[1500]	valid_0's l2: 0.672757
+[2000]	valid_0's l2: 0.672419
+[2500]	valid_0's l2: 0.672186
+Early stopping, best iteration is:
+[2733]	valid_0's l2: 0.672073
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.680676	valid_0's l1: 0.575734
+[1000]	valid_0's l2: 0.679382	valid_0's l1: 0.575196
+[1500]	valid_0's l2: 0.678643	valid_0's l1: 0.574959
+[2000]	valid_0's l2: 0.678238	valid_0's l1: 0.574875
+[2500]	valid_0's l2: 0.677836	valid_0's l1: 0.574779
+[3000]	valid_0's l2: 0.677641	valid_0's l1: 0.574664
+[3500]	valid_0's l2: 0.677445	valid_0's l1: 0.574582
+[4000]	valid_0's l2: 0.677296	valid_0's l1: 0.574534
+[4500]	valid_0's l2: 0.677146	valid_0's l1: 0.574499
+[5000]	valid_0's l2: 0.676954	valid_0's l1: 0.574456
+Early stopping, best iteration is:
+[5351]	valid_0's l2: 0.67687	valid_0's l1: 0.574436
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.678611	valid_0's huber: 0.262268
+[1000]	valid_0's l2: 0.675394	valid_0's huber: 0.261313
+[1500]	valid_0's l2: 0.673725	valid_0's huber: 0.260931
+[2000]	valid_0's l2: 0.672862	valid_0's huber: 0.260758
+[2500]	valid_0's l2: 0.672114	valid_0's huber: 0.260614
+[3000]	valid_0's l2: 0.6717	valid_0's huber: 0.260554
+Early stopping, best iteration is:
+[2900]	valid_0's l2: 0.671761	valid_0's huber: 0.260549
+[3/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.680994
+[1000]	valid_0's l2: 0.679197
+[1500]	valid_0's l2: 0.678565
+[2000]	valid_0's l2: 0.67808
+[2500]	valid_0's l2: 0.677867
+[3000]	valid_0's l2: 0.677682
+[3500]	valid_0's l2: 0.677453
+[4000]	valid_0's l2: 0.677347
+Early stopping, best iteration is:
+[3958]	valid_0's l2: 0.677332
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.693412	valid_0's l1: 0.579972
+[1000]	valid_0's l2: 0.69245	valid_0's l1: 0.579413
+[1500]	valid_0's l2: 0.692021	valid_0's l1: 0.579205
+[2000]	valid_0's l2: 0.691683	valid_0's l1: 0.579091
+[2500]	valid_0's l2: 0.690884	valid_0's l1: 0.578895
+[3000]	valid_0's l2: 0.690317	valid_0's l1: 0.578752
+[3500]	valid_0's l2: 0.689835	valid_0's l1: 0.578659
+[4000]	valid_0's l2: 0.68957	valid_0's l1: 0.578609
+Early stopping, best iteration is:
+[4287]	valid_0's l2: 0.689494	valid_0's l1: 0.578563
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.681859	valid_0's huber: 0.26297
+[1000]	valid_0's l2: 0.679244	valid_0's huber: 0.262181
+[1500]	valid_0's l2: 0.6777	valid_0's huber: 0.261814
+[2000]	valid_0's l2: 0.677076	valid_0's huber: 0.261719
+[2500]	valid_0's l2: 0.676464	valid_0's huber: 0.261627
+Early stopping, best iteration is:
+[2463]	valid_0's l2: 0.676484	valid_0's huber: 0.261622
+[3/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.689764
+[1000]	valid_0's l2: 0.688296
+[1500]	valid_0's l2: 0.687672
+[2000]	valid_0's l2: 0.687367
+[2500]	valid_0's l2: 0.68715
+Early stopping, best iteration is:
+[2711]	valid_0's l2: 0.687078
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.702452	valid_0's l1: 0.584186
+[1000]	valid_0's l2: 0.70185	valid_0's l1: 0.583825
+[1500]	valid_0's l2: 0.701412	valid_0's l1: 0.583608
+[2000]	valid_0's l2: 0.701215	valid_0's l1: 0.583547
+Early stopping, best iteration is:
+[2345]	valid_0's l2: 0.701105	valid_0's l1: 0.58352
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.697129	valid_0's huber: 0.268158
+[1000]	valid_0's l2: 0.695088	valid_0's huber: 0.267569
+[1500]	valid_0's l2: 0.694088	valid_0's huber: 0.267388
+[2000]	valid_0's l2: 0.693341	valid_0's huber: 0.267233
+[2500]	valid_0's l2: 0.692715	valid_0's huber: 0.267122
+Early stopping, best iteration is:
+[2814]	valid_0's l2: 0.692425	valid_0's huber: 0.26709
+[3/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.70156
+[1000]	valid_0's l2: 0.70056
+[1500]	valid_0's l2: 0.700094
+[2000]	valid_0's l2: 0.699781
+[2500]	valid_0's l2: 0.699612
+Early stopping, best iteration is:
+[2753]	valid_0's l2: 0.69956
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.708924	valid_0's l1: 0.592316
+[1000]	valid_0's l2: 0.708466	valid_0's l1: 0.592092
+[1500]	valid_0's l2: 0.708126	valid_0's l1: 0.591996
+[2000]	valid_0's l2: 0.707906	valid_0's l1: 0.59194
+[2500]	valid_0's l2: 0.707717	valid_0's l1: 0.59188
+[3000]	valid_0's l2: 0.707618	valid_0's l1: 0.591814
+[3500]	valid_0's l2: 0.707465	valid_0's l1: 0.59171
+Early stopping, best iteration is:
+[3819]	valid_0's l2: 0.707394	valid_0's l1: 0.591673
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.707499	valid_0's huber: 0.273274
+[1000]	valid_0's l2: 0.705998	valid_0's huber: 0.27277
+[1500]	valid_0's l2: 0.70543	valid_0's huber: 0.272679
+Early stopping, best iteration is:
+[1484]	valid_0's l2: 0.705429	valid_0's huber: 0.272676
+Traceback (most recent call last):
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/ensemble_model_training.py", line 751, in <module>
+    main(config)
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/ensemble_model_training.py", line 702, in main
+    metrics = calculate_metrics(filtered_predictions, filtered_returns, config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/ensemble_model_training.py", line 517, in calculate_metrics
+    directional_accuracy = (pred_direction == actual_direction).mean().mean()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/venv/lib/python3.12/site-packages/pandas/core/ops/common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/venv/lib/python3.12/site-packages/pandas/core/arraylike.py", line 40, in __eq__
+    return self._cmp_method(other, operator.eq)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 7897, in _cmp_method
+    self, other = self._align_for_op(other, axis, flex=False, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 8196, in _align_for_op
+    raise ValueError(
+ValueError: Can only compare identically-labeled (both index and columns) DataFrame objects
+Model training failed.
+Results from /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results/metrics_20250525_125104.json:
+{
+    "metrics": {
+        "overall": 0.09187313023858362,
+        "2020": 0.10804934922454153,
+        "2021": 0.08822888587237752,
+        "2022": 0.08184091329014154,
+        "2023": 0.08952782885172313
+    },
+    "config": {
+        "data_path": "/workspace/starter_code_dataset",
+        "results_path": "/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results",
+        "num_years_train": 3,
+        "start_year": 2017,
+        "end_year": 2023,
+        "min_samples": 1650,
+        "min_trading_volume": 5000000,
+        "min_price": 2,
+        "lgbm_params": {
+            "objective": "regression",
+            "num_leaves": 511,
+            "learning_rate": 0.02,
+            "verbose": -1,
+            "min_child_samples": 30,
+            "n_estimators": 10000,
+            "subsample": 0.7,
+            "colsample_bytree": 0.7,
+            "early_stopping_rounds": 100,
+            "log_evaluation_freq": 500
+        },
+        "num_workers": 40,
+        "num_simulations": 3,
+        "feature_threshold": 0.75,
+        "device_type": "gpu"
+    }
+}Experiment MSE+MAE+Huber with averaging ensemble completed at Sun May 25 23:04:55 UTC 2025
+=========================================================

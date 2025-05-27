@@ -1,0 +1,22 @@
+{
+    "data_path": "/workspace/starter_code_dataset",
+    "results_path": "/workspace/starter_code_c68dbfd0-0457-4dd3-8b2c-53698e8de0dc/results",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu",
+    
+    "ensemble_method": "boosting",
+    "feature_engineering": "raw",
+    "hyperparameter_optimization": "optimized",
+    
+    "experiment_name": "Boosting of weak learners (LightGBM+XGBoost+CatBoost) with raw factors and optimized hyperparameters"
+}

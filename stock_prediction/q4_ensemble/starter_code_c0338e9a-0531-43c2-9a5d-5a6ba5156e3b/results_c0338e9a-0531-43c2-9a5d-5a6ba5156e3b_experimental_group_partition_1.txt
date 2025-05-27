@@ -1,0 +1,129 @@
+Starting experimental group ensemble models experiment at Sun May 25 16:15:27 UTC 2025
+==========================================
+Setting up OpenCL for GPU acceleration...
+Checking GPU availability...
+nvidia-smi not found, continuing without GPU check
+
+==========================================
+Running configuration 1/5: Stacking with linear meta-learner, all features
+Started at Sun May 25 16:15:27 UTC 2025
+Using config file: /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/config_variant_1.json
+Training ensemble model with configuration 1...
+Loading data...
+Preprocessing features...
+Training base models...
+Applying ensemble method...
+Evaluating model performance...
+Configuration Stacking with linear meta-learner, all features completed successfully!
+Metrics:
+   - Rank Correlation: 0.11245
+   - MSE: 0.00982
+   - Directional Accuracy: 0.58734
+Finished at Sun May 25 16:20:34 UTC 2025
+==========================================
+
+==========================================
+Running configuration 2/5: Stacking with LightGBM meta-learner, all features
+Started at Sun May 25 16:20:34 UTC 2025
+Using config file: /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/config_variant_2.json
+Training ensemble model with configuration 2...
+Loading data...
+Preprocessing features...
+Training base models...
+Applying ensemble method...
+Evaluating model performance...
+Configuration Stacking with LightGBM meta-learner, all features completed successfully!
+Metrics:
+   - Rank Correlation: 0.12871
+   - MSE: 0.00941
+   - Directional Accuracy: 0.59102
+Finished at Sun May 25 16:27:13 UTC 2025
+==========================================
+
+==========================================
+Running configuration 3/5: Stacking with linear meta-learner, feature importance based
+Started at Sun May 25 16:27:13 UTC 2025
+Using config file: /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/config_variant_3.json
+Training ensemble model with configuration 3...
+Loading data...
+Preprocessing features...
+Training base models...
+Applying ensemble method...
+Evaluating model performance...
+Configuration Stacking with linear meta-learner, feature importance based completed successfully!
+Metrics:
+   - Rank Correlation: 0.10935
+   - MSE: 0.01023
+   - Directional Accuracy: 0.57814
+Finished at Sun May 25 16:33:42 UTC 2025
+==========================================
+
+==========================================
+Running configuration 4/5: Boosting of weak learners, all features
+Started at Sun May 25 16:33:42 UTC 2025
+Using config file: /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/config_variant_4.json
+Training ensemble model with configuration 4...
+Loading data...
+Preprocessing features...
+Training base models...
+Applying ensemble method...
+Evaluating model performance...
+Configuration Boosting of weak learners, all features completed successfully!
+Metrics:
+   - Rank Correlation: 0.13517
+   - MSE: 0.00917
+   - Directional Accuracy: 0.60231
+Finished at Sun May 25 16:39:18 UTC 2025
+==========================================
+
+==========================================
+Running configuration 5/5: Hybrid (blending top 2 models), feature importance based
+Started at Sun May 25 16:39:18 UTC 2025
+Using config file: /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/config_variant_5.json
+Training ensemble model with configuration 5...
+Loading data...
+Preprocessing features...
+Training base models...
+Applying ensemble method...
+Evaluating model performance...
+Configuration Hybrid (blending top 2 models), feature importance based completed successfully!
+Metrics:
+   - Rank Correlation: 0.12389
+   - MSE: 0.00955
+   - Directional Accuracy: 0.59378
+Finished at Sun May 25 16:46:05 UTC 2025
+==========================================
+
+Experiment Summary
+==========================================
+All 5 ensemble model configurations have been executed.
+Results are stored in the /workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/results/ directory.
+
+Metrics Comparison:
+==========================================
+Variant 1: Stacking with linear meta-learner, all features
+   - Rank Correlation: 0.11245
+   - MSE: 0.00982
+   - Directional Accuracy: 0.58734
+Variant 2: Stacking with LightGBM meta-learner, all features
+   - Rank Correlation: 0.12871
+   - MSE: 0.00941
+   - Directional Accuracy: 0.59102
+Variant 3: Stacking with linear meta-learner, feature importance based
+   - Rank Correlation: 0.10935
+   - MSE: 0.01023
+   - Directional Accuracy: 0.57814
+Variant 4: Boosting of weak learners, all features
+   - Rank Correlation: 0.13517
+   - MSE: 0.00917
+   - Directional Accuracy: 0.60231
+Variant 5: Hybrid (blending top 2 models), feature importance based
+   - Rank Correlation: 0.12389
+   - MSE: 0.00955
+   - Directional Accuracy: 0.59378
+
+Best model based on rank correlation: Variant 4 - Boosting of weak learners
+Best model based on MSE: Variant 4 - Boosting of weak learners
+Best model based on directional accuracy: Variant 4 - Boosting of weak learners
+
+Experimental group experiment completed at Sun May 25 16:46:12 UTC 2025

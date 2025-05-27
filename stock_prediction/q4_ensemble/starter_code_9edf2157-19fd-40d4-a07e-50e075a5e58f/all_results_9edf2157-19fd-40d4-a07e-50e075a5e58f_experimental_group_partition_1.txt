@@ -1,0 +1,307 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Setting up environment...
+Setting up OpenCL for GPU acceleration...
+Checking GPU availability...
+Sun May 25 20:25:52 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   72C    P0            155W /  300W |     735MiB /  46068MiB |     30%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+=========================================================
+EXPERIMENTAL GROUP PARTITION 1: ENSEMBLE METHODS
+=========================================================
+Starting experiments at Sun May 25 20:25:53 UTC 2025
+Dataset path: /workspace/starter_code_dataset
+Running 5 different ensemble configurations:
+1. MSE+MAE+Huber with averaging
+2. MSE+MAE+Huber with stacking
+3. MSE+Quantile(0.1,0.5,0.9) with averaging
+4. MSE+Quantile(0.1,0.5,0.9) with stacking
+5. MSE+RankCorrelation with averaging
+=========================================================
+
+=========================================================
+RUNNING EXPERIMENT: MSE+MAE+Huber with averaging ensemble
+Configuration file: /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/config_mse_mae_huber_averaging.json
+Starting at Sun May 25 20:25:53 UTC 2025
+=========================================================
+Configuration details:
+{
+    "data_path": "/workspace/starter_code_dataset", 
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 511,
+        "learning_rate": 0.02,
+        "verbose": -1,
+        "min_child_samples": 30,
+        "n_estimators": 10000,
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "ensemble_method": "averaging",
+    "loss_functions": ["mse", "mae", "huber"],
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu"
+}
+Starting model training...
+2025-05-25 20:25:54,039 - __main__ - INFO - >>> Start training with Config: {'data_path': '/workspace/starter_code_dataset', 'results_path': '/workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results', 'num_years_train': 3, 'start_year': 2017, 'end_year': 2023, 'min_samples': 1650, 'min_trading_volume': 5000000, 'min_price': 2, 'feature_threshold': 0.75, 'lgbm_params': {'objective': 'regression', 'num_leaves': 511, 'learning_rate': 0.02, 'verbose': -1, 'min_child_samples': 30, 'n_estimators': 10000, 'subsample': 0.7, 'colsample_bytree': 0.7, 'early_stopping_rounds': 100, 'log_evaluation_freq': 500}, 'ensemble_method': 'averaging', 'loss_functions': ['mse', 'mae', 'huber'], 'num_workers': 40, 'num_simulations': 3, 'device_type': 'gpu'} <<<
+2025-05-25 20:25:54,039 - __main__ - INFO - Created or verified directories: /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f/results
+2025-05-25 20:25:54,039 - __main__ - INFO - Loading data...
+2025-05-25 20:26:59,230 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-25 20:27:02,486 - __main__ - INFO - Loaded 208 factor files
+2025-05-25 20:27:04,119 - __main__ - INFO - Successfully loaded all data files
+2025-05-25 20:27:04,119 - __main__ - INFO - Filtering factors...
+2025-05-25 20:27:12,425 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-25 20:27:12,425 - __main__ - INFO - Processing factors...
+2025-05-25 20:27:12,425 - __main__ - INFO - Processing 205 factors using 40 workers
+Current working directory: /workspace/starter_code_9edf2157-19fd-40d4-a07e-50e075a5e58f
+[1/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.674483
+[1000]	valid_0's l2: 0.672386
+[1500]	valid_0's l2: 0.671684
+[2000]	valid_0's l2: 0.671259
+[2500]	valid_0's l2: 0.670878
+Early stopping, best iteration is:
+[2892]	valid_0's l2: 0.670668
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.682697	valid_0's l1: 0.577104
+[1000]	valid_0's l2: 0.681497	valid_0's l1: 0.576451
+[1500]	valid_0's l2: 0.680838	valid_0's l1: 0.576184
+[2000]	valid_0's l2: 0.680466	valid_0's l1: 0.576076
+[2500]	valid_0's l2: 0.680093	valid_0's l1: 0.575993
+[3000]	valid_0's l2: 0.679879	valid_0's l1: 0.575941
+[3500]	valid_0's l2: 0.679602	valid_0's l1: 0.5759
+[4000]	valid_0's l2: 0.679388	valid_0's l1: 0.575832
+[4500]	valid_0's l2: 0.679171	valid_0's l1: 0.575771
+[5000]	valid_0's l2: 0.678575	valid_0's l1: 0.57562
+[5500]	valid_0's l2: 0.67802	valid_0's l1: 0.575556
+Early stopping, best iteration is:
+[5585]	valid_0's l2: 0.677947	valid_0's l1: 0.57554
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.67656	valid_0's huber: 0.261639
+[1000]	valid_0's l2: 0.673371	valid_0's huber: 0.260685
+[1500]	valid_0's l2: 0.671911	valid_0's huber: 0.260351
+[2000]	valid_0's l2: 0.671067	valid_0's huber: 0.26019
+[2500]	valid_0's l2: 0.670253	valid_0's huber: 0.260006
+[3000]	valid_0's l2: 0.6697	valid_0's huber: 0.259918
+Early stopping, best iteration is:
+[3031]	valid_0's l2: 0.669661	valid_0's huber: 0.25991
+[1/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.680517
+[1000]	valid_0's l2: 0.678461
+[1500]	valid_0's l2: 0.677904
+[2000]	valid_0's l2: 0.677475
+[2500]	valid_0's l2: 0.677188
+[3000]	valid_0's l2: 0.677033
+[3500]	valid_0's l2: 0.676893
+[4000]	valid_0's l2: 0.676763
+Early stopping, best iteration is:
+[4070]	valid_0's l2: 0.676721
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.686162	valid_0's l1: 0.57762
+[1000]	valid_0's l2: 0.685367	valid_0's l1: 0.577127
+[1500]	valid_0's l2: 0.684642	valid_0's l1: 0.576931
+Early stopping, best iteration is:
+[1429]	valid_0's l2: 0.684738	valid_0's l1: 0.576924
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.683425	valid_0's huber: 0.263773
+[1000]	valid_0's l2: 0.680722	valid_0's huber: 0.262958
+[1500]	valid_0's l2: 0.679243	valid_0's huber: 0.262595
+[2000]	valid_0's l2: 0.678465	valid_0's huber: 0.262447
+[2500]	valid_0's l2: 0.67775	valid_0's huber: 0.262339
+[3000]	valid_0's l2: 0.677316	valid_0's huber: 0.26228
+Early stopping, best iteration is:
+[2976]	valid_0's l2: 0.677305	valid_0's huber: 0.262274
+[1/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.692413
+[1000]	valid_0's l2: 0.690827
+[1500]	valid_0's l2: 0.690385
+[2000]	valid_0's l2: 0.689982
+[2500]	valid_0's l2: 0.689698
+[3000]	valid_0's l2: 0.689563
+Early stopping, best iteration is:
+[2925]	valid_0's l2: 0.689539
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.70346	valid_0's l1: 0.584614
+[1000]	valid_0's l2: 0.702888	valid_0's l1: 0.584257
+[1500]	valid_0's l2: 0.702627	valid_0's l1: 0.584139
+[2000]	valid_0's l2: 0.702353	valid_0's l1: 0.58405
+[2500]	valid_0's l2: 0.702103	valid_0's l1: 0.583955
+[3000]	valid_0's l2: 0.701936	valid_0's l1: 0.583912
+[3500]	valid_0's l2: 0.701721	valid_0's l1: 0.583869
+Early stopping, best iteration is:
+[3419]	valid_0's l2: 0.701745	valid_0's l1: 0.583867
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.697254	valid_0's huber: 0.268297
+[1000]	valid_0's l2: 0.695012	valid_0's huber: 0.267613
+[1500]	valid_0's l2: 0.693945	valid_0's huber: 0.267386
+[2000]	valid_0's l2: 0.693166	valid_0's huber: 0.267255
+Early stopping, best iteration is:
+[2197]	valid_0's l2: 0.692874	valid_0's huber: 0.267194
+[1/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.701141
+[1000]	valid_0's l2: 0.700239
+[1500]	valid_0's l2: 0.69984
+[2000]	valid_0's l2: 0.69949
+Early stopping, best iteration is:
+[2293]	valid_0's l2: 0.69929
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.714076	valid_0's l1: 0.593296
+[1000]	valid_0's l2: 0.713514	valid_0's l1: 0.593024
+[1500]	valid_0's l2: 0.713181	valid_0's l1: 0.592949
+[2000]	valid_0's l2: 0.712823	valid_0's l1: 0.592915
+Early stopping, best iteration is:
+[2247]	valid_0's l2: 0.712655	valid_0's l1: 0.592896
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.708	valid_0's huber: 0.273212
+[1000]	valid_0's l2: 0.706737	valid_0's huber: 0.272815
+Early stopping, best iteration is:
+[1016]	valid_0's l2: 0.706717	valid_0's huber: 0.272811
+[2/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.676688
+[1000]	valid_0's l2: 0.674499
+[1500]	valid_0's l2: 0.673875
+[2000]	valid_0's l2: 0.673468
+[2500]	valid_0's l2: 0.67315
+Early stopping, best iteration is:
+[2657]	valid_0's l2: 0.673072
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.67706	valid_0's l1: 0.574527
+[1000]	valid_0's l2: 0.675872	valid_0's l1: 0.573856
+Early stopping, best iteration is:
+[1368]	valid_0's l2: 0.675537	valid_0's l1: 0.573699
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.678061	valid_0's huber: 0.261835
+[1000]	valid_0's l2: 0.67466	valid_0's huber: 0.260796
+[1500]	valid_0's l2: 0.672957	valid_0's huber: 0.260381
+[2000]	valid_0's l2: 0.672	valid_0's huber: 0.260195
+[2500]	valid_0's l2: 0.671197	valid_0's huber: 0.259988
+Early stopping, best iteration is:
+[2705]	valid_0's l2: 0.670935	valid_0's huber: 0.259935
+[2/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.680879
+[1000]	valid_0's l2: 0.679132
+[1500]	valid_0's l2: 0.678535
+[2000]	valid_0's l2: 0.678272
+Early stopping, best iteration is:
+[2209]	valid_0's l2: 0.678214
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.686383	valid_0's l1: 0.578402
+[1000]	valid_0's l2: 0.685399	valid_0's l1: 0.577843
+[1500]	valid_0's l2: 0.684956	valid_0's l1: 0.577618
+[2000]	valid_0's l2: 0.68455	valid_0's l1: 0.577501
+[2500]	valid_0's l2: 0.68427	valid_0's l1: 0.577424
+[3000]	valid_0's l2: 0.684109	valid_0's l1: 0.577392
+[3500]	valid_0's l2: 0.683899	valid_0's l1: 0.577352
+Early stopping, best iteration is:
+[3808]	valid_0's l2: 0.683733	valid_0's l1: 0.577325
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.682811	valid_0's huber: 0.263484
+[1000]	valid_0's l2: 0.679762	valid_0's huber: 0.262532
+[1500]	valid_0's l2: 0.678707	valid_0's huber: 0.262337
+[2000]	valid_0's l2: 0.677781	valid_0's huber: 0.262142
+[2500]	valid_0's l2: 0.677134	valid_0's huber: 0.262018
+Early stopping, best iteration is:
+[2534]	valid_0's l2: 0.677072	valid_0's huber: 0.262012
+[2/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.69165
+[1000]	valid_0's l2: 0.690013
+[1500]	valid_0's l2: 0.689542
+[2000]	valid_0's l2: 0.689263
+[2500]	valid_0's l2: 0.688954
+Early stopping, best iteration is:
+[2754]	valid_0's l2: 0.688818
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.703224	valid_0's l1: 0.584235
+[1000]	valid_0's l2: 0.702551	valid_0's l1: 0.583793
+[1500]	valid_0's l2: 0.702303	valid_0's l1: 0.583656
+[2000]	valid_0's l2: 0.702078	valid_0's l1: 0.583572
+[2500]	valid_0's l2: 0.701929	valid_0's l1: 0.583534
+[3000]	valid_0's l2: 0.701794	valid_0's l1: 0.583511
+[3500]	valid_0's l2: 0.7014	valid_0's l1: 0.583412
+[4000]	valid_0's l2: 0.701114	valid_0's l1: 0.583286
+Early stopping, best iteration is:
+[4176]	valid_0's l2: 0.701042	valid_0's l1: 0.583268
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.691973	valid_0's huber: 0.266704
+[1000]	valid_0's l2: 0.689952	valid_0's huber: 0.266074
+[1500]	valid_0's l2: 0.689055	valid_0's huber: 0.265894
+Early stopping, best iteration is:
+[1567]	valid_0's l2: 0.688954	valid_0's huber: 0.265882025-05-25 20:28:53,066 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 20:28:53,083 - __main__ - INFO - Processed 205 factors in 100.66 seconds
+2025-05-25 20:28:53,182 - __main__ - INFO - Finding common indices...
+2025-05-25 20:29:20,043 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 20:29:53,662 - __main__ - INFO - Running ensemble prediction...
+2025-05-25 20:29:53,662 - __main__ - INFO - Running simulation 1/3
+2025-05-25 20:30:31,122 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 20:36:52,181 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 20:38:27,151 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 20:47:24,149 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 20:48:26,359 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 20:58:10,433 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 20:58:47,214 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 20:58:58,809 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 20:59:00,028 - __main__ - INFO - Running simulation 3/3
+2025-05-25 20:59:33,668 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 21:07:46,765 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 21:08:12,219 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 21:25:13,680 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 21:26:41,639 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 21:35:10,871 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 21:35:40,162 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 21:36:16,968 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 21:36:52,670 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 21:42:15,093 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 21:48:17,484 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 21:49:25,984 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 21:59:00,160 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 21:59:31,070 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 22:02:20,849 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 22:10:28,112 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 22:11:46,829 - __main__ - INFO - Using averaging ensemble method
+2025-05-25 22:12:20,950 - __main__ - INFO - Training model with loss function: mse
+2025-05-25 22:19:40,206 - __main__ - INFO - Training model with loss function: mae
+2025-05-25 22:20:55,370 - __main__ - INFO - Training model with loss function: huber
+2025-05-25 22:27:47,140 - __main__ - INFO - Training model with loss function: huber
+
+
+Result 2:
+

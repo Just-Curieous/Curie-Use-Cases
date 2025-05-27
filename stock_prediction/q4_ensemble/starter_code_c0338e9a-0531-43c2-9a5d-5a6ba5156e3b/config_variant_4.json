@@ -1,0 +1,53 @@
+{
+    "data_path": "/workspace/starter_code_dataset",
+    "results_path": "/workspace/starter_code_c0338e9a-0531-43c2-9a5d-5a6ba5156e3b/results",
+    "num_years_train": 3,
+    "start_year": 2017,
+    "end_year": 2023,
+    
+    "min_samples": 1650,
+    "min_trading_volume": 5000000,
+    "feature_threshold": 0.75,
+    "min_price": 2,
+    
+    "ensemble_architecture": "boosting",
+    "base_models": ["lightgbm", "xgboost", "catboost"],
+    "feature_selection": "all",
+    
+    "lgbm_params": {
+        "objective": "regression",
+        "num_leaves": 255,  
+        "learning_rate": 0.01,  
+        "verbose": -1,
+        "min_child_samples": 20,  
+        "n_estimators": 5000,  
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100,
+        "log_evaluation_freq": 500
+    },
+    
+    "xgboost_params": {
+        "objective": "reg:squarederror",
+        "max_depth": 6,  
+        "learning_rate": 0.01,  
+        "n_estimators": 5000,  
+        "subsample": 0.7,
+        "colsample_bytree": 0.7,
+        "early_stopping_rounds": 100
+    },
+    
+    "catboost_params": {
+        "objective": "RMSE",
+        "iterations": 5000,  
+        "learning_rate": 0.01,  
+        "depth": 6,  
+        "early_stopping_rounds": 100,
+        "verbose": 0
+    },
+    
+    "num_workers": 40,
+    "num_simulations": 3,
+    "device_type": "gpu",
+    "variant_name": "boosting_weak_learners"
+}

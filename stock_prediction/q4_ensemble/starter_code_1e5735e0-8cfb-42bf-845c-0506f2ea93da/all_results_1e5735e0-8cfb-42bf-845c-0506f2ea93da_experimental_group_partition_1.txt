@@ -1,0 +1,66 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+==================================================
+EXPERIMENTAL GROUP PARTITION 1 - STARTED: Sun May 25 23:34:37 UTC 2025
+==================================================
+Setting up OpenCL environment...
+Activating micromamba environment...
+Checking GPU availability...
+Sun May 25 23:34:39 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   55C    P0             84W /  300W |       1MiB /  46068MiB |      4%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+
+==================================================
+RUNNING CONFIGURATION 1/5: Feature Engineering: factor momentum + mean reversion, Hyperparameters: default, Weighting: equal weights
+==================================================
+Using configuration file: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/config_1_factor_momentum_mean_reversion_default_equal_weights.json
+2025-05-25 23:34:40,626 - __main__ - INFO - >>> Start training with Config: {'data_path': '/workspace/starter_code_dataset', 'results_path': '/workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results', 'num_years_train': 3, 'start_year': 2017, 'end_year': 2023, 'min_samples': 1650, 'min_trading_volume': 5000000, 'min_price': 2, 'lgbm_params': {'objective': 'regression', 'num_leaves': 511, 'learning_rate': 0.02, 'verbose': -1, 'min_child_samples': 30, 'n_estimators': 10000, 'subsample': 0.7, 'colsample_bytree': 0.7, 'early_stopping_rounds': 100, 'log_evaluation_freq': 500}, 'num_workers': 40, 'num_simulations': 3, 'feature_threshold': 0.75, 'device_type': 'gpu', 'feature_engineering': 'factor_momentum_mean_reversion', 'hyperparameters': 'default', 'weighting': 'equal_weights'} <<<
+2025-05-25 23:34:40,626 - __main__ - INFO - Created or verified directories: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results
+2025-05-25 23:34:40,626 - __main__ - INFO - Loading data...
+2025-05-25 23:35:36,461 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-25 23:35:39,271 - __main__ - INFO - Loaded 208 factor files
+2025-05-25 23:35:40,611 - __main__ - INFO - Successfully loaded all data files
+2025-05-25 23:35:40,611 - __main__ - INFO - Filtering factors...
+2025-05-25 23:35:47,514 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-25 23:35:47,515 - __main__ - INFO - Processing factors...
+2025-05-25 23:35:47,515 - __main__ - INFO - Processing 205 factors using 40 workers
+Current working directory: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da
+2025-05-25 23:37:15,899 - __main__ - INFO - Processed 205 factors in 88.38 seconds
+2025-05-25 23:37:15,900 - __main__ - INFO - Applying feature engineering...
+2025-05-25 23:37:15,900 - __main__ - INFO - Applying factor momentum and mean reversion feature engineering
+2025-05-25 23:45:29,908 - __main__ - INFO - Created 820 momentum features from 205 original factors
+2025-05-25 23:50:24,144 - __main__ - INFO - Created 820 mean reversion features from 205 original factors
+2025-05-25 23:50:24,242 - __main__ - INFO - Finding common indices...
+2025-05-25 23:56:11,191 - __main__ - INFO - Running prediction...
+2025-05-25 23:56:11,192 - __main__ - INFO - Running simulation 1/3
+2025-05-26 00:00:26,898 - __main__ - INFO - Using default hyperparameters
+2025-05-26 00:25:42,832 - __main__ - INFO - Using default hyperparameters
+2025-05-26 00:44:52,218 - __main__ - INFO - Using default hyperparameters
+2025-05-26 01:00:26,992 - __main__ - INFO - Using default hyperparameters
+2025-05-26 01:14:32,057 - __main__ - INFO - Running simulation 2/3
+2025-05-26 01:18:03,398 - __main__ - INFO - Using default hyperparameters
+2025-05-26 01:36:36,806 - __main__ - INFO - Using default hyperparameters
+
+
+Result 2:
+

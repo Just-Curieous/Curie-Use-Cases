@@ -1,0 +1,220 @@
+==================================================
+EXPERIMENTAL GROUP PARTITION 1 - STARTED: Mon May 26 01:36:53 UTC 2025
+==================================================
+Setting up OpenCL environment...
+Activating micromamba environment...
+Checking GPU availability...
+Mon May 26 01:36:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   41C    P8             12W /  300W |       4MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+
+==================================================
+RUNNING CONFIGURATION 1/5: Feature Engineering: factor momentum + mean reversion, Hyperparameters: default, Weighting: equal weights
+==================================================
+Using configuration file: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/config_1_factor_momentum_mean_reversion_default_equal_weights.json
+2025-05-26 01:36:54,737 - __main__ - INFO - >>> Start training with Config: {'data_path': '/workspace/starter_code_dataset', 'results_path': '/workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results', 'num_years_train': 3, 'start_year': 2017, 'end_year': 2023, 'min_samples': 1650, 'min_trading_volume': 5000000, 'min_price': 2, 'lgbm_params': {'objective': 'regression', 'num_leaves': 511, 'learning_rate': 0.02, 'verbose': -1, 'min_child_samples': 30, 'n_estimators': 10000, 'subsample': 0.7, 'colsample_bytree': 0.7, 'early_stopping_rounds': 100, 'log_evaluation_freq': 500}, 'num_workers': 40, 'num_simulations': 3, 'feature_threshold': 0.75, 'device_type': 'gpu', 'feature_engineering': 'factor_momentum_mean_reversion', 'hyperparameters': 'default', 'weighting': 'equal_weights'} <<<
+2025-05-26 01:36:54,737 - __main__ - INFO - Created or verified directories: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results
+2025-05-26 01:36:54,737 - __main__ - INFO - Loading data...
+2025-05-26 01:38:00,536 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-26 01:38:03,897 - __main__ - INFO - Loaded 208 factor files
+2025-05-26 01:38:05,492 - __main__ - INFO - Successfully loaded all data files
+2025-05-26 01:38:05,492 - __main__ - INFO - Filtering factors...
+2025-05-26 01:38:16,984 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-26 01:38:16,984 - __main__ - INFO - Processing factors...
+2025-05-26 01:38:16,984 - __main__ - INFO - Processing 205 factors using 40 workers
+Current working directory: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da
+2025-05-26 01:40:08,133 - __main__ - INFO - Processed 205 factors in 111.15 seconds
+2025-05-26 01:40:08,134 - __main__ - INFO - Applying feature engineering...
+2025-05-26 01:40:08,134 - __main__ - INFO - Applying factor momentum and mean reversion feature engineering
+2025-05-26 01:48:47,676 - __main__ - INFO - Created 820 momentum features from 205 original factors
+2025-05-26 01:53:36,789 - __main__ - INFO - Created 820 mean reversion features from 205 original factors
+2025-05-26 01:53:36,896 - __main__ - INFO - Finding common indices...
+2025-05-26 01:56:14,164 - __main__ - INFO - Using default hyperparameters
+2025-05-26 02:00:18,833 - __main__ - INFO - Running prediction...
+2025-05-26 02:00:18,834 - __main__ - INFO - Running simulation 1/3
+2025-05-26 02:06:16,150 - __main__ - INFO - Using default hyperparameters
+2025-05-26 02:27:12,608 - __main__ - INFO - Using default hyperparameters
+2025-05-26 02:46:44,624 - __main__ - INFO - Running simulation 3/3
+2025-05-26 02:50:42,586 - __main__ - INFO - Using default hyperparameters
+2025-05-26 02:55:02,957 - __main__ - INFO - Using default hyperparameters
+2025-05-26 03:31:00,040 - __main__ - INFO - Using default hyperparameters
+2025-05-26 03:35:40,604 - __main__ - INFO - Using default hyperparameters
+2025-05-26 04:12:06,606 - __main__ - INFO - Using default hyperparameters
+2025-05-26 04:14:57,206 - __main__ - INFO - Using default hyperparameters
+2025-05-26 04:41:18,802 - __main__ - INFO - Running simulation 2/3
+2025-05-26 04:42:18,311 - __main__ - INFO - Using default hyperparameters
+2025-05-26 04:45:34,856 - __main__ - INFO - Using default hyperparameters
+2025-05-26 05:01:12,876 - __main__ - INFO - Applying filters...
+2025-05-26 05:01:13,081 - __main__ - INFO - Applied filters: 1644 rows remaining
+2025-05-26 05:01:13,081 - __main__ - INFO - Calculating metrics...
+2025-05-26 05:18:53,905 - __main__ - INFO - Using default hyperparameters
+2025-05-26 05:44:01,402 - __main__ - INFO - Using default hyperparameters
+2025-05-26 06:07:49,904 - __main__ - INFO - Using default hyperparameters
+2025-05-26 06:28:27,292 - __main__ - INFO - Running simulation 3/3
+2025-05-26 06:32:12,428 - __main__ - INFO - Using default hyperparameters
+2025-05-26 06:46:49,553 - __main__ - INFO - Saving results...
+2025-05-26 06:46:50,599 - __main__ - INFO - Results saved to /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results/predictions_20250526_064649.parquet and /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results/metrics_20250526_064649.json
+2025-05-26 06:46:50,599 - __main__ - INFO - Total processing time: 25929.97 seconds
+2025-05-26 06:46:50,599 - __main__ - INFO - 
+==================================================
+PERFORMANCE METRICS
+==================================================
+2025-05-26 06:46:50,599 - __main__ - INFO - Overall Rank Correlation: 0.0942
+2025-05-26 06:46:50,599 - __main__ - INFO - MSE: 0.025658
+2025-05-26 06:46:50,599 - __main__ - INFO - Sharpe Ratio: 0.9196
+2025-05-26 06:46:50,599 - __main__ - INFO - 2020 Rank Correlation: 0.1098
+2025-05-26 06:46:50,599 - __main__ - INFO - 2021 Rank Correlation: 0.0925
+2025-05-26 06:46:50,599 - __main__ - INFO - 2022 Rank Correlation: 0.0871
+2025-05-26 06:46:50,599 - __main__ - INFO - 2023 Rank Correlation: 0.0871
+2025-05-26 06:46:50,599 - __main__ - INFO - ==================================================
+Full report saved to: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results/metrics_20250526_064649.json
+==================================================
+2025-05-26 06:46:50,599 - __main__ - INFO - Metrics: {'overall': 0.0942429740351569, 'mse': 0.025657719418074616, 'sharpe': 0.9195758310794975, '2020': 0.10982902280617406, '2021': 0.0924672741495103, '2022': 0.08713092532681639, '2023': 0.0871467105452522}
+[1/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.696787
+[1000]	valid_0's l2: 0.69368
+[1500]	valid_0's l2: 0.692719
+[2000]	valid_0's l2: 0.692286
+[2500]	valid_0's l2: 0.691758
+[3000]	valid_0's l2: 0.691446
+[3500]	valid_0's l2: 0.691101
+Early stopping, best iteration is:
+[3868]	valid_0's l2: 0.69093
+[1/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.701915
+[1000]	valid_0's l2: 0.699727
+[1500]	valid_0's l2: 0.699165
+[2000]	valid_0's l2: 0.698803
+[2500]	valid_0's l2: 0.69855
+Early stopping, best iteration is:
+[2613]	valid_0's l2: 0.698472
+[1/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.71217
+[1000]	valid_0's l2: 0.710839
+[1500]	valid_0's l2: 0.710432
+Early stopping, best iteration is:
+[1673]	valid_0's l2: 0.710375
+[1/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.722652
+[1000]	valid_0's l2: 0.721763
+[1500]	valid_0's l2: 0.721514
+[2000]	valid_0's l2: 0.721256
+[2500]	valid_0's l2: 0.721078
+Early stopping, best iteration is:
+[2410]	valid_0's l2: 0.721074
+[2/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.692272
+[1000]	valid_0's l2: 0.689092
+[1500]	valid_0's l2: 0.688068
+[2000]	valid_0's l2: 0.687607
+Early stopping, best iteration is:
+[2363]	valid_0's l2: 0.687287
+[2/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.69909
+[1000]	valid_0's l2: 0.696717
+[1500]	valid_0's l2: 0.695951
+[2000]	valid_0's l2: 0.695649
+[2500]	valid_0's l2: 0.695344
+Early stopping, best iteration is:
+[2445]	valid_0's l2: 0.695318
+[2/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.710816
+[1000]	valid_0's l2: 0.709449
+[1500]	valid_0's l2: 0.70907
+[2000]	valid_0's l2: 0.708776
+[2500]	valid_0's l2: 0.708637
+Early stopping, best iteration is:
+[2410]	valid_0's l2: 0.708607
+[2/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.719167
+[1000]	valid_0's l2: 0.718323
+[1500]	valid_0's l2: 0.718163
+Early stopping, best iteration is:
+[1537]	valid_0's l2: 0.718137
+[3/3] Predicting for year 2020
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.688421
+[1000]	valid_0's l2: 0.685385
+[1500]	valid_0's l2: 0.684624
+[2000]	valid_0's l2: 0.684228
+[2500]	valid_0's l2: 0.683847
+[3000]	valid_0's l2: 0.683587
+Early stopping, best iteration is:
+[3161]	valid_0's l2: 0.683436
+[3/3] Predicting for year 2021
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.703184
+[1000]	valid_0's l2: 0.701104
+[1500]	valid_0's l2: 0.700356
+[2000]	valid_0's l2: 0.70006
+[2500]	valid_0's l2: 0.699768
+Early stopping, best iteration is:
+[2730]	valid_0's l2: 0.699641
+[3/3] Predicting for year 2022
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.711515
+[1000]	valid_0's l2: 0.710041
+[1500]	valid_0's l2: 0.709694
+Early stopping, best iteration is:
+[1888]	valid_0's l2: 0.709476
+[3/3] Predicting for year 2023
+Training until validation scores don't improve for 100 rounds
+[500]	valid_0's l2: 0.721579
+[1000]	valid_0's l2: 0.720812
+Early stopping, best iteration is:
+[1161]	valid_0's l2: 0.720682
+Configuration 1 completed successfully
+Extracting metrics from /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results/metrics_20250526_064649.json
+Rank Correlation: 0.0942429740351569
+Sharpe Ratio: 0.9195758310794975
+MSE: 0.025657719418074616
+Computation Time: 25973 seconds
+
+
+==================================================
+RUNNING CONFIGURATION 2/5: Feature Engineering: raw factors only, Hyperparameters: optimized, Weighting: equal weights
+==================================================
+Using configuration file: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/config_2_raw_factors_only_optimized_equal_weights.json
+2025-05-26 06:47:33,371 - __main__ - INFO - >>> Start training with Config: {'data_path': '/workspace/starter_code_dataset', 'results_path': '/workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results', 'num_years_train': 3, 'start_year': 2017, 'end_year': 2023, 'min_samples': 1650, 'min_trading_volume': 5000000, 'min_price': 2, 'lgbm_params': {'objective': 'regression', 'num_leaves': 511, 'learning_rate': 0.02, 'verbose': -1, 'min_child_samples': 30, 'n_estimators': 10000, 'subsample': 0.7, 'colsample_bytree': 0.7, 'early_stopping_rounds': 100, 'log_evaluation_freq': 500}, 'num_workers': 40, 'num_simulations': 3, 'feature_threshold': 0.75, 'device_type': 'gpu', 'feature_engineering': 'raw_factors_only', 'hyperparameters': 'optimized', 'weighting': 'equal_weights'} <<<
+2025-05-26 06:47:33,372 - __main__ - INFO - Created or verified directories: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da/results
+2025-05-26 06:47:33,372 - __main__ - INFO - Loading data...
+2025-05-26 06:48:43,361 - __main__ - INFO - Warning: Skip reading /workspace/starter_code_dataset/RawData/NFactors/factor98.parquet: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+2025-05-26 06:48:47,532 - __main__ - INFO - Loaded 208 factor files
+2025-05-26 06:48:49,145 - __main__ - INFO - Successfully loaded all data files
+2025-05-26 06:48:49,145 - __main__ - INFO - Filtering factors...
+2025-05-26 06:48:56,092 - __main__ - INFO - Filtered factors from 208 to 205
+2025-05-26 06:48:56,092 - __main__ - INFO - Processing factors...
+2025-05-26 06:48:56,092 - __main__ - INFO - Processing 205 factors using 40 workers
+Current working directory: /workspace/starter_code_1e5735e0-8cfb-42bf-845c-0506f2ea93da
+2025-05-26 06:50:32,717 - __main__ - INFO - Processed 205 factors in 96.63 seconds
+2025-05-26 06:50:32,719 - __main__ - INFO - Applying feature engineering...
+2025-05-26 06:50:32,719 - __main__ - INFO - Using raw factors only (no additional feature engineering)
+2025-05-26 06:50:32,827 - __main__ - INFO - Finding common indices...
+2025-05-26 06:51:43,878 - __main__ - INFO - Running prediction...
+2025-05-26 06:51:43,878 - __main__ - INFO - Running simulation 1/3
