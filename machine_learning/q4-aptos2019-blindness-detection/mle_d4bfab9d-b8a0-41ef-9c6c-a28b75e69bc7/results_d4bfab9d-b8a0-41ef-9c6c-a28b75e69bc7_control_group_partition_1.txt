@@ -1,0 +1,73 @@
+Starting diabetic retinopathy detection experiment at Fri May 23 20:44:25 UTC 2025
+=======================================================
+Setting up environment...
+Checking CUDA availability...
+CUDA available: True
+PyTorch version: 2.7.0+cu126
+Starting the main workflow...
+=======================================================
+Arguments:
+  train_csv: /workspace/mle_dataset/train.csv
+  test_csv: /workspace/mle_dataset/test.csv
+  train_img_dir: /workspace/mle_dataset/train_images
+  test_img_dir: /workspace/mle_dataset/test_images
+  output_dir: /workspace/mle_d4bfab9d-b8a0-41ef-9c6c-a28b75e69bc7/output
+  batch_size: 16
+  num_epochs: 10
+Using device: cuda
+Class weights: tensor([0.2152, 1.0302, 0.3909, 1.9901, 1.3736], device='cuda:0')
+Loaded pretrained weights for efficientnet-b4
+Starting training...
+Epoch 1/10
+----------
+Train Loss: 1.1427, Val Loss: 1.5836
+Val Acc: 0.6202, Val Kappa: 0.4793
+Saved best model with kappa: 0.4793
+
+Epoch 2/10
+----------
+Train Loss: 0.9680, Val Loss: 1.0103
+Val Acc: 0.8061, Val Kappa: 0.8583
+Saved best model with kappa: 0.8583
+
+Epoch 3/10
+----------
+Train Loss: 0.8990, Val Loss: 1.0119
+Val Acc: 0.7818, Val Kappa: 0.8721
+Saved best model with kappa: 0.8721
+
+Epoch 4/10
+----------
+Train Loss: 0.8378, Val Loss: 0.8875
+Val Acc: 0.7778, Val Kappa: 0.8564
+
+Epoch 5/10
+----------
+Train Loss: 0.7740, Val Loss: 1.6279
+Val Acc: 0.6869, Val Kappa: 0.5989
+
+Epoch 6/10
+----------
+Train Loss: 0.7701, Val Loss: 0.8648
+Val Acc: 0.7293, Val Kappa: 0.8422
+Early stopping after 6 epochs
+Training completed in 2490.39 seconds
+Evaluating model...
+Making predictions on test set...
+Done!
+=======================================================
+Experiment completed successfully at Fri May 23 21:27:48 UTC 2025
+=======================================================
+Results Summary:
+Test Loss: 1.0119
+Test Accuracy: 0.7818
+Test Quadratic Weighted Kappa: 0.8721
+
+Per-Class Accuracy:
+Class 0: 0.9915
+Class 1: 0.2549
+Class 2: 0.7687
+Class 3: 0.1786
+Class 4: 0.6857
+=======================================================
+End of experiment log

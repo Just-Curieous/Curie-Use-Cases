@@ -1,0 +1,8 @@
+Validation Kappa: 0.9079
+Validation Accuracy: 0.8346
+Per-class Accuracy:
+  Class 0: 0.9939
+  Class 1: 0.5692
+  Class 2: 0.7796
+  Class 3: 0.4062
+  Class 4: 0.6042

@@ -1,0 +1,140 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+=== Diabetic Retinopathy Detection Experiment ===
+Starting experiment at: Fri May 23 21:07:09 UTC 2025
+
+=== Checking GPU availability ===
+  File "<string>", line 1
+    import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'PyTorch version: {torch.__version__}'); print(f'Device: {torch.device("cuda" if torch.cuda.is_available() else "cpu")}'); if torch.cuda.is_available(): print(f'CUDA device: {torch.cuda.get_device_name(0)}'); print(f'Number of GPUs: {torch.cuda.device_count()}')
+                                                                                                                                                                                                           ^^
+SyntaxError: invalid syntax
+
+=== Dataset Information ===
+Training data:
+Total samples: 3295
+Class distribution:
+diagnosis
+0    1628
+2     896
+1     340
+4     255
+3     176
+Name: count, dtype: int64
+
+Test data:
+Total samples: 367
+
+=== Running Main Script ===
+Using device: cuda
+Creating dataloaders...
+Train size: 2636, Validation size: 659, Test size: 367
+Creating model...
+Loaded pretrained weights for efficientnet-b4
+Training model...
+Epoch 1/50
+Train Loss: 1.2296, Train Kappa: 0.6553
+Val Loss: 0.8751, Val Kappa: 0.8704
+New best model saved with validation kappa: 0.8704
+Epoch 2/50
+Train Loss: 0.8533, Train Kappa: 0.8138
+Val Loss: 0.7743, Val Kappa: 0.8615
+Epoch 3/50
+Train Loss: 0.6441, Train Kappa: 0.8760
+Val Loss: 0.7584, Val Kappa: 0.8841
+New best model saved with validation kappa: 0.8841
+Epoch 4/50
+Train Loss: 0.4654, Train Kappa: 0.9243
+Val Loss: 0.7923, Val Kappa: 0.8695
+Epoch 5/50
+Train Loss: 0.2990, Train Kappa: 0.9492
+Val Loss: 0.9178, Val Kappa: 0.8864
+New best model saved with validation kappa: 0.8864
+Epoch 6/50
+Train Loss: 0.2258, Train Kappa: 0.9544
+Val Loss: 1.0184, Val Kappa: 0.8887
+New best model saved with validation kappa: 0.8887
+Epoch 7/50
+Train Loss: 0.1847, Train Kappa: 0.9670
+Val Loss: 0.9210, Val Kappa: 0.8556
+Epoch 8/50
+Train Loss: 0.1805, Train Kappa: 0.9700
+Val Loss: 1.0262, Val Kappa: 0.9096
+New best model saved with validation kappa: 0.9096
+Epoch 9/50
+Train Loss: 0.1274, Train Kappa: 0.9846
+Val Loss: 0.9078, Val Kappa: 0.8919
+Epoch 10/50
+Train Loss: 0.1253, Train Kappa: 0.9771
+Val Loss: 0.9516, Val Kappa: 0.8930
+Epoch 11/50
+Train Loss: 0.1219, Train Kappa: 0.9800
+Val Loss: 1.0745, Val Kappa: 0.8849
+Epoch 12/50
+Train Loss: 0.1188, Train Kappa: 0.9812
+Val Loss: 1.3561, Val Kappa: 0.8820
+Epoch 13/50
+Train Loss: 0.1000, Train Kappa: 0.9843
+Val Loss: 1.1176, Val Kappa: 0.8820
+Epoch 14/50
+Train Loss: 0.0630, Train Kappa: 0.9905
+Val Loss: 1.1340, Val Kappa: 0.8867
+Epoch 15/50
+Train Loss: 0.0699, Train Kappa: 0.9901
+Val Loss: 1.1131, Val Kappa: 0.8725
+Epoch 16/50
+Train Loss: 0.0705, Train Kappa: 0.9884
+Val Loss: 1.1923, Val Kappa: 0.8801
+Epoch 17/50
+Train Loss: 0.0578, Train Kappa: 0.9902
+Val Loss: 1.2015, Val Kappa: 0.8899
+Epoch 18/50
+Train Loss: 0.0477, Train Kappa: 0.9910
+Val Loss: 1.1779, Val Kappa: 0.8737
+Early stopping at epoch 18
+Training complete in 113m 13s
+Best validation Kappa: 0.9096 at epoch 8
+Calculating validation metrics...
+Validation Kappa: 0.9096
+Validation Accuracy: 0.8376
+Per-class Accuracy:
+  Class 0: 0.9878
+  Class 1: 0.6615
+  Class 2: 0.7688
+  Class 3: 0.4688
+  Class 4: 0.5625
+Plotting confusion matrix...
+Plotting training history...
+Making predictions on test set...
+Saving predictions...
+Saving metrics...
+Done!
+
+=== Final Results ===
+Validation Kappa: 0.9096
+Validation Accuracy: 0.8376
+Per-class Accuracy:
+  Class 0: 0.9878
+  Class 1: 0.6615
+  Class 2: 0.7688
+  Class 3: 0.4688
+  Class 4: 0.5625
+
+=== Predictions Sample ===
+id_code,diagnosis
+b460ca9fa26f,0
+6cee2e148520,0
+ca6842bfcbc9,1
+6cbc3dad809c,2
+a9bc2f892cb3,0
+40e9b5630438,1
+e4e343eaae2a,1
+f4d3777f2710,2
+10a5026eb8e6,0
+
+Experiment completed at: Fri May 23 23:05:55 UTC 2025
+
+
+Result 2:
+

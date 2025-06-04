@@ -1,0 +1,34 @@
+=== Diabetic Retinopathy Detection Experiment - Control Group ===
+Started at: Fri May 23 23:19:15 UTC 2025
+
+=== GPU Information ===
+CUDA available: True
+GPU Count: 1
+GPU Name: NVIDIA A40
+
+=== Dataset Information ===
+Training samples: 3295
+Test samples: 367
+Class distribution in training data:
+diagnosis
+0    1628
+1     340
+2     896
+3     176
+4     255
+Name: count, dtype: int64
+
+=== Running Training and Evaluation ===
+Traceback (most recent call last):
+  File "/workspace/mle_cb2a24fa-7167-4bd7-a9fb-616fea266e41/main.py", line 13, in <module>
+    from train import train_model, evaluate_model, predict
+  File "/workspace/mle_cb2a24fa-7167-4bd7-a9fb-616fea266e41/train.py", line 11, in <module>
+    from utils import calculate_metrics, save_predictions
+  File "/workspace/mle_cb2a24fa-7167-4bd7-a9fb-616fea266e41/utils.py", line 6, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+=== ERROR: Model Training Failed ===
+
+Finished at: Fri May 23 23:19:21 UTC 2025
+=== Experiment Completed ===

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/mle_45b01289-4e36-4d34-89f6-bb7a5d8cc86e/diabetic_retinopathy_detection_improved.py", line 19, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'

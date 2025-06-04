@@ -1,0 +1,79 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+===== Starting Simplified Diabetic Retinopathy Detection Experiment =====
+Experiment ID: ab0b31ec-4057-4e7f-aab3-134dc35a5d57
+Group: control_group_partition_1
+Date: Fri May 23 09:41:36 UTC 2025
+
+===== Checking GPU Availability =====
+CUDA available: True
+CUDA device count: 1
+CUDA device name: NVIDIA A40
+
+===== Dataset Information =====
+Train CSV: /workspace/mle_dataset/train.csv
+Test CSV: /workspace/mle_dataset/test.csv
+Train images directory: /workspace/mle_dataset/train_images
+Test images directory: /workspace/mle_dataset/test_images
+Train images count: 3295
+Test images count: 367
+
+===== Class Distribution =====
+Class counts:
+diagnosis
+0    1628
+1     340
+2     896
+3     176
+4     255
+Name: count, dtype: int64
+
+Percentage distribution:
+diagnosis
+0    49.408194
+1    10.318665
+2    27.192716
+3     5.341426
+4     7.738998
+Name: count, dtype: float64
+
+===== Training Model (Simplified, 2 epochs) =====
+Loaded pretrained weights for efficientnet-b4
+Starting training for 2 epochs...
+Epoch 1/2 | Train Loss: 1.2013, Train Acc: 63.92% | Val Loss: 1.0595, Val Acc: 74.96%, Val Kappa: 0.8016
+Model saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/model_epoch_1.pt
+New best model saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/best_model.pt
+Epoch 2/2 | Train Loss: 0.8120, Train Acc: 77.85% | Val Loss: 0.8785, Val Acc: 76.02%, Val Kappa: 0.8570
+Model saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/model_epoch_2.pt
+New best model saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/best_model.pt
+Training completed. Best model from epoch 2 with kappa: 0.8570
+Final validation metrics:
+  Accuracy: 0.7602
+  Quadratic Weighted Kappa: 0.8570
+Results saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results
+Test predictions saved to /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/submission.csv
+
+===== Experiment Summary =====
+Model: EfficientNetB4
+Training: 2 epochs only
+Preprocessing: CLAHE enhancement
+Augmentation: Minimal (horizontal/vertical flips, small rotations)
+Class balancing: Weighted loss function
+DataLoader: num_workers=0 (fixed to prevent bus error)
+
+Results:
+Validation metrics:
+accuracy,quadratic_weighted_kappa
+0.7602427921092565,0.8569981299282092
+
+===== Experiment Completed =====
+Date: Fri May 23 10:01:08 UTC 2025
+All results saved to: /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results
+Submission file: /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/submission.csv
+Model saved after each epoch and best model saved to: /workspace/mle_ab0b31ec-4057-4e7f-aab3-134dc35a5d57/results/best_model.pt
+
+
+Result 2:
+

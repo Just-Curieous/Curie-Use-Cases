@@ -1,0 +1,100 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+=== System Information ===
+Date: Fri May 23 03:50:32 UTC 2025
+Hostname: optane01
+Python version: Python 3.12.10
+  File "<string>", line 1
+    import torch; print(f\"PyTorch {torch.__version__}, CUDA available: {torch.cuda.is_available()}\")
+                          ^
+SyntaxError: unexpected character after line continuation character
+PyTorch version: 
+GPU information:
+Fri May 23 03:50:34 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   56C    P0             84W /  300W |       1MiB /  46068MiB |      4%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+=== Dataset Information ===
+Train samples: 3296 (including header)
+Test samples: 368 (including header)
+Train images: 3295
+Test images: 367
+
+=== Simplified Version Settings ===
+- Using PyTorch instead of TensorFlow
+- Using batch size of 8
+- Using smaller image size (128x128)
+- Using MobileNetV2 model
+- Limited training samples to 200
+- Training for only 2 epochs
+- Simplified preprocessing (no circular crop)
+- Minimal model architecture
+
+=== Starting Experiment ===
+Model: MobileNetV2 (PyTorch)
+Experiment ID: c617eb89-e0b7-4a21-92e8-0028d18a5053
+Group: control_group_partition_1
+
+2025-05-23 03:50:39 - INFO - Using device: cuda:0
+2025-05-23 03:50:39 - INFO - Training data: 3295 samples
+2025-05-23 03:50:39 - INFO - Test data: 367 samples
+2025-05-23 03:50:39 - INFO - Limiting training data to 200 samples
+2025-05-23 03:50:39 - INFO - Training subset: 160 samples
+2025-05-23 03:50:39 - INFO - Validation subset: 40 samples
+Downloading: "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth" to /root/.cache/torch/hub/checkpoints/mobilenet_v2-7ebf99e0.pth
+
+  0%|          | 0.00/13.6M [00:00<?, ?B/s]
+100%|██████████| 13.6M/13.6M [00:00<00:00, 182MB/s]
+2025-05-23 03:50:40 - INFO - Epoch 1/2
+2025-05-23 03:50:47 - INFO - Train Loss: 1.1443 Acc: 0.5875
+2025-05-23 03:50:49 - INFO - Val Loss: 1.3275 Acc: 0.6250
+2025-05-23 03:50:49 - INFO - Epoch 2/2
+2025-05-23 03:50:56 - INFO - Train Loss: 0.7354 Acc: 0.7438
+2025-05-23 03:50:58 - INFO - Val Loss: 0.8526 Acc: 0.7500
+2025-05-23 03:50:58 - INFO - Training completed in 18.53 seconds
+2025-05-23 03:51:16 - INFO - Inference completed in 18.11 seconds
+2025-05-23 03:51:16 - INFO - Submission saved to /workspace/mle_c617eb89-e0b7-4a21-92e8-0028d18a5053/output/submission.csv
+2025-05-23 03:51:16 - INFO - Done!
+
+=== Experiment Completed with Exit Code: 0 ===
+=== Results ===
+Metrics:
+inference_time,training_time
+18.113327980041504,18.533250331878662
+
+Submission file preview:
+id_code,diagnosis
+b460ca9fa26f,0
+6cee2e148520,2
+ca6842bfcbc9,2
+6cbc3dad809c,2
+a9bc2f892cb3,0
+40e9b5630438,2
+e4e343eaae2a,2
+f4d3777f2710,2
+10a5026eb8e6,0
+
+=== End of Experiment ===
+
+
+Result 2:
+

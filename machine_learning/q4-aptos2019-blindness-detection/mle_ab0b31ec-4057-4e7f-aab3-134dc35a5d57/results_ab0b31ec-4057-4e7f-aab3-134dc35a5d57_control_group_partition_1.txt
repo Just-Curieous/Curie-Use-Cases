@@ -1,0 +1,38 @@
+===== Starting Simplified Diabetic Retinopathy Detection Experiment =====
+Experiment ID: ab0b31ec-4057-4e7f-aab3-134dc35a5d57
+Group: control_group_partition_1
+Date: Fri May 23 10:03:38 UTC 2025
+
+===== Checking GPU Availability =====
+CUDA available: True
+CUDA device count: 1
+CUDA device name: NVIDIA A40
+
+===== Dataset Information =====
+Train CSV: /workspace/mle_dataset/train.csv
+Test CSV: /workspace/mle_dataset/test.csv
+Train images directory: /workspace/mle_dataset/train_images
+Test images directory: /workspace/mle_dataset/test_images
+Train images count: 3295
+Test images count: 367
+
+===== Class Distribution =====
+Class counts:
+diagnosis
+0    1628
+1     340
+2     896
+3     176
+4     255
+Name: count, dtype: int64
+
+Percentage distribution:
+diagnosis
+0    49.408194
+1    10.318665
+2    27.192716
+3     5.341426
+4     7.738998
+Name: count, dtype: float64
+
+===== Training Model (Simplified, 2 epochs) =====

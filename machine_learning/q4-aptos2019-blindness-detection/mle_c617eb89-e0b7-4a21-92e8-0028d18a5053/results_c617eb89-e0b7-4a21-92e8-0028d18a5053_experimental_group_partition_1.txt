@@ -1,0 +1,111 @@
+=== System Information ===
+Date: Sat May 24 01:30:06 UTC 2025
+Hostname: optane01
+Python version: Python 3.12.10
+  File "<string>", line 1
+    import torch; print(f\"PyTorch {torch.__version__}, CUDA available: {torch.cuda.is_available()}\")
+                          ^
+SyntaxError: unexpected character after line continuation character
+PyTorch version: 
+GPU information:
+Sat May 24 01:30:06 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   66C    P0             91W /  300W |    4493MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+
+=== Dataset Information ===
+Train samples: 3296 (including header)
+Test samples: 368 (including header)
+Train images: 3295
+Test images: 367
+
+=== Experiment Settings ===
+- Using PyTorch with GPU acceleration
+- Using batch size of 16
+- Using model-specific image sizes (224x224 for EfficientNetB4/DenseNet121, 299x299 for InceptionV3)
+- Using multiple models: EfficientNetB4, DenseNet121, InceptionV3
+- Using all training samples (full dataset)
+- Training for 30 epochs with early stopping
+- Advanced preprocessing with circular crop
+- Data augmentation (flips, rotations, color jitter)
+- Learning rate scheduling
+- DataLoader with num_workers=0 to avoid multiprocessing issues
+
+=== Starting Experiment ===
+Models: EfficientNetB4, DenseNet121, InceptionV3 (PyTorch)
+Experiment ID: c617eb89-e0b7-4a21-92e8-0028d18a5053
+Group: experimental_group_partition_1
+
+2025-05-24 01:30:10 - INFO - Using device: cuda:0
+2025-05-24 01:30:10 - INFO - Training data: 3295 samples
+2025-05-24 01:30:10 - INFO - Test data: 367 samples
+2025-05-24 01:30:10 - INFO - Training subset: 2636 samples
+2025-05-24 01:30:10 - INFO - Validation subset: 659 samples
+2025-05-24 01:30:10 - INFO - === Starting training for efficientnet_b4 ===
+2025-05-24 01:30:10 - INFO - Using image size 224x224 for efficientnet_b4
+2025-05-24 01:30:10 - INFO - Epoch 1/30
+2025-05-24 01:38:45 - INFO - Train Loss: 0.7537 Acc: 0.7197 | Val Loss: 0.6428 Acc: 0.7618
+2025-05-24 01:38:45 - INFO - Validation loss decreased (inf --> 0.642845). Saving model...
+2025-05-24 01:38:45 - INFO - Epoch 2/30
+2025-05-24 01:47:19 - INFO - Train Loss: 0.6004 Acc: 0.7728 | Val Loss: 0.6101 Acc: 0.7557
+2025-05-24 01:47:19 - INFO - Validation loss decreased (0.642845 --> 0.610083). Saving model...
+2025-05-24 01:47:19 - INFO - Epoch 3/30
+2025-05-24 01:55:48 - INFO - Train Loss: 0.5142 Acc: 0.8058 | Val Loss: 0.5707 Acc: 0.7860
+2025-05-24 01:55:48 - INFO - Validation loss decreased (0.610083 --> 0.570687). Saving model...
+2025-05-24 01:55:48 - INFO - Epoch 4/30
+2025-05-24 02:04:17 - INFO - Train Loss: 0.4641 Acc: 0.8266 | Val Loss: 0.5564 Acc: 0.7891
+2025-05-24 02:04:17 - INFO - Validation loss decreased (0.570687 --> 0.556395). Saving model...
+2025-05-24 02:04:17 - INFO - Epoch 5/30
+2025-05-24 02:12:44 - INFO - Train Loss: 0.4245 Acc: 0.8418 | Val Loss: 0.5083 Acc: 0.7951
+2025-05-24 02:12:44 - INFO - Validation loss decreased (0.556395 --> 0.508321). Saving model...
+2025-05-24 02:12:45 - INFO - Epoch 6/30
+2025-05-24 02:21:12 - INFO - Train Loss: 0.3787 Acc: 0.8528 | Val Loss: 0.5946 Acc: 0.8073
+2025-05-24 02:21:12 - INFO - EarlyStopping counter: 1 out of 5
+2025-05-24 02:21:12 - INFO - Epoch 7/30
+2025-05-24 02:29:40 - INFO - Train Loss: 0.3457 Acc: 0.8733 | Val Loss: 0.5022 Acc: 0.8118
+2025-05-24 02:29:40 - INFO - Validation loss decreased (0.508321 --> 0.502239). Saving model...
+2025-05-24 02:29:40 - INFO - Epoch 8/30
+2025-05-24 02:38:07 - INFO - Train Loss: 0.3456 Acc: 0.8714 | Val Loss: 0.6321 Acc: 0.8073
+2025-05-24 02:38:07 - INFO - EarlyStopping counter: 1 out of 5
+2025-05-24 02:38:07 - INFO - Epoch 9/30
+2025-05-24 02:46:35 - INFO - Train Loss: 0.3224 Acc: 0.8733 | Val Loss: 0.5903 Acc: 0.8270
+2025-05-24 02:46:35 - INFO - EarlyStopping counter: 2 out of 5
+2025-05-24 02:46:35 - INFO - Epoch 10/30
+2025-05-24 02:55:04 - INFO - Train Loss: 0.2732 Acc: 0.8976 | Val Loss: 0.6384 Acc: 0.8103
+2025-05-24 02:55:04 - INFO - EarlyStopping counter: 3 out of 5
+2025-05-24 02:55:04 - INFO - Epoch 11/30
+2025-05-24 03:03:31 - INFO - Train Loss: 0.2345 Acc: 0.9120 | Val Loss: 0.6345 Acc: 0.7982
+2025-05-24 03:03:31 - INFO - EarlyStopping counter: 4 out of 5
+2025-05-24 03:03:31 - INFO - Epoch 12/30
+2025-05-24 03:11:58 - INFO - Train Loss: 0.1749 Acc: 0.9351 | Val Loss: 0.5983 Acc: 0.8118
+2025-05-24 03:11:58 - INFO - EarlyStopping counter: 5 out of 5
+2025-05-24 03:11:58 - INFO - Early stopping triggered at epoch 12
+2025-05-24 03:11:58 - INFO - Training completed in 6108.20 seconds
+2025-05-24 03:12:56 - INFO - Inference completed in 57.34 seconds
+2025-05-24 03:12:56 - INFO - Submission saved to /workspace/mle_c617eb89-e0b7-4a21-92e8-0028d18a5053/output_experimental/submission_efficientnet_b4.csv
+2025-05-24 03:12:56 - INFO - === Completed training and evaluation for efficientnet_b4 ===
+
+2025-05-24 03:12:56 - INFO - === Starting training for densenet121 ===
+2025-05-24 03:12:56 - INFO - Using image size 224x224 for densenet121
+2025-05-24 03:12:56 - INFO - Epoch 1/30
+2025-05-24 03:21:21 - INFO - Train Loss: 0.8255 Acc: 0.7052 | Val Loss: 0.7271 Acc: 0.7375
+2025-05-24 03:21:21 - INFO - Validation loss decreased (inf --> 0.727104). Saving model...
+2025-05-24 03:21:21 - INFO - Epoch 2/30
+2025-05-24 03:29:47 - INFO - Train Loss: 0.7011 Acc: 0.7470 | Val Loss: 0.9656 Acc: 0.7117
+2025-05-24 03:29:47 - INFO - EarlyStopping counter: 1 out of 5
+2025-05-24 03:29:47 - INFO - Epoch 3/30

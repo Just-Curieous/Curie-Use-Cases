@@ -1,0 +1,102 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Starting diabetic retinopathy detection experiment at Fri May 23 19:30:25 UTC 2025
+=======================================================
+Setting up environment...
+Checking CUDA availability...
+CUDA available: True
+PyTorch version: 2.7.0+cu126
+Starting the main workflow...
+=======================================================
+Arguments:
+  train_csv: /workspace/mle_dataset/train.csv
+  test_csv: /workspace/mle_dataset/test.csv
+  train_img_dir: /workspace/mle_dataset/train_images
+  test_img_dir: /workspace/mle_dataset/test_images
+  output_dir: /workspace/mle_d4bfab9d-b8a0-41ef-9c6c-a28b75e69bc7/output
+  batch_size: 16
+  num_epochs: 10
+Using device: cuda
+Class weights: tensor([0.2152, 1.0302, 0.3909, 1.9901, 1.3736], device='cuda:0')
+Loaded pretrained weights for efficientnet-b4
+Starting training...
+Epoch 1/10
+----------
+Train Loss: 1.1160, Val Loss: 1.0341
+Val Acc: 0.7434, Val Kappa: 0.8097
+Saved best model with kappa: 0.8097
+
+Epoch 2/10
+----------
+Train Loss: 0.9589, Val Loss: 1.5251
+Val Acc: 0.6687, Val Kappa: 0.7609
+
+Epoch 3/10
+----------
+Train Loss: 0.9107, Val Loss: 0.8419
+Val Acc: 0.7960, Val Kappa: 0.8763
+Saved best model with kappa: 0.8763
+
+Epoch 4/10
+----------
+Train Loss: 0.8447, Val Loss: 1.6490
+Val Acc: 0.6202, Val Kappa: 0.7056
+
+Epoch 5/10
+----------
+Train Loss: 0.7955, Val Loss: 0.8159
+Val Acc: 0.7899, Val Kappa: 0.8834
+Saved best model with kappa: 0.8834
+
+Epoch 6/10
+----------
+Train Loss: 0.7774, Val Loss: 0.9298
+Val Acc: 0.7293, Val Kappa: 0.8143
+
+Epoch 7/10
+----------
+Train Loss: 0.7451, Val Loss: 0.8482
+Val Acc: 0.7475, Val Kappa: 0.8359
+
+Epoch 8/10
+----------
+Train Loss: 0.7058, Val Loss: 0.7849
+Val Acc: 0.8242, Val Kappa: 0.8970
+Saved best model with kappa: 0.8970
+
+Epoch 9/10
+----------
+Train Loss: 0.6452, Val Loss: 0.7080
+Val Acc: 0.8061, Val Kappa: 0.8927
+
+Epoch 10/10
+----------
+Train Loss: 0.6366, Val Loss: 0.7523
+Val Acc: 0.7455, Val Kappa: 0.8423
+
+Training completed in 4121.98 seconds
+Evaluating model...
+Making predictions on test set...
+Done!
+=======================================================
+Experiment completed successfully at Fri May 23 20:40:55 UTC 2025
+=======================================================
+Results Summary:
+Test Loss: 0.7849
+Test Accuracy: 0.8242
+Test Quadratic Weighted Kappa: 0.8970
+
+Per-Class Accuracy:
+Class 0: 0.9915
+Class 1: 0.6078
+Class 2: 0.7959
+Class 3: 0.4286
+Class 4: 0.4571
+=======================================================
+End of experiment log
+
+
+Result 2:
+

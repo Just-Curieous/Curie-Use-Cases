@@ -1,0 +1,18 @@
+{
+    "train_csv": "/workspace/mle_dataset/train.csv",
+    "test_csv": "/workspace/mle_dataset/test.csv",
+    "train_img_dir": "/workspace/mle_dataset/train_images",
+    "test_img_dir": "/workspace/mle_dataset/test_images",
+    "output_dir": "/workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group",
+    "preprocessing_method": "basic",
+    "batch_size": 4,
+    "num_workers": 4,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "num_epochs": 10,
+    "patience": 5,
+    "lr_step_size": 5,
+    "lr_gamma": 0.5,
+    "val_size": 0.2,
+    "mode": "train_eval"
+}

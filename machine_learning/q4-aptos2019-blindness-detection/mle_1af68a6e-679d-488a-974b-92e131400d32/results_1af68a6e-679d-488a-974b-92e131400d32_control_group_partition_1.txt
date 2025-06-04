@@ -1,0 +1,241 @@
+=== Environment Information ===
+Date: Fri May 23 06:51:03 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 8 --num_epochs 20 --patience 5 --mode train_eval
+
+Using device: cuda
+Loading data...
+Train set: 2636 images
+Validation set: 659 images
+Test set: 367 images
+Initializing model...
+Training model...
+Epoch 1/20
+----------
+
+=== Experiment Completed ===
+=== Results Summary ===
+No metrics file found.
+No submission file found.
+=============================
+=== Environment Information ===
+Date: Fri May 23 07:03:02 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+NumPy: 2.2.6
+OpenCV: 4.11.0
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 4 --num_epochs 10 --patience 5 --mode train_eval
+
+Using device: cuda
+Loading data...
+Train set: 2636 images
+Validation set: 659 images
+Test set: 367 images
+
+=== Experiment Completed ===
+=== Results Summary ===
+No metrics file found.
+No submission file found.
+=============================
+=== Environment Information ===
+Date: Fri May 23 07:06:13 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+NumPy: 2.2.6
+OpenCV: 4.11.0
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 4 --num_epochs 10 --patience 5 --mode train_eval
+
+Using device: cuda
+Loading data...
+Train set: 2636 images
+Validation set: 659 images
+Test set: 367 images
+Initializing model...
+Training model...
+Epoch 1/10
+----------
+
+=== Experiment Completed ===
+=== Results Summary ===
+No metrics file found.
+No submission file found.
+=============================
+=== Environment Information ===
+Date: Fri May 23 07:10:21 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+NumPy: 2.2.6
+OpenCV: 4.11.0
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+NumPy 2.x Compatibility: Fixed
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 4 --num_epochs 10 --patience 5 --mode train_eval
+
+Using device: cuda
+Loading data...
+Train set: 2636 images
+Validation set: 659 images
+Test set: 367 images
+Initializing model...
+Training model...
+Epoch 1/10
+----------
+
+=== Experiment Completed ===
+=== Results Summary ===
+No metrics file found.
+No submission file found.
+=============================
+=== Environment Information ===
+Date: Fri May 23 07:13:36 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+NumPy: 2.2.6
+OpenCV: 4.11.0
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+NumPy 2.x Compatibility: Fixed
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 4 --num_epochs 10 --patience 5 --mode train_eval
+
+Using device: cuda
+Loading data...
+Train set: 2636 images
+Validation set: 659 images
+Test set: 367 images
+Initializing model...
+Training model...
+Epoch 1/10
+----------
+train Loss: 0.9202 Kappa: 0.5780 Acc: 0.6677
+val Loss: 0.7093 Kappa: 0.7610 Acc: 0.7466
+
+Epoch 2/10
+----------
+train Loss: 0.6779 Kappa: 0.7637 Acc: 0.7470
+val Loss: 0.6243 Kappa: 0.7927 Acc: 0.7693
+
+Epoch 3/10
+----------
+train Loss: 0.5650 Kappa: 0.8234 Acc: 0.7841
+val Loss: 0.5800 Kappa: 0.8655 Acc: 0.8012
+
+Epoch 4/10
+----------
+train Loss: 0.5071 Kappa: 0.8519 Acc: 0.8096
+val Loss: 0.5283 Kappa: 0.8620 Acc: 0.7845
+
+Epoch 5/10
+----------
+train Loss: 0.4679 Kappa: 0.8778 Acc: 0.8175
+val Loss: 0.5546 Kappa: 0.8851 Acc: 0.8179
+
+Epoch 6/10
+----------
+train Loss: 0.4230 Kappa: 0.8958 Acc: 0.8429
+val Loss: 0.4901 Kappa: 0.8814 Acc: 0.8134
+
+Epoch 7/10
+----------
+train Loss: 0.3963 Kappa: 0.8990 Acc: 0.8452
+val Loss: 0.4967 Kappa: 0.8815 Acc: 0.8285
+
+Epoch 8/10
+----------
+train Loss: 0.3797 Kappa: 0.9033 Acc: 0.8513
+val Loss: 0.4781 Kappa: 0.8912 Acc: 0.8300
+
+Epoch 9/10
+----------
+train Loss: 0.3754 Kappa: 0.9070 Acc: 0.8596
+val Loss: 0.4834 Kappa: 0.8984 Acc: 0.8316
+
+Epoch 10/10
+----------
+train Loss: 0.3520 Kappa: 0.9202 Acc: 0.8695
+val Loss: 0.5926 Kappa: 0.8931 Acc: 0.8361
+
+Training complete in 116m 32s
+Best val Kappa: 0.8984 at epoch 9
+Loading model from /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group/best_model.pth
+Evaluating model...
+Validation Kappa: 0.8984
+Validation Accuracy: 0.8316
+Generating predictions...
+=== Environment Information ===
+Date: Fri May 23 09:17:48 UTC 2025
+Python: Python 3.12.10
+PyTorch: 2.2.0+cu121
+NumPy: 2.2.6
+OpenCV: 4.11.0
+CUDA available: True
+CUDA device: NVIDIA A40
+=============================
+
+=== Experiment Configuration ===
+Experiment: Diabetic Retinopathy Detection
+Group: Control Group (Basic Normalization)
+Model: EfficientNetB4
+Dataset: APTOS 2019
+NumPy 2.x Compatibility: Fixed
+=============================
+
+=== Starting Experiment ===
+Command: python /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/dr_detection.py --train_csv /workspace/mle_dataset/train.csv --test_csv /workspace/mle_dataset/test.csv --train_img_dir /workspace/mle_dataset/train_images --test_img_dir /workspace/mle_dataset/test_images --output_dir /workspace/mle_1af68a6e-679d-488a-974b-92e131400d32/output_control_group --preprocessing_method basic --batch_size 4 --num_epochs 10 --patience 5 --mode train_eval
+

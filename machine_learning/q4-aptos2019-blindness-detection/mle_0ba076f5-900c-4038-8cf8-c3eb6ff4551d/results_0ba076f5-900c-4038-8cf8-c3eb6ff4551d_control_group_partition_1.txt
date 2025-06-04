@@ -1,0 +1,25 @@
+=== Diabetic Retinopathy Detection Experiment ===
+Starting experiment at: Fri May 23 23:08:06 UTC 2025
+
+=== Checking GPU availability ===
+  File "<string>", line 1
+    import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'PyTorch version: {torch.__version__}'); print(f'Device: {torch.device("cuda" if torch.cuda.is_available() else "cpu")}'); if torch.cuda.is_available(): print(f'CUDA device: {torch.cuda.get_device_name(0)}'); print(f'Number of GPUs: {torch.cuda.device_count()}')
+                                                                                                                                                                                                           ^^
+SyntaxError: invalid syntax
+
+=== Dataset Information ===
+Training data:
+Total samples: 3295
+Class distribution:
+diagnosis
+0    1628
+2     896
+1     340
+4     255
+3     176
+Name: count, dtype: int64
+
+Test data:
+Total samples: 367
+
+=== Running Main Script ===
