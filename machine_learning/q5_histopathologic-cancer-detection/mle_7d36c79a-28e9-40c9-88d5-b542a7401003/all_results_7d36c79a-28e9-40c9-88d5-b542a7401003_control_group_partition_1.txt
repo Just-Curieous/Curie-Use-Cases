@@ -1,0 +1,66 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+Using device: cuda
+Starting PCam cancer detection experiment (Control Group)
+Loading labels...
+Creating dataset...
+Splitting dataset...
+Dataset split: Train=122126, Validation=34892, Test=17446
+Creating ResNet18 model...
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 62%|██████▏   | 27.9M/44.7M [00:00<00:00, 292MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 335MB/s]
+Model size: 42.64 MB
+Starting training...
+Epoch 1/20 - Train Loss: 0.2440, Val Loss: 0.2331, Val AUC: 0.9679
+Epoch 2/20 - Train Loss: 0.1767, Val Loss: 0.1782, Val AUC: 0.9800
+Epoch 3/20 - Train Loss: 0.1398, Val Loss: 0.1440, Val AUC: 0.9871
+Epoch 4/20 - Train Loss: 0.1110, Val Loss: 0.1512, Val AUC: 0.9847
+Epoch 5/20 - Train Loss: 0.0871, Val Loss: 0.1493, Val AUC: 0.9872
+Epoch 6/20 - Train Loss: 0.0681, Val Loss: 0.1457, Val AUC: 0.9873
+Epoch 7/20 - Train Loss: 0.0518, Val Loss: 0.1577, Val AUC: 0.9866
+Epoch 8/20 - Train Loss: 0.0420, Val Loss: 0.1828, Val AUC: 0.9842
+Epoch 9/20 - Train Loss: 0.0369, Val Loss: 0.2202, Val AUC: 0.9854
+Epoch 10/20 - Train Loss: 0.0316, Val Loss: 0.1810, Val AUC: 0.9876
+Epoch 11/20 - Train Loss: 0.0293, Val Loss: 0.2001, Val AUC: 0.9864
+Epoch 12/20 - Train Loss: 0.0246, Val Loss: 0.2090, Val AUC: 0.9877
+Epoch 13/20 - Train Loss: 0.0227, Val Loss: 0.2079, Val AUC: 0.9874
+Epoch 14/20 - Train Loss: 0.0214, Val Loss: 0.1972, Val AUC: 0.9864
+Epoch 15/20 - Train Loss: 0.0218, Val Loss: 0.2289, Val AUC: 0.9843
+Epoch 16/20 - Train Loss: 0.0179, Val Loss: 0.2527, Val AUC: 0.9864
+Epoch 17/20 - Train Loss: 0.0182, Val Loss: 0.2305, Val AUC: 0.9858
+Epoch 18/20 - Train Loss: 0.0177, Val Loss: 0.2360, Val AUC: 0.9862
+Epoch 19/20 - Train Loss: 0.0150, Val Loss: 0.2445, Val AUC: 0.9860
+Epoch 20/20 - Train Loss: 0.0158, Val Loss: 0.2606, Val AUC: 0.9861
+Training completed in 6145.96 seconds
+Evaluating on test set...
+Test AUC-ROC: 0.9855
+Inference time: 34.60 seconds for 17446 samples
+Average inference time per sample: 1.98 ms
+
+Experiment Results:
+AUC-ROC: 0.9855
+Training Time (s): 6145.9551
+Inference Time (s): 34.6007
+Inference Time per Sample (ms): 1.9833
+Model Size (MB): 42.6370
+
+Total experiment time: 6181.20 seconds
+Experiment completed successfully.
+Experiment summary:
+- Model: ResNet18
+- Optimizer: Adam
+- Preprocessing: Standard normalization
+- Augmentation: None
+- Learning rate: 0.001
+- Batch size: 64
+- Epochs: 20
+Experiment completed at: Tue May 20 04:47:12 UTC 2025
+
+
+Result 2:
+

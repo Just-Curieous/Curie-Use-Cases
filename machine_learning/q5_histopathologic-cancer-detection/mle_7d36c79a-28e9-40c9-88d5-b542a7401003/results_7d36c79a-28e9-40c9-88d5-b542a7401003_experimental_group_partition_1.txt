@@ -1,0 +1,132 @@
+Initializing micromamba environment...
+Checking GPU availability...
+Tue May 20 14:13:49 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   56C    P0             84W /  300W |       1MiB /  46068MiB |      4%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Ensuring all required packages are installed...
+Installing missing packages: scikit-learn pillow
+Running PatchCamelyon cancer detection experiment...
+Experiment started at: Tue May 20 14:14:17 UTC 2025
+Experimental Group - Partition 1
+
+Using device: cuda
+
+==================================================
+Training resnet50 model
+==================================================
+Using 17446 samples for training and validation
+Epoch 1/3 - Train Loss: 0.3365, Val Loss: 0.3325, Val AUC: 0.9440
+Epoch 2/3 - Train Loss: 0.2322, Val Loss: 0.3818, Val AUC: 0.9639
+Epoch 3/3 - Train Loss: 0.1634, Val Loss: 0.2342, Val AUC: 0.9768
+
+Results for resnet50:
+AUC-ROC: 0.9727
+Training time: 34.37 seconds
+Inference time: 0.61 ms per sample
+Model size: 89.89 MB
+
+==================================================
+Training densenet121 model
+==================================================
+Using 17446 samples for training and validation
+Epoch 1/3 - Train Loss: 0.3184, Val Loss: 0.3053, Val AUC: 0.9432
+Epoch 2/3 - Train Loss: 0.2416, Val Loss: 0.2157, Val AUC: 0.9728
+Epoch 3/3 - Train Loss: 0.1741, Val Loss: 0.1656, Val AUC: 0.9813
+
+Results for densenet121:
+AUC-ROC: 0.9778
+Training time: 57.02 seconds
+Inference time: 0.65 ms per sample
+Model size: 26.85 MB
+
+==================================================
+Training efficientnet_b0 model
+==================================================
+Using 17446 samples for training and validation
+Epoch 1/3 - Train Loss: 0.3212, Val Loss: 0.2336, Val AUC: 0.9647
+Epoch 2/3 - Train Loss: 0.2166, Val Loss: 0.1921, Val AUC: 0.9757
+Epoch 3/3 - Train Loss: 0.1561, Val Loss: 0.1529, Val AUC: 0.9843
+
+Results for efficientnet_b0:
+AUC-ROC: 0.9840
+Training time: 33.09 seconds
+Inference time: 0.62 ms per sample
+Model size: 15.45 MB
+
+==================================================
+Training seresnext50 model
+==================================================
+Using 17446 samples for training and validation
+Epoch 1/3 - Train Loss: 0.3339, Val Loss: 0.2282, Val AUC: 0.9671
+Epoch 2/3 - Train Loss: 0.2099, Val Loss: 0.1995, Val AUC: 0.9734
+Epoch 3/3 - Train Loss: 0.1459, Val Loss: 0.1687, Val AUC: 0.9812
+
+Results for seresnext50:
+AUC-ROC: 0.9807
+Training time: 48.56 seconds
+Inference time: 0.62 ms per sample
+Model size: 97.58 MB
+
+==================================================
+Training custom_attention model
+==================================================
+Using 17446 samples for training and validation
+Epoch 1/5 - Train Loss: 0.4754, Val Loss: 0.3068, Val AUC: 0.9461
+Epoch 2/5 - Train Loss: 0.3012, Val Loss: 0.2188, Val AUC: 0.9704
+Epoch 3/5 - Train Loss: 0.2434, Val Loss: 0.1879, Val AUC: 0.9798
+Epoch 4/5 - Train Loss: 0.1980, Val Loss: 0.1546, Val AUC: 0.9843
+Epoch 5/5 - Train Loss: 0.1593, Val Loss: 0.1520, Val AUC: 0.9849
+
+Results for custom_attention:
+AUC-ROC: 0.9840
+Training time: 60.17 seconds
+Inference time: 0.61 ms per sample
+Model size: 95.88 MB
+
+
+================================================================================
+EXPERIMENT SUMMARY
+================================================================================
+Model                AUC-ROC    Train Time (s)  Inference (ms)  Size (MB) 
+--------------------------------------------------------------------------------
+resnet50             0.9727     34.37           0.61           89.89
+densenet121          0.9778     57.02           0.65           26.85
+efficientnet_b0      0.9840     33.09           0.62           15.45
+seresnext50          0.9807     48.56           0.62           97.58
+custom_attention     0.9840     60.17           0.61           95.88
+
+Best model by AUC-ROC:
+efficientnet_b0 with AUC-ROC of 0.9840
+Experiment completed successfully.
+Experiment summary:
+- Models evaluated:
+  1. ResNet50
+  2. DenseNet121
+  3. EfficientNetB0
+  4. SEResNeXt50
+  5. Custom model with attention mechanisms
+- Configurations as per experiment plan:
+  - Batch size: 32
+  - Learning rates: 0.0005 (models 1-4), 0.0003 (model 5)
+  - Epochs: 3 (models 1-4), 5 (model 5)
+  - Optimizers: Adam with cosine annealing (models 1-4), AdamW with OneCycleLR (model 5)
+Results summary:
+=======================================================================
+Experiment completed at: Tue May 20 14:18:26 UTC 2025

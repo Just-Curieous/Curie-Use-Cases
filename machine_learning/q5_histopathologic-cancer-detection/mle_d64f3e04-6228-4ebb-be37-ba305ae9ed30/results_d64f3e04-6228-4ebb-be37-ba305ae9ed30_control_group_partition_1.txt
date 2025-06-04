@@ -1,0 +1,40 @@
+=== System Information ===
+Date: Tue May 20 14:54:26 UTC 2025
+Hostname: optane01
+Python version: Python 3.12.10
+PyTorch version: 2.7.0+cu126
+CUDA available: True
+CUDA device: NVIDIA A40
+
+=== Experiment Configuration ===
+Experiment ID: d64f3e04-6228-4ebb-be37-ba305ae9ed30
+Group: control_group_partition_1
+Model: ResNet18
+Preprocessing: Standard RGB normalization (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+Augmentation: Basic (horizontal flip, vertical flip, rotation)
+Optimizer: Adam with learning rate 0.001
+Batch size: 64
+Early stopping patience: 5 epochs
+Maximum epochs: 20
+
+=== Starting Experiment ===
+Starting experiment with configuration:
+{
+    "data_dir": "/workspace/mle_dataset",
+    "output_dir": "/workspace/mle_d64f3e04-6228-4ebb-be37-ba305ae9ed30/output",
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "num_epochs": 20,
+    "patience": 5,
+    "seed": 42,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "num_workers": 4,
+    "pretrained": true
+}
+Using GPU: NVIDIA A40
+Loading data...
+Dataset split: Train=122126, Validation=26169, Test=26169
+Creating model...
+Training model...
+Epoch 1/20

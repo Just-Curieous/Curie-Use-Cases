@@ -1,0 +1,217 @@
+Starting experiment: EfficientNetB0 for PCam dataset (Control Group)
+Date: Tue May 20 10:09:33 UTC 2025
+=======================================================
+Setting up environment...
+Activating environment...
+Installing required packages...
+error    libmamba Could not solve for environment specs
+    The following packages are incompatible
+    ├─ pytorch =* * is not installable because there are no viable options
+    │  ├─ pytorch [1.10.0|1.10.1|1.10.2] would require
+    │  │  └─ dataclasses =* *, which does not exist (perhaps a missing channel);
+    │  ├─ pytorch [1.10.0|1.10.1|...|2.5.1] would require
+    │  │  └─ mkl >=2018 *, which does not exist (perhaps a missing channel);
+    │  └─ pytorch [1.5.1|1.6.0|...|1.9.1] would require
+    │     └─ ninja =* *, which does not exist (perhaps a missing channel);
+    └─ torchvision =* * is not installable because there are no viable options
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.6,<3.7.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.7,<3.8.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|...|0.9.1] would require
+       │  └─ python >=3.8,<3.9.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.10.0|0.10.1|0.8.2|0.9.0|0.9.1] would require
+       │  └─ python >=3.9,<3.10.0a0 *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.11.0|0.11.1|...|0.8.1] would require
+       │  └─ jpeg =* *, which does not exist (perhaps a missing channel);
+       ├─ torchvision [0.12.0|0.13.0|...|0.20.1] would require
+       │  └─ requests =* *, which does not exist (perhaps a missing channel);
+       └─ torchvision 0.6.1 would require
+          └─ python >=3.5,<3.6.0a0 *, which does not exist (perhaps a missing channel).
+critical libmamba Could not solve for environment specs
+critical libmamba filesystem error: cannot remove: Directory not empty [/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/include/ATen]
+Requirement already satisfied: thop in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (0.1.1.post2209072238)
+Requirement already satisfied: seaborn in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (0.13.2)
+Requirement already satisfied: psutil in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (7.0.0)
+Requirement already satisfied: torch in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from thop) (2.7.0)
+Requirement already satisfied: numpy!=1.24.0,>=1.20 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from seaborn) (2.2.6)
+Requirement already satisfied: pandas>=1.2 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from seaborn) (2.2.3)
+Requirement already satisfied: matplotlib!=3.6.1,>=3.4 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from seaborn) (3.10.3)
+Requirement already satisfied: contourpy>=1.0.1 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (4.58.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (1.4.8)
+Requirement already satisfied: packaging>=20.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (25.0)
+Requirement already satisfied: pillow>=8 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (11.2.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,>=3.4->seaborn) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from pandas>=1.2->seaborn) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from pandas>=1.2->seaborn) (2025.2)
+Requirement already satisfied: six>=1.5 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib!=3.6.1,>=3.4->seaborn) (1.17.0)
+Requirement already satisfied: filelock in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (3.18.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (4.13.2)
+Requirement already satisfied: setuptools in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (80.1.0)
+Requirement already satisfied: sympy>=1.13.3 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (1.14.0)
+Requirement already satisfied: networkx in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (3.4.2)
+Requirement already satisfied: jinja2 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (3.1.6)
+Requirement already satisfied: fsspec in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (2025.3.2)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.77)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.77)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.80)
+Requirement already satisfied: nvidia-cudnn-cu12==9.5.1.17 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (9.5.1.17)
+Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (11.3.0.4)
+Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (10.3.7.77)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (11.7.1.2)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.5.4.2)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.3 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (0.6.3)
+Requirement already satisfied: nvidia-nccl-cu12==2.26.2 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (2.26.2)
+Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.77)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (12.6.85)
+Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (1.11.1.6)
+Requirement already satisfied: triton==3.3.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from torch->thop) (3.3.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from sympy>=1.13.3->torch->thop) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages (from jinja2->torch->thop) (3.0.2)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Checking GPU availability...
+Tue May 20 10:09:50 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   72C    P0            127W /  300W |     975MiB /  46068MiB |     29%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+=======================================================
+Python version:
+Python 3.12.10
+PyTorch version:
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/__init__.py", line 405, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+ImportError: /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/../../../././libcusparse.so.12: undefined symbol: __nvJitLinkGetErrorLogSize_12_9, version libnvJitLink.so.12
+=======================================================
+Dataset information:
+Train directory: 174467 files
+Test directory: 45564 files
+Labels file: 174465 /workspace/mle_dataset/train_labels.csv lines
+=======================================================
+Running experiment...
+Traceback (most recent call last):
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/main.py", line 3, in <module>
+    import torch
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/__init__.py", line 405, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+ImportError: /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/../../../././libcusparse.so.12: undefined symbol: __nvJitLinkGetErrorLogSize_12_9, version libnvJitLink.so.12
+Experiment failed with error code 1
+=======================================================
+Detailed logs:
+=======================================================
+Experiment started at 2025-05-20 08:00:34
+Using device: cuda
+
+Experiment Configuration:
+data_dir: /workspace/mle_dataset
+val_size: 0.15
+test_size: 0.15
+model_dir: /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models
+log_dir: /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/logs
+batch_size: 32
+num_epochs: 30
+learning_rate: 0.001
+patience: 7
+threshold: 0.5
+num_workers: 4
+seed: 42
+generate_submission: False
+
+Train set size: 122124
+Validation set size: 26170
+Test set size: 26170
+
+Epoch 1/30 | Train Loss: 0.2609 | Val Loss: 0.1835 | Train AUC: 0.9548 | Val AUC: 0.9797
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 2/30 | Train Loss: 0.1981 | Val Loss: 0.1492 | Train AUC: 0.9731 | Val AUC: 0.9853
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 3/30 | Train Loss: 0.1770 | Val Loss: 0.1387 | Train AUC: 0.9781 | Val AUC: 0.9863
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 4/30 | Train Loss: 0.1661 | Val Loss: 0.1265 | Train AUC: 0.9807 | Val AUC: 0.9884
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 5/30 | Train Loss: 0.1550 | Val Loss: 0.1194 | Train AUC: 0.9830 | Val AUC: 0.9902
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 6/30 | Train Loss: 0.1492 | Val Loss: 0.1287 | Train AUC: 0.9843 | Val AUC: 0.9900
+Epoch 7/30 | Train Loss: 0.1423 | Val Loss: 0.1142 | Train AUC: 0.9856 | Val AUC: 0.9908
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 8/30 | Train Loss: 0.1370 | Val Loss: 0.1123 | Train AUC: 0.9866 | Val AUC: 0.9906
+Epoch 9/30 | Train Loss: 0.1317 | Val Loss: 0.1146 | Train AUC: 0.9876 | Val AUC: 0.9916
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 10/30 | Train Loss: 0.1276 | Val Loss: 0.1085 | Train AUC: 0.9883 | Val AUC: 0.9916
+Epoch 11/30 | Train Loss: 0.1242 | Val Loss: 0.1079 | Train AUC: 0.9887 | Val AUC: 0.9915
+Epoch 12/30 | Train Loss: 0.1211 | Val Loss: 0.1046 | Train AUC: 0.9894 | Val AUC: 0.9924
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 13/30 | Train Loss: 0.1184 | Val Loss: 0.1024 | Train AUC: 0.9899 | Val AUC: 0.9927
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 14/30 | Train Loss: 0.1156 | Val Loss: 0.0979 | Train AUC: 0.9904 | Val AUC: 0.9929
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 15/30 | Train Loss: 0.1112 | Val Loss: 0.0995 | Train AUC: 0.9911 | Val AUC: 0.9935
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 16/30 | Train Loss: 0.1080 | Val Loss: 0.0967 | Train AUC: 0.9916 | Val AUC: 0.9935
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 17/30 | Train Loss: 0.1061 | Val Loss: 0.1025 | Train AUC: 0.9919 | Val AUC: 0.9924
+Epoch 18/30 | Train Loss: 0.1038 | Val Loss: 0.0947 | Train AUC: 0.9922 | Val AUC: 0.9935
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 19/30 | Train Loss: 0.1023 | Val Loss: 0.0934 | Train AUC: 0.9924 | Val AUC: 0.9940
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 20/30 | Train Loss: 0.1011 | Val Loss: 0.0905 | Train AUC: 0.9927 | Val AUC: 0.9939
+Epoch 21/30 | Train Loss: 0.0980 | Val Loss: 0.0915 | Train AUC: 0.9930 | Val AUC: 0.9937
+Epoch 22/30 | Train Loss: 0.0962 | Val Loss: 0.1034 | Train AUC: 0.9933 | Val AUC: 0.9931
+Epoch 23/30 | Train Loss: 0.0957 | Val Loss: 0.0939 | Train AUC: 0.9934 | Val AUC: 0.9942
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 24/30 | Train Loss: 0.0925 | Val Loss: 0.0943 | Train AUC: 0.9938 | Val AUC: 0.9942
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 25/30 | Train Loss: 0.0911 | Val Loss: 0.0909 | Train AUC: 0.9940 | Val AUC: 0.9946
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 26/30 | Train Loss: 0.0902 | Val Loss: 0.0935 | Train AUC: 0.9942 | Val AUC: 0.9940
+Epoch 27/30 | Train Loss: 0.0873 | Val Loss: 0.0876 | Train AUC: 0.9945 | Val AUC: 0.9943
+Epoch 28/30 | Train Loss: 0.0867 | Val Loss: 0.0921 | Train AUC: 0.9947 | Val AUC: 0.9942
+=======================================================
+EXPERIMENT SUMMARY
+=======================================================
+No metrics file found.
+=======================================================
+Experiment completed at Tue May 20 10:09:52 UTC 2025
+=======================================================
+Epoch 29/30 | Train Loss: 0.0855 | Val Loss: 0.0814 | Train AUC: 0.9948 | Val AUC: 0.9950
+Model saved to /workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/models/efficientnet_b0_20250520_080034.pt
+Epoch 30/30 | Train Loss: 0.0847 | Val Loss: 0.0929 | Train AUC: 0.9948 | Val AUC: 0.9945
+Traceback (most recent call last):
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/main.py", line 173, in <module>
+    main(args)
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/main.py", line 67, in main
+    model, history = train_model(
+                     ^^^^^^^^^^^^
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/train.py", line 153, in train_model
+    checkpoint = torch.load(model_save_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mle_a6604f22-7b59-46c5-9a9c-4953fbd2e0f0/venv/lib/python3.12/site-packages/torch/serialization.py", line 1524, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy._core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy._core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy._core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.

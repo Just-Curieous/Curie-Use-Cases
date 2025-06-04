@@ -1,0 +1,189 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+=== PatchCamelyon Cancer Detection Experiment ===
+Experiment ID: b3f788d8-5097-4fb4-a60b-5e1198e43a7b
+Control Group Partition: 1
+Date: Tue May 20 04:55:51 UTC 2025
+====================================================
+Setting up environment...
+Checking GPU availability...
+Tue May 20 04:55:51 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:0F:00.0 Off |                    0 |
+|  0%   68C    P0            103W /  300W |     891MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+
+=== Experiment Configuration ===
+Model: EfficientNetB0
+Optimizer: Adam
+Learning rate: 0.001
+Loss function: Binary Cross-Entropy
+Batch size: 32
+Transfer learning: ImageNet pretrained, fine-tune all layers
+Cross-validation: 5-fold
+====================================================
+
+=== Dataset Information ===
+Dataset location: /workspace/mle_dataset
+Train images count: 174464
+Test images count: 45561
+====================================================
+
+=== Running Experiment ===
+Start time: Tue May 20 04:55:51 UTC 2025
+2025-05-20 04:55:55 - INFO - Starting PCam cancer detection experiment
+2025-05-20 04:55:55 - INFO - Random seed set to 42
+2025-05-20 04:55:55 - INFO - Using device: cuda
+2025-05-20 04:56:00 - INFO - Starting fold 1/5
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to /root/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]
+ 70%|██████▉   | 14.2M/20.5M [00:00<00:00, 141MB/s]
+100%|██████████| 20.5M/20.5M [00:00<00:00, 170MB/s]
+2025-05-20 04:56:07 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 04:56:07 - INFO - Starting training for 10 epochs
+2025-05-20 04:58:09 - INFO - Epoch 1/10 - Train Loss: 0.2025, Val Loss: 0.0306, Val AUC: 0.9835
+2025-05-20 05:00:04 - INFO - Epoch 2/10 - Train Loss: 0.1533, Val Loss: 0.0322, Val AUC: 0.9801
+2025-05-20 05:01:50 - INFO - Epoch 3/10 - Train Loss: 0.1403, Val Loss: 0.0252, Val AUC: 0.9885
+2025-05-20 05:03:35 - INFO - Epoch 4/10 - Train Loss: 0.1297, Val Loss: 0.0278, Val AUC: 0.9882
+2025-05-20 05:05:20 - INFO - Epoch 5/10 - Train Loss: 0.1219, Val Loss: 0.0248, Val AUC: 0.9894
+2025-05-20 05:07:04 - INFO - Epoch 6/10 - Train Loss: 0.1163, Val Loss: 0.0244, Val AUC: 0.9910
+2025-05-20 05:08:49 - INFO - Epoch 7/10 - Train Loss: 0.1120, Val Loss: 0.0228, Val AUC: 0.9914
+2025-05-20 05:10:34 - INFO - Epoch 8/10 - Train Loss: 0.1070, Val Loss: 0.0228, Val AUC: 0.9914
+2025-05-20 05:12:18 - INFO - Epoch 9/10 - Train Loss: 0.1037, Val Loss: 0.0203, Val AUC: 0.9925
+2025-05-20 05:14:03 - INFO - Epoch 10/10 - Train Loss: 0.1003, Val Loss: 0.0213, Val AUC: 0.9919
+2025-05-20 05:14:03 - INFO - Evaluating model
+2025-05-20 05:14:10 - INFO - Evaluation metrics: AUC=0.9919, Precision=0.9687, Recall=0.9352, F1=0.9516
+2025-05-20 05:14:10 - INFO - Starting fold 2/5
+2025-05-20 05:14:16 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 05:14:16 - INFO - Starting training for 10 epochs
+2025-05-20 05:16:02 - INFO - Epoch 1/10 - Train Loss: 0.2040, Val Loss: 0.0357, Val AUC: 0.9791
+2025-05-20 05:17:47 - INFO - Epoch 2/10 - Train Loss: 0.1556, Val Loss: 0.0278, Val AUC: 0.9863
+2025-05-20 05:19:31 - INFO - Epoch 3/10 - Train Loss: 0.1386, Val Loss: 0.0274, Val AUC: 0.9865
+2025-05-20 05:21:17 - INFO - Epoch 4/10 - Train Loss: 0.1298, Val Loss: 0.0256, Val AUC: 0.9884
+2025-05-20 05:23:02 - INFO - Epoch 5/10 - Train Loss: 0.1223, Val Loss: 0.0243, Val AUC: 0.9901
+2025-05-20 05:24:48 - INFO - Epoch 6/10 - Train Loss: 0.1168, Val Loss: 0.0233, Val AUC: 0.9908
+2025-05-20 05:26:40 - INFO - Epoch 7/10 - Train Loss: 0.1127, Val Loss: 0.0233, Val AUC: 0.9913
+2025-05-20 05:28:36 - INFO - Epoch 8/10 - Train Loss: 0.1081, Val Loss: 0.0217, Val AUC: 0.9922
+2025-05-20 05:30:20 - INFO - Epoch 9/10 - Train Loss: 0.1039, Val Loss: 0.0214, Val AUC: 0.9915
+2025-05-20 05:32:07 - INFO - Epoch 10/10 - Train Loss: 0.1010, Val Loss: 0.0232, Val AUC: 0.9900
+2025-05-20 05:32:07 - INFO - Evaluating model
+2025-05-20 05:32:15 - INFO - Evaluation metrics: AUC=0.9900, Precision=0.9550, Recall=0.9432, F1=0.9491
+2025-05-20 05:32:15 - INFO - Starting fold 3/5
+2025-05-20 05:32:21 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 05:32:21 - INFO - Starting training for 10 epochs
+2025-05-20 05:34:14 - INFO - Epoch 1/10 - Train Loss: 0.2038, Val Loss: 0.0326, Val AUC: 0.9821
+2025-05-20 05:35:59 - INFO - Epoch 2/10 - Train Loss: 0.1559, Val Loss: 0.0282, Val AUC: 0.9862
+2025-05-20 05:37:44 - INFO - Epoch 3/10 - Train Loss: 0.1398, Val Loss: 0.0245, Val AUC: 0.9892
+2025-05-20 05:39:30 - INFO - Epoch 4/10 - Train Loss: 0.1290, Val Loss: 0.0246, Val AUC: 0.9901
+2025-05-20 05:41:16 - INFO - Epoch 5/10 - Train Loss: 0.1228, Val Loss: 0.0218, Val AUC: 0.9915
+2025-05-20 05:43:01 - INFO - Epoch 6/10 - Train Loss: 0.1158, Val Loss: 0.0237, Val AUC: 0.9903
+2025-05-20 05:44:46 - INFO - Epoch 7/10 - Train Loss: 0.1112, Val Loss: 0.0219, Val AUC: 0.9918
+2025-05-20 05:46:32 - INFO - Epoch 8/10 - Train Loss: 0.1072, Val Loss: 0.0219, Val AUC: 0.9926
+2025-05-20 05:48:17 - INFO - Epoch 9/10 - Train Loss: 0.1026, Val Loss: 0.0212, Val AUC: 0.9920
+2025-05-20 05:50:03 - INFO - Epoch 10/10 - Train Loss: 0.0998, Val Loss: 0.0196, Val AUC: 0.9933
+2025-05-20 05:50:03 - INFO - Evaluating model
+2025-05-20 05:50:11 - INFO - Evaluation metrics: AUC=0.9933, Precision=0.9623, Recall=0.9579, F1=0.9601
+2025-05-20 05:50:11 - INFO - Starting fold 4/5
+2025-05-20 05:50:17 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 05:50:17 - INFO - Starting training for 10 epochs
+2025-05-20 05:52:03 - INFO - Epoch 1/10 - Train Loss: 0.2044, Val Loss: 0.0328, Val AUC: 0.9812
+2025-05-20 05:53:49 - INFO - Epoch 2/10 - Train Loss: 0.1540, Val Loss: 0.0309, Val AUC: 0.9832
+2025-05-20 05:55:34 - INFO - Epoch 3/10 - Train Loss: 0.1376, Val Loss: 0.0264, Val AUC: 0.9872
+2025-05-20 05:57:23 - INFO - Epoch 4/10 - Train Loss: 0.1278, Val Loss: 0.0291, Val AUC: 0.9873
+2025-05-20 05:59:08 - INFO - Epoch 5/10 - Train Loss: 0.1212, Val Loss: 0.0248, Val AUC: 0.9891
+2025-05-20 06:00:56 - INFO - Epoch 6/10 - Train Loss: 0.1158, Val Loss: 0.0233, Val AUC: 0.9895
+2025-05-20 06:02:51 - INFO - Epoch 7/10 - Train Loss: 0.1114, Val Loss: 0.0240, Val AUC: 0.9893
+2025-05-20 06:04:42 - INFO - Epoch 8/10 - Train Loss: 0.1073, Val Loss: 0.0218, Val AUC: 0.9913
+2025-05-20 06:06:38 - INFO - Epoch 9/10 - Train Loss: 0.1034, Val Loss: 0.0207, Val AUC: 0.9918
+2025-05-20 06:08:23 - INFO - Epoch 10/10 - Train Loss: 0.1001, Val Loss: 0.0210, Val AUC: 0.9919
+2025-05-20 06:08:23 - INFO - Evaluating model
+2025-05-20 06:08:31 - INFO - Evaluation metrics: AUC=0.9919, Precision=0.9579, Recall=0.9548, F1=0.9564
+2025-05-20 06:08:31 - INFO - Starting fold 5/5
+2025-05-20 06:08:37 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 06:08:37 - INFO - Starting training for 10 epochs
+2025-05-20 06:10:24 - INFO - Epoch 1/10 - Train Loss: 0.2012, Val Loss: 0.0312, Val AUC: 0.9830
+2025-05-20 06:12:12 - INFO - Epoch 2/10 - Train Loss: 0.1533, Val Loss: 0.0316, Val AUC: 0.9849
+2025-05-20 06:13:58 - INFO - Epoch 3/10 - Train Loss: 0.1389, Val Loss: 0.0268, Val AUC: 0.9876
+2025-05-20 06:15:45 - INFO - Epoch 4/10 - Train Loss: 0.1294, Val Loss: 0.0254, Val AUC: 0.9887
+2025-05-20 06:17:37 - INFO - Epoch 5/10 - Train Loss: 0.1219, Val Loss: 0.0247, Val AUC: 0.9891
+2025-05-20 06:19:25 - INFO - Epoch 6/10 - Train Loss: 0.1162, Val Loss: 0.0255, Val AUC: 0.9906
+2025-05-20 06:21:12 - INFO - Epoch 7/10 - Train Loss: 0.1113, Val Loss: 0.0237, Val AUC: 0.9909
+2025-05-20 06:22:58 - INFO - Epoch 8/10 - Train Loss: 0.1067, Val Loss: 0.0218, Val AUC: 0.9915
+2025-05-20 06:24:43 - INFO - Epoch 9/10 - Train Loss: 0.1037, Val Loss: 0.0216, Val AUC: 0.9912
+2025-05-20 06:26:29 - INFO - Epoch 10/10 - Train Loss: 0.1012, Val Loss: 0.0204, Val AUC: 0.9924
+2025-05-20 06:26:29 - INFO - Evaluating model
+2025-05-20 06:26:37 - INFO - Evaluation metrics: AUC=0.9924, Precision=0.9594, Recall=0.9538, F1=0.9566
+2025-05-20 06:26:37 - INFO - Cross-validation completed
+2025-05-20 06:26:37 - INFO - Average AUC: 0.9919 ± 0.0011
+2025-05-20 06:26:37 - INFO - Average Precision: 0.9607 ± 0.0046
+2025-05-20 06:26:37 - INFO - Average Recall: 0.9490 ± 0.0085
+2025-05-20 06:26:37 - INFO - Average F1: 0.9548 ± 0.0039
+2025-05-20 06:26:37 - INFO - Training final model on all data
+2025-05-20 06:26:37 - INFO - Model loaded: EfficientNetB0 (pretrained)
+2025-05-20 06:28:42 - INFO - Final model - Epoch 1/10 - Loss: 0.2452
+2025-05-20 06:30:44 - INFO - Final model - Epoch 2/10 - Loss: 0.1839
+2025-05-20 06:32:46 - INFO - Final model - Epoch 3/10 - Loss: 0.1660
+2025-05-20 06:34:48 - INFO - Final model - Epoch 4/10 - Loss: 0.1534
+2025-05-20 06:36:56 - INFO - Final model - Epoch 5/10 - Loss: 0.1458
+2025-05-20 06:39:00 - INFO - Final model - Epoch 6/10 - Loss: 0.1383
+2025-05-20 06:41:03 - INFO - Final model - Epoch 7/10 - Loss: 0.1334
+2025-05-20 06:43:06 - INFO - Final model - Epoch 8/10 - Loss: 0.1281
+2025-05-20 06:45:08 - INFO - Final model - Epoch 9/10 - Loss: 0.1221
+2025-05-20 06:47:11 - INFO - Final model - Epoch 10/10 - Loss: 0.1192
+2025-05-20 06:47:11 - INFO - Experiment completed in 6675.98 seconds
+
+=== FINAL RESULTS ===
+AUC-ROC: 0.9919 ± 0.0011
+Precision: 0.9607 ± 0.0046
+Recall: 0.9490 ± 0.0085
+F1 Score: 0.9548 ± 0.0039
+End time: Tue May 20 06:47:12 UTC 2025
+====================================================
+
+=== Results Summary ===
+Average metrics across 5-fold cross-validation:
+auc,precision,recall,f1,auc_std,precision_std,recall_std,f1_std
+0.9918925241240434,0.9606714499132154,0.9489982675773223,0.9547656628958008,0.0010660862723215923,0.004631908860144757,0.0084730802804136,0.0039037436189271473
+====================================================
+
+=== Output Files ===
+total 95984
+drwxr-xr-x. 2  123 root     4096 May 20 06:47 .
+drwxrwxrwx. 4 root root     4096 May 20 04:55 ..
+-rw-r--r--. 1 root root      224 May 20 06:26 average_metrics.csv
+-rw-r--r--. 1 root root 16335207 May 20 06:47 final_model.pth
+-rw-r--r--. 1 root root      401 May 20 06:26 fold_metrics.csv
+-rw-r--r--. 1 root root 16335573 May 20 05:14 model_fold_1.pth
+-rw-r--r--. 1 root root 16335573 May 20 05:32 model_fold_2.pth
+-rw-r--r--. 1 root root 16335573 May 20 05:50 model_fold_3.pth
+-rw-r--r--. 1 root root 16335573 May 20 06:08 model_fold_4.pth
+-rw-r--r--. 1 root root 16335573 May 20 06:26 model_fold_5.pth
+-rw-r--r--. 1 root root    46058 May 20 05:14 training_curves_fold_1.png
+-rw-r--r--. 1 root root    45163 May 20 05:32 training_curves_fold_2.png
+-rw-r--r--. 1 root root    45730 May 20 05:50 training_curves_fold_3.png
+-rw-r--r--. 1 root root    43392 May 20 06:08 training_curves_fold_4.png
+-rw-r--r--. 1 root root    43264 May 20 06:26 training_curves_fold_5.png
+====================================================
+
+Experiment completed successfully!
+
+
+Result 2:
+

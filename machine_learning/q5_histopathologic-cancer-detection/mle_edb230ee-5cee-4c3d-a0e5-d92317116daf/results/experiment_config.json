@@ -1,0 +1,17 @@
+{
+    "data_dir": "/workspace/mle_dataset",
+    "output_dir": "/workspace/mle_edb230ee-5cee-4c3d-a0e5-d92317116daf/results",
+    "model_name": "resnet50",
+    "pretrained": true,
+    "batch_size": 32,
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "num_workers": 4,
+    "seed": 42,
+    "skip_training": false,
+    "gpu_available": true,
+    "gpu_count": 1,
+    "gpu_name": "NVIDIA A40",
+    "cuda_version": "12.6",
+    "timestamp": "2025-05-20 07:05:51"
+}

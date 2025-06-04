@@ -1,0 +1,13 @@
+{
+    "data_dir": "/workspace/mle_dataset",
+    "output_dir": "/workspace/mle_d64f3e04-6228-4ebb-be37-ba305ae9ed30/output",
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "num_epochs": 20,
+    "patience": 5,
+    "seed": 42,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "num_workers": 4,
+    "pretrained": true
+}

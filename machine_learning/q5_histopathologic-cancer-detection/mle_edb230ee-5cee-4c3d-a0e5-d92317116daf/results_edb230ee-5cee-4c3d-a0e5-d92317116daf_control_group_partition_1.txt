@@ -1,0 +1,113 @@
+=== Starting Cancer Detection Experiment ===
+Experiment ID: edb230ee-5cee-4c3d-a0e5-d92317116daf
+Group: control_group_partition_1
+Date: Tue May 20 07:05:38 UTC 2025
+
+=== Setting up environment ===
+=== Checking required packages ===
+=== Checking GPU availability ===
+CUDA available: True
+GPU count: 1
+GPU name: NVIDIA A40
+
+=== Running experiment ===
+GPU Information: {
+  "gpu_available": true,
+  "gpu_count": 1,
+  "gpu_name": "NVIDIA A40",
+  "cuda_version": "12.6"
+}
+Using device: cuda
+Creating data loaders...
+Train samples: 157017
+Validation samples: 17447
+Test samples: 45561
+Creating resnet50 model...
+Training model...
+Epoch 1/20
+Train Loss: 0.2384 | Val Loss: 0.1645 | Val AUC: 0.9811
+Saved new best model with AUC: 0.9811
+Epoch 2/20
+Train Loss: 0.1701 | Val Loss: 0.2482 | Val AUC: 0.9704
+Epoch 3/20
+Train Loss: 0.1412 | Val Loss: 0.1340 | Val AUC: 0.9875
+Saved new best model with AUC: 0.9875
+Epoch 4/20
+Train Loss: 0.1192 | Val Loss: 0.1436 | Val AUC: 0.9885
+Saved new best model with AUC: 0.9885
+Epoch 5/20
+Train Loss: 0.0987 | Val Loss: 0.1211 | Val AUC: 0.9898
+Saved new best model with AUC: 0.9898
+Epoch 6/20
+Train Loss: 0.0827 | Val Loss: 0.1285 | Val AUC: 0.9894
+Epoch 7/20
+Train Loss: 0.0706 | Val Loss: 0.1576 | Val AUC: 0.9886
+Epoch 8/20
+Train Loss: 0.0576 | Val Loss: 0.1266 | Val AUC: 0.9914
+Saved new best model with AUC: 0.9914
+Epoch 9/20
+Train Loss: 0.0510 | Val Loss: 0.1321 | Val AUC: 0.9908
+Epoch 10/20
+Train Loss: 0.0443 | Val Loss: 0.1345 | Val AUC: 0.9913
+Epoch 11/20
+Train Loss: 0.0402 | Val Loss: 0.1450 | Val AUC: 0.9911
+Epoch 12/20
+Train Loss: 0.0362 | Val Loss: 0.1406 | Val AUC: 0.9896
+Epoch 13/20
+Train Loss: 0.0162 | Val Loss: 0.1471 | Val AUC: 0.9914
+Epoch 14/20
+Train Loss: 0.0116 | Val Loss: 0.1765 | Val AUC: 0.9926
+Saved new best model with AUC: 0.9926
+Epoch 15/20
+Train Loss: 0.0110 | Val Loss: 0.1884 | Val AUC: 0.9917
+Epoch 16/20
+Train Loss: 0.0098 | Val Loss: 0.1835 | Val AUC: 0.9920
+Epoch 17/20
+Train Loss: 0.0099 | Val Loss: 0.1635 | Val AUC: 0.9921
+Epoch 18/20
+Train Loss: 0.0094 | Val Loss: 0.1898 | Val AUC: 0.9915
+Epoch 19/20
+Train Loss: 0.0047 | Val Loss: 0.1857 | Val AUC: 0.9923
+Epoch 20/20
+Train Loss: 0.0041 | Val Loss: 0.1976 | Val AUC: 0.9920
+Visualizing predictions...
+Evaluating model performance...
+Submission file saved to /workspace/mle_edb230ee-5cee-4c3d-a0e5-d92317116daf/results/submission.csv
+
+Model Performance Metrics:
+val_auc: 0.9920005203232575
+accuracy: 0.9662406144322806
+precision: 0.9720849084036057
+recall: 0.9439503035436961
+f1_score: 0.9578110450540792
+inference_time_ms: 3.9946389198303223
+
+Experiment completed. Results saved to /workspace/mle_edb230ee-5cee-4c3d-a0e5-d92317116daf/results
+
+=== Experiment completed successfully ===
+
+=== Results Summary ===
+Performance Metrics:
+val_auc,accuracy,precision,recall,f1_score,inference_time_ms
+0.9920005203232575,0.9662406144322806,0.9720849084036057,0.9439503035436961,0.9578110450540792,3.9946389198303223
+
+=== Experiment Configuration ===
+{
+    "data_dir": "/workspace/mle_dataset",
+    "output_dir": "/workspace/mle_edb230ee-5cee-4c3d-a0e5-d92317116daf/results",
+    "model_name": "resnet50",
+    "pretrained": true,
+    "batch_size": 32,
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "num_workers": 4,
+    "seed": 42,
+    "skip_training": false,
+    "gpu_available": true,
+    "gpu_count": 1,
+    "gpu_name": "NVIDIA A40",
+    "cuda_version": "12.6",
+    "timestamp": "2025-05-20 07:05:51"
+}
+=== End of Experiment ===
+Date: Tue May 20 07:44:49 UTC 2025
