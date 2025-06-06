@@ -2,6 +2,7 @@
 
 This directory contains Curie's experiments with various ML solutions for super-resolution tissue architecture inference, focusing on improving the accuracy of biological tissue structure predictions.
 
+[Source Paper](https://github.com/daviddaiweizhang/istar?tab=readme-ov-file) | [Source Code](https://github.com/daviddaiweizhang/istar)
 
 ## Directory Structure
 
