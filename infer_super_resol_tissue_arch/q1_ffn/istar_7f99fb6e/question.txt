@@ -1,0 +1,4 @@
+Find an optimal feedforward neural network predict high-resolution gene expression by allocating low-resolution spatial transcriptomics (ST) measurements to finer spatial units (superpixels) based on high-resolution histological features?
+The objective is to minimize the loss or RMSE of the model. 
+The baseline solution code is provided, you can just work on top of it. 
+Refer to 'paper.pdf' for more context of this problem.

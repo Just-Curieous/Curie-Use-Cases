@@ -1,0 +1,8 @@
+# Model Configuration
+# Input dimension: 579
+# Output dimension: 1000
+# Learning rate: 0.0001
+# Latent network: 4 layers of 256 units
+# Output activation: ELU(alpha=0.01, beta=0.01)
+# Training Metrics
+epoch,rmse,loss,learning_rate,batch_size
