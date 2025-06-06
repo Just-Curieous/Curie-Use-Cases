@@ -1,6 +1,10 @@
-# Ensemble Methods
+# Ensemble Methods - Boosting Stock Prediction by 35%
+This directory contains Curie's experiments with various ensemble strategies for stock prediction.
 
-This directory contains the experiments of different ensemble methods for the stock prediction model.
+**💥 Curie achieves a 35% improvement over a real-world baseline used by a real high-frequency trading firm!**
+The baseline model, which already yields positive returns on the A-share market, achieves a 0.1 correlation in stock price ranking prediction. 
+Curie pushes this significantly higher by searching through various ensemble methods.
+
 
 ## Overview
 
@@ -16,38 +20,6 @@ python3 -m curie.main -f ~/Curie-Use-Cases/stock_prediction/q4_ensemble/ensemble
 - Task description: [ensemble-question.txt](./ensemble-question.txt) 
 - We use an A40 GPU as the local machine.
 - You need to modify the dataset and starter code path specified in `quant_config.json`.
-  
-<!-- ## Experiment Plan
-
-**Plan 1: Basic Ensemble Methods**
-- Simple averaging of base models
-- Weighted averaging (based on validation performance)
-- Stacking with linear meta-learner
-- Stacking with LightGBM meta-learner
-
-**Plan 2: Advanced Stacking**
-- Stacking with cross-validation
-- Stacking with time-based validation
-- Stacking with different meta-features
-- Stacking with feature selection
-
-**Plan 3: Boosting Ensembles**
-- LightGBM with different base models
-- XGBoost with different base models
-- CatBoost with different base models
-- Custom boosting implementation
-
-**Plan 4: Bagging and Random Forest**
-- Random Forest with different configurations
-- Bagging with different base models
-- Extra Trees with different configurations
-- Custom bagging implementation
-
-**Plan 5: Hybrid Ensemble Methods**
-- Combination of stacking and boosting
-- Combination of bagging and boosting
-- Dynamic ensemble selection
-- Ensemble pruning methods -->
 
 ## Curie Results
 
