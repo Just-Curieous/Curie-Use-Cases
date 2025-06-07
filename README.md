@@ -26,11 +26,11 @@ The Curie framework is designed to facilitate scientific discovery across variou
   - [`q3_feature_engineering`](./stock_prediction/q3_feature_engineering):  Test out different feature engineering techniques for stock prediction.
   - [`q4_ensemble`](./stock_prediction/q4_ensemble): Test out different ensemble methods for improving stock prediction accuracy.
   - [`starter_code`](./stock_prediction/starter_code): Starter code and templates for stock prediction experiments.
-<!-- - **template**:Provides a template for creating new use cases with the Curie framework. -->
 
+
+  
+<!-- - **template**:Provides a template for creating new use cases with the Curie framework. -->
+<!-- 
 ## Demo
 Curie can automatically generate experiment report for you research question, here is a sample report for `Histopathologic Cancer Detection` task:
-
-
-![Experimental Analysis of Model Architectures for Histopathologic Cancer Detection 1](./machine_learning/q5_histopathologic-cancer-detection/Experimental%20Analysis%20of%20Model%20Architectures%20for%20Histopathologic%20Cancer%20Detection-1.png)
-![Experimental Analysis of Model Architectures for Histopathologic Cancer Detection 2](./machine_learning/q5_histopathologic-cancer-detection/Experimental%20Analysis%20of%20Model%20Architectures%20for%20Histopathologic%20Cancer%20Detection-2.png)
+ -->
