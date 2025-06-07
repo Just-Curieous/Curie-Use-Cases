@@ -27,6 +27,9 @@ The Curie framework is designed to facilitate scientific discovery across variou
   - [`q4_ensemble`](./stock_prediction/q4_ensemble): Test out different ensemble methods for improving stock prediction accuracy.
   - [`starter_code`](./stock_prediction/starter_code): Starter code and templates for stock prediction experiments.
 
+- **🧬 Bioinformatics Experiments**: Contains use cases related to bioinformatics and computational biology:
+  - [`enhance_st_resolution`](./bio_info/enhance_st_resolution): Experiments for enhancing spatial transcriptomics data resolution using deep learning approaches.
+  - [`infer_super_resol_tissue_arch`](./bio_info/infer_super_resol_tissue_arch): Experiments for inferring tissue architecture from super-resolution data.
 
   
 <!-- - **template**:Provides a template for creating new use cases with the Curie framework. -->
