@@ -1,6 +1,29 @@
 # Enhancing Spatial Transcriptomics Resolution
 This directory contains Curie's experiments with enhancing the resolution of spatial transcriptomics data from the [HEST dataset](https://huggingface.co/datasets/MahmoodLab/hest).
 
+💥 Curie is able to **load and analyze the pattern within a ST and histology sample**!
+ 
+Here are some selected examples from `hest_analyze_*/results`:
+ 
+<table>
+  <tr>
+    <td>
+      <img src="./hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_pca.png" width="250"/>
+      <br><sub><i>PCA - TENX96</i></sub>
+    </td>
+    <td>
+      <img src="./hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_spatial_clusters.png" width="250"/>
+      <br><sub><i>Spatial Clusters - TENX96</i></sub>
+    </td>
+    <td>
+      <img src="./hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/tsne_visualization.png" width="250"/>
+      <br><sub><i>t-SNE Visualization</i></sub>
+    </td>
+  </tr>
+</table>
+
+
+
 ## Overview
 
 Spatial transcriptomics (ST) provides valuable insights into gene expression patterns within tissue samples, but often at limited spatial resolution. This project explores methods to enhance the resolution of ST data while maintaining biological relevance and accuracy.
