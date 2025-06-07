@@ -1,7 +1,7 @@
 # Enhancing Spatial Transcriptomics Resolution
 This directory contains Curie's experiments with enhancing the resolution of spatial transcriptomics data from the [HEST dataset](https://huggingface.co/datasets/MahmoodLab/hest).
 
-💥 Curie is able to **load and analyze the pattern within a ST and histology sample**!
+💥 Curie is able to **load and analyze the pattern within a ST and histology sample** (TENX96)!
  
 Here are some selected examples from `hest_analyze_*/results`:
  
