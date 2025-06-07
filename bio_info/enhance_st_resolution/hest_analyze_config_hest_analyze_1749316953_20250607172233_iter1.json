@@ -1,0 +1,23 @@
+{
+    "job_name": "default_research",
+    "docker_image": "curie-pip-image",
+    "dockerfile_name": "ExpDockerfile_pip",
+    "benchmark_specific_context": "none",
+    "is_user_interrupt_allowed": false,
+    "timeout": 600,
+    "max_coding_iterations": 25,
+    "supervisor_system_prompt_filename": "prompts/simple/simple-supervisor.txt",
+    "control_worker_system_prompt_filename": "prompts/simple/simple-control-worker.txt",
+    "patcher_system_prompt_filename": "prompts/simple/simple-patcher.txt",
+    "llm_verifier_system_prompt_filename": "prompts/simple/simple-llm-verifier.txt",
+    "coding_prompt_filename": "prompts/simple/simple-coding.txt",
+    "worker_system_prompt_filename": "prompts/simple/simple-worker.txt",
+    "workspace_name": "/home/ubuntu/hest_analyze",
+    "dataset_dir": "/home/ubuntu/hest_data",
+    "env_requirements": "",
+    "unique_id": "20250607172233",
+    "iteration": 1,
+    "log_filename": "logs/hest_analyze_20250607172233_iter1/hest_analyze_1749316953_20250607172233_iter1.log",
+    "exp_plan_filename": "workspace/hest_analyze_1749316953.txt",
+    "base_dir": "/home/ubuntu/dev/Curie"
+}

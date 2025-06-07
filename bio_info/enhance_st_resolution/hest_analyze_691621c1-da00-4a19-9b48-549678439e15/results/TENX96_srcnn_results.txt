@@ -1,0 +1,36 @@
+ENHANCEMENT RESULTS FOR SAMPLE TENX96
+Method: srcnn
+============================================================
+
+ENHANCEMENT DETAILS
+----------------------------------------
+Original shape: (32, 32, 100)
+Enhanced shape: (128, 128, 100)
+Enhancement time: 0.6516 seconds
+
+EVALUATION METRICS
+----------------------------------------
+Spatial Resolution:
+  mse: 0.0039
+  ssim: 0.6872
+  resolution_factor: 4.0000
+  original_shape: (32, 32, 100)
+  enhanced_shape: (128, 128, 100)
+
+Gene Expression Preservation:
+  correlation: 0.9891
+  expression_preservation: 0.9957
+
+Computational Efficiency:
+  memory_usage_mb: 559.4297
+  enhanced_data_size_mb: 12.5000
+
+Detail Retention:
+  gradient_similarity: 0.5596
+  edge_preservation: 0.2922
+
+TIMING INFORMATION
+----------------------------------------
+Enhancement time: 0.6516 seconds
+Evaluation time: 0.4897 seconds
+Total analysis time: 1.9828 seconds

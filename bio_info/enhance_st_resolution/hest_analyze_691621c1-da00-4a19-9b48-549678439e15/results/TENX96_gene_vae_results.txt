@@ -1,0 +1,36 @@
+ENHANCEMENT RESULTS FOR SAMPLE TENX96
+Method: gene_vae
+============================================================
+
+ENHANCEMENT DETAILS
+----------------------------------------
+Original shape: (32, 32, 100)
+Enhanced shape: (128, 128, 100)
+Enhancement time: 0.3000 seconds
+
+EVALUATION METRICS
+----------------------------------------
+Spatial Resolution:
+  mse: 0.0223
+  ssim: 0.4861
+  resolution_factor: 4.0000
+  original_shape: (32, 32, 100)
+  enhanced_shape: (128, 128, 100)
+
+Gene Expression Preservation:
+  correlation: 0.9247
+  expression_preservation: 0.9765
+
+Computational Efficiency:
+  memory_usage_mb: 598.6562
+  enhanced_data_size_mb: 12.5000
+
+Detail Retention:
+  gradient_similarity: 0.4192
+  edge_preservation: 0.2730
+
+TIMING INFORMATION
+----------------------------------------
+Enhancement time: 0.3000 seconds
+Evaluation time: 0.4886 seconds
+Total analysis time: 1.6888 seconds

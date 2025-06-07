@@ -1,0 +1,44 @@
+ENHANCEMENT METHOD COMPARISON FOR SAMPLE TENX96
+============================================================
+
+SPATIAL_RESOLUTION:
+Metric                   bicubic        srcnn          histology_guidedgene_vae       
+-------------------------------------------------------------------------------------
+mse                      0.0000         0.0039         0.0024         0.0223         
+resolution_factor        4.0000         4.0000         4.0000         4.0000         
+ssim                     0.8142         0.6872         0.7886         0.4861         
+
+GENE_EXPRESSION:
+Metric                   bicubic        srcnn          histology_guidedgene_vae       
+-------------------------------------------------------------------------------------
+correlation              0.9928         0.9891         0.9921         0.9247         
+expression_preservation  0.9989         0.9957         0.9962         0.9765         
+
+COMPUTATIONAL_EFFICIENCY:
+Metric                   bicubic        srcnn          histology_guidedgene_vae       
+-------------------------------------------------------------------------------------
+enhanced_data_size_mb    12.5000        12.5000        12.5000        12.5000        
+memory_usage_mb          516.9922       559.4297       591.6094       598.6562       
+
+DETAIL_RETENTION:
+Metric                   bicubic        srcnn          histology_guidedgene_vae       
+-------------------------------------------------------------------------------------
+edge_preservation        0.3069         0.2922         0.2839         0.2730         
+gradient_similarity      0.5001         0.5596         0.4583         0.4192         
+
+TIMINGS:
+Timing                   bicubic        srcnn          histology_guidedgene_vae       
+-------------------------------------------------------------------------------------
+enhancement_time         0.1000         0.6516         1.5671         0.3000         
+evaluation_time          0.4891         0.4897         0.4901         0.4886         
+total_analysis_time      1.3788         1.9828         2.8231         1.6888         
+
+OVERALL RECOMMENDATION:
+----------------------------------------
+Based on all metrics, the recommended method is: BICUBIC
+
+Method scores (higher is better):
+  bicubic        : 100.0/100
+  srcnn          : 84.1/100
+  histology_guided: 74.4/100
+  gene_vae       : 0.0/100

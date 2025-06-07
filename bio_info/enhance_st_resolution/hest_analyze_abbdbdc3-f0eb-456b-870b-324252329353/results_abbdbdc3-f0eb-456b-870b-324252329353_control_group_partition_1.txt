@@ -1,0 +1,102 @@
+==========================================================
+HEST Analysis Experiment - Control Group (Partition 1)
+Experiment ID: abbdbdc3-f0eb-456b-870b-324252329353
+Date: Sat Jun  7 19:13:52 UTC 2025
+==========================================================
+
+Python version:
+Python 3.9.23
+Checking if required packages are installed...
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/control_experiment_abbdbdc3-f0eb-456b-870b-324252329353_control_group_partition_1.sh: line 31: /workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/venv/bin/pip: cannot execute: required file not found
+Checking dataset structure...
+total 64
+drwxr-xr-x 16 root root 4096 Jun  7 17:31 .
+drwxrwxrwx 13 1000 1000 4096 Jun  7 17:36 ..
+drwxr-xr-x  3 root root 4096 Jun  7 17:23 .cache
+drwxr-xr-x  3 root root 4096 Jun  7 17:23 MahmoodLab___hest
+drwxr-xr-x  2 root root 4096 Jun  7 17:24 cellvit_seg
+-rw-r--r--  1 root root    0 Jun  7 17:23 hest_data_MahmoodLab___hest_custom_config-4491da823078bdaa_1.0.0_94127ca856cb5f26aa6d5ab751be03921c2cc400b324e6285c015001d87154f7.lock
+drwxr-xr-x  2 root root 4096 Jun  7 17:23 metadata
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 patches
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 patches_vis
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 pixel_size_vis
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 spatial_plots
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 st
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 thumbnails
+drwxr-xr-x  2 root root 4096 Jun  7 17:25 tissue_seg
+drwxr-xr-x  2 root root 4096 Jun  7 17:26 transcripts
+drwxr-xr-x  2 root root 4096 Jun  7 17:28 wsis
+drwxr-xr-x  2 root root 4096 Jun  7 17:31 xenium_seg
+ST data directory:
+total 41724
+drwxr-xr-x  2 root root     4096 Jun  7 17:25 .
+drwxr-xr-x 16 root root     4096 Jun  7 17:31 ..
+-rw-r--r--  1 root root 11970984 Jun  7 17:25 TENX96.h5ad
+-rw-r--r--  1 root root 30742777 Jun  7 17:25 TENX99.h5ad
+Running ST data analysis without histology integration...
+==========================================================
+2025-06-07 19:14:01,878 - st_analyzer - INFO - Hardware information:
+2025-06-07 19:14:01,882 - st_analyzer - INFO - CUDA available: False
+2025-06-07 19:14:01,882 - st_analyzer - INFO - Attempting to load data from /workspace/hest_analyze_dataset
+2025-06-07 19:14:04,151 - st_analyzer - INFO - Loaded TENX96 from AnnData file with 7233 spots and 541 genes
+2025-06-07 19:14:04,156 - st_analyzer - INFO - Results will be saved to: /workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results
+2025-06-07 19:14:04,156 - st_analyzer - INFO - Analyzing sample: TENX96
+2025-06-07 19:14:04,163 - st_analyzer - INFO - Calculating spatial resolution metrics...
+2025-06-07 19:14:06,027 - st_analyzer - INFO - Calculating gene expression metrics...
+2025-06-07 19:14:06,045 - st_analyzer - INFO - Performing dimensionality reduction...
+2025-06-07 19:14:06,093 - st_analyzer - INFO - Performing clustering for cell type identification...
+2025-06-07 19:14:06,274 - st_analyzer - INFO - Calculating clustering metrics...
+2025-06-07 19:14:06,670 - st_analyzer - INFO - Generating visualizations...
+2025-06-07 19:14:08,335 - st_analyzer - INFO - Analysis completed in 4.18 seconds
+2025-06-07 19:14:08,335 - st_analyzer - INFO - Results saved to: /workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_analysis_results.txt
+2025-06-07 19:14:08,336 - st_analyzer - INFO - Analysis completed successfully
+==========================================================
+Analysis completed in 17 seconds
+==========================================================
+Results summary:
+Dataset Information:
+Dataset path: /workspace/hest_analyze_dataset
+Sample ID: TENX96
+Number of spots: 7233
+Number of genes: 541
+Sparsity: 0.5187
+
+Analysis Summary:
+Spatial Transcriptomics Analysis - Control Group Experiment
+============================================================
+
+Date: 2025-06-07 19:14:08
+Sample ID: TENX96
+Number of spots: 7233
+Number of genes: 541
+Analysis approach: ST data only (no histology integration)
+
+Key Findings:
+----------------------------------------
+Spot density: 0.0000 spots per unit area
+Mean spot distance: 470.5882
+Coverage ratio: 0.6732
+
+Number of identified cell types: 8
+Silhouette score: 0.2848
+
+Mean genes per spot: 260.36
+Mean counts per spot: 7416.25
+Data sparsity: 0.5187
+
+Analysis time: 4.18 seconds
+
+Generated result files:
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_analysis_results.txt
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/synthetic_sample_analysis_results.txt
+Generated visualizations:
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_expression_heatmap.png
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_pca.png
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/TENX96_spatial_clusters.png
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/synthetic_sample_expression_heatmap.png
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/synthetic_sample_pca.png
+/workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results/synthetic_sample_spatial_clusters.png
+==========================================================
+Experiment completed successfully
+Results saved to: /workspace/hest_analyze_abbdbdc3-f0eb-456b-870b-324252329353/results
+==========================================================

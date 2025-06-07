@@ -1,0 +1,47 @@
+==========================================================
+HEST Analysis Experiment - Control Group (Partition 1)
+Experiment ID: 691621c1-da00-4a19-9b48-549678439e15
+Method: Original unenhanced ST data
+Date: Sat Jun  7 18:11:11 UTC 2025
+==========================================================
+
+Activating Python environment...
+Running `shell init`, which:
+ - modifies RC file: "/root/.bashrc"
+ - generates config for root prefix: [1m"/root/.local/share/mamba"[0m
+ - sets mamba executable to: [1m"/usr/local/bin/micromamba"[0m
+The following has been added in your "/root/.bashrc" file
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/usr/local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/root/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+Python version:
+Python 3.9.23
+Checking GPU availability...
+CUDA available: False
+CUDA device count: 0
+CUDA device name: N/A
+Checking dataset...
+total 41724
+drwxr-xr-x  2 root root     4096 Jun  7 17:25 .
+drwxr-xr-x 16 root root     4096 Jun  7 17:31 ..
+-rw-r--r--  1 root root 11970984 Jun  7 17:25 TENX96.h5ad
+-rw-r--r--  1 root root 30742777 Jun  7 17:25 TENX99.h5ad
+total 228
+drwxr-xr-x  2 root root   4096 Jun  7 17:25 .
+drwxr-xr-x 16 root root   4096 Jun  7 17:31 ..
+-rw-r--r--  1 root root 162623 Jun  7 17:25 TENX96_downscaled_fullres.jpeg
+-rw-r--r--  1 root root  60074 Jun  7 17:25 TENX99_downscaled_fullres.jpeg
+==========================================================
+Starting analysis with method: original (control group)
+==========================================================

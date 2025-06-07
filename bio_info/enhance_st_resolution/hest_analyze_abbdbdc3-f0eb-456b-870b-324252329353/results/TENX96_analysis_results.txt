@@ -1,0 +1,41 @@
+Spatial Transcriptomics Analysis Results - Sample: TENX96
+============================================================
+
+Processing Time: 4.18 seconds
+
+Metrics:
+----------------------------------------
+
+Spatial Resolution:
+  num_spots: 7233
+  area: 1868844290.6574397
+  spot_density: 3.870306389975115e-06
+  mean_spot_distance: 470.5882352941157
+  median_spot_distance: 470.5882352941153
+  min_spot_distance: 470.58823529411166
+  max_spot_distance: 470.58823529411893
+  coverage_ratio: 0.67315853962006
+
+Gene Expression:
+  genes_per_spot_mean: 260.3575279966819
+  genes_per_spot_median: 316.0
+  counts_per_spot_mean: 7416.248582884004
+  counts_per_spot_median: 5071.0
+  zero_fraction: 0.5187476377140816
+  mean_gene_expression: 13.70840773176341
+  median_gene_expression: 2.0424443522742983
+  mean_gene_cv: 2.3340906693360597
+
+Cell Typing:
+  num_clusters: 8
+  min_cluster_size: 380
+  max_cluster_size: 1376
+  mean_cluster_size: 904.125
+  median_cluster_size: 895.5
+  silhouette_score: 0.2847856879234314
+
+Visualizations:
+----------------------------------------
+  spatial_clusters: TENX96_spatial_clusters.png
+  pca: TENX96_pca.png
+  expression_heatmap: TENX96_expression_heatmap.png

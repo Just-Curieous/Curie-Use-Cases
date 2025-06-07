@@ -1,0 +1,20 @@
+[20:28:15] Starting spatial transcriptomics analysis - Control group (no imputation)
+[20:28:15] Output directory: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results
+[20:28:15] Loading ST data from: /workspace/hest_analyze_dataset/st/TENX96.h5ad
+[20:28:15] Successfully loaded data with 7233 spots and 541 genes.
+[20:28:15] Calculating basic statistics...
+[20:28:15] Found 7233 spots and 541 genes
+[20:28:15] Calculating spatial metrics...
+[20:28:15] Mean distance between spots: 20762.28
+[20:28:15] Spot density: 0.0000 spots per unit area
+[20:28:15] Analyzing gene expression patterns...
+[20:28:15] Mean coefficient of variation: 2.33
+[20:28:15] Performing clustering to identify cell types...
+[20:28:16] Found 8 clusters with silhouette score: 0.14
+[20:28:16] Generating visualizations...
+[20:28:44] Generated spatial_clusters visualization: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/spatial_clusters.png
+[20:28:44] Generated tsne visualization: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/tsne_visualization.png
+[20:28:44] Generated heatmap visualization: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/gene_expression_heatmap.png
+[20:28:44] Analysis completed in 29.21 seconds
+[20:28:44] Report written to: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/analysis_results.txt
+[20:28:44] Analysis completed successfully

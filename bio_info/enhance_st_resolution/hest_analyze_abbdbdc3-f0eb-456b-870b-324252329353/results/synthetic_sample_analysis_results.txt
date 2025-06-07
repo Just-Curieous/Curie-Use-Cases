@@ -1,0 +1,41 @@
+Spatial Transcriptomics Analysis Results - Sample: synthetic_sample
+============================================================
+
+Processing Time: 0.45 seconds
+
+Metrics:
+----------------------------------------
+
+Spatial Resolution:
+  num_spots: 100
+  area: 81
+  spot_density: 1.2345679012345678
+  mean_spot_distance: 1.0
+  median_spot_distance: 1.0
+  min_spot_distance: 1.0
+  max_spot_distance: 1.0
+  coverage_ratio: 0.969627362219072
+
+Gene Expression:
+  genes_per_spot_mean: 40.16
+  genes_per_spot_median: 40.0
+  counts_per_spot_mean: 414.00146534501727
+  counts_per_spot_median: 413.74521437239275
+  zero_fraction: 0.7992
+  mean_gene_expression: 2.0700073267250865
+  median_gene_expression: 0.8587997468723096
+  mean_gene_cv: 2.1961683566619117
+
+Cell Typing:
+  num_clusters: 8
+  min_cluster_size: 2
+  max_cluster_size: 27
+  mean_cluster_size: 12.5
+  median_cluster_size: 14.0
+  silhouette_score: 0.04039567836782929
+
+Visualizations:
+----------------------------------------
+  spatial_clusters: synthetic_sample_spatial_clusters.png
+  pca: synthetic_sample_pca.png
+  expression_heatmap: synthetic_sample_expression_heatmap.png

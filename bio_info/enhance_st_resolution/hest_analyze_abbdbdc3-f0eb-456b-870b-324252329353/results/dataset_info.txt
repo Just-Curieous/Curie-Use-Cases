@@ -1,0 +1,5 @@
+Dataset path: /workspace/hest_analyze_dataset
+Sample ID: TENX96
+Number of spots: 7233
+Number of genes: 541
+Sparsity: 0.5187

@@ -1,0 +1,28 @@
+Analysis Results for Sample TENX96
+Enhancement Method: original
+
+Metrics:
+  spatial_resolution:
+    average_spot_distance: 20762.283796422576
+    min_spot_distance: 470.58823529411166
+    spot_density: 3.825071335559305e-06
+  gene_expression:
+    num_genes: 541
+    num_spots: 7233
+    mean_expression: 13.708407731763408
+    median_expression: 0.0
+    zero_fraction: 0.5187476377140816
+  computational_efficiency:
+    gene_expression_memory_mb: 7.463556289672852
+  detail_retention:
+    expression_entropy: 18.67466164513057
+
+Timings:
+  metrics_calculation: 63.4999 seconds
+  visualization_creation: 0.8960 seconds
+
+Visualization Paths:
+  histology_with_spots: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_histology.png
+  expression_heatmap: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_heatmap.png
+  spatial_expression: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_spatial.png
+  pca_visualization: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_pca_visualization.png

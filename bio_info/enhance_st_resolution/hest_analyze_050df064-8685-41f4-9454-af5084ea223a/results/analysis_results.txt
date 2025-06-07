@@ -1,0 +1,39 @@
+Spatial Transcriptomics Analysis Results
+======================================
+
+Date: 2025-06-07 20:28:44
+Analysis time: 29.21 seconds
+
+1. Basic Statistics
+------------------
+n_spots: 7233
+n_genes: 541
+mean_gene_expr: 13.70840773176341
+median_gene_expr: 2.0424443522742983
+max_gene_expr: 414.3396930734135
+zero_fraction: 0.5187476377140816
+
+2. Spatial Metrics
+-----------------
+mean_spot_distance: 20762.283796422576
+min_spot_distance: 470.58823529411166
+max_spot_distance: 54321.8653205421
+spot_density: 3.870306389975115e-06
+
+3. Gene Expression Analysis
+-------------------------
+mean_cv: 2.3340908833506138
+max_cv: 10.375869718864339
+Number of top variable genes identified: 50
+
+4. Clustering Results
+-------------------
+Number of clusters: 8
+Silhouette score: 0.1437615204511708
+Cluster sizes: {0: 1306, 1: 555, 2: 2266, 3: 1599, 4: 914, 5: 431, 6: 19, 7: 143}
+
+5. Visualizations
+---------------
+spatial_clusters: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/spatial_clusters.png
+tsne: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/tsne_visualization.png
+heatmap: /workspace/hest_analyze_050df064-8685-41f4-9454-af5084ea223a/results/gene_expression_heatmap.png

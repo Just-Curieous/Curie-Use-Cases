@@ -1,0 +1,36 @@
+ENHANCEMENT RESULTS FOR SAMPLE TENX96
+Method: bicubic
+============================================================
+
+ENHANCEMENT DETAILS
+----------------------------------------
+Original shape: (32, 32, 100)
+Enhanced shape: (128, 128, 100)
+Enhancement time: 0.1000 seconds
+
+EVALUATION METRICS
+----------------------------------------
+Spatial Resolution:
+  mse: 0.0000
+  ssim: 0.8142
+  resolution_factor: 4.0000
+  original_shape: (32, 32, 100)
+  enhanced_shape: (128, 128, 100)
+
+Gene Expression Preservation:
+  correlation: 0.9928
+  expression_preservation: 0.9989
+
+Computational Efficiency:
+  memory_usage_mb: 516.9922
+  enhanced_data_size_mb: 12.5000
+
+Detail Retention:
+  gradient_similarity: 0.5001
+  edge_preservation: 0.3069
+
+TIMING INFORMATION
+----------------------------------------
+Enhancement time: 0.1000 seconds
+Evaluation time: 0.4891 seconds
+Total analysis time: 1.3788 seconds

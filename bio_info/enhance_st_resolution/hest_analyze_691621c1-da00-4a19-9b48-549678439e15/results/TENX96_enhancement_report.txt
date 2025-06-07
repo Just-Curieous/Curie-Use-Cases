@@ -1,0 +1,62 @@
+SPATIAL TRANSCRIPTOMICS ENHANCEMENT EXPERIMENT REPORT
+============================================================
+
+Sample ID: TENX96
+Date: 2025-06-07 21:18:18
+
+SUMMARY OF ENHANCEMENT METHODS
+------------------------------------------------------------
+
+BICUBIC:
+  Description: Classical image processing technique that uses bicubic interpolation to increase resolution.
+  Enhancement Time: 0.1000 seconds
+  Resolution Factor: 4.00x
+
+SRCNN:
+  Description: Deep learning super-resolution using convolutional neural networks.
+  Enhancement Time: 0.6516 seconds
+  Resolution Factor: 4.00x
+
+HISTOLOGY_GUIDED:
+  Description: Enhancement guided by histology images to improve spatial resolution.
+  Enhancement Time: 1.5671 seconds
+  Resolution Factor: 4.00x
+
+GENE_VAE:
+  Description: Variational autoencoder that preserves gene expression patterns during enhancement.
+  Enhancement Time: 0.3000 seconds
+  Resolution Factor: 4.00x
+
+BEST METHODS BY METRIC
+------------------------------------------------------------
+
+Spatial Resolution (SSIM):
+  Best Method: bicubic
+  Value: 0.8142
+
+Gene Expression Preservation:
+  Best Method: bicubic
+  Value: 0.9928
+
+Computational Efficiency:
+  Best Method: bicubic
+  Value: 516.9922
+
+Detail Retention:
+  Best Method: bicubic
+  Value: 0.3069
+
+Processing Speed:
+  Best Method: bicubic
+  Value: 0.1000
+
+OVERALL RECOMMENDATION
+------------------------------------------------------------
+
+Based on the overall performance across all metrics, the recommended method is: BICUBIC
+
+Method rankings (lower score is better):
+  bicubic: 0.0000
+  srcnn: 1.7701
+  histology_guided: 2.6790
+  gene_vae: 4.1363

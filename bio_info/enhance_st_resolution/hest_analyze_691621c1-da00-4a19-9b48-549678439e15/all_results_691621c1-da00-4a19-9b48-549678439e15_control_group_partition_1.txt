@@ -1,0 +1,139 @@
+
+Here are the results from 2 separate runs of this workflow:
+
+Result 1:
+==========================================================
+HEST Analysis Experiment - Control Group (Partition 1)
+Experiment ID: 691621c1-da00-4a19-9b48-549678439e15
+Method: Original unenhanced ST data
+Date: Sat Jun  7 18:01:22 UTC 2025
+==========================================================
+
+Activating Python environment...
+Running `shell init`, which:
+ - modifies RC file: "/root/.bashrc"
+ - generates config for root prefix: [1m"/root/.local/share/mamba"[0m
+ - sets mamba executable to: [1m"/usr/local/bin/micromamba"[0m
+The following has been added in your "/root/.bashrc" file
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/usr/local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/root/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+Python version:
+Python 3.9.23
+Checking GPU availability...
+CUDA available: False
+CUDA device count: 0
+CUDA device name: N/A
+Checking dataset...
+total 41724
+drwxr-xr-x  2 root root     4096 Jun  7 17:25 .
+drwxr-xr-x 16 root root     4096 Jun  7 17:31 ..
+-rw-r--r--  1 root root 11970984 Jun  7 17:25 TENX96.h5ad
+-rw-r--r--  1 root root 30742777 Jun  7 17:25 TENX99.h5ad
+total 228
+drwxr-xr-x  2 root root   4096 Jun  7 17:25 .
+drwxr-xr-x 16 root root   4096 Jun  7 17:31 ..
+-rw-r--r--  1 root root 162623 Jun  7 17:25 TENX96_downscaled_fullres.jpeg
+-rw-r--r--  1 root root  60074 Jun  7 17:25 TENX99_downscaled_fullres.jpeg
+==========================================================
+Starting analysis with method: original (control group)
+==========================================================
+Using device: cpu
+Loading sample data from /workspace/hest_analyze_dataset...
+Loading sample from /workspace/hest_analyze_dataset
+Loading ST data from: /workspace/hest_analyze_dataset/st/TENX96.h5ad
+Loading histology image from: /workspace/hest_analyze_dataset/thumbnails/TENX96_downscaled_fullres.jpeg
+Using device: cpu
+Running analysis with method: original...
+Analyzing sample TENX96 with method: original
+Analysis complete. Results saved to /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_results.txt
+
+Analysis Summary:
+Sample ID: TENX96
+Enhancement Method: original
+
+Metrics:
+  spatial_resolution:
+    average_spot_distance: 20762.283796422576
+    min_spot_distance: 470.58823529411166
+    spot_density: 3.825071335559305e-06
+  gene_expression:
+    num_genes: 541
+    num_spots: 7233
+    mean_expression: 13.708407731763408
+    median_expression: 0.0
+    zero_fraction: 0.5187476377140816
+  computational_efficiency:
+    gene_expression_memory_mb: 7.463556289672852
+  detail_retention:
+    expression_entropy: 18.67466164513057
+
+Timings:
+  metrics_calculation: 63.0083 seconds
+  visualization_creation: 0.9712 seconds
+
+Visualization files generated:
+  histology_with_spots: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_histology.png
+  expression_heatmap: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_heatmap.png
+  spatial_expression: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_spatial.png
+  pca_visualization: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_pca_visualization.png
+==========================================================
+Analysis completed in 73 seconds
+==========================================================
+Results summary:
+----------------------------------------
+Results from: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_results.txt
+----------------------------------------
+Analysis Results for Sample TENX96
+Enhancement Method: original
+
+Metrics:
+  spatial_resolution:
+    average_spot_distance: 20762.283796422576
+    min_spot_distance: 470.58823529411166
+    spot_density: 3.825071335559305e-06
+  gene_expression:
+    num_genes: 541
+    num_spots: 7233
+    mean_expression: 13.708407731763408
+    median_expression: 0.0
+    zero_fraction: 0.5187476377140816
+  computational_efficiency:
+    gene_expression_memory_mb: 7.463556289672852
+  detail_retention:
+    expression_entropy: 18.67466164513057
+
+Timings:
+  metrics_calculation: 63.0083 seconds
+  visualization_creation: 0.9712 seconds
+
+Visualization Paths:
+  histology_with_spots: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_histology.png
+  expression_heatmap: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_heatmap.png
+  spatial_expression: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_spatial.png
+  pca_visualization: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_pca_visualization.png
+
+Generated visualizations:
+/workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_heatmap.png
+/workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_histology.png
+/workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_pca_visualization.png
+/workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results/TENX96_original_spatial.png
+==========================================================
+Experiment completed successfully
+Results saved to: /workspace/hest_analyze_691621c1-da00-4a19-9b48-549678439e15/results
+==========================================================
+
+
+Result 2:
+

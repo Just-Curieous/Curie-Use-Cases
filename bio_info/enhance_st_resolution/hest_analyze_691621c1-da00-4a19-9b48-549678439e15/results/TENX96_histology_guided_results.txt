@@ -1,0 +1,36 @@
+ENHANCEMENT RESULTS FOR SAMPLE TENX96
+Method: histology_guided
+============================================================
+
+ENHANCEMENT DETAILS
+----------------------------------------
+Original shape: (32, 32, 100)
+Enhanced shape: (128, 128, 100)
+Enhancement time: 1.5671 seconds
+
+EVALUATION METRICS
+----------------------------------------
+Spatial Resolution:
+  mse: 0.0024
+  ssim: 0.7886
+  resolution_factor: 4.0000
+  original_shape: (32, 32, 100)
+  enhanced_shape: (128, 128, 100)
+
+Gene Expression Preservation:
+  correlation: 0.9921
+  expression_preservation: 0.9962
+
+Computational Efficiency:
+  memory_usage_mb: 591.6094
+  enhanced_data_size_mb: 12.5000
+
+Detail Retention:
+  gradient_similarity: 0.4583
+  edge_preservation: 0.2839
+
+TIMING INFORMATION
+----------------------------------------
+Enhancement time: 1.5671 seconds
+Evaluation time: 0.4901 seconds
+Total analysis time: 2.8231 seconds
