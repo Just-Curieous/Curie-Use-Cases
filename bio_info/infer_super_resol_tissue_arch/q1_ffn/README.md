@@ -2,7 +2,7 @@
 
 This directory contains Curie's experiments with Feed-Forward Neural Networks (FFN) for super-resolution tissue architecture inference.
  
- Curie is able to find models that **converge fast and have smaller loss** (fig. 1) on the  super-resolution tissue architecture inference task!
+💥 Curie is able to find models that **converge fast and have smaller loss** (fig. 1) on the  super-resolution tissue architecture inference task!
 
 ## Curie Experiment Results
 - Full experiment report: [istar_1749179423_20250605231023_iter1.md](./istar_1749179423_20250605231023_iter1.md)
