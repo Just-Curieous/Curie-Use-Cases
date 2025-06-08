@@ -5,7 +5,7 @@
 [![Demo](https://img.shields.io/badge/Demo-Live-green)](http://44.202.70.8:5000/)
 [![Blog](https://img.shields.io/badge/Blog-Read%20More-orange)](https://www.just-curieous.com/)
 
-This repository provides a collection of use cases and examples demonstrating the application of the [Curie](https://github.com/Just-Curieous/Curie) for automated and rigorous scientific experimentation with AI agents.
+This repository provides a collection of use cases and examples demonstrating the application of [Curie](https://github.com/Just-Curieous/Curie) for automated and rigorous scientific experimentation with AI agents.
 
 ## Overview
 
