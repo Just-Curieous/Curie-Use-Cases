@@ -4,6 +4,25 @@ This directory contains Curie's experiments with Feed-Forward Neural Networks (F
  
 💥 Curie is able to find models that **converge fast and have smaller loss** (fig. 1) on the  super-resolution tissue architecture inference task!
 
+
+## Running Experiment with Curie
+To run resolution enhancement experiments with Curie:
+```
+key_dict = {
+    "MODEL": "claude-3-7-sonnet-20250219",
+    "ANTHROPIC_API_KEY": "your-anthropic-key"
+}
+
+import curie
+result = curie.experiment(api_keys=key_dict, 
+                          question="Find an optimal model architecture, hyperparameters and training algorithms to train the feedforward neural network \
+                          to minimize the loss or RMSE of the model.\
+                          The baseline solution code is provided at 'impute.py', you only need to work on top of it.", 
+                          workspace_name='/home/ubuntu/hest_analyze',
+                          dataset_dir='/home/ubuntu/hest_data')
+```
+
+
 ## Curie Experiment Results
 - Full experiment report: [istar_1749179423_20250605231023_iter1.md](./istar_1749179423_20250605231023_iter1.md)
 - Raw results: [istar_1749179423_20250605231023_iter1_all_results.txt](./istar_1749179423_20250605231023_iter1_all_results.txt)
